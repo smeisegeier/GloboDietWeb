@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:p4="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ITV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Param">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="PAR_ExportDate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Project">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="PRO_Language" type="xs:string" />
+                  </xs:sequence>
+                  <xs:attribute name="PRO_Code" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Country">
+                <xs:complexType>
+                  <xs:attribute name="CTY_code" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="ListeInterviews">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Interview">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="ITV_Id" nillable="true" />
+                    <xs:element minOccurs="0" name="ITV_RecallDate" type="xs:dateTime" />
+                    <xs:element minOccurs="0" name="CTR_Code" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" name="ITR_Code" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" name="ITR_CTY_Code" type="xs:string" />
+                    <xs:element minOccurs="0" name="ITR_CTR_Code" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" name="SBT_Code" type="xs:string" />
+                    <xs:element minOccurs="0" name="SBT_Name" type="xs:string" />
+                    <xs:element minOccurs="0" name="SBT_FirstName" type="xs:string" />
+                    <xs:element minOccurs="0" name="SBT_Sex" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" name="SBT_BirthDate" type="xs:dateTime" />
+                    <xs:element minOccurs="0" name="ITG_Release" type="xs:dateTime" />
+                    <xs:element minOccurs="0" name="ITG_Num" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" name="ITG_Date" type="xs:dateTime" />
+                    <xs:element minOccurs="0" name="ITG_SubjectHeight" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" name="ITG_SubjectWeight" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" name="ITG_VURecall" type="xs:string" />
+                    <xs:element minOccurs="0" name="ITG_VUNextRecall" type="xs:string" />
+                    <xs:element minOccurs="0" name="ITG_EnergyRequirement" type="xs:decimal" />
+                    <xs:element minOccurs="0" name="ITG_EnergyCalculated" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" name="ITG_TimeGI" type="xs:time" />
+                    <xs:element minOccurs="0" name="ITG_TimeQL" type="xs:time" />
+                    <xs:element minOccurs="0" name="ITG_TimeDQ" type="xs:time" />
+                    <xs:element minOccurs="0" name="ITG_TimeDS" type="xs:time" />
+                    <xs:element minOccurs="0" name="ITG_TimeALL" type="xs:time" />
+                    <xs:element minOccurs="0" name="ITG_RecomputeDate" type="xs:dateTime" />
+                    <xs:element minOccurs="0" name="ITG_SPD_code" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" name="ITG_SPT_code" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" name="ITG_Version" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" name="ListeNotes" />
+                    <xs:element minOccurs="0" name="ListeLignesITV">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="LigneITV">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" name="ITL_POC_Code" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_FCO_Code" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_FCOHour" type="xs:unsignedShort" />
+                                <xs:element minOccurs="0" name="ITL_TOK" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_QLINUM" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_ING_NUM" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_S_ING_NUM" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_Type" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_FoodNum" type="xs:unsignedShort" />
+                                <xs:element minOccurs="0" name="ITL_Group" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_SubGroup1" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_SubGroup2" type="xs:string" />
+                                <xs:element minOccurs="0" name="ITL_DS_Classif" />
+                                <xs:element minOccurs="0" name="ITL_F_Type" type="xs:string" />
+                                <xs:element minOccurs="0" name="ITL_I_Type" type="xs:string" />
+                                <xs:element minOccurs="0" name="ITL_R_Modif" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_I_Modif" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_R_Type" type="xs:string" />
+                                <xs:element minOccurs="0" name="ITL_Text" type="xs:string" />
+                                <xs:element minOccurs="0" name="ITL_Name" type="xs:string" />
+                                <xs:element minOccurs="0" name="ITL_Facets_STR" type="xs:string" />
+                                <xs:element minOccurs="0" name="ITL_BrandName" />
+                                <xs:element minOccurs="0" name="ITL_Status" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_Estim_QTY" type="xs:unsignedShort" />
+                                <xs:element minOccurs="0" name="ITL_Q_Method" type="xs:string" />
+                                <xs:element minOccurs="0" name="ITL_QM_Code" type="xs:string" />
+                                <xs:element minOccurs="0" name="ITL_QUNIT" type="xs:string" />
+                                <xs:element minOccurs="0" name="ITL_NGRAMS" type="xs:unsignedShort" />
+                                <xs:element minOccurs="0" name="ITL_Proport" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_HHMFract" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_R_Fract" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_RawCooked" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_ConsRawCo" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_Conver" type="xs:decimal" />
+                                <xs:element minOccurs="0" name="ITL_EDIB" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_EDIB_CSTE" type="xs:decimal" />
+                                <xs:element minOccurs="0" name="ITL_DENSITY" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_FATLEFTO" type="xs:boolean" />
+                                <xs:element minOccurs="0" name="ITL_FAT_PCT" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_PCT_CONS" type="xs:decimal" />
+                                <xs:element minOccurs="0" name="ITL_PCT_ESTIM" type="xs:decimal" />
+                                <xs:element minOccurs="0" name="ITL_CONS_QTY" type="xs:decimal" />
+                                <xs:element minOccurs="0" name="ITL_R_COOKED" type="xs:decimal" />
+                                <xs:element minOccurs="0" name="ITL_R_EDIB" type="xs:decimal" />
+                                <xs:element minOccurs="0" name="ITL_RAW_Q" type="xs:decimal" />
+                                <xs:element minOccurs="0" name="ITL_RAW_Q_W" type="xs:decimal" />
+                                <xs:element minOccurs="0" name="ITL_MAX" type="xs:unsignedByte" />
+                                <xs:element minOccurs="0" name="ITL_SUPPL" type="xs:boolean" />
+                                <xs:element minOccurs="0" name="ITL_ITEM_SEQ" type="xs:unsignedShort" />
+                                <xs:element minOccurs="0" name="ListeITV_Quantity">
+                                  <xs:complexType>
+                                    <xs:sequence minOccurs="0">
+                                      <xs:element minOccurs="0" name="ITV_Quantity_Service">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" name="ITQ_Order" type="xs:unsignedByte" />
+                                            <xs:element minOccurs="0" name="ITQ_SH_Surface" type="xs:unsignedByte" />
+                                            <xs:element minOccurs="0" name="ITQ_TH_Thick" type="xs:unsignedByte" />
+                                            <xs:element minOccurs="0" name="ITQ_PH_Code" type="xs:unsignedByte" />
+                                            <xs:element minOccurs="0" name="ITQ_PH_QTY" type="xs:unsignedByte" />
+                                            <xs:element minOccurs="0" name="ITQ_FRACT" type="xs:unsignedByte" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="ListeITV_Nutriments">
+                                  <xs:complexType>
+                                    <xs:sequence minOccurs="0">
+                                      <xs:element minOccurs="0" maxOccurs="unbounded" name="ITV_Nutriment">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" name="NTR_Code" type="xs:unsignedByte" />
+                                            <xs:element minOccurs="0" name="ITV_NTR_Value" type="xs:decimal" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="ListeNotes" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

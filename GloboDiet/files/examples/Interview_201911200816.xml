@@ -1,0 +1,2667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ITV>
+	<Param>
+		<PAR_ExportDate>2019-11-20T08:16:16.3643221+01:00</PAR_ExportDate>
+		<Project PRO_Code="NVS III Pretest (U4.2)">
+			<PRO_Language>de-DE</PRO_Language>
+		</Project>
+		<Country CTY_code="DE_" />
+	</Param>
+	<ListeInterviews>
+		<Interview>
+			<ITV_Id p4:nil="true" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance" />
+			<ITV_RecallDate>2019-11-17T00:00:00</ITV_RecallDate>
+			<CTR_Code>001</CTR_Code>
+			<ITR_Code>00000006</ITR_Code>
+			<ITR_CTY_Code>DE_</ITR_CTY_Code>
+			<ITR_CTR_Code>001</ITR_CTR_Code>
+			<SBT_Code>30001020</SBT_Code>
+			<SBT_Name>K</SBT_Name>
+			<SBT_FirstName>G</SBT_FirstName>
+			<SBT_Sex>2</SBT_Sex>
+			<SBT_BirthDate>2001-01-21T00:00:00</SBT_BirthDate>
+			<ITG_Release>2018-09-03T00:00:00</ITG_Release>
+			<ITG_Num>1</ITG_Num>
+			<ITG_Date>2019-11-18T00:00:00</ITG_Date>
+			<ITG_SubjectHeight>172</ITG_SubjectHeight>
+			<ITG_SubjectWeight>67</ITG_SubjectWeight>
+			<ITG_VURecall>08:00</ITG_VURecall>
+			<ITG_VUNextRecall>05:30</ITG_VUNextRecall>
+			<ITG_EnergyRequirement>2319.920654296875</ITG_EnergyRequirement>
+			<ITG_EnergyCalculated>1011</ITG_EnergyCalculated>
+			<ITG_TimeGI>00:01:50</ITG_TimeGI>
+			<ITG_TimeQL>00:04:43</ITG_TimeQL>
+			<ITG_TimeDQ>00:10:13</ITG_TimeDQ>
+			<ITG_TimeDS>00:00:00</ITG_TimeDS>
+			<ITG_TimeALL>00:17:02</ITG_TimeALL>
+			<ITG_RecomputeDate>2019-11-20T08:16:15</ITG_RecomputeDate>
+			<ITG_SPD_code>99</ITG_SPD_code>
+			<ITG_SPT_code>00</ITG_SPT_code>
+			<ITG_Version>1</ITG_Version>
+			<ListeNotes>
+				<Note>
+					<NOT_Status>00</NOT_Status>
+					<NOT_Memo>Wochenende</NOT_Memo>
+					<NOT_Date>2019-11-18T10:53:49</NOT_Date>
+					<NOT_Type>G_DY</NOT_Type>
+					<NOT_QuantityConsumed>0</NOT_QuantityConsumed>
+					<NOT_MaxVal>false</NOT_MaxVal>
+					<NOT_EmptyQLI>false</NOT_EmptyQLI>
+				</Note>
+			</ListeNotes>
+			<ListeLignesITV>
+				<LigneITV>
+					<ITL_POC_Code>13</ITL_POC_Code>
+					<ITL_FCO_Code>01</ITL_FCO_Code>
+					<ITL_FCOHour> 0815</ITL_FCOHour>
+					<ITL_TOK>0</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>1</ITL_Type>
+					<ITL_Text>VORM FRÜHSTÜCK --------------------------------------------- 08h15 , im Restaurant, Hotel</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>13</ITL_POC_Code>
+					<ITL_FCO_Code>01</ITL_FCO_Code>
+					<ITL_FCOHour> 0815</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Wasser</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>13</ITL_POC_Code>
+					<ITL_FCO_Code>01</ITL_FCO_Code>
+					<ITL_FCOHour> 0815</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>01273</ITL_FoodNum>
+					<ITL_Group>13</ITL_Group>
+					<ITL_SubGroup1>04</ITL_SubGroup1>
+					<ITL_SubGroup2 />
+					<ITL_DS_Classif />
+					<ITL_F_Type />
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text />
+					<ITL_Name>Wasser, Leitungswasser</ITL_Name>
+					<ITL_Facets_STR />
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>500</ITL_Estim_QTY>
+					<ITL_Q_Method>V</ITL_Q_Method>
+					<ITL_QM_Code />
+					<ITL_QUNIT>V</ITL_QUNIT>
+					<ITL_NGRAMS>500</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>500</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>500</ITL_RAW_Q>
+					<ITL_RAW_Q_W>500</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>13</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0830</ITL_FCOHour>
+					<ITL_TOK>0</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>1</ITL_Type>
+					<ITL_Text>FRÜHSTÜCK -------------------------------------------------- 08h30 , im Restaurant, Hotel</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>13</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0830</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Brötchen</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>13</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0830</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>00466</ITL_FoodNum>
+					<ITL_Group>06</ITL_Group>
+					<ITL_SubGroup1>03</ITL_SubGroup1>
+					<ITL_SubGroup2>01</ITL_SubGroup2>
+					<ITL_DS_Classif />
+					<ITL_F_Type />
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text>Restaurant/Catering n.s., Natur/pur, kein (weiteres) Garverfahren angewendet</ITL_Text>
+					<ITL_Name>Brötchen, Roggenmischbrötchen</ITL_Name>
+					<ITL_Facets_STR>1009,0699,0398</ITL_Facets_STR>
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>60</ITL_Estim_QTY>
+					<ITL_Q_Method>U</ITL_Q_Method>
+					<ITL_QM_Code>0003</ITL_QM_Code>
+					<ITL_QUNIT>G</ITL_QUNIT>
+					<ITL_NGRAMS>60</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>1</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>60</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>60</ITL_RAW_Q>
+					<ITL_RAW_Q_W>60</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>887</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>4</NTR_Code>
+							<ITV_NTR_Value>0.60000002384185791</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>3</NTR_Code>
+							<ITV_NTR_Value>28.799999237060547</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>2</NTR_Code>
+							<ITV_NTR_Value>4.8000001907348633</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>141.60000610351563</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>13</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0830</ITL_FCOHour>
+					<ITL_TOK>2</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Nutella</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>13</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0830</ITL_FCOHour>
+					<ITL_TOK>2</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>01909</ITL_FoodNum>
+					<ITL_Group>11</ITL_Group>
+					<ITL_SubGroup1>02</ITL_SubGroup1>
+					<ITL_SubGroup2>03</ITL_SubGroup2>
+					<ITL_DS_Classif />
+					<ITL_F_Type>SH</ITL_F_Type>
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text />
+					<ITL_Name>Nuss-Nougat-Creme</ITL_Name>
+					<ITL_Facets_STR />
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>30</ITL_Estim_QTY>
+					<ITL_Q_Method>H</ITL_Q_Method>
+					<ITL_QM_Code>H012</ITL_QM_Code>
+					<ITL_QUNIT>V</ITL_QUNIT>
+					<ITL_NGRAMS>30</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1.2300000190734863</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>36.900001525878906</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>36.900001525878906</ITL_RAW_Q>
+					<ITL_RAW_Q_W>36.900001525878906</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>671</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>4</NTR_Code>
+							<ITV_NTR_Value>11.439000129699707</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>3</NTR_Code>
+							<ITV_NTR_Value>21.402000427246094</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>2</NTR_Code>
+							<ITV_NTR_Value>1.4760000705718994</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>195.93901062011719</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>13</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0830</ITL_FCOHour>
+					<ITL_TOK>3</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Kaffee</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>13</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0830</ITL_FCOHour>
+					<ITL_TOK>3</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>01237</ITL_FoodNum>
+					<ITL_Group>13</ITL_Group>
+					<ITL_SubGroup1>03</ITL_SubGroup1>
+					<ITL_SubGroup2>01</ITL_SubGroup2>
+					<ITL_DS_Classif />
+					<ITL_F_Type>GI</ITL_F_Type>
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text />
+					<ITL_Name>Kaffee n.s.</ITL_Name>
+					<ITL_Facets_STR />
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>200</ITL_Estim_QTY>
+					<ITL_Q_Method>V</ITL_Q_Method>
+					<ITL_QM_Code />
+					<ITL_QUNIT>V</ITL_QUNIT>
+					<ITL_NGRAMS>200</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>200</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>200</ITL_RAW_Q>
+					<ITL_RAW_Q_W>200</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>1803</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>4</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1600</ITL_FCOHour>
+					<ITL_TOK>0</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>1</ITL_Type>
+					<ITL_Text>MITTAGESSEN ------------------------------------------------ 16h00 , zu Hause</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1600</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Kartoffeln</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1600</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>00001</ITL_FoodNum>
+					<ITL_Group>01</ITL_Group>
+					<ITL_SubGroup1>01</ITL_SubGroup1>
+					<ITL_SubGroup2 />
+					<ITL_DS_Classif />
+					<ITL_F_Type />
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text>frisch, gekocht in Wasser, gesalzen n.s., Schale/Haut nicht mitverzehrt</ITL_Text>
+					<ITL_Name>Kartoffel</ITL_Name>
+					<ITL_Facets_STR>0499,0303,1901,1301</ITL_Facets_STR>
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>228</ITL_Estim_QTY>
+					<ITL_Q_Method>P</ITL_Q_Method>
+					<ITL_QM_Code>P001</ITL_QM_Code>
+					<ITL_QUNIT>G</ITL_QUNIT>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>228</ITL_CONS_QTY>
+					<ITL_R_COOKED>0.95999997854232788</ITL_R_COOKED>
+					<ITL_R_EDIB>0.800000011920929</ITL_R_EDIB>
+					<ITL_RAW_Q>237.5</ITL_RAW_Q>
+					<ITL_RAW_Q_W>296.875</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>9</ITL_ITEM_SEQ>
+					<ListeITV_Quantity>
+						<ITV_Quantity_Service>
+							<ITQ_Order>1</ITQ_Order>
+							<ITQ_SH_Surface>0</ITQ_SH_Surface>
+							<ITQ_TH_Thick>0</ITQ_TH_Thick>
+							<ITQ_PH_Code>3</ITQ_PH_Code>
+							<ITQ_PH_QTY>228</ITQ_PH_QTY>
+							<ITQ_FRACT>1</ITQ_FRACT>
+						</ITV_Quantity_Service>
+					</ListeITV_Quantity>
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>3</NTR_Code>
+							<ITV_NTR_Value>34.200000762939453</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>2</NTR_Code>
+							<ITV_NTR_Value>4.559999942779541</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>159.60000610351563</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1600</ITL_FCOHour>
+					<ITL_TOK>2</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Quark</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1600</ITL_FCOHour>
+					<ITL_TOK>2</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>00224</ITL_FoodNum>
+					<ITL_Group>05</ITL_Group>
+					<ITL_SubGroup1>04</ITL_SubGroup1>
+					<ITL_SubGroup2 />
+					<ITL_DS_Classif />
+					<ITL_F_Type />
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text>Kuh, fettreduziert n.s.</ITL_Text>
+					<ITL_Name>Quark, natur</ITL_Name>
+					<ITL_Facets_STR>0102,0805</ITL_Facets_STR>
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>90</ITL_Estim_QTY>
+					<ITL_Q_Method>H</ITL_Q_Method>
+					<ITL_QM_Code>H012</ITL_QM_Code>
+					<ITL_QUNIT>V</ITL_QUNIT>
+					<ITL_NGRAMS>30</ITL_NGRAMS>
+					<ITL_Proport>3</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0.97000002861022949</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>87.300003051757812</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>87.300003051757812</ITL_RAW_Q>
+					<ITL_RAW_Q_W>87.300003051757812</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>433</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>4</NTR_Code>
+							<ITV_NTR_Value>4.3650002479553223</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>3</NTR_Code>
+							<ITV_NTR_Value>2.6190001964569092</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>2</NTR_Code>
+							<ITV_NTR_Value>11.348999977111816</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>95.1570053100586</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1600</ITL_FCOHour>
+					<ITL_TOK>3</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Tee</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1600</ITL_FCOHour>
+					<ITL_TOK>3</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>01260</ITL_FoodNum>
+					<ITL_Group>13</ITL_Group>
+					<ITL_SubGroup1>03</ITL_SubGroup1>
+					<ITL_SubGroup2>03</ITL_SubGroup2>
+					<ITL_DS_Classif />
+					<ITL_F_Type>GI</ITL_F_Type>
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text>nicht angereichert</ITL_Text>
+					<ITL_Name>Tee, Früchtetee n.s.</ITL_Name>
+					<ITL_Facets_STR>1199</ITL_Facets_STR>
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>1000</ITL_Estim_QTY>
+					<ITL_Q_Method>V</ITL_Q_Method>
+					<ITL_QM_Code />
+					<ITL_QUNIT>V</ITL_QUNIT>
+					<ITL_NGRAMS>1000</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>1000</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>1000</ITL_RAW_Q>
+					<ITL_RAW_Q_W>1000</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>1708</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>10</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1600</ITL_FCOHour>
+					<ITL_TOK>4</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Leinöl</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1600</ITL_FCOHour>
+					<ITL_TOK>4</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>00871</ITL_FoodNum>
+					<ITL_Group>10</ITL_Group>
+					<ITL_SubGroup1>01</ITL_SubGroup1>
+					<ITL_SubGroup2 />
+					<ITL_DS_Classif />
+					<ITL_F_Type />
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text />
+					<ITL_Name>Öl, Leinöl</ITL_Name>
+					<ITL_Facets_STR />
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>5</ITL_Estim_QTY>
+					<ITL_Q_Method>H</ITL_Q_Method>
+					<ITL_QM_Code>H015</ITL_QM_Code>
+					<ITL_QUNIT>V</ITL_QUNIT>
+					<ITL_NGRAMS>5</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0.92000001668930054</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>4.5999999046325684</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>4.5999999046325684</ITL_RAW_Q>
+					<ITL_RAW_Q_W>4.5999999046325684</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>615</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>4</NTR_Code>
+							<ITV_NTR_Value>4.5999999046325684</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>40.663997650146484</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1600</ITL_FCOHour>
+					<ITL_TOK>5</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Salat</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1600</ITL_FCOHour>
+					<ITL_TOK>5</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>00021</ITL_FoodNum>
+					<ITL_Group>02</ITL_Group>
+					<ITL_SubGroup1>01</ITL_SubGroup1>
+					<ITL_SubGroup2 />
+					<ITL_DS_Classif />
+					<ITL_F_Type />
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text>roh</ITL_Text>
+					<ITL_Name>Salat, Feldsalat</ITL_Name>
+					<ITL_Facets_STR>0399</ITL_Facets_STR>
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>40</ITL_Estim_QTY>
+					<ITL_Q_Method>P</ITL_Q_Method>
+					<ITL_QM_Code>P009</ITL_QM_Code>
+					<ITL_QUNIT>G</ITL_QUNIT>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>1</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>40</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>0.949999988079071</ITL_R_EDIB>
+					<ITL_RAW_Q>40</ITL_RAW_Q>
+					<ITL_RAW_Q_W>42.105262756347656</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>46</ITL_ITEM_SEQ>
+					<ListeITV_Quantity>
+						<ITV_Quantity_Service>
+							<ITQ_Order>1</ITQ_Order>
+							<ITQ_SH_Surface>0</ITQ_SH_Surface>
+							<ITQ_TH_Thick>0</ITQ_TH_Thick>
+							<ITQ_PH_Code>2</ITQ_PH_Code>
+							<ITQ_PH_QTY>20</ITQ_PH_QTY>
+							<ITQ_FRACT>1</ITQ_FRACT>
+						</ITV_Quantity_Service>
+						<ITV_Quantity_Service>
+							<ITQ_Order>2</ITQ_Order>
+							<ITQ_SH_Surface>0</ITQ_SH_Surface>
+							<ITQ_TH_Thick>0</ITQ_TH_Thick>
+							<ITQ_PH_Code>2</ITQ_PH_Code>
+							<ITQ_PH_QTY>20</ITQ_PH_QTY>
+							<ITQ_FRACT>1</ITQ_FRACT>
+						</ITV_Quantity_Service>
+					</ListeITV_Quantity>
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>3</NTR_Code>
+							<ITV_NTR_Value>0.40000000596046448</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>2</NTR_Code>
+							<ITV_NTR_Value>0.800000011920929</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>6</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>07</ITL_FCO_Code>
+					<ITL_FCOHour> 1800</ITL_FCOHour>
+					<ITL_TOK>0</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>1</ITL_Type>
+					<ITL_Text>NACHMITTAGS ------------------------------------------------ 18h00 , zu Hause</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>07</ITL_FCO_Code>
+					<ITL_FCOHour> 1800</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Schokolade</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>07</ITL_FCO_Code>
+					<ITL_FCOHour> 1800</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>00935</ITL_FoodNum>
+					<ITL_Group>11</ITL_Group>
+					<ITL_SubGroup1>03</ITL_SubGroup1>
+					<ITL_SubGroup2 />
+					<ITL_DS_Classif />
+					<ITL_F_Type />
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text />
+					<ITL_Name>Nougat</ITL_Name>
+					<ITL_Facets_STR />
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>75</ITL_Estim_QTY>
+					<ITL_Q_Method>U</ITL_Q_Method>
+					<ITL_QM_Code>0003</ITL_QM_Code>
+					<ITL_QUNIT>G</ITL_QUNIT>
+					<ITL_NGRAMS>75</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>75</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>75</ITL_RAW_Q>
+					<ITL_RAW_Q_W>75</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>1547</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>4</NTR_Code>
+							<ITV_NTR_Value>16.5</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>3</NTR_Code>
+							<ITV_NTR_Value>48</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>2</NTR_Code>
+							<ITV_NTR_Value>5.25</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>358.5</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+			</ListeLignesITV>
+		</Interview>
+		<Interview>
+			<ITV_Id p4:nil="true" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance" />
+			<ITV_RecallDate>2019-11-17T00:00:00</ITV_RecallDate>
+			<CTR_Code>001</CTR_Code>
+			<ITR_Code>00000006</ITR_Code>
+			<ITR_CTY_Code>DE_</ITR_CTY_Code>
+			<ITR_CTR_Code>001</ITR_CTR_Code>
+			<SBT_Code>30001160</SBT_Code>
+			<SBT_Name>H</SBT_Name>
+			<SBT_FirstName>J</SBT_FirstName>
+			<SBT_Sex>1</SBT_Sex>
+			<SBT_BirthDate>1975-01-26T00:00:00</SBT_BirthDate>
+			<ITG_Release>2018-09-03T00:00:00</ITG_Release>
+			<ITG_Num>1</ITG_Num>
+			<ITG_Date>2019-11-18T00:00:00</ITG_Date>
+			<ITG_SubjectHeight>163</ITG_SubjectHeight>
+			<ITG_SubjectWeight>58</ITG_SubjectWeight>
+			<ITG_VURecall>08:00</ITG_VURecall>
+			<ITG_VUNextRecall>07:00</ITG_VUNextRecall>
+			<ITG_EnergyRequirement>2382.704833984375</ITG_EnergyRequirement>
+			<ITG_EnergyCalculated>154</ITG_EnergyCalculated>
+			<ITG_TimeGI>00:01:39</ITG_TimeGI>
+			<ITG_TimeQL>00:27:53</ITG_TimeQL>
+			<ITG_TimeDQ>00:03:32</ITG_TimeDQ>
+			<ITG_TimeDS>00:00:10</ITG_TimeDS>
+			<ITG_TimeALL>00:33:40</ITG_TimeALL>
+			<ITG_RecomputeDate>2019-11-20T08:16:15</ITG_RecomputeDate>
+			<ITG_SPD_code>00</ITG_SPD_code>
+			<ITG_SPT_code>00</ITG_SPT_code>
+			<ITG_Version>1</ITG_Version>
+			<ListeNotes />
+			<ListeLignesITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0900</ITL_FCOHour>
+					<ITL_TOK>0</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>1</ITL_Type>
+					<ITL_Text>FRÜHSTÜCK -------------------------------------------------- 09h00 , zu Hause</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0900</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Toast</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0900</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>00443</ITL_FoodNum>
+					<ITL_Group>06</ITL_Group>
+					<ITL_SubGroup1>03</ITL_SubGroup1>
+					<ITL_SubGroup2>01</ITL_SubGroup2>
+					<ITL_DS_Classif />
+					<ITL_F_Type>GI</ITL_F_Type>
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text>Selbstgemacht, Fettart bekannt, geröstet/getoastet ohne Fett, unbekannt</ITL_Text>
+					<ITL_Name>Brot, Toastbrot n.s.</ITL_Name>
+					<ITL_Facets_STR>1001,0314,1100</ITL_Facets_STR>
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>25</ITL_Estim_QTY>
+					<ITL_Q_Method>U</ITL_Q_Method>
+					<ITL_QM_Code>0001</ITL_QM_Code>
+					<ITL_QUNIT>G</ITL_QUNIT>
+					<ITL_NGRAMS>25</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>1</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>0.87000000476837158</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>21.75</ITL_CONS_QTY>
+					<ITL_R_COOKED>0.87000000476837158</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>25</ITL_RAW_Q>
+					<ITL_RAW_Q_W>25</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>861</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>4</NTR_Code>
+							<ITV_NTR_Value>0.87000000476837158</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>3</NTR_Code>
+							<ITV_NTR_Value>10.4399995803833</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>2</NTR_Code>
+							<ITV_NTR_Value>1.7400000095367432</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>56.767501831054688</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0900</ITL_FCOHour>
+					<ITL_TOK>2</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Marmelade</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0900</ITL_FCOHour>
+					<ITL_TOK>2</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>00897</ITL_FoodNum>
+					<ITL_Group>11</ITL_Group>
+					<ITL_SubGroup1>01</ITL_SubGroup1>
+					<ITL_SubGroup2>02</ITL_SubGroup2>
+					<ITL_DS_Classif />
+					<ITL_F_Type>GI</ITL_F_Type>
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text>Selbstgemacht, Fettverwendung n.s., gesüsst mit Zucker</ITL_Text>
+					<ITL_Name>Marmelade n.s.</ITL_Name>
+					<ITL_Facets_STR>1003,0702</ITL_Facets_STR>
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>30</ITL_Estim_QTY>
+					<ITL_Q_Method>H</ITL_Q_Method>
+					<ITL_QM_Code>H012</ITL_QM_Code>
+					<ITL_QUNIT>V</ITL_QUNIT>
+					<ITL_NGRAMS>30</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1.1499999761581421</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>34.5</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>34.5</ITL_RAW_Q>
+					<ITL_RAW_Q_W>34.5</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>1412</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>3</NTR_Code>
+							<ITV_NTR_Value>23.805000305175781</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>97.635002136230469</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0900</ITL_FCOHour>
+					<ITL_TOK>3</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Kaffee</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0900</ITL_FCOHour>
+					<ITL_TOK>3</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>01267</ITL_FoodNum>
+					<ITL_Group>13</ITL_Group>
+					<ITL_SubGroup1>03</ITL_SubGroup1>
+					<ITL_SubGroup2>04</ITL_SubGroup2>
+					<ITL_DS_Classif />
+					<ITL_F_Type>GI</ITL_F_Type>
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text />
+					<ITL_Name>Kaffee Ersatz n.s., Getränk</ITL_Name>
+					<ITL_Facets_STR />
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>15</ITL_Estim_QTY>
+					<ITL_Q_Method>H</ITL_Q_Method>
+					<ITL_QM_Code>H011</ITL_QM_Code>
+					<ITL_QUNIT>V</ITL_QUNIT>
+					<ITL_NGRAMS>15</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>15</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>15</ITL_RAW_Q>
+					<ITL_RAW_Q_W>15</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>1713</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>3</NTR_Code>
+							<ITV_NTR_Value>0.15000000596046448</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>0.30000001192092896</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>02</ITL_FCO_Code>
+					<ITL_FCOHour> 0900</ITL_FCOHour>
+					<ITL_TOK>4</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Apfel</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes>
+						<Note>
+							<NOT_Status>00</NOT_Status>
+							<NOT_Memo>•••●LEERER QUICKLISTEN-Eintrag●•••¤[LF]¤</NOT_Memo>
+							<NOT_Date>2019-11-18T10:38:25</NOT_Date>
+							<NOT_Type>EMP</NOT_Type>
+							<NOT_QuantityConsumed>0</NOT_QuantityConsumed>
+							<NOT_MaxVal>false</NOT_MaxVal>
+							<NOT_EmptyQLI>false</NOT_EmptyQLI>
+						</Note>
+					</ListeNotes>
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>03</ITL_FCO_Code>
+					<ITL_FCOHour> 1000</ITL_FCOHour>
+					<ITL_TOK>0</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>1</ITL_Type>
+					<ITL_Text>VORMITTAGS ------------------------------------------------- 10h00 , zu Hause</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>03</ITL_FCO_Code>
+					<ITL_FCOHour> 1000</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Tee</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes>
+						<Note>
+							<NOT_Status>00</NOT_Status>
+							<NOT_Memo>•••●LEERER QUICKLISTEN-Eintrag●•••¤[LF]¤</NOT_Memo>
+							<NOT_Date>2019-11-18T10:38:25</NOT_Date>
+							<NOT_Type>EMP</NOT_Type>
+							<NOT_QuantityConsumed>0</NOT_QuantityConsumed>
+							<NOT_MaxVal>false</NOT_MaxVal>
+							<NOT_EmptyQLI>false</NOT_EmptyQLI>
+						</Note>
+					</ListeNotes>
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>11</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1400</ITL_FCOHour>
+					<ITL_TOK>0</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>1</ITL_Type>
+					<ITL_Text>MITTAGESSEN ------------------------------------------------ 14h00 , unterwegs (Auto/Zug/Flugzeug/Boot/Fahrrad)</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>11</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1400</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Döner</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes>
+						<Note>
+							<NOT_Status>00</NOT_Status>
+							<NOT_Memo>•••●LEERER QUICKLISTEN-Eintrag●•••¤[LF]¤</NOT_Memo>
+							<NOT_Date>2019-11-18T10:38:25</NOT_Date>
+							<NOT_Type>EMP</NOT_Type>
+							<NOT_QuantityConsumed>0</NOT_QuantityConsumed>
+							<NOT_MaxVal>false</NOT_MaxVal>
+							<NOT_EmptyQLI>false</NOT_EmptyQLI>
+						</Note>
+					</ListeNotes>
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>11</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1400</ITL_FCOHour>
+					<ITL_TOK>2</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Wasser</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes>
+						<Note>
+							<NOT_Status>00</NOT_Status>
+							<NOT_Memo>•••●LEERER QUICKLISTEN-Eintrag●•••¤[LF]¤</NOT_Memo>
+							<NOT_Date>2019-11-18T10:38:25</NOT_Date>
+							<NOT_Type>EMP</NOT_Type>
+							<NOT_QuantityConsumed>0</NOT_QuantityConsumed>
+							<NOT_MaxVal>false</NOT_MaxVal>
+							<NOT_EmptyQLI>false</NOT_EmptyQLI>
+						</Note>
+					</ListeNotes>
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>09</ITL_FCO_Code>
+					<ITL_FCOHour> 2000</ITL_FCOHour>
+					<ITL_TOK>0</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>1</ITL_Type>
+					<ITL_Text>ABENDESSEN ------------------------------------------------- 20h00 , zu Hause</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>09</ITL_FCO_Code>
+					<ITL_FCOHour> 2000</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Suppe</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes>
+						<Note>
+							<NOT_Status>00</NOT_Status>
+							<NOT_Memo>•••●LEERER QUICKLISTEN-Eintrag●•••¤[LF]¤</NOT_Memo>
+							<NOT_Date>2019-11-18T10:38:25</NOT_Date>
+							<NOT_Type>EMP</NOT_Type>
+							<NOT_QuantityConsumed>0</NOT_QuantityConsumed>
+							<NOT_MaxVal>false</NOT_MaxVal>
+							<NOT_EmptyQLI>false</NOT_EmptyQLI>
+						</Note>
+					</ListeNotes>
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>09</ITL_FCO_Code>
+					<ITL_FCOHour> 2000</ITL_FCOHour>
+					<ITL_TOK>2</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Wein</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes>
+						<Note>
+							<NOT_Status>00</NOT_Status>
+							<NOT_Memo>•••●LEERER QUICKLISTEN-Eintrag●•••¤[LF]¤</NOT_Memo>
+							<NOT_Date>2019-11-18T10:38:25</NOT_Date>
+							<NOT_Type>EMP</NOT_Type>
+							<NOT_QuantityConsumed>0</NOT_QuantityConsumed>
+							<NOT_MaxVal>false</NOT_MaxVal>
+							<NOT_EmptyQLI>false</NOT_EmptyQLI>
+						</Note>
+					</ListeNotes>
+				</LigneITV>
+			</ListeLignesITV>
+		</Interview>
+		<Interview>
+			<ITV_Id p4:nil="true" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance" />
+			<ITV_RecallDate>2019-11-17T00:00:00</ITV_RecallDate>
+			<CTR_Code>001</CTR_Code>
+			<ITR_Code>00000006</ITR_Code>
+			<ITR_CTY_Code>DE_</ITR_CTY_Code>
+			<ITR_CTR_Code>001</ITR_CTR_Code>
+			<SBT_Code>40001829</SBT_Code>
+			<SBT_Name>S</SBT_Name>
+			<SBT_FirstName>J</SBT_FirstName>
+			<SBT_Sex>2</SBT_Sex>
+			<SBT_BirthDate>1943-07-31T00:00:00</SBT_BirthDate>
+			<ITG_Release>2018-09-03T00:00:00</ITG_Release>
+			<ITG_Num>1</ITG_Num>
+			<ITG_Date>2019-11-18T00:00:00</ITG_Date>
+			<ITG_SubjectHeight>182</ITG_SubjectHeight>
+			<ITG_SubjectWeight>68</ITG_SubjectWeight>
+			<ITG_VURecall>06:00</ITG_VURecall>
+			<ITG_VUNextRecall>07:32</ITG_VUNextRecall>
+			<ITG_EnergyRequirement>2149.7939453125</ITG_EnergyRequirement>
+			<ITG_EnergyCalculated>969</ITG_EnergyCalculated>
+			<ITG_TimeGI>00:02:56</ITG_TimeGI>
+			<ITG_TimeQL>00:06:03</ITG_TimeQL>
+			<ITG_TimeDQ>00:13:15</ITG_TimeDQ>
+			<ITG_TimeDS>00:00:00</ITG_TimeDS>
+			<ITG_TimeALL>00:22:56</ITG_TimeALL>
+			<ITG_RecomputeDate>2019-11-20T08:16:16</ITG_RecomputeDate>
+			<ITG_SPD_code>00</ITG_SPD_code>
+			<ITG_SPT_code>00</ITG_SPT_code>
+			<ITG_Version>1</ITG_Version>
+			<ListeNotes />
+			<ListeLignesITV>
+				<LigneITV>
+					<ITL_POC_Code>12</ITL_POC_Code>
+					<ITL_FCO_Code>01</ITL_FCO_Code>
+					<ITL_FCOHour> 0900</ITL_FCOHour>
+					<ITL_TOK>0</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>1</ITL_Type>
+					<ITL_Text>VORM FRÜHSTÜCK --------------------------------------------- 09h00 , am Arbeitsplatz/in der Schule (mitgebrachte Speisen)</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>12</ITL_POC_Code>
+					<ITL_FCO_Code>01</ITL_FCO_Code>
+					<ITL_FCOHour> 0900</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Laugenbrötchen + Belag</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>12</ITL_POC_Code>
+					<ITL_FCO_Code>01</ITL_FCO_Code>
+					<ITL_FCOHour> 0900</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>02140</ITL_FoodNum>
+					<ITL_Group>06</ITL_Group>
+					<ITL_SubGroup1>03</ITL_SubGroup1>
+					<ITL_SubGroup2>01</ITL_SubGroup2>
+					<ITL_DS_Classif />
+					<ITL_F_Type>SH</ITL_F_Type>
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text>Aus dem Fachgeschäft (Bäckerei/Feinkostladen/Fleischerei/Fischgeschäft), Sonnenblumenkerne, kein (weiteres) Garverfahren angewendet</ITL_Text>
+					<ITL_Name>Brötchen, Laugenbrötchen, ohne Salz</ITL_Name>
+					<ITL_Facets_STR>1008,0672,0398</ITL_Facets_STR>
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>80</ITL_Estim_QTY>
+					<ITL_Q_Method>U</ITL_Q_Method>
+					<ITL_QM_Code>0002</ITL_QM_Code>
+					<ITL_QUNIT>G</ITL_QUNIT>
+					<ITL_NGRAMS>80</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>1</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>80</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>80</ITL_RAW_Q>
+					<ITL_RAW_Q_W>80</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>891</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>4</NTR_Code>
+							<ITV_NTR_Value>3.2000000476837158</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>3</NTR_Code>
+							<ITV_NTR_Value>44.799999237060547</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>2</NTR_Code>
+							<ITV_NTR_Value>7.1999998092651367</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>242.39999389648438</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>12</ITL_POC_Code>
+					<ITL_FCO_Code>01</ITL_FCO_Code>
+					<ITL_FCOHour> 0900</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>2</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>00804</ITL_FoodNum>
+					<ITL_Group>08</ITL_Group>
+					<ITL_SubGroup1>01</ITL_SubGroup1>
+					<ITL_SubGroup2 />
+					<ITL_DS_Classif />
+					<ITL_F_Type />
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text>geräuchert, unbekannt, kein (weiteres) Garverfahren angewendet, Schale/Haut nicht mitverzehrt</ITL_Text>
+					<ITL_Name>Fisch, Lachs</ITL_Name>
+					<ITL_Facets_STR>0405,0200,0398,1301</ITL_Facets_STR>
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>40</ITL_Estim_QTY>
+					<ITL_Q_Method>U</ITL_Q_Method>
+					<ITL_QM_Code>0001</ITL_QM_Code>
+					<ITL_QUNIT>G</ITL_QUNIT>
+					<ITL_NGRAMS>40</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>40</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>0.64999997615814209</ITL_R_EDIB>
+					<ITL_RAW_Q>40</ITL_RAW_Q>
+					<ITL_RAW_Q_W>61.5384635925293</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>1300</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>4</NTR_Code>
+							<ITV_NTR_Value>4.8000001907348633</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>2</NTR_Code>
+							<ITV_NTR_Value>8.3999996185302734</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>76</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>12</ITL_POC_Code>
+					<ITL_FCO_Code>01</ITL_FCO_Code>
+					<ITL_FCOHour> 0900</ITL_FCOHour>
+					<ITL_TOK>2</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Wasser 200 ml</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>12</ITL_POC_Code>
+					<ITL_FCO_Code>01</ITL_FCO_Code>
+					<ITL_FCOHour> 0900</ITL_FCOHour>
+					<ITL_TOK>2</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>01273</ITL_FoodNum>
+					<ITL_Group>13</ITL_Group>
+					<ITL_SubGroup1>04</ITL_SubGroup1>
+					<ITL_SubGroup2 />
+					<ITL_DS_Classif />
+					<ITL_F_Type />
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text />
+					<ITL_Name>Wasser, Leitungswasser</ITL_Name>
+					<ITL_Facets_STR />
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>200</ITL_Estim_QTY>
+					<ITL_Q_Method>V</ITL_Q_Method>
+					<ITL_QM_Code />
+					<ITL_QUNIT>V</ITL_QUNIT>
+					<ITL_NGRAMS>200</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>200</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>200</ITL_RAW_Q>
+					<ITL_RAW_Q_W>200</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>06</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1220</ITL_FCOHour>
+					<ITL_TOK>0</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>1</ITL_Type>
+					<ITL_Text>MITTAGESSEN ------------------------------------------------ 12h20 , Kantine/Mensa/Cafeteria/Self-Service</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>06</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1220</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Pommes + Mayo</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>06</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1220</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>00003</ITL_FoodNum>
+					<ITL_Group>01</ITL_Group>
+					<ITL_SubGroup1>01</ITL_SubGroup1>
+					<ITL_SubGroup2 />
+					<ITL_DS_Classif />
+					<ITL_F_Type />
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text>verzehrfertig, kommerziell verarbeitet, Kantine/Mensa/Cafeteria, frittiert, gesalzen n.s.</ITL_Text>
+					<ITL_Name>Pommes Frites, Kartoffeln</ITL_Name>
+					<ITL_Facets_STR>0419,1022,0310,1901</ITL_Facets_STR>
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>142</ITL_Estim_QTY>
+					<ITL_Q_Method>P</ITL_Q_Method>
+					<ITL_QM_Code>P003</ITL_QM_Code>
+					<ITL_QUNIT>G</ITL_QUNIT>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>142</ITL_CONS_QTY>
+					<ITL_R_COOKED>0.81000000238418579</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>175.30863952636719</ITL_RAW_Q>
+					<ITL_RAW_Q_W>175.30863952636719</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>12</ITL_ITEM_SEQ>
+					<ListeITV_Quantity>
+						<ITV_Quantity_Service>
+							<ITQ_Order>1</ITQ_Order>
+							<ITQ_SH_Surface>0</ITQ_SH_Surface>
+							<ITQ_TH_Thick>0</ITQ_TH_Thick>
+							<ITQ_PH_Code>3</ITQ_PH_Code>
+							<ITQ_PH_QTY>142</ITQ_PH_QTY>
+							<ITQ_FRACT>1</ITQ_FRACT>
+						</ITV_Quantity_Service>
+					</ListeITV_Quantity>
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>3</NTR_Code>
+							<ITV_NTR_Value>26.979999542236328</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>2</NTR_Code>
+							<ITV_NTR_Value>2.8399999141693115</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>129.22000122070313</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>06</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1220</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>6</ITL_Type>
+					<ITL_FoodNum>00878</ITL_FoodNum>
+					<ITL_Group>10</ITL_Group>
+					<ITL_SubGroup1>02</ITL_SubGroup1>
+					<ITL_SubGroup2 />
+					<ITL_DS_Classif />
+					<ITL_F_Type />
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text />
+					<ITL_Name>Butter, Butterschmalz</ITL_Name>
+					<ITL_Facets_STR />
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>17.039999008178711</ITL_Estim_QTY>
+					<ITL_Q_Method>G</ITL_Q_Method>
+					<ITL_QM_Code />
+					<ITL_QUNIT />
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>17.039999008178711</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>17.039999008178711</ITL_RAW_Q>
+					<ITL_RAW_Q_W>17.039999008178711</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>1384</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>4</NTR_Code>
+							<ITV_NTR_Value>17.039999008178711</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>149.95199584960938</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>06</ITL_POC_Code>
+					<ITL_FCO_Code>05</ITL_FCO_Code>
+					<ITL_FCOHour> 1220</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>2</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>02487</ITL_FoodNum>
+					<ITL_Group>15</ITL_Group>
+					<ITL_SubGroup1>01</ITL_SubGroup1>
+					<ITL_SubGroup2>02</ITL_SubGroup2>
+					<ITL_DS_Classif />
+					<ITL_F_Type />
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text>Selbstgemacht, Fettverwendung n.s.</ITL_Text>
+					<ITL_Name>Mayonnaise, normal</ITL_Name>
+					<ITL_Facets_STR>1003</ITL_Facets_STR>
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>20</ITL_Estim_QTY>
+					<ITL_Q_Method>U</ITL_Q_Method>
+					<ITL_QM_Code>0001</ITL_QM_Code>
+					<ITL_QUNIT>G</ITL_QUNIT>
+					<ITL_NGRAMS>20</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>20</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>20</ITL_RAW_Q>
+					<ITL_RAW_Q_W>20</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>2077</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>4</NTR_Code>
+							<ITV_NTR_Value>16.600000381469727</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>3</NTR_Code>
+							<ITV_NTR_Value>0.40000000596046448</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>2</NTR_Code>
+							<ITV_NTR_Value>0.20000000298023224</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>148.60000610351563</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>09</ITL_FCO_Code>
+					<ITL_FCOHour> 1900</ITL_FCOHour>
+					<ITL_TOK>0</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>1</ITL_Type>
+					<ITL_Text>ABENDESSEN ------------------------------------------------- 19h00 , zu Hause</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>09</ITL_FCO_Code>
+					<ITL_FCOHour> 1900</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>0</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>2</ITL_Type>
+					<ITL_Text>Brötchen, Pastete, etc</ITL_Text>
+					<ITL_Estim_QTY>0</ITL_Estim_QTY>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Conver>0</ITL_Conver>
+					<ITL_EDIB_CSTE>0</ITL_EDIB_CSTE>
+					<ITL_DENSITY>0</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>0</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>0</ITL_CONS_QTY>
+					<ITL_R_COOKED>0</ITL_R_COOKED>
+					<ITL_R_EDIB>0</ITL_R_EDIB>
+					<ITL_RAW_Q>0</ITL_RAW_Q>
+					<ITL_RAW_Q_W>0</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>0</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments />
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>09</ITL_FCO_Code>
+					<ITL_FCOHour> 1900</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>1</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>01914</ITL_FoodNum>
+					<ITL_Group>06</ITL_Group>
+					<ITL_SubGroup1>03</ITL_SubGroup1>
+					<ITL_SubGroup2>01</ITL_SubGroup2>
+					<ITL_DS_Classif />
+					<ITL_F_Type />
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text>Kommerzielle Herstellung (Supermarkt/Lebensmittelgeschäft/Bioladen), ohne weitere Fettzugabe, gefroren, Samen und Kerne n.s., gegrillt (Ofen/Elektrogrill) ohne Fett</ITL_Text>
+					<ITL_Name>Brötchen, Dinkelbrötchen</ITL_Name>
+					<ITL_Facets_STR>1011,0402,0637,0312</ITL_Facets_STR>
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>70</ITL_Estim_QTY>
+					<ITL_Q_Method>U</ITL_Q_Method>
+					<ITL_QM_Code>0004</ITL_QM_Code>
+					<ITL_QUNIT>G</ITL_QUNIT>
+					<ITL_NGRAMS>70</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>1</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>0.89999997615814209</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>63</ITL_CONS_QTY>
+					<ITL_R_COOKED>0.89999997615814209</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>70</ITL_RAW_Q>
+					<ITL_RAW_Q_W>70</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>895</ITL_ITEM_SEQ>
+					<ListeITV_Quantity />
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>4</NTR_Code>
+							<ITV_NTR_Value>1.8899999856948853</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>3</NTR_Code>
+							<ITV_NTR_Value>23.940000534057617</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>2</NTR_Code>
+							<ITV_NTR_Value>6.3000001907348633</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>142.3800048828125</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+				<LigneITV>
+					<ITL_POC_Code>01</ITL_POC_Code>
+					<ITL_FCO_Code>09</ITL_FCO_Code>
+					<ITL_FCOHour> 1900</ITL_FCOHour>
+					<ITL_TOK>1</ITL_TOK>
+					<ITL_QLINUM>2</ITL_QLINUM>
+					<ITL_ING_NUM>0</ITL_ING_NUM>
+					<ITL_S_ING_NUM>0</ITL_S_ING_NUM>
+					<ITL_Type>4</ITL_Type>
+					<ITL_FoodNum>00749</ITL_FoodNum>
+					<ITL_Group>07</ITL_Group>
+					<ITL_SubGroup1>04</ITL_SubGroup1>
+					<ITL_SubGroup2 />
+					<ITL_DS_Classif />
+					<ITL_F_Type>GI</ITL_F_Type>
+					<ITL_I_Type />
+					<ITL_R_Modif>0</ITL_R_Modif>
+					<ITL_I_Modif>0</ITL_I_Modif>
+					<ITL_R_Type />
+					<ITL_Text>sonstiges Geflügel n.s., Kommerzielle Herstellung (Supermarkt/Lebensmittelgeschäft/Bioladen), Fettart unbekannt, kein (weiteres) Garverfahren angewendet</ITL_Text>
+					<ITL_Name>Leberpastete n.s.</ITL_Name>
+					<ITL_Facets_STR>0112,1005,0398</ITL_Facets_STR>
+					<ITL_BrandName />
+					<ITL_Status>1</ITL_Status>
+					<ITL_Estim_QTY>26</ITL_Estim_QTY>
+					<ITL_Q_Method>P</ITL_Q_Method>
+					<ITL_QM_Code>P048</ITL_QM_Code>
+					<ITL_QUNIT>G</ITL_QUNIT>
+					<ITL_NGRAMS>0</ITL_NGRAMS>
+					<ITL_Proport>1</ITL_Proport>
+					<ITL_HHMFract>1</ITL_HHMFract>
+					<ITL_R_Fract>1</ITL_R_Fract>
+					<ITL_RawCooked>2</ITL_RawCooked>
+					<ITL_ConsRawCo>2</ITL_ConsRawCo>
+					<ITL_Conver>1</ITL_Conver>
+					<ITL_EDIB>1</ITL_EDIB>
+					<ITL_EDIB_CSTE>1</ITL_EDIB_CSTE>
+					<ITL_DENSITY>1</ITL_DENSITY>
+					<ITL_FATLEFTO>false</ITL_FATLEFTO>
+					<ITL_FAT_PCT>1</ITL_FAT_PCT>
+					<ITL_PCT_CONS>0</ITL_PCT_CONS>
+					<ITL_PCT_ESTIM>0</ITL_PCT_ESTIM>
+					<ITL_CONS_QTY>26</ITL_CONS_QTY>
+					<ITL_R_COOKED>1</ITL_R_COOKED>
+					<ITL_R_EDIB>1</ITL_R_EDIB>
+					<ITL_RAW_Q>26</ITL_RAW_Q>
+					<ITL_RAW_Q_W>26</ITL_RAW_Q_W>
+					<ITL_MAX>0</ITL_MAX>
+					<ITL_SUPPL>false</ITL_SUPPL>
+					<ITL_ITEM_SEQ>1201</ITL_ITEM_SEQ>
+					<ListeITV_Quantity>
+						<ITV_Quantity_Service>
+							<ITQ_Order>1</ITQ_Order>
+							<ITQ_SH_Surface>0</ITQ_SH_Surface>
+							<ITQ_TH_Thick>0</ITQ_TH_Thick>
+							<ITQ_PH_Code>2</ITQ_PH_Code>
+							<ITQ_PH_QTY>26</ITQ_PH_QTY>
+							<ITQ_FRACT>1</ITQ_FRACT>
+						</ITV_Quantity_Service>
+					</ListeITV_Quantity>
+					<ListeITV_Nutriments>
+						<ITV_Nutriment>
+							<NTR_Code>4</NTR_Code>
+							<ITV_NTR_Value>7.5399999618530273</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>3</NTR_Code>
+							<ITV_NTR_Value>0.25999999046325684</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>2</NTR_Code>
+							<ITV_NTR_Value>3.6400001049041748</ITV_NTR_Value>
+						</ITV_Nutriment>
+						<ITV_Nutriment>
+							<NTR_Code>1</NTR_Code>
+							<ITV_NTR_Value>81.379997253417969</ITV_NTR_Value>
+						</ITV_Nutriment>
+					</ListeITV_Nutriments>
+					<ListeNotes />
+				</LigneITV>
+			</ListeLignesITV>
+		</Interview>
+	</ListeInterviews>
+</ITV>
