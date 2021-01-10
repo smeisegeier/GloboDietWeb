@@ -28,14 +28,14 @@ namespace GloboDiet
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
 
+            app.UseStaticFiles();
+            //app.UseApiResponseAndExceptionWrapper(new AutoWrapperOptions() { IsApiOnly = false, IsDebug = true }); // use before routing
+            app.UseRouting();
+            app.UseHttpsRedirection();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
