@@ -160,7 +160,6 @@ namespace GloboDiet.Data
         #region PrivateSector
         private void writeDefaultValues()
         {
-
             using (var context = new GloboDietDbContext())
             {
                 if (!context.Interviewers.Any())
@@ -177,6 +176,11 @@ namespace GloboDiet.Data
                 {
                     var list = PlaceOfMeal.GenerateDefaultValues();
                     context.PlacesOfMeal.AddRange(list);
+                }
+                if (!context.Respondents.Any())
+                {
+                    var list = Respondent.GenerateDefaultValues();
+                    context.Respondents.AddRange(list);
                 }
                 context.SaveChanges();
             }

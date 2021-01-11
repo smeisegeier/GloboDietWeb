@@ -54,7 +54,7 @@ namespace GloboDiet.Controllers
             _repo.AddLocation(location);
             return Redirect("~/Home/Index");
         }
-        public IActionResult ListLocation()
+        public IActionResult ListLocations()
         {
             var list = _repo.GetAllLocations();
             return View(list);
