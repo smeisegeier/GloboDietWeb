@@ -25,7 +25,7 @@ namespace GloboDiet.Models
 
         public string Name { get; set; }
 
-        public float Age { get; set; } // TODO get routine
+        public double Age { get => Math.Round((DateTime.Now - DateOfBirth).TotalDays / 365.242199, 1); }
 
         public Gender Gender{ get; set; }
 
@@ -45,14 +45,14 @@ namespace GloboDiet.Models
 
         public Respondent()
         {
-
+            
         }
             public static List<Respondent> GenerateDefaultValues()
             {
                 return new List<Respondent>()
                 {
-                    new Respondent() { Name = "Simpson", GivenName = "Meredith", Age=34.8f, Code="1700025",Height=165, Weight=70, DateOfBirth=DateTimeHelper.GetDateTimeFromString("1970-05-13", "yyyy-MM-dd"), Gender=Gender.Female},
-                    new Respondent() { Name = "lolman", GivenName = "Gary", Age = 52.1f, Code="DA12-B01",Height=182, Weight=98, DateOfBirth=DateTimeHelper.GetDateTimeFromString("1988-11-07", "yyyy-MM-dd"), Gender=Gender.Male}
+                    new Respondent() { Name = "Simpson", GivenName = "Meredith", Code="1700025",Height=165, Weight=70, DateOfBirth=DateTimeHelper.GetDateTimeFromString("1970-05-13", "yyyy-MM-dd"), Gender=Gender.Female},
+                    new Respondent() { Name = "lolman", GivenName = "Gary", Code="DA12-B01",Height=182, Weight=98, DateOfBirth=DateTimeHelper.GetDateTimeFromString("1988-11-07", "yyyy-MM-dd"), Gender=Gender.Male}
                 };
             }
 

@@ -6,11 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace GloboDiet.Controllers
 {
 
-    public class InterviewerController : Controller
+    public class InterviewerController : ControllerBase
     {
-        private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly IRepository _repo;
-
 
         public InterviewerController(IWebHostEnvironment webHostEnvironment, IRepository repo) 
         {
@@ -18,10 +15,6 @@ namespace GloboDiet.Controllers
             _repo = repo;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         [HttpGet]
         public IActionResult Create()

@@ -15,7 +15,6 @@ namespace GloboDiet.Models
 
         public PlaceOfMeal()
         {
-            // TODO
         }
 
         public static List<PlaceOfMeal> GenerateDefaultValues()
