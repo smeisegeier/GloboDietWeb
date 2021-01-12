@@ -12,6 +12,7 @@ namespace GloboDiet.Models
 
         public DateTime Timestamp { get; set; } = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, 0);
         public int Number { get; set; } = 1;
+        [DataType(DataType.Date)]
         public DateTime ReferenceDate { get; set; } = DateTime.Now;
         public Location Location { get; set; }
 
