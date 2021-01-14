@@ -11,6 +11,7 @@ namespace GloboDiet.ViewModels
 
         public InterviewCreateEdit(Interview interview, List<Location> listOfLocations)
         {
+            Interview = interview;
             ListOfLocations = new SelectList(listOfLocations, "Id", "City");
         }
     }

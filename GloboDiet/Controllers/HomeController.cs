@@ -11,28 +11,24 @@ using GloboDiet.Data;
 
 namespace GloboDiet.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : ControllerBase
     {
-        private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly IRepository _repo;
 
         public HomeController(IWebHostEnvironment webHostEnvironment, IRepository repo)
         {
             _webHostEnvironment = webHostEnvironment;
             _repo = repo;
         }
-
-        // GET: HomeController
-        public ActionResult Index()
-        {
-            return View();
-        }
-
+        //// GET: HomeController
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
         public ActionResult Test()
         {
             return Content(_repo.Test());
         }
-
+        #region Respondent
         [HttpGet]
         public IActionResult CreateRespondent()
         {
@@ -51,16 +47,20 @@ namespace GloboDiet.Controllers
             var list = _repo.GetAllRespondents();
             return View(list);
         }
+        #endregion
+        #region Interview
 
         [HttpGet]
         public IActionResult CreateInterview()
         {
-            return View(new Interview());
+            return View(new ViewModels.InterviewCreateEdit(new Interview(), _repo.GetAllLocations()));
         }
 
         [HttpPost]
-        public IActionResult CreateInterview(Interview interview)
+        public IActionResult CreateInterview(Interview interview, string submit)
         {
+            if (submit == "New Location")
+                return Content("yeah");
             _repo.AddInterview(interview);
             return Redirect("~/Home/Index");
         }
@@ -70,6 +70,7 @@ namespace GloboDiet.Controllers
             var list = _repo.GetAllInterviews();
             return View(list);
         }
+        #endregion
 
         // POST: HomeController/Create
         [HttpPost]
@@ -86,25 +87,5 @@ namespace GloboDiet.Controllers
             }
         }
 
-        // GET: HomeController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: HomeController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

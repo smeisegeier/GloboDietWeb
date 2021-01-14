@@ -38,6 +38,7 @@ namespace GloboDiet.Data
     {
         private readonly GloboDietDbContext _context;
         public static EfCoreHelper.SqlConnectionType CurrentSqlConnectionType { get; set; }
+        // HACK
         public static int PillCountInterviews { get; set; }
         public static int PillCountInterviewers { get; set; }
 
@@ -49,11 +50,7 @@ namespace GloboDiet.Data
             if (env.EnvironmentName != "Production")
                 writeDefaultValues();
             setPillBoxes();
-           
         }
-
-      
-
 
         public string Test() => null;
 

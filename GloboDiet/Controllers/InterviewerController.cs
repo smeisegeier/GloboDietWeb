@@ -23,8 +23,9 @@ namespace GloboDiet.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Interviewer interviewer)
+        public IActionResult Create(Interviewer interviewer, string submit)
         {
+
             _repo.AddInterviewer(interviewer);
             return Redirect("~/Home/Index");
         }
