@@ -19,11 +19,7 @@ namespace GloboDiet.Controllers
             _webHostEnvironment = webHostEnvironment;
             _repo = repo;
         }
-        //// GET: HomeController
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+
         public ActionResult Test()
         {
             return Content(_repo.Test());
@@ -57,19 +53,67 @@ namespace GloboDiet.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateInterview(Interview interview, string submit)
+        public IActionResult CreateInterview(Interview interview)
         {
-            if (submit == "New Location")
-                return Content("yeah");
             _repo.AddInterview(interview);
             return Redirect("~/Home/Index");
         }
+
+        [HttpPost]
+        public IActionResult CreateLocationFromInterview(Interview interview)
+        {
+            return Content("yeah");
+        }
+
 
         public IActionResult ListInterviews()
         {
             var list = _repo.GetAllInterviews();
             return View(list);
         }
+        #endregion
+
+        #region Interviewer
+        [HttpGet]
+        public IActionResult CreateInterviewer()
+        {
+            return View(new Interviewer());
+        }
+
+        [HttpPost]
+        public IActionResult CreateInterviewer(Interviewer interviewer)
+        {
+
+            _repo.AddInterviewer(interviewer);
+            return Redirect("~/Home/Index");
+        }
+
+        public IActionResult ListInterviewers()
+        {
+            var list = _repo.GetAllInterviewers();
+            return View(list);
+        }
+        #endregion
+
+        #region Location
+        [HttpGet]
+        public IActionResult CreateLocation()
+        {
+            return View(new Location());
+        }
+
+        [HttpPost]
+        public IActionResult Createlocation(Location location)
+        {
+            _repo.AddLocation(location);
+            return Redirect("~/Home/Index");
+        }
+        public IActionResult ListLocations()
+        {
+            var list = _repo.GetAllLocations();
+            return View(list);
+        }
+
         #endregion
 
         // POST: HomeController/Create

@@ -41,6 +41,8 @@ namespace GloboDiet.Models
         [Required(ErrorMessage = "Weight must be provided")]
         [Range(30, 300)]
         public int Weight { get; set; }
+
+        // Navigation property
         public List<Interview> Interviews { get; set; }
 
         public Respondent()

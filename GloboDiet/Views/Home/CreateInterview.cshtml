@@ -26,7 +26,7 @@
                 <select asp-for="Interview.Location" class="form-control" asp-items=@Model.ListOfLocations>
                 </select>
                 <span asp-validation-for="Interview.Location" class="text-danger"></span>
-                <input type="submit" value="New Location" name="submit" class="btn btn-secondary" formaction=""></input>
+                <input type="submit" value="New Location" name="submit" class="btn btn-secondary" formaction="CreateLocationFromInterview"></input>
             </div>
 
             <div class="form-group">
