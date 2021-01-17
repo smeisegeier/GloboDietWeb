@@ -31,13 +31,16 @@ namespace GloboDiet.Data
         List<Location> GetAllLocations();
         bool AddLocation(Location location);
 
-        string Test();
-
     }
     public class Repository : IRepository
     {
-        private readonly GloboDietDbContext _context;
+        #region StaticArea
+        public static Interview CachedInterview { get; set; } = null;
         public static EfCoreHelper.SqlConnectionType CurrentSqlConnectionType { get; set; }
+        #endregion
+
+        private readonly GloboDietDbContext _context;
+
         // HACK
         public static int PillCountInterviews { get; set; }
         public static int PillCountInterviewers { get; set; }
@@ -52,7 +55,6 @@ namespace GloboDiet.Data
             setPillBoxes();
         }
 
-        public string Test() => null;
 
         #region Interview
         public Interview GetInterviewById(int id)

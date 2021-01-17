@@ -20,22 +20,11 @@ namespace GloboDiet.Controllers
             _repo = repo;
         }
 
-        public ActionResult Test()
-        {
-            return Content(_repo.Test());
-        }
         #region Respondent
         [HttpGet]
         public IActionResult CreateRespondent()
         {
             return View(new Respondent());
-        }
-
-        [HttpPost]
-        public IActionResult CreateLocation(Respondent respondent)
-        {
-            _repo.AddRespondent(respondent);
-            return Redirect("~/Home/Index");
         }
 
         public IActionResult ListRespondents()
@@ -44,25 +33,30 @@ namespace GloboDiet.Controllers
             return View(list);
         }
         #endregion
+
         #region Interview
 
         [HttpGet]
         public IActionResult CreateInterview()
         {
-            return View(new ViewModels.InterviewCreateEdit(new Interview(), _repo.GetAllLocations()));
+            var modelNewOrEmpty = Repository.CachedInterview ?? new Interview();
+            Repository.CachedInterview = null;
+            return View(new ViewModels.InterviewCreateEdit(modelNewOrEmpty, _repo.GetAllLocations()));
         }
 
         [HttpPost]
         public IActionResult CreateInterview(Interview interview)
         {
             _repo.AddInterview(interview);
-            return Redirect("~/Home/Index");
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpPost]
         public IActionResult CreateLocationFromInterview(Interview interview)
         {
-            return Content("yeah");
+            // cache object, then redirect
+            Repository.CachedInterview = interview;
+            return RedirectToAction(nameof(CreateLocation), new { ReturningAction = nameof(CreateInterview) });
         }
 
 
@@ -72,7 +66,7 @@ namespace GloboDiet.Controllers
             return View(list);
         }
         #endregion
-
+        
         #region Interviewer
         [HttpGet]
         public IActionResult CreateInterviewer()
@@ -94,20 +88,23 @@ namespace GloboDiet.Controllers
             return View(list);
         }
         #endregion
-
+        
         #region Location
         [HttpGet]
-        public IActionResult CreateLocation()
+        public IActionResult CreateLocation(string returningAction=null)
         {
-            return View(new Location());
+            return View(new ViewModels.LocationCreateEdit(new Location(), returningAction));
         }
 
         [HttpPost]
-        public IActionResult Createlocation(Location location)
+        public IActionResult CreateLocation(Location location, string ReturningAction)
         {
             _repo.AddLocation(location);
-            return Redirect("~/Home/Index");
+            // get Referer
+            //return Redirect(Request.Headers["Referer"].ToString());
+            return RedirectToAction(ReturningAction);
         }
+
         public IActionResult ListLocations()
         {
             var list = _repo.GetAllLocations();
@@ -116,6 +113,7 @@ namespace GloboDiet.Controllers
 
         #endregion
 
+        #region Artefacts
         // POST: HomeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -130,6 +128,7 @@ namespace GloboDiet.Controllers
                 return View();
             }
         }
+        #endregion
 
     }
 }
