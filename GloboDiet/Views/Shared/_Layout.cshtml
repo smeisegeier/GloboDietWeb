@@ -13,14 +13,11 @@
     <link rel="stylesheet" href="~/css/site.css" />
 
     <script>
-        $(document).ready(function ()
-        {
-        $('[data-toggle="tooltip"]').tooltip()
-        $(".dropdown-toggle").dropdown();
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+            $(".dropdown-toggle").dropdown();
         })
     </script>
-
-
 </head>
 <body>
     <header>
@@ -63,7 +60,9 @@
                                 <a class="dropdown-item" href="/Home/ListLocations">List Locations</a>
                             </div>
                         </li>
-
+                        <li class="nav-item"><a class="nav-link text-muted" href="#">Respondent</a></li>
+                        <li class="nav-item"><div class="alert alert-sm alert-secondary">Recipe</div></li>
+                        <li class="nav-item"><a class="nav-link text" href="#">Interview</a></li>
                     </ul>
                 </div>
                 <span class="navbar-item float-right text-muted">
@@ -78,11 +77,19 @@
             @RenderBody()
         </main>
     </div>
+    <ul class="container list-group list-group-horizontal d-flex align-items-center" style="height: 2rem">
+        <li class="list-group-item list-group-item-primray">Respondent</li>
+        <li class="list-group-item list-group-item-success">Respondent</li>
+        <li class="list-group-item list-group-item-secondary">Respondent</li>
+    </ul>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - GloboDiet - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <footer class="border-top footer">
+        <ul class="container list-group list-group-horizontal">
+            <li class="list-group-item list-group-item-primray">Respondent</li>
+            <li class="list-group-item list-group-item-success">Respondent</li>
+            <li class="list-group-item list-group-item-secondary">Respondent</li>
+        </ul>
+
     </footer>
 </body>
 </html>
