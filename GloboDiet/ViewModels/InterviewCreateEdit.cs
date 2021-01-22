@@ -9,13 +9,19 @@ namespace GloboDiet.ViewModels
     {
         public IEnumerable<SelectListItem> ListOfLocations { get; set; }
         public Interview Interview { get; set; }
-        public List<string> ListOfProcessMilestones{ get; set; }
 
-    public InterviewCreateEdit(Interview interview, List<Location> listOfLocations, List<string> listOfProcessMilestones)
+        // for displaying all possible milestones
+        public List<KeyValuePair<ProcessMilestone, string>> ListOfProcessMilestones { get; set; }
+
+        // make the current one more prominent
+        public ProcessMilestone CurrentProcessMilestone { get; set; }
+
+        public InterviewCreateEdit(Interview interview, List<Location> listOfLocations, List<KeyValuePair<ProcessMilestone, string>> listOfProcessMilestones, ProcessMilestone currentProcessMilestone)
         {
             Interview = interview;
             ListOfLocations = new SelectList(listOfLocations, "Id", "City");
             ListOfProcessMilestones = listOfProcessMilestones;
+            CurrentProcessMilestone= currentProcessMilestone;
         }
     }
 }

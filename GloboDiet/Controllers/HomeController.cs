@@ -33,31 +33,7 @@ namespace GloboDiet.Controllers
             _repo = repo;
         }
 
-        #region private Area
-        //private ProcessMilestone processMilestone;
-        private List<string> getCurrentProcessMilestoneList(ProcessMilestone processMilestone)
-        {
-            // get complete List
-            // TODO type indepentant?
-            var completeList = Globals.GetListWithDescription<ProcessMilestone>();
-
-            ////// get starting pos
-            ////int i = (int)completeList.First().Key;
-            ////// only extract members up to current pos
-            ////while (i <= (int)processMilestone)
-            ////{
-            ////    stringList.Add(completeList[i])
-            ////}
-
-            //foreach (var item in completeList)
-            //{
-            //    if ((int)item.Key > (int)processMilestone)
-            //        break;
-            //    stringList.Add(item.Key.ToString());
-            //}
-
-            return completeList.Where(x => (int)x.Key <= (int)processMilestone).Select(x => x.Value).ToList();
-        }
+        #region Private Area
         #endregion
 
         #region Respondent
@@ -75,14 +51,14 @@ namespace GloboDiet.Controllers
         #endregion
 
         #region Interview
-
         [HttpGet]
         public IActionResult CreateInterview()
         {
             var modelNewOrEmpty = Repository.CachedInterview ?? new Interview();
             Repository.CachedInterview = null;
-            var currentList = getCurrentProcessMilestoneList(ProcessMilestone._2_RESPONDENT);
-            return View(new ViewModels.InterviewCreateEdit(modelNewOrEmpty, _repo.GetAllLocations(), currentList));
+
+            // ViewModel now also needs the whole List from Process-Enum plus the actual Milestone
+            return View(new ViewModels.InterviewCreateEdit(modelNewOrEmpty, _repo.GetAllLocations(), Globals.GetListWithDescription<ProcessMilestone>(), ProcessMilestone._1_INTERVIEW));
         }
 
         [HttpPost]
