@@ -8,9 +8,22 @@ using HelperLibrary;
 using Microsoft.AspNetCore.Hosting;
 using GloboDiet.Models;
 using GloboDiet.Data;
+using System.ComponentModel;
 
 namespace GloboDiet.Controllers
 {
+    public enum ProcessMilestone
+    {
+        [Description("Interview started")]
+        _1_INTERVIEW = 1,
+
+        [Description("Respondent created")]
+        _2_RESPONDENT = 2,
+
+        [Description("Meals created")]
+        _3_MEALS = 3
+    }
+
     public class HomeController : ControllerBase
     {
 
@@ -19,6 +32,33 @@ namespace GloboDiet.Controllers
             _webHostEnvironment = webHostEnvironment;
             _repo = repo;
         }
+
+        #region private Area
+        //private ProcessMilestone processMilestone;
+        private List<string> getCurrentProcessMilestoneList(ProcessMilestone processMilestone)
+        {
+            // get complete List
+            // TODO type indepentant?
+            var completeList = Globals.GetListWithDescription<ProcessMilestone>();
+
+            ////// get starting pos
+            ////int i = (int)completeList.First().Key;
+            ////// only extract members up to current pos
+            ////while (i <= (int)processMilestone)
+            ////{
+            ////    stringList.Add(completeList[i])
+            ////}
+
+            //foreach (var item in completeList)
+            //{
+            //    if ((int)item.Key > (int)processMilestone)
+            //        break;
+            //    stringList.Add(item.Key.ToString());
+            //}
+
+            return completeList.Where(x => (int)x.Key <= (int)processMilestone).Select(x => x.Value).ToList();
+        }
+        #endregion
 
         #region Respondent
         [HttpGet]
@@ -41,7 +81,8 @@ namespace GloboDiet.Controllers
         {
             var modelNewOrEmpty = Repository.CachedInterview ?? new Interview();
             Repository.CachedInterview = null;
-            return View(new ViewModels.InterviewCreateEdit(modelNewOrEmpty, _repo.GetAllLocations()));
+            var currentList = getCurrentProcessMilestoneList(ProcessMilestone._2_RESPONDENT);
+            return View(new ViewModels.InterviewCreateEdit(modelNewOrEmpty, _repo.GetAllLocations(), currentList));
         }
 
         [HttpPost]

@@ -1,5 +1,13 @@
 ﻿@model GloboDiet.ViewModels.InterviewCreateEdit
 
+@*<div class="d-flex justify-content-between border-soft">*@
+<div class="d-flex justify-content-around border-soft">
+    @foreach (var item in Model.ListOfProcessMilestones)
+    {
+        <div class="border-soft p-2 m-2">@item</div>
+    }
+</div>
+
 <h1>CreateInterview</h1>
 <h4>Interview</h4>0
 <div class="row">
@@ -7,9 +15,9 @@
         <form asp-action="CreateInterview">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-inline">
-                    <label asp-for="Interview.Timestamp" class="form-control alert-primary"></label>
-                    <input asp-for="Interview.Timestamp" class="form-control alert-danger" />
-                    <span asp-validation-for="Interview.Timestamp" class="text-danger"></span>
+                <label asp-for="Interview.Timestamp" class="form-control alert-primary"></label>
+                <input asp-for="Interview.Timestamp" class="form-control alert-danger" />
+                <span asp-validation-for="Interview.Timestamp" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Interview.Number" class="control-label alert-primary"></label>
