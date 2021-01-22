@@ -1,0 +1,15 @@
+﻿@model GloboDiet.ViewModels.InterviewCreateEdit
+
+<div class="d-flex justify-content-between border-soft">
+    @foreach (var item in Model.ListOfProcessMilestones)
+    {
+        @if ((int)item.Key <= (int)Model.CurrentProcessMilestone)
+        {
+            <div class="border-soft mb-2 text-primary"><strong>@item.Value</strong></div>
+        }
+        else
+        {
+            <div class="border-soft mb-2 text-muted">@item.Value</div>
+        }
+    }
+</div>

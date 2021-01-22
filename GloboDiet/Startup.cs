@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using GloboDiet.Models;
 using Microsoft.EntityFrameworkCore;
 using GloboDiet.Data;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace GloboDiet
 {
@@ -23,6 +24,14 @@ namespace GloboDiet
             //services.AddDbContext<GloboDietDbContext>(options => options.UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDiet;trusted_connection=true;"));
             services.AddDbContext<GloboDietDbContext>(options => options.UseInMemoryDatabase("Test"));
             services.AddScoped<IRepository, Repository>();
+
+            // enable tempdata
+            services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
+            services.AddSession(options =>
+            {
+                options.Cookie.IsEssential = true;
+            });
+            services.AddDistributedMemoryCache();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +45,9 @@ namespace GloboDiet
 
             app.UseStaticFiles();
             //app.UseApiResponseAndExceptionWrapper(new AutoWrapperOptions() { IsApiOnly = false, IsDebug = true }); // use before routing
+            app.UseSession();
+
+
             app.UseRouting();
             app.UseHttpsRedirection();
             app.UseEndpoints(endpoints =>

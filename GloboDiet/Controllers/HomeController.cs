@@ -58,7 +58,7 @@ namespace GloboDiet.Controllers
             Repository.CachedInterview = null;
 
             // ViewModel now also needs the whole List from Process-Enum plus the actual Milestone
-            return View(new ViewModels.InterviewCreateEdit(modelNewOrEmpty, _repo.GetAllLocations(), Globals.GetListWithDescription<ProcessMilestone>(), ProcessMilestone._1_INTERVIEW));
+            return View(new ViewModels.InterviewCreateEdit(modelNewOrEmpty, _repo.GetAllLocations(), Globals.GetListWithDescription<ProcessMilestone>(), ProcessMilestone._2_RESPONDENT));
         }
 
         [HttpPost]
