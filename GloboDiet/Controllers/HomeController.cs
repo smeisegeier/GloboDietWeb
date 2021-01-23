@@ -12,6 +12,7 @@ using System.ComponentModel;
 
 namespace GloboDiet.Controllers
 {
+    // TODO shift
     public enum ProcessMilestone
     {
         [Description("Interview started")]
@@ -31,6 +32,8 @@ namespace GloboDiet.Controllers
         {
             _webHostEnvironment = webHostEnvironment;
             _repo = repo;
+
+            HttpContext.Session.SetString("SessionUser","itsme");
         }
 
         #region Private Area
