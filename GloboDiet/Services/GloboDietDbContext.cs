@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GloboDiet.Models;
 
-namespace GloboDiet.Data
+namespace GloboDiet.Services
 {
     public class GloboDietDbContext : DbContext
     {

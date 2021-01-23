@@ -7,7 +7,7 @@ using HelperLibrary;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 
-namespace GloboDiet.Data
+namespace GloboDiet.Services
 {
     public interface IRepository
     {

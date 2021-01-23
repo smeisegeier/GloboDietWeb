@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GloboDiet.Models;
 using Microsoft.EntityFrameworkCore;
-using GloboDiet.Data;
+using GloboDiet.Services;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace GloboDiet
@@ -25,13 +25,16 @@ namespace GloboDiet
             services.AddDbContext<GloboDietDbContext>(options => options.UseInMemoryDatabase("Test"));
             services.AddScoped<IRepository, Repository>();
 
-            // enable tempdata
-            services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
+            // enable session stuff
+            services.AddHttpContextAccessor();
             services.AddSession(options =>
             {
                 options.Cookie.IsEssential = true;
             });
             services.AddDistributedMemoryCache();
+            // option tempdata
+            //services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

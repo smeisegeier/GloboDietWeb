@@ -7,33 +7,26 @@ using System.Threading.Tasks;
 using HelperLibrary;
 using Microsoft.AspNetCore.Hosting;
 using GloboDiet.Models;
-using GloboDiet.Data;
+using GloboDiet.Services;
 using System.ComponentModel;
 
 namespace GloboDiet.Controllers
 {
-    // TODO shift
-    public enum ProcessMilestone
-    {
-        [Description("Interview started")]
-        _1_INTERVIEW = 1,
-
-        [Description("Respondent created")]
-        _2_RESPONDENT = 2,
-
-        [Description("Meals created")]
-        _3_MEALS = 3
-    }
 
     public class HomeController : ControllerBase
     {
-
-        public HomeController(IWebHostEnvironment webHostEnvironment, IRepository repo)
+        public HomeController(IWebHostEnvironment webHostEnvironment, IRepository repo, IHttpContextAccessor httpContextAccessor)
         {
             _webHostEnvironment = webHostEnvironment;
             _repo = repo;
+            _httpContext = httpContextAccessor.HttpContext;
 
-            HttpContext.Session.SetString("SessionUser","itsme");
+            _httpContext.Session.SetString("SessionUser","itsme");
+        }
+        
+        public IActionResult Index()
+        {
+            return View();
         }
 
         #region Private Area
