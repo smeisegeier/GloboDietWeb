@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GloboDiet.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.Models
 {
-    public class Interview
+    public class Interview : IEntity
     {
         public int Id { get; set; }
 

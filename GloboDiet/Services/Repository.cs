@@ -11,6 +11,7 @@ namespace GloboDiet.Services
 {
     public interface IRepository
     {
+
         /* Interview */
         Interview GetInterviewById(int id);
         List<Interview> GetAllInterviews();
@@ -32,6 +33,8 @@ namespace GloboDiet.Services
         bool AddLocation(Location location);
 
     }
+
+
     public class Repository : IRepository
     {
         #region StaticArea

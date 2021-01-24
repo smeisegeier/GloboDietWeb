@@ -13,19 +13,29 @@ using System.ComponentModel;
 namespace GloboDiet.Controllers
 {
 
-    public class HomeController : ControllerBase
+    public class HomeController : Controller
     {
-        public HomeController(IWebHostEnvironment webHostEnvironment, IRepository repo, IHttpContextAccessor httpContextAccessor)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly IRepository _repo;
+        private readonly HttpContext _httpContext;
+
+        // example for domain repo
+        private readonly IRepositoryNew<Interview> _repoInterview;
+
+
+        public HomeController(IWebHostEnvironment webHostEnvironment, IRepository repo, IHttpContextAccessor httpContextAccessor, IRepositoryNew<Interview> repoInterview)
         {
             _webHostEnvironment = webHostEnvironment;
             _repo = repo;
             _httpContext = httpContextAccessor.HttpContext;
+            _repoInterview = repoInterview;
 
-            _httpContext.Session.SetString("SessionUser","itsme");
         }
         
         public IActionResult Index()
         {
+            // testing session mechanics
+            _httpContext.Session.SetString("SessionUser", "itsme");
             return View();
         }
 

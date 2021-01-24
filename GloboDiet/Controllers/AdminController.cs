@@ -9,8 +9,12 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.Controllers
 {
-    public class AdminController : ControllerBase
+    public class AdminController : Controller
     {
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly IRepository _repo;
+        private readonly HttpContext _httpContext;
+
         public AdminController(IWebHostEnvironment webHostEnvironment, IRepository repo, IHttpContextAccessor httpContextAccessor)
         {
             _webHostEnvironment = webHostEnvironment;
