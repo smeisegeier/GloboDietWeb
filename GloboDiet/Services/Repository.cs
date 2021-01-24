@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GloboDiet.Services
 {
+    [Obsolete]
     public interface IRepository
     {
 
@@ -35,7 +36,7 @@ namespace GloboDiet.Services
         int GetInterviewsCount();
         int GetInterviewersCount();
 
-        EfCoreHelper.SqlConnectionType GetSqlConnectionType();
+        //EfCoreHelper.SqlConnectionType GetSqlConnectionType();
     }
 
 
@@ -57,7 +58,7 @@ namespace GloboDiet.Services
         }
 
         // TODO make this an extension method
-        public EfCoreHelper.SqlConnectionType GetSqlConnectionType() => EfCoreHelper.GetSqlConnectionType(_context);
+        //public EfCoreHelper.SqlConnectionType GetSqlConnectionType() => EfCoreHelper.GetSqlConnectionType(_context);
         public int GetInterviewsCount() => _context.Interviews.Count();
         public int GetInterviewersCount() => _context.Interviewers.Count();
 

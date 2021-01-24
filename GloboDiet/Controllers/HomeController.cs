@@ -44,6 +44,7 @@ namespace GloboDiet.Controllers
         {
             // testing session mechanics
             _httpContext.Session.SetString("SessionUser", "itsme");
+            // if no content needed just pass ViewModelBase
             return View(new ViewModelBase(getNewNavigationBar()));
         }
 
@@ -57,6 +58,7 @@ namespace GloboDiet.Controllers
             _repoInterviewer.SeedItems(Interviewer.GetSeededValues());
             _repoLocation.SeedItems(Location.GetSeededValues());
             _repoRespondent.SeedItems(Respondent.GetSeededValues());
+            _repoInterview.SeedItems(Interview.GetSeededValues());
         }
 
         #region Respondent
@@ -99,19 +101,38 @@ namespace GloboDiet.Controllers
             return RedirectToAction(nameof(CreateLocation), new { ReturningAction = nameof(CreateInterview) });
         }
 
+        [HttpGet]
+        public IActionResult EditInterview(int id)
+        {
+            var interview = _repoInterview.GetById(id);
+            return View(new InterviewCreateEdit(interview, _repoLocation.GetAllItems(), EnumHelper.GetListWithDescription<ProcessMilestone>(), ProcessMilestone._3_MEALS, getNewNavigationBar()));
+        }
+
+        [HttpPost]
+        public IActionResult EditInterview(Interview interview)
+        {
+            _repoInterview.UpdateItem(interview);
+            return RedirectToAction(nameof(Index));
+        }
 
         public IActionResult ListInterviews()
         {
             var list = _repoInterview.GetAllItems();
             return View(new InterviewsList(list, getNewNavigationBar()));
         }
+
+        public IActionResult DetailsInterview(int id)
+        {
+            return Json(_repoInterview.GetById(id));
+        }
+
         #endregion
-        
+
         #region Interviewer
         [HttpGet]
         public IActionResult CreateInterviewer()
         {
-            return View(new Interviewer());
+            return View(new ViewModels.InterviewerCreateEdit( new Interviewer(), getNewNavigationBar()));
         }
 
         [HttpPost]

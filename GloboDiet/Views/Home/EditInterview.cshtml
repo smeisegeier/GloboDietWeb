@@ -1,21 +1,18 @@
 ﻿@model GloboDiet.ViewModels.InterviewCreateEdit
 
-<partial name="_ProcessMilestoneDisplayBar.cshtml" ></partial>
+<partial name="_ProcessMilestoneDisplayBar.cshtml"/>
 
-<h1>CreateInterview</h1>
+<h1>Edit Interview</h1>
 <h4>Interview</h4>0
 <div class="row">
     <div class="col-md-6">
-        <form asp-action="CreateInterview">
+        <form asp-action="EditInterview">
 
             <partial name="_Interview.cshtml" />
 
             <div class="form-group">
-                <input type="submit" name="submit" value="Create" class="btn btn-primary"></input>
+                <input type="submit" name="submit" value="Update" class="btn btn-primary"></input>
             </div>
         </form>
     </div>
 </div>
-
-
-

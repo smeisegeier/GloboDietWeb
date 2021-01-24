@@ -11,6 +11,11 @@ namespace GloboDiet.Models
         public int Id { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
+
+        public Location()
+        {
+        }
+
         public static IEnumerable<Location> GetSeededValues()
         {
             return new List<Location>()

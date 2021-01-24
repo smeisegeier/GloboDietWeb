@@ -11,9 +11,9 @@ namespace GloboDiet.ViewModels
         public int PillCountInterviews { get; set; }
         public int PillCountInterviewers { get; set; }
 
-        public Extensions.SqlConnectionType CurrentSqlConnectionType { get; set; }
+        public EfCoreHelper.SqlConnectionType CurrentSqlConnectionType { get; set; }
 
-        public NavigationBar(int pillCountInterviews, int pillCountInterviewers, Extensions.SqlConnectionType currentSqlConnectionType)
+        public NavigationBar(int pillCountInterviews, int pillCountInterviewers, EfCoreHelper.SqlConnectionType currentSqlConnectionType)
         {
             PillCountInterviews = pillCountInterviews;
             PillCountInterviewers = pillCountInterviewers;

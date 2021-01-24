@@ -15,11 +15,22 @@ namespace GloboDiet.Models
         public int Number { get; set; } = 1;
         [DataType(DataType.Date)]
         public DateTime ReferenceDate { get; set; } = DateTime.Now;
+
+        // TODO still not clear
+        public int LocationId { get; set; }
         public Location Location { get; set; }
 
-        public Interview()
-        {
+        public Interview() { }
 
-        }
+        public static IEnumerable<Interview> GetSeededValues() => new List<Interview>()
+        { 
+            new Interview()
+            {
+                LocationId = 1,
+                Number = 3,
+                ReferenceDate = DateTime.Now,
+                Timestamp = DateTime.Now
+            }
+        };
     }
 }

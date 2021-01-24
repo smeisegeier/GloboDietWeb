@@ -9,12 +9,13 @@ namespace GloboDiet.Services
     public interface IRepositoryNew<TEntity>
     {
         IEnumerable<TEntity> GetAllItems();
+        TEntity GetById(int id);
         void AddItem(TEntity entity);
         void UpdateItem(TEntity entity);
         void DeleteItem(TEntity entity);
         int GetItemsCount();
         void SeedItems(IEnumerable<TEntity> entities);
-        Extensions.SqlConnectionType GetSqlConnectionType();
+        EfCoreHelper.SqlConnectionType GetSqlConnectionType();
     }
     public class RepositoryNew<TEntity> : IRepositoryNew<TEntity> where TEntity : class, IEntity
     {
@@ -37,25 +38,22 @@ namespace GloboDiet.Services
         {
             using (var context = new GloboDietDbContext())
             {
-                _context.Add(entity);
+                _context.Set<TEntity>().Add(entity);
                 _context.SaveChanges();
             }
         }
 
         public void UpdateItem(TEntity entity)
         {
-            using (var context = new GloboDietDbContext())
-            {
-                _context.Update(entity);
-                _context.SaveChanges();
-            }
+            _context.Set<TEntity>().Update(entity);
+            _context.SaveChanges();
         }
 
         public void DeleteItem(TEntity entity)
         {
             using (var context = new GloboDietDbContext())
             {
-                _context.Remove(entity);
+                _context.Set<TEntity>().Remove(entity);
                 _context.SaveChanges();
             }
         }
@@ -85,7 +83,7 @@ namespace GloboDiet.Services
             }
         }
 
-        public Extensions.SqlConnectionType GetSqlConnectionType() => _context.GetSqlConnectionType();
+        public EfCoreHelper.SqlConnectionType GetSqlConnectionType() => _context.GetSqlConnectionType();
 
     }
 }
