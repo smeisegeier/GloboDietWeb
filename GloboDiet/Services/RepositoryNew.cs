@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelperLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,30 +9,36 @@ namespace GloboDiet.Services
     public interface IRepositoryNew<TEntity>
     {
         IEnumerable<TEntity> GetAllItems();
-        void AddItems(TEntity entity);
+        void AddItem(TEntity entity);
         void UpdateItem(TEntity entity);
         void DeleteItem(TEntity entity);
         int GetItemsCount();
         void SeedItems(IEnumerable<TEntity> entities);
+        Extensions.SqlConnectionType GetSqlConnectionType();
     }
     public class RepositoryNew<TEntity> : IRepositoryNew<TEntity> where TEntity : class, IEntity
     {
-        private readonly GloboDietDbContext _context;
+        protected readonly GloboDietDbContext _context;
+
+        public RepositoryNew(GloboDietDbContext context)
+        {
+            _context = context;
+        }
 
         public IEnumerable<TEntity> GetAllItems()
         {
             using (var context = new GloboDietDbContext())
             {
-                return context.Set<TEntity>();
+                return _context.Set<TEntity>();
             }
         }
 
-        public void AddItems(TEntity entity)
+        public void AddItem(TEntity entity)
         {
             using (var context = new GloboDietDbContext())
             {
-                context.Add(entity);
-                context.SaveChanges();
+                _context.Add(entity);
+                _context.SaveChanges();
             }
         }
 
@@ -39,8 +46,8 @@ namespace GloboDiet.Services
         {
             using (var context = new GloboDietDbContext())
             {
-                context.Update(entity);
-                context.SaveChanges();
+                _context.Update(entity);
+                _context.SaveChanges();
             }
         }
 
@@ -48,8 +55,8 @@ namespace GloboDiet.Services
         {
             using (var context = new GloboDietDbContext())
             {
-                context.Remove(entity);
-                context.SaveChanges();
+                _context.Remove(entity);
+                _context.SaveChanges();
             }
         }
 
@@ -57,7 +64,7 @@ namespace GloboDiet.Services
         {
             using (var context = new GloboDietDbContext())
             {
-                return context.Set<TEntity>().FirstOrDefault(x => x.Id == id);
+                return _context.Set<TEntity>().FirstOrDefault(x => x.Id == id);
             }
         }
 
@@ -65,17 +72,20 @@ namespace GloboDiet.Services
         {
             using (var context = new GloboDietDbContext())
             {
-                return context.Set<TEntity>().Count();
+                return _context.Set<TEntity>().Count();
             }
         }
 
         public void SeedItems(IEnumerable<TEntity> entities)
         {
-            using (var context = new GloboDietDbContext())
+            if (!_context.Set<TEntity>().Any())
             {
-                context.Set<TEntity>().AddRange(entities);
+                _context.Set<TEntity>().AddRange(entities);
+                _context.SaveChanges();
             }
         }
+
+        public Extensions.SqlConnectionType GetSqlConnectionType() => _context.GetSqlConnectionType();
 
     }
 }

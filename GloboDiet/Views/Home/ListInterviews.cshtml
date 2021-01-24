@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GloboDiet.Models.Interview>
+﻿@model GloboDiet.ViewModels.InterviewsList
 
 <h1>ListInterview</h1>
 
@@ -6,19 +6,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Timestamp)
+                @Html.DisplayNameFor(model => model.Interviews.First().Timestamp)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Number)
+                @Html.DisplayNameFor(model => model.Interviews.First().Number)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ReferenceDate)
+                @Html.DisplayNameFor(model => model.Interviews.First().ReferenceDate)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Interviews) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Timestamp)

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GloboDiet.Models.Location>
+﻿@model GloboDiet.ViewModels.LocationsList
 
 <h1>ListLocation</h1>
 
@@ -6,16 +6,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.City)
+                @Html.DisplayNameFor(model => model.Locations.First().City)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Country)
+                @Html.DisplayNameFor(model => model.Locations.First().Country)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Locations) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.City)

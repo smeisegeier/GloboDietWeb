@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GloboDiet.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 namespace GloboDiet.Models
 {
 
-    public class Interviewer
+    public class Interviewer : IEntity
     {
         public int Id { get; set; }
         [Required(ErrorMessage ="Enter code")]
@@ -17,7 +18,7 @@ namespace GloboDiet.Models
         public string Name { get; set; }
 
         public Interviewer() { }
-        public static List<Interviewer> GenerateDefaultValues()
+        public static IEnumerable<Interviewer> GetSeededValues()
         {
             return new List<Interviewer>()
                 {

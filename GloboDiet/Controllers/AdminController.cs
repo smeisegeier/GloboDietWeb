@@ -15,10 +15,9 @@ namespace GloboDiet.Controllers
         private readonly IRepository _repo;
         private readonly HttpContext _httpContext;
 
-        public AdminController(IWebHostEnvironment webHostEnvironment, IRepository repo, IHttpContextAccessor httpContextAccessor)
+        public AdminController(IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor)
         {
             _webHostEnvironment = webHostEnvironment;
-            _repo = repo;
             _httpContext = httpContextAccessor.HttpContext;
         }
 

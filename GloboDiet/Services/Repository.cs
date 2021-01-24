@@ -175,12 +175,12 @@ namespace GloboDiet.Services
             {
                 if (!context.Interviewers.Any())
                 {
-                    var list = Interviewer.GenerateDefaultValues();
+                    var list = Interviewer.GetSeededValues();
                     context.Interviewers.AddRange(list);
                 }
                 if (!context.Locations.Any())
                 {
-                    var list = Location.GenerateDefaultValues();
+                    var list = Location.GetSeededValues();
                     context.Locations.AddRange(list);
                 }
                 if (!context.PlacesOfMeal.Any())
@@ -190,7 +190,7 @@ namespace GloboDiet.Services
                 }
                 if (!context.Respondents.Any())
                 {
-                    var list = Respondent.GenerateDefaultValues();
+                    var list = Respondent.GetSeededValues();
                     context.Respondents.AddRange(list);
                 }
                 context.SaveChanges();

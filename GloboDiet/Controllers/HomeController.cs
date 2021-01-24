@@ -10,6 +10,8 @@ using GloboDiet.Models;
 using GloboDiet.Services;
 using System.ComponentModel;
 using GloboDiet.ViewModels;
+using Microsoft.EntityFrameworkCore;
+using GloboDiet;
 
 namespace GloboDiet.Controllers
 {
@@ -17,23 +19,27 @@ namespace GloboDiet.Controllers
     public class HomeController : Controller
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly IRepository _repo;
+        //private readonly IRepository _repo;
         private readonly HttpContext _httpContext;
 
         // example for domain repo
+        private readonly IRepositoryNew<Interview> _repoInterview;
+        private readonly IRepositoryNew<Interviewer> _repoInterviewer;
         private readonly IRepositoryNew<Location> _repoLocation;
+        private readonly IRepositoryNew<Respondent> _repoRespondent;
 
-
-        public HomeController(IWebHostEnvironment webHostEnvironment, IRepository repo, IHttpContextAccessor httpContextAccessor, IRepositoryNew<Location> repoLocation)
+        public HomeController(IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor, IRepositoryNew<Interview> repoInterview, IRepositoryNew<Interviewer> repoInterviewer, IRepositoryNew<Location> repoLocation, IRepositoryNew<Respondent> repoRespondent)
         {
             _webHostEnvironment = webHostEnvironment;
-            _repo = repo;
             _httpContext = httpContextAccessor.HttpContext;
+            _repoInterview = repoInterview;
+            _repoInterviewer = repoInterviewer;
             _repoLocation = repoLocation;
+            _repoRespondent = repoRespondent;
 
-
+            seedAll();
         }
-        
+
         public IActionResult Index()
         {
             // testing session mechanics
@@ -41,9 +47,17 @@ namespace GloboDiet.Controllers
             return View(new ViewModelBase(getNewNavigationBar()));
         }
 
+
         #region Private Area
-        private NavigationBar getNewNavigationBar() => new NavigationBar(_repo.GetInterviewsCount(), _repo.GetInterviewersCount(), _repo.GetSqlConnectionType());
+        private NavigationBar getNewNavigationBar() => new NavigationBar(_repoInterview.GetItemsCount(), _repoInterviewer.GetItemsCount(), _repoInterview.GetSqlConnectionType());
         #endregion
+
+        private void seedAll()
+        {
+            _repoInterviewer.SeedItems(Interviewer.GetSeededValues());
+            _repoLocation.SeedItems(Location.GetSeededValues());
+            _repoRespondent.SeedItems(Respondent.GetSeededValues());
+        }
 
         #region Respondent
         [HttpGet]
@@ -54,7 +68,7 @@ namespace GloboDiet.Controllers
 
         public IActionResult ListRespondents()
         {
-            var list = _repo.GetAllRespondents();
+            var list = _repoRespondent.GetAllItems();
             return View(list);
         }
         #endregion
@@ -67,13 +81,13 @@ namespace GloboDiet.Controllers
             Repository.CachedInterview = null;
 
             // ViewModel now also needs the whole List from Process-Enum plus the actual Milestone
-            return View(new InterviewCreateEdit(modelNewOrEmpty, _repo.GetAllLocations(), EnumHelper.GetListWithDescription<ProcessMilestone>(), ProcessMilestone._2_RESPONDENT, getNewNavigationBar()));
+            return View(new InterviewCreateEdit(modelNewOrEmpty, _repoLocation.GetAllItems(), EnumHelper.GetListWithDescription<ProcessMilestone>(), ProcessMilestone._2_RESPONDENT, getNewNavigationBar()));
         }
 
         [HttpPost]
         public IActionResult CreateInterview(Interview interview)
         {
-            _repo.AddInterview(interview);
+            _repoInterview.AddItem(interview);
             return RedirectToAction(nameof(Index));
         }
 
@@ -88,8 +102,8 @@ namespace GloboDiet.Controllers
 
         public IActionResult ListInterviews()
         {
-            var list = _repo.GetAllInterviews();
-            return View(list);
+            var list = _repoInterview.GetAllItems();
+            return View(new InterviewsList(list, getNewNavigationBar()));
         }
         #endregion
         
@@ -104,13 +118,13 @@ namespace GloboDiet.Controllers
         public IActionResult CreateInterviewer(Interviewer interviewer)
         {
 
-            _repo.AddInterviewer(interviewer);
+            _repoInterviewer.AddItem(interviewer);
             return Redirect("~/Home/Index");
         }
 
         public IActionResult ListInterviewers()
         {
-            var list = _repo.GetAllInterviewers();
+            var list = _repoInterviewer.GetAllItems();
             return View(list);
         }
         #endregion
@@ -125,7 +139,7 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult CreateLocation(Location location, string ReturningAction)
         {
-            _repo.AddLocation(location);
+            _repoLocation.AddItem(location);
             // get Referer
             //return Redirect(Request.Headers["Referer"].ToString());
             return RedirectToAction(ReturningAction);
@@ -133,8 +147,8 @@ namespace GloboDiet.Controllers
 
         public IActionResult ListLocations()
         {
-            var list = _repo.GetAllLocations();
-            return View(list);
+            var list = _repoLocation.GetAllItems();
+            return View(new LocationsList(list, getNewNavigationBar()));
         }
 
         #endregion

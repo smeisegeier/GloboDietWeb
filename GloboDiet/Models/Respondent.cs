@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using GloboDiet.Services;
 using HelperLibrary;
 namespace GloboDiet.Models
 {
@@ -13,7 +14,7 @@ namespace GloboDiet.Models
         Female
     }
 
-    public class Respondent
+    public class Respondent : IEntity
     {
         public int Id { get; set; }
 
@@ -49,7 +50,7 @@ namespace GloboDiet.Models
         {
             
         }
-            public static List<Respondent> GenerateDefaultValues()
+            public static IEnumerable<Respondent> GetSeededValues()
             {
                 return new List<Respondent>()
                 {

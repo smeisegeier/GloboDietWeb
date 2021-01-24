@@ -8,7 +8,7 @@ using GloboDiet.Services;
 namespace GloboDiet.Models
 {
     [Table(nameof(GloboDietDbContext.PlacesOfMeal))]
-    public class PlaceOfMeal
+    public class PlaceOfMeal : IEntity
     {
         public int Id { get; set; }
         public string Place { get; set; }
