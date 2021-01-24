@@ -31,7 +31,11 @@ namespace GloboDiet.Services
         Location GetLocationById(int id);
         List<Location> GetAllLocations();
         bool AddLocation(Location location);
+        // mess
+        int GetInterviewsCount();
+        int GetInterviewersCount();
 
+        EfCoreHelper.SqlConnectionType GetSqlConnectionType();
     }
 
 
@@ -39,24 +43,23 @@ namespace GloboDiet.Services
     {
         #region StaticArea
         public static Interview CachedInterview { get; set; } = null;
-        public static EfCoreHelper.SqlConnectionType CurrentSqlConnectionType { get; set; }
         #endregion
 
         private readonly GloboDietDbContext _context;
 
-        // HACK
-        public static int PillCountInterviews { get; set; }
-        public static int PillCountInterviewers { get; set; }
 
         public Repository(IWebHostEnvironment env, GloboDietDbContext context)
         {
             _context = context;
-            CurrentSqlConnectionType = EfCoreHelper.GetSqlConnectionType(_context);
 
             if (env.EnvironmentName != "Production")
                 writeDefaultValues();
-            setPillBoxes();
         }
+
+        // TODO make this an extension method
+        public EfCoreHelper.SqlConnectionType GetSqlConnectionType() => EfCoreHelper.GetSqlConnectionType(_context);
+        public int GetInterviewsCount() => _context.Interviews.Count();
+        public int GetInterviewersCount() => _context.Interviewers.Count();
 
 
         #region Interview
@@ -193,11 +196,7 @@ namespace GloboDiet.Services
                 context.SaveChanges();
             }
         }
-        private void setPillBoxes()
-        {
-            PillCountInterviews = _context.Interviews.Count();
-            PillCountInterviewers = _context.Interviewers.Count();
-        }
+
         #endregion
     }
 }

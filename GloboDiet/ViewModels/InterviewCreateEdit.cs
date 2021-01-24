@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace GloboDiet.ViewModels
 {
-    public class InterviewCreateEdit
+    public class InterviewCreateEdit : ViewModelBase
     {
         public IEnumerable<SelectListItem> ListOfLocations { get; set; }
         public Interview Interview { get; set; }
@@ -16,7 +16,7 @@ namespace GloboDiet.ViewModels
         // make the current one more prominent
         public ProcessMilestone CurrentProcessMilestone { get; set; }
 
-        public InterviewCreateEdit(Interview interview, IEnumerable<Location> listOfLocations, List<KeyValuePair<ProcessMilestone, string>> listOfProcessMilestones, ProcessMilestone currentProcessMilestone)
+        public InterviewCreateEdit(Interview interview, IEnumerable<Location> listOfLocations, List<KeyValuePair<ProcessMilestone, string>> listOfProcessMilestones, ProcessMilestone currentProcessMilestone, NavigationBar navigationBar) : base(navigationBar)
         {
             Interview = interview;
             ListOfLocations = new SelectList(listOfLocations, "Id", "City");

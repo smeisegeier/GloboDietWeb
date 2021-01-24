@@ -7,15 +7,18 @@ namespace GloboDiet.Services
 {
     public interface IRepositoryNew<TEntity>
     {
-        IEnumerable<TEntity> GetAll();
-        void Add(TEntity entity);
-        void Update(TEntity entity);
-        void Delete(TEntity entity);
+        IEnumerable<TEntity> GetAllItems();
+        void AddItems(TEntity entity);
+        void UpdateItem(TEntity entity);
+        void DeleteItem(TEntity entity);
+        int GetItemsCount();
+        void SeedItems(IEnumerable<TEntity> entities);
     }
     public class RepositoryNew<TEntity> : IRepositoryNew<TEntity> where TEntity : class, IEntity
     {
         private readonly GloboDietDbContext _context;
-        public IEnumerable<TEntity> GetAll()
+
+        public IEnumerable<TEntity> GetAllItems()
         {
             using (var context = new GloboDietDbContext())
             {
@@ -23,7 +26,7 @@ namespace GloboDiet.Services
             }
         }
 
-        public void Add(TEntity entity)
+        public void AddItems(TEntity entity)
         {
             using (var context = new GloboDietDbContext())
             {
@@ -32,7 +35,7 @@ namespace GloboDiet.Services
             }
         }
 
-        public void Update(TEntity entity)
+        public void UpdateItem(TEntity entity)
         {
             using (var context = new GloboDietDbContext())
             {
@@ -41,7 +44,7 @@ namespace GloboDiet.Services
             }
         }
 
-        public void Delete(TEntity entity)
+        public void DeleteItem(TEntity entity)
         {
             using (var context = new GloboDietDbContext())
             {
@@ -56,7 +59,23 @@ namespace GloboDiet.Services
             {
                 return context.Set<TEntity>().FirstOrDefault(x => x.Id == id);
             }
-
         }
+
+        public int GetItemsCount()
+        {
+            using (var context = new GloboDietDbContext())
+            {
+                return context.Set<TEntity>().Count();
+            }
+        }
+
+        public void SeedItems(IEnumerable<TEntity> entities)
+        {
+            using (var context = new GloboDietDbContext())
+            {
+                context.Set<TEntity>().AddRange(entities);
+            }
+        }
+
     }
 }

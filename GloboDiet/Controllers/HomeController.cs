@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using GloboDiet.Models;
 using GloboDiet.Services;
 using System.ComponentModel;
+using GloboDiet.ViewModels;
 
 namespace GloboDiet.Controllers
 {
@@ -29,16 +30,19 @@ namespace GloboDiet.Controllers
             _repo = repo;
             _httpContext = httpContextAccessor.HttpContext;
             _repoLocation = repoLocation;
+
+
         }
         
         public IActionResult Index()
         {
             // testing session mechanics
             _httpContext.Session.SetString("SessionUser", "itsme");
-            return View();
+            return View(new ViewModelBase(getNewNavigationBar()));
         }
 
         #region Private Area
+        private NavigationBar getNewNavigationBar() => new NavigationBar(_repo.GetInterviewsCount(), _repo.GetInterviewersCount(), _repo.GetSqlConnectionType());
         #endregion
 
         #region Respondent
@@ -63,7 +67,7 @@ namespace GloboDiet.Controllers
             Repository.CachedInterview = null;
 
             // ViewModel now also needs the whole List from Process-Enum plus the actual Milestone
-            return View(new ViewModels.InterviewCreateEdit(modelNewOrEmpty, _repo.GetAllLocations(), EnumHelper.GetListWithDescription<ProcessMilestone>(), ProcessMilestone._2_RESPONDENT));
+            return View(new InterviewCreateEdit(modelNewOrEmpty, _repo.GetAllLocations(), EnumHelper.GetListWithDescription<ProcessMilestone>(), ProcessMilestone._2_RESPONDENT, getNewNavigationBar()));
         }
 
         [HttpPost]
@@ -115,7 +119,7 @@ namespace GloboDiet.Controllers
         [HttpGet]
         public IActionResult CreateLocation(string returningAction=null)
         {
-            return View(new ViewModels.LocationCreateEdit(new Location(), returningAction));
+            return View(new ViewModels.LocationCreateEdit(new Location(), getNewNavigationBar(), returningAction));
         }
 
         [HttpPost]
