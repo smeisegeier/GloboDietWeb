@@ -20,16 +20,15 @@ namespace GloboDiet.Controllers
         private readonly HttpContext _httpContext;
 
         // example for domain repo
-        private readonly IRepositoryNew<Interview> _repoInterview;
+        private readonly IRepositoryNew<Location> _repoLocation;
 
 
-        public HomeController(IWebHostEnvironment webHostEnvironment, IRepository repo, IHttpContextAccessor httpContextAccessor, IRepositoryNew<Interview> repoInterview)
+        public HomeController(IWebHostEnvironment webHostEnvironment, IRepository repo, IHttpContextAccessor httpContextAccessor, IRepositoryNew<Location> repoLocation)
         {
             _webHostEnvironment = webHostEnvironment;
             _repo = repo;
             _httpContext = httpContextAccessor.HttpContext;
-            _repoInterview = repoInterview;
-
+            _repoLocation = repoLocation;
         }
         
         public IActionResult Index()

@@ -7,7 +7,7 @@ namespace GloboDiet.Services
 {
     public interface IRepositoryNew<TEntity>
     {
-        IQueryable<TEntity> GetAll();
+        IEnumerable<TEntity> GetAll();
         void Add(TEntity entity);
         void Update(TEntity entity);
         void Delete(TEntity entity);
@@ -15,7 +15,7 @@ namespace GloboDiet.Services
     public class RepositoryNew<TEntity> : IRepositoryNew<TEntity> where TEntity : class, IEntity
     {
         private readonly GloboDietDbContext _context;
-        public IQueryable<TEntity> GetAll()
+        public IEnumerable<TEntity> GetAll()
         {
             using (var context = new GloboDietDbContext())
             {

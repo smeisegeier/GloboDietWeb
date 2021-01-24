@@ -16,7 +16,7 @@ namespace GloboDiet.ViewModels
         // make the current one more prominent
         public ProcessMilestone CurrentProcessMilestone { get; set; }
 
-        public InterviewCreateEdit(Interview interview, List<Location> listOfLocations, List<KeyValuePair<ProcessMilestone, string>> listOfProcessMilestones, ProcessMilestone currentProcessMilestone)
+        public InterviewCreateEdit(Interview interview, IEnumerable<Location> listOfLocations, List<KeyValuePair<ProcessMilestone, string>> listOfProcessMilestones, ProcessMilestone currentProcessMilestone)
         {
             Interview = interview;
             ListOfLocations = new SelectList(listOfLocations, "Id", "City");

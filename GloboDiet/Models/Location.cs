@@ -1,16 +1,17 @@
-﻿using System;
+﻿using GloboDiet.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace GloboDiet.Models
 {
-    public class Location
+    public class Location : IEntity
     {
         public int Id { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
-        public static List<Location> GenerateDefaultValues()
+        public static IEnumerable<Location> GenerateDefaultValues()
         {
             return new List<Location>()
             {
