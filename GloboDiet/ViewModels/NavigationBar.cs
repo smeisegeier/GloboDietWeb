@@ -10,13 +10,17 @@ namespace GloboDiet.ViewModels
     {
         public int PillCountInterviews { get; set; }
         public int PillCountInterviewers { get; set; }
+        public int PillCountLocations { get; set; }
+        public int PillCountRespondents { get; set; }
 
         public EfCoreHelper.SqlConnectionType CurrentSqlConnectionType { get; set; }
 
-        public NavigationBar(int pillCountInterviews, int pillCountInterviewers, EfCoreHelper.SqlConnectionType currentSqlConnectionType)
+        public NavigationBar(int pillCountInterviews, int pillCountInterviewers, int pillCountLocations, int pillCountRespondents, EfCoreHelper.SqlConnectionType currentSqlConnectionType)
         {
             PillCountInterviews = pillCountInterviews;
             PillCountInterviewers = pillCountInterviewers;
+            PillCountLocations = pillCountLocations;
+            PillCountRespondents = pillCountRespondents;
             CurrentSqlConnectionType = currentSqlConnectionType;
         }
     }

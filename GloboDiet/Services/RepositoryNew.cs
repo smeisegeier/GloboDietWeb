@@ -8,13 +8,13 @@ namespace GloboDiet.Services
 {
     public interface IRepositoryNew<TEntity>
     {
-        IEnumerable<TEntity> GetAllItems();
-        TEntity GetById(int id);
-        void AddItem(TEntity entity);
-        void UpdateItem(TEntity entity);
-        void DeleteItem(TEntity entity);
-        int GetItemsCount();
-        void SeedItems(IEnumerable<TEntity> entities);
+        IEnumerable<TEntity> ItemsGetAll();
+        TEntity ItemGetById(int id);
+        void ItemAdd(TEntity entity);
+        void ItemUpdate(TEntity entity);
+        void ItemDelete(TEntity entity);
+        int ItemsGetCount();
+        void ItemsSeed(IEnumerable<TEntity> entities);
         EfCoreHelper.SqlConnectionType GetSqlConnectionType();
     }
     public class RepositoryNew<TEntity> : IRepositoryNew<TEntity> where TEntity : class, IEntity
@@ -26,55 +26,33 @@ namespace GloboDiet.Services
             _context = context;
         }
 
-        public IEnumerable<TEntity> GetAllItems()
+        public IEnumerable<TEntity> ItemsGetAll() => _context.Set<TEntity>();
+
+
+        public void ItemAdd(TEntity entity)
         {
-            using (var context = new GloboDietDbContext())
-            {
-                return _context.Set<TEntity>();
-            }
+            _context.Set<TEntity>().Add(entity);
+            _context.SaveChanges();
         }
 
-        public void AddItem(TEntity entity)
-        {
-            using (var context = new GloboDietDbContext())
-            {
-                _context.Set<TEntity>().Add(entity);
-                _context.SaveChanges();
-            }
-        }
-
-        public void UpdateItem(TEntity entity)
+        public void ItemUpdate(TEntity entity)
         {
             _context.Set<TEntity>().Update(entity);
             _context.SaveChanges();
         }
 
-        public void DeleteItem(TEntity entity)
+        public void ItemDelete(TEntity entity)
         {
-            using (var context = new GloboDietDbContext())
-            {
-                _context.Set<TEntity>().Remove(entity);
-                _context.SaveChanges();
-            }
+            _context.Set<TEntity>().Remove(entity);
+            _context.SaveChanges();
         }
 
-        public TEntity GetById(int id)
-        {
-            using (var context = new GloboDietDbContext())
-            {
-                return _context.Set<TEntity>().FirstOrDefault(x => x.Id == id);
-            }
-        }
+        public TEntity ItemGetById(int id) => _context.Set<TEntity>().FirstOrDefault(x => x.Id == id);
 
-        public int GetItemsCount()
-        {
-            using (var context = new GloboDietDbContext())
-            {
-                return _context.Set<TEntity>().Count();
-            }
-        }
+        public int ItemsGetCount() => _context.Set<TEntity>().Count();
 
-        public void SeedItems(IEnumerable<TEntity> entities)
+        // TODO saving should be isolated!
+        public void ItemsSeed(IEnumerable<TEntity> entities)
         {
             if (!_context.Set<TEntity>().Any())
             {

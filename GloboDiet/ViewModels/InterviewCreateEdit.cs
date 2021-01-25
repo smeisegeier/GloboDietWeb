@@ -2,6 +2,7 @@
 using GloboDiet.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GloboDiet.ViewModels
 {
@@ -19,7 +20,7 @@ namespace GloboDiet.ViewModels
         public InterviewCreateEdit(Interview interview, IEnumerable<Location> listOfLocations, List<KeyValuePair<ProcessMilestone, string>> listOfProcessMilestones, ProcessMilestone currentProcessMilestone, NavigationBar navigationBar) : base(navigationBar)
         {
             Interview = interview;
-            ListOfLocations = new SelectList(listOfLocations, "Id", "City");
+            ListOfLocations = new SelectList(listOfLocations, "Id", "Label");
             ListOfProcessMilestones = listOfProcessMilestones;
             CurrentProcessMilestone= currentProcessMilestone;
         }

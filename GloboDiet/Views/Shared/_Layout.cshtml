@@ -33,32 +33,29 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Test">Test</a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-                                Interviews <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountInterviews</span>
+                                Interviews 
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/Home/CreateRespondent">Create Respondent</a>
-                                <a class="dropdown-item" href="/Home/ListRespondents">List Respondents</a>
+                                <a class="dropdown-item" href="/Home/RespondentCreate">Create Respondent</a>
+                                <a class="dropdown-item" href="/Home/RespondentsList">List Respondents <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountRespondents</span></a>
                                 <hr class="dropdown-divider">
-                                <a class="dropdown-item" href="/Home/CreateInterview">Create Interview</a>
-                                <a class="dropdown-item" href="/Home/ListInterviews">List Interviews <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountInterviews</span></a>
+                                <a class="dropdown-item" href="/Home/InterviewCreate">Create Interview</a>
+                                <a class="dropdown-item" href="/Home/InterviewsList">List Interviews <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountInterviews</span></a>
                                 <hr class="dropdown-divider">
                             </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-                                Interviewers <span class="badge badge-pill badge-primary">@Model.NavigationBar.PillCountInterviewers</span>
+                                Interviewers 
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/Home/CreateInterviewer">Create Interviewer</a>
-                                <a class="dropdown-item" href="/Home/ListInterviewers">List Interviewers</a>
+                                <a class="dropdown-item" href="/Home/InterviewerCreate">Create Interviewer</a>
+                                <a class="dropdown-item" href="/Home/InterviewersList">List Interviewers <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountInterviewers</span></a>
                                 <hr class="dropdown-divider">
-                                <a class="dropdown-item" href="/Home/CreateLocation">Create Location</a>
-                                <a class="dropdown-item" href="/Home/ListLocations">List Locations</a>
+                                <a class="dropdown-item" href="/Home/LocationCreate">Create Location</a>
+                                <a class="dropdown-item" href="/Home/LocationsList">List Locations <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountLocations</span></a>
                             </div>
                         </li>
                         <li class="nav-item"><a class="nav-link text-muted" href="#">Respondent</a></li>
@@ -79,11 +76,6 @@
             @RenderBody()
         </main>
     </div>
-    <ul class="container list-group list-group-horizontal d-flex align-items-center" style="height: 2rem">
-        <li class="list-group-item list-group-item-primray">Respondent</li>
-        <li class="list-group-item list-group-item-success">Respondent</li>
-        <li class="list-group-item list-group-item-secondary">Respondent</li>
-    </ul>
 
     <footer class="border-top footer">
         <ul class="container list-group list-group-horizontal">

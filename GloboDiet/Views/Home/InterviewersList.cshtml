@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GloboDiet.Models.Interviewer>
+﻿@model GloboDiet.ViewModels.InterviewersList
 
 
 <h1>List</h1>
@@ -7,19 +7,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Code)
+                @Html.DisplayNameFor(model => model.Interviewers.First().Code)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.GivenName)
+                @Html.DisplayNameFor(model => model.Interviewers.First().GivenName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(model => model.Interviewers.First().Name)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Interviewers) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Code)
@@ -31,9 +31,9 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="InterviewerEdit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="InterviewerDetails" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="InterviewerDelete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

@@ -16,9 +16,12 @@ namespace GloboDiet.Models
         [DataType(DataType.Date)]
         public DateTime ReferenceDate { get; set; } = DateTime.Now;
 
-        // TODO still not clear
+        [Display(Name ="The Location")]
+        [Required]
         public int LocationId { get; set; }
-        public Location Location { get; set; }
+        //public Location Location { get; set; }
+
+        public int ResponentId { get; set; }
 
         public Interview() { }
 
@@ -26,8 +29,7 @@ namespace GloboDiet.Models
         { 
             new Interview()
             {
-                LocationId = 1,
-                Number = 3,
+                Number = 13,
                 ReferenceDate = DateTime.Now,
                 Timestamp = DateTime.Now
             }
