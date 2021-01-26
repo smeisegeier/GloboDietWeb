@@ -40,6 +40,7 @@ namespace GloboDiet.Controllers
             seedAll();
         }
 
+        // TODO use modal window instead of status area
         public IActionResult Index()
         {
             // testing session mechanics
@@ -61,12 +62,32 @@ namespace GloboDiet.Controllers
         }
         #endregion
 
-
         #region Respondent
         [HttpGet]
         public IActionResult RespondentCreate()
         {
             return View(new RespondentCreateEdit(new Respondent(), getNewNavigationBar()));
+        }
+        [HttpPost]
+        public IActionResult RespondentCreate(Respondent respondent)
+        {
+            // TODO insert checks
+            _repoRespondent.ItemAdd(respondent);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public IActionResult RespondentEdit(int id)
+        {
+            // TODO checks
+            var respondent = _repoRespondent.ItemGetById(id);
+            return View(new RespondentCreateEdit(respondent, getNewNavigationBar()));
+        }
+        [HttpPost]
+        public IActionResult RespondentEdit(Respondent respondent)
+        {
+            _repoRespondent.ItemUpdate(respondent);
+            return RedirectToAction(nameof(RespondentsList));
         }
 
         public IActionResult RespondentsList()
@@ -74,14 +95,15 @@ namespace GloboDiet.Controllers
             var list = _repoRespondent.ItemsGetAll();
             return View(new RespondentsList(list, getNewNavigationBar()));
         }
+        public IActionResult RespondentDetails(int id) => Json(_repoRespondent.ItemGetById(id));
+
         #endregion
 
         #region Interview
         [HttpGet]
         public IActionResult InterviewCreate()
         {
-            var modelNewOrEmpty = Repository.CachedInterview ?? new Interview();
-            Repository.CachedInterview = null;
+            var modelNewOrEmpty = new Interview();
 
             // ViewModel now also needs the whole List from Process-Enum plus the actual Milestone
             return View(new InterviewCreateEdit(modelNewOrEmpty, _repoLocation.ItemsGetAll(), EnumHelper.GetListWithDescription<ProcessMilestone>(), ProcessMilestone._2_RESPONDENT, getNewNavigationBar()));
@@ -95,10 +117,10 @@ namespace GloboDiet.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateLocationFromInterview(Interview interview)
+        public IActionResult InterviewCreateLocation(Interview interview)
         {
             // cache object, then redirect
-            Repository.CachedInterview = interview;
+            // TODO remove 
             return RedirectToAction(nameof(LocationCreate), new { ReturningAction = nameof(InterviewCreate) });
         }
 
@@ -146,8 +168,11 @@ namespace GloboDiet.Controllers
             var list = _repoInterviewer.ItemsGetAll();
             return View(new InterviewersList(list, getNewNavigationBar()));
         }
+
+        public IActionResult InterviewerDetails(int id) => Json(_repoInterviewer.ItemGetById(id));
+
         #endregion
-        
+
         #region Location
         [HttpGet]
         public IActionResult LocationCreate(string returningAction=null)
@@ -169,6 +194,8 @@ namespace GloboDiet.Controllers
             var list = _repoLocation.ItemsGetAll();
             return View(new LocationsList(list, getNewNavigationBar()));
         }
+        public IActionResult LocationDetails(int id) => Json(_repoLocation.ItemGetById(id));
+
 
         #endregion
 

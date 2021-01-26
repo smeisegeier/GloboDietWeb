@@ -10,7 +10,7 @@ namespace GloboDiet.Services
 {
     public class GloboDietDbContext : DbContext
     {
-        public GloboDietDbContext(DbContextOptions options) : base(options) { }
+        public GloboDietDbContext(DbContextOptions<GloboDietDbContext> options) : base(options) { }
 
         public GloboDietDbContext() { }
 
@@ -38,6 +38,8 @@ namespace GloboDiet.Services
         public DbSet<Respondent> Respondents { get; set; }
         public DbSet<PlaceOfMeal> PlacesOfMeal { get; set; }
 
+
+        // Test: using dbcontext as repo
         public IEnumerable<TEntity> GetAllEntities<TEntity>() where TEntity : class, IEntity => Set<TEntity>().ToList();
         public TEntity GetEntityById<TEntity>(int id) where TEntity : class, IEntity => GetAllEntities<TEntity>().FirstOrDefault(x => x.Id == id);
         public void AddEntityNoSave<TEntity>(TEntity entity) where TEntity : class, IEntity  => Set<TEntity>().Add(entity);
