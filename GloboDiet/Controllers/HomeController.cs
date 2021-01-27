@@ -13,6 +13,7 @@ using GloboDiet.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using GloboDiet;
 using Newtonsoft.Json;
+using Microsoft.Extensions.Logging;
 
 namespace GloboDiet.Controllers
 {
@@ -20,7 +21,7 @@ namespace GloboDiet.Controllers
     public class HomeController : Controller
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
-        //private readonly IRepository _repo;
+        private readonly ILogger<HomeController> _logger;
         private readonly HttpContext _httpContext;
 
         // example for domain repo
@@ -29,8 +30,9 @@ namespace GloboDiet.Controllers
         private readonly IRepositoryNew<Location> _repoLocation;
         private readonly IRepositoryNew<Respondent> _repoRespondent;
 
-        public HomeController(IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor, IRepositoryNew<Interview> repoInterview, IRepositoryNew<Interviewer> repoInterviewer, IRepositoryNew<Location> repoLocation, IRepositoryNew<Respondent> repoRespondent)
+        public HomeController(IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor, IRepositoryNew<Interview> repoInterview, IRepositoryNew<Interviewer> repoInterviewer, IRepositoryNew<Location> repoLocation, IRepositoryNew<Respondent> repoRespondent, ILogger<HomeController> logger)
         {
+            _logger = logger;
             _webHostEnvironment = webHostEnvironment;
             _httpContext = httpContextAccessor.HttpContext;
             _repoInterview = repoInterview;
@@ -203,7 +205,6 @@ namespace GloboDiet.Controllers
         {
             return View(new ViewModels.LocationCreateEdit(new Location(), getNewNavigationBar(), returningAction));
         }
-
         [HttpPost]
         public IActionResult LocationCreate(Location location, string ReturningAction)
         {
@@ -213,7 +214,17 @@ namespace GloboDiet.Controllers
             return RedirectToAction(ReturningAction);
         }
 
-        // TODO views
+        [HttpGet]
+        public IActionResult LocationEdit(int id ) => View(new LocationCreateEdit(_repoLocation.ItemGetById(id), getNewNavigationBar()));
+
+        [HttpPost]
+        public IActionResult LocationEdit(Location location)
+        {
+            _repoLocation.ItemUpdate(location);
+            return RedirectToAction(nameof(Index));
+        }
+
+
         [HttpGet]
         public IActionResult LocationCreateToInterview() => View(new LocationCreateEdit(new Location(), getNewNavigationBar()));
 

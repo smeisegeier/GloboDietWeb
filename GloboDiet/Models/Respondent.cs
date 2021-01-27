@@ -16,7 +16,6 @@ namespace GloboDiet.Models
 
     public class Respondent : Base
     {
-        public int Id { get; set; }
 
         [DisplayName("Respondent Code")]
         public string Code { get; set; }
@@ -48,7 +47,6 @@ namespace GloboDiet.Models
 
         public Respondent()
         {
-
         }
         public static IEnumerable<Respondent> GetSeededValues()
         {

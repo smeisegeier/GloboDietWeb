@@ -10,7 +10,6 @@ namespace GloboDiet.Models
 {
     public class Location : Base
     {
-        public int Id { get; set; }
         [Required]
         public string City { get; set; }
         [Required]

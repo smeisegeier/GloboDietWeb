@@ -1,14 +1,15 @@
 ﻿@model GloboDiet.ViewModels.LocationCreateEdit
 
-<h1>CreateLocation</h1>
+<h1>CreateEdit</h1>
 
 <h4>Location</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="LocationCreate">
-            <input type="hidden" asp-for="ReturningAction" />
+            <input type="hidden" asp-for="ReturningAction"/>
             <partial name="_Location.cshtml" />
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
                 @*<a href='javascript:history.go(-1)' class="btn btn-primary" >back</a>*@

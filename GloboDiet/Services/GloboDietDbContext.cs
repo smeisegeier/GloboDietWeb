@@ -12,13 +12,16 @@ namespace GloboDiet.Services
     {
         public GloboDietDbContext(DbContextOptions<GloboDietDbContext> options) : base(options) { }
 
-        public GloboDietDbContext() { }
 
+        /// <summary>
+        /// This is only needed when NOT using DI, but creating new context()
+        /// </summary>
+        /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDiet;trusted_connection=true;");
             //optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
-            optionsBuilder.UseInMemoryDatabase("Test");
+            //optionsBuilder.UseInMemoryDatabase("Test");
         }
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)

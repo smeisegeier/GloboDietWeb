@@ -10,10 +10,9 @@ namespace GloboDiet.Models
 
     public class Interviewer : Base
     {
-        public int Id { get; set; }
         [Required(ErrorMessage ="Enter code")]
         public string Code { get; set; }
-        [StringLength(3)]
+        [StringLength(30)]
         public string GivenName { get; set; }
         public string Name { get; set; }
 
