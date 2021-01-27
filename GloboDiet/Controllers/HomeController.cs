@@ -12,6 +12,7 @@ using System.ComponentModel;
 using GloboDiet.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using GloboDiet;
+using Newtonsoft.Json;
 
 namespace GloboDiet.Controllers
 {
@@ -104,6 +105,10 @@ namespace GloboDiet.Controllers
         public IActionResult InterviewCreate()
         {
             var modelNewOrEmpty = new Interview();
+            if (_httpContext.Session.GetString("InterviewCache") is not null)
+            {
+                modelNewOrEmpty = JsonConvert.DeserializeObject<Interview>(_httpContext.Session.GetString("InterviewCache"));
+            }
 
             // ViewModel now also needs the whole List from Process-Enum plus the actual Milestone
             return View(new InterviewCreateEdit(modelNewOrEmpty, _repoLocation.ItemsGetAll(), EnumHelper.GetListWithDescription<ProcessMilestone>(), ProcessMilestone._2_RESPONDENT, getNewNavigationBar()));
@@ -120,8 +125,11 @@ namespace GloboDiet.Controllers
         public IActionResult InterviewCreateLocation(Interview interview)
         {
             // cache object, then redirect
+            _httpContext.Session.SetString("InterviewCache", JsonConvert.SerializeObject(interview));
+
             // TODO remove 
-            return RedirectToAction(nameof(LocationCreate), new { ReturningAction = nameof(InterviewCreate) });
+            //return RedirectToAction(nameof(LocationCreate), new { ReturningAction = nameof(InterviewCreate) });
+            return RedirectToAction(nameof(LocationCreateToInterview));
         }
 
         [HttpGet]
@@ -188,6 +196,18 @@ namespace GloboDiet.Controllers
             //return Redirect(Request.Headers["Referer"].ToString());
             return RedirectToAction(ReturningAction);
         }
+
+        // TODO views
+        [HttpGet]
+        public IActionResult LocationCreateToInterview() => View(new LocationCreateEdit(new Location(), getNewNavigationBar()));
+
+        [HttpPost]
+        public IActionResult LocationCreateToInterview(Location location)
+        {
+            _repoLocation.ItemAdd(location);
+            return RedirectToAction(nameof(InterviewCreate));
+        }
+
 
         public IActionResult LocationsList()
         {

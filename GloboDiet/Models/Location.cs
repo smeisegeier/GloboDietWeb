@@ -1,6 +1,7 @@
 ﻿using GloboDiet.Services;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,7 +11,9 @@ namespace GloboDiet.Models
     public class Location : IEntity
     {
         public int Id { get; set; }
+        [Required]
         public string City { get; set; }
+        [Required]
         public string Country { get; set; }
         [NotMapped]
         public string Label { get => $"{City} - {Country}"; }
