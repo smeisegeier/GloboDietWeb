@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.Models
 {
-    public class Interview : IEntity
+    public class Interview : Base
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
 
         public DateTime Timestamp { get; set; } = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, 0);
         public int Number { get; set; } = 1;

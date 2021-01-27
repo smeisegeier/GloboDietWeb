@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.Models
 {
-    public class Location : IEntity
+    public class Location : Base
     {
         public int Id { get; set; }
         [Required]

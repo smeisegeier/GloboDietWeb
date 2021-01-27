@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GloboDiet.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 namespace GloboDiet.Models
 {
     // This is just a test (EF, repo)
-    public abstract class Base
+    public abstract class Base : IEntity
     {
         public int Id { get; set; }
         public DateTime CreatedAt { get; } = DateTime.Now;

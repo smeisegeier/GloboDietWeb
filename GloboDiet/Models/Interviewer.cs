@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace GloboDiet.Models
 {
 
-    public class Interviewer : IEntity
+    public class Interviewer : Base
     {
         public int Id { get; set; }
         [Required(ErrorMessage ="Enter code")]

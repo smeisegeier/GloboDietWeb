@@ -14,7 +14,7 @@ namespace GloboDiet.Models
         Female
     }
 
-    public class Respondent : IEntity
+    public class Respondent : Base
     {
         public int Id { get; set; }
 
