@@ -122,7 +122,7 @@ namespace GloboDiet.Controllers
         }
 
         [HttpPost]
-        public IActionResult InterviewCreateLocation(Interview interview)
+        public IActionResult InterviewCreateToLocation(Interview interview)
         {
             // cache object, then redirect
             _httpContext.Session.SetString("InterviewCache", JsonConvert.SerializeObject(interview));
@@ -142,6 +142,7 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult InterviewEdit(Interview interview)
         {
+            // TODO custom validation as in PlanungsTool?
             _repoInterview.ItemUpdate(interview);
             return RedirectToAction(nameof(Index));
         }
@@ -160,7 +161,7 @@ namespace GloboDiet.Controllers
         [HttpGet]
         public IActionResult InterviewerCreate()
         {
-            return View(new ViewModels.InterviewerCreateEdit( new Interviewer(), getNewNavigationBar()));
+            return View(new InterviewerCreateEdit( new Interviewer(), getNewNavigationBar()));
         }
 
         [HttpPost]
@@ -169,6 +170,21 @@ namespace GloboDiet.Controllers
 
             _repoInterviewer.ItemAdd(interviewer);
             return Redirect("~/Home/Index");
+        }
+
+        [HttpGet]
+        public IActionResult InterviewerEdit(int id)
+        {
+            var interviewer = _repoInterviewer.ItemGetById(id);
+            return View(new InterviewerCreateEdit(interviewer, getNewNavigationBar()));
+        }
+
+        [HttpPost]
+        public IActionResult InterviewerEdit(Interviewer interviewer)
+        {
+            // TODO custom validation as in PlanungsTool?
+            _repoInterviewer.ItemUpdate(interviewer);
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult InterviewersList()

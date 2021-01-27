@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 namespace GloboDiet.Models
 {
     // This is just a test (EF, repo)
+    // TODO inherit
     public abstract class Base
     {
         public int Id { get; set; }
