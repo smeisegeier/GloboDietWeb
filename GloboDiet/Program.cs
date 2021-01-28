@@ -17,6 +17,8 @@ namespace GloboDiet
         {
             _logger.Info("App started");
             CreateHostBuilder(args).Build().Run();
+
+            // still is still not visible
             _logger.Info("App closed");
         }
 
