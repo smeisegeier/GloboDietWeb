@@ -21,7 +21,7 @@ namespace GloboDiet.Controllers
     public class HomeController : Controller
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly ILogger<HomeController> _logger;
+        private static NLog.Logger _nLogger = NLog.LogManager.GetCurrentClassLogger();
         private readonly HttpContext _httpContext;
 
         // example for domain repo
@@ -30,9 +30,8 @@ namespace GloboDiet.Controllers
         private readonly IRepositoryNew<Location> _repoLocation;
         private readonly IRepositoryNew<Respondent> _repoRespondent;
 
-        public HomeController(IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor, IRepositoryNew<Interview> repoInterview, IRepositoryNew<Interviewer> repoInterviewer, IRepositoryNew<Location> repoLocation, IRepositoryNew<Respondent> repoRespondent, ILogger<HomeController> logger)
+        public HomeController(IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor, IRepositoryNew<Interview> repoInterview, IRepositoryNew<Interviewer> repoInterviewer, IRepositoryNew<Location> repoLocation, IRepositoryNew<Respondent> repoRespondent)
         {
-            _logger = logger;
             _webHostEnvironment = webHostEnvironment;
             _httpContext = httpContextAccessor.HttpContext;
             _repoInterview = repoInterview;
@@ -40,6 +39,7 @@ namespace GloboDiet.Controllers
             _repoLocation = repoLocation;
             _repoRespondent = repoRespondent;
 
+            _nLogger.Info("Controller started");
             seedAll();
         }
 

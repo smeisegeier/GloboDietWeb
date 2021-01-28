@@ -36,7 +36,6 @@ namespace GloboDiet
             services.AddDistributedMemoryCache();
             // option tempdata
             //services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

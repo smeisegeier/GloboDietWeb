@@ -11,9 +11,13 @@ namespace GloboDiet
 {
     public class Program
     {
+        private static NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
+
         public static void Main(string[] args)
         {
+            _logger.Info("App started");
             CreateHostBuilder(args).Build().Run();
+            _logger.Info("App closed");
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
