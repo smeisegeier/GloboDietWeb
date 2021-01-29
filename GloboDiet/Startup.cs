@@ -21,14 +21,28 @@ namespace GloboDiet
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            // Identity
-            services.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<GloboDietDbContext>();
+            // Identity setup
+            services.AddIdentity<User, IdentityRole>(config =>
+            {
+               config.Password.RequiredLength = 3;
+               config.Password.RequireDigit = false;
+               config.Password.RequireLowercase = false;
+               config.Password.RequireUppercase = false;
+               config.Password.RequireNonAlphanumeric = false;
+            })
+                .AddEntityFrameworkStores<GloboDietDbContext>()
+                .AddDefaultTokenProviders();
+
+            services.ConfigureApplicationCookie(config =>
+            {
+                config.Cookie.Name = "GloboDietCookie";
+                //config.LoginPath = "";
+                config.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+            });
 
             services.AddMvc();
             //services.AddDbContext<GloboDietDbContext>(options => options.UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDiet;trusted_connection=true;"));
             services.AddDbContext<GloboDietDbContext>(options => options.UseInMemoryDatabase("Test"));
-            // test Generic Repo
             services.AddScoped(typeof(IRepositoryNew<>), typeof(RepositoryNew<>));
 
             // enable session stuff
@@ -38,6 +52,7 @@ namespace GloboDiet
                 options.Cookie.IsEssential = true;
             });
             services.AddDistributedMemoryCache();
+
             // option tempdata
             //services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
         }
@@ -54,9 +69,8 @@ namespace GloboDiet
             app.UseSession();
             app.UseHttpsRedirection();
 
-            // fixed part up here
             app.UseRouting();
-            // must appear here:
+            // must appear between Routing and Endpoints:
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>

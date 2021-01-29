@@ -18,7 +18,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace GloboDiet.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
@@ -68,6 +67,7 @@ namespace GloboDiet.Controllers
         #endregion
 
         #region Respondent
+        [Authorize]
         [HttpGet]
         public IActionResult RespondentCreate()
         {
@@ -132,7 +132,7 @@ namespace GloboDiet.Controllers
             _httpContext.Session.SetString("InterviewCache", JsonConvert.SerializeObject(interview));
 
             // TODO remove 
-            //return RedirectToAction(nameof(LocationCreate), new { ReturningAction = nameof(InterviewCreate) });
+            //return RedirectToAction(nameof(LocationCreate), new { ReturnAction = nameof(InterviewCreate) });
             return RedirectToAction(nameof(LocationCreateToInterview));
         }
 
@@ -203,17 +203,17 @@ namespace GloboDiet.Controllers
 
         #region Location
         [HttpGet]
-        public IActionResult LocationCreate(string returningAction=null)
+        public IActionResult LocationCreate(string returnAction=null)
         {
-            return View(new ViewModels.LocationCreateEdit(new Location(), getNewNavigationBar(), returningAction));
+            return View(new ViewModels.LocationCreateEdit(new Location(), getNewNavigationBar(), returnAction));
         }
         [HttpPost]
-        public IActionResult LocationCreate(Location location, string ReturningAction)
+        public IActionResult LocationCreate(Location location, string ReturnAction)
         {
             _repoLocation.ItemAdd(location);
             // get Referer
             //return Redirect(Request.Headers["Referer"].ToString());
-            return RedirectToAction(ReturningAction);
+            return RedirectToAction(ReturnAction);
         }
 
         [HttpGet]

@@ -26,16 +26,16 @@ namespace GloboDiet.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-            return View(new Register(getNewNavigationBar()));
+            return View(new Register());
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(Register model)
+        public async Task<IActionResult> Register(Register viewModel)
         {
-            if (!ModelState.IsValid) return View();
+            if (!ModelState.IsValid) return View(viewModel);
 
-            var user = new User { UserName = model.Username };
-            var result = await _userManager.CreateAsync(user, model.Password);
+            var user = new User { UserName = viewModel.Username };
+            var result = await _userManager.CreateAsync(user, viewModel.Password);
             if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(user, false);
@@ -47,7 +47,7 @@ namespace GloboDiet.Controllers
                     ModelState.AddModelError("", error.Description);
             }
 
-            return View();
+            return View(viewModel);
         }
 
 
@@ -55,7 +55,7 @@ namespace GloboDiet.Controllers
         public IActionResult Login(string returnUrl = "")
         {
             var model = new Login(returnUrl, getNewNavigationBar());
-            return View(model);
+            return View(new Login());
         }
 
         [HttpPost]
@@ -81,7 +81,6 @@ namespace GloboDiet.Controllers
             return View(viewModel);
         }
 
-        [HttpGet]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();

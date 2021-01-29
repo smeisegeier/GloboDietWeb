@@ -10,12 +10,12 @@ namespace GloboDiet.ViewModels
     public class LocationCreateEdit : ViewModelBase
     {
         public Location Location { get; set; }
-        public string ReturningAction { get; set; }
+        public string ReturnAction { get; set; }
 
-        public LocationCreateEdit(Location location, NavigationBar navigationBar, string returningAction = null) : base(navigationBar)
+        public LocationCreateEdit(Location location, NavigationBar navigationBar, string returnAction = null) : base(navigationBar)
         {
             Location = location;
-            ReturningAction = returningAction;
+            ReturnAction = returnAction;
         }
     }
 }

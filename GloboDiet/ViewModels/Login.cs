@@ -20,5 +20,7 @@ namespace GloboDiet.ViewModels
         {
             ReturnUrl = returnUrl;
         }
+
+        public Login() { }
     }
 }
