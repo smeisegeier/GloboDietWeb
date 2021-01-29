@@ -14,10 +14,11 @@ using Microsoft.EntityFrameworkCore;
 using GloboDiet;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GloboDiet.Controllers
 {
-
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
@@ -44,6 +45,7 @@ namespace GloboDiet.Controllers
         }
 
         // TODO use modal window instead of status area
+        [AllowAnonymous]
         public IActionResult Index()
         {
             // testing session mechanics

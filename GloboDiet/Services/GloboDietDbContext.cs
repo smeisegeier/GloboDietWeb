@@ -5,10 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GloboDiet.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace GloboDiet.Services
 {
-    public class GloboDietDbContext : DbContext
+    public class GloboDietDbContext : IdentityDbContext
     {
         public GloboDietDbContext(DbContextOptions<GloboDietDbContext> options) : base(options) { }
 

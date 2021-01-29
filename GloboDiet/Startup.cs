@@ -11,16 +11,20 @@ using GloboDiet.Models;
 using Microsoft.EntityFrameworkCore;
 using GloboDiet.Services;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Identity;
 
 namespace GloboDiet
 {
-    // TODO logger4net?
     public class Startup
     {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // Identity
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<GloboDietDbContext>();
+
             services.AddMvc();
             //services.AddDbContext<GloboDietDbContext>(options => options.UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDiet;trusted_connection=true;"));
             services.AddDbContext<GloboDietDbContext>(options => options.UseInMemoryDatabase("Test"));
@@ -45,15 +49,16 @@ namespace GloboDiet
             {
                 app.UseDeveloperExceptionPage();
             }
-
-
             app.UseStaticFiles();
             //app.UseApiResponseAndExceptionWrapper(new AutoWrapperOptions() { IsApiOnly = false, IsDebug = true }); // use before routing
             app.UseSession();
-
-
-            app.UseRouting();
             app.UseHttpsRedirection();
+
+            // fixed part up here
+            app.UseRouting();
+            // must appear here:
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
