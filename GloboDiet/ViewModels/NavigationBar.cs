@@ -23,5 +23,6 @@ namespace GloboDiet.ViewModels
             PillCountRespondents = pillCountRespondents;
             CurrentSqlConnectionType = currentSqlConnectionType;
         }
+        public NavigationBar() {}
     }
 }

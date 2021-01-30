@@ -136,7 +136,7 @@ namespace GloboDiet.Controllers
         public IActionResult InterviewCreate(Interview interview)
         {
             _repoInterview.ItemAdd(interview);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(InterviewsList));
         }
 
         [HttpPost]
@@ -161,7 +161,7 @@ namespace GloboDiet.Controllers
         public IActionResult InterviewEdit(Interview interview)
         {
             _repoInterview.ItemUpdate(interview);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(InterviewsList));
         }
 
         public IActionResult InterviewsList()
@@ -218,7 +218,6 @@ namespace GloboDiet.Controllers
 
         #region Interviewer
 
-        [Authorize]
         [HttpGet]
         public IActionResult InterviewerCreate()
         {

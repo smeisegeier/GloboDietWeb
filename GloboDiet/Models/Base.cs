@@ -14,15 +14,17 @@ namespace GloboDiet.Models
     public abstract class Base : IEntity
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = "NotSet";
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
-        public DateTime? UpdatedAt { get; set; } 
-        public Guid Guid { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+
+        // TODO calculated column?
+        public Guid Guid { get; } = new Guid();
 
         /* convenience props*/
         [NotMapped]
-        public string Label => $"[{Id} | Name]";
+        public string Label => $"[{Id} | {Name}]";
 
     }
 }
