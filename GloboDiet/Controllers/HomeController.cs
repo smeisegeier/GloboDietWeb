@@ -91,7 +91,10 @@ namespace GloboDiet.Controllers
         public IActionResult RespondentEdit(Respondent respondent)
         {
             if (respondent.Weight > 80)
+            {
                 ModelState.AddModelError("CustomError", "too schwer");
+                ModelState.AddModelError("CustomError", "lol");
+            }
 
             if (!ModelState.IsValid)
                 return View(new RespondentCreateEdit(respondent, getNewNavigationBar()));

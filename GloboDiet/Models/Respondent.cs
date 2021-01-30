@@ -27,10 +27,11 @@ namespace GloboDiet.Models
 
         public double Age { get => Math.Round((DateTime.Now - DateOfBirth).TotalDays / 365.242199, 1); }
 
+
         public Gender Gender { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; } = DateTimeHelper.GetDateTimeFromString("1980-01-01", "yyyy-MM-dd");
 
         [Display(Name = "Height in cm", Prompt = "150 - 230 cm")]
         [Required(ErrorMessage = "Height must be provided")]
@@ -45,9 +46,8 @@ namespace GloboDiet.Models
         // Navigation property
         public ICollection<Interview> Interviews { get; set; }
 
-        public Respondent()
-        {
-        }
+        public Respondent() { }
+
         public static IEnumerable<Respondent> GetSeededValues()
         {
             return new List<Respondent>()
