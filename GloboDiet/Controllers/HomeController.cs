@@ -29,8 +29,9 @@ namespace GloboDiet.Controllers
         private readonly IRepositoryNew<Interviewer> _repoInterviewer;
         private readonly IRepositoryNew<Location> _repoLocation;
         private readonly IRepositoryNew<Respondent> _repoRespondent;
+        private readonly IRepositoryNew<Recipe> _repoRecipe;
 
-        public HomeController(IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor, IRepositoryNew<Interview> repoInterview, IRepositoryNew<Interviewer> repoInterviewer, IRepositoryNew<Location> repoLocation, IRepositoryNew<Respondent> repoRespondent)
+        public HomeController(IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor, IRepositoryNew<Interview> repoInterview, IRepositoryNew<Interviewer> repoInterviewer, IRepositoryNew<Location> repoLocation, IRepositoryNew<Respondent> repoRespondent, IRepositoryNew<Recipe> repoRecipe)
         {
             _webHostEnvironment = webHostEnvironment;
             _httpContext = httpContextAccessor.HttpContext;
@@ -38,6 +39,7 @@ namespace GloboDiet.Controllers
             _repoInterviewer = repoInterviewer;
             _repoLocation = repoLocation;
             _repoRespondent = repoRespondent;
+            _repoRecipe = repoRecipe;
 
             _nLogger.Info("Controller started");
             seedAll();
@@ -63,6 +65,7 @@ namespace GloboDiet.Controllers
             _repoLocation.ItemsSeed(Location.GetSeededValues());
             _repoRespondent.ItemsSeed(Respondent.GetSeededValues());
             _repoInterview.ItemsSeed(Interview.GetSeededValues());
+            _repoRecipe.ItemsSeed(Recipe.GetSeededValues());
         }
         #endregion
 
@@ -83,7 +86,6 @@ namespace GloboDiet.Controllers
         [HttpGet]
         public IActionResult RespondentEdit(int id)
         {
-            // TODO checks
             var respondent = _repoRespondent.ItemGetById(id);
             return View(new RespondentCreateEdit(respondent, getNewNavigationBar()));
         }
@@ -93,7 +95,10 @@ namespace GloboDiet.Controllers
             if (respondent.Weight > 80)
             {
                 ModelState.AddModelError("CustomError", "too schwer");
-                ModelState.AddModelError("CustomError", "lol");
+            }
+            if (respondent.Height > 200)
+            {
+                ModelState.AddModelError("CustomError", "too hoch");
             }
 
             if (!ModelState.IsValid)
@@ -155,7 +160,6 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult InterviewEdit(Interview interview)
         {
-            // TODO custom validation as in PlanungsTool?
             _repoInterview.ItemUpdate(interview);
             return RedirectToAction(nameof(Index));
         }
@@ -167,6 +171,46 @@ namespace GloboDiet.Controllers
         }
 
         public IActionResult InterviewDetails(int id) => Json(_repoInterview.ItemGetById(id));
+
+        #endregion
+
+        #region Recipe
+        [HttpGet]
+        public IActionResult RecipeCreate()
+        {
+            var modelNewOrEmpty = new Recipe();
+            return View(new RecipeCreateEdit(modelNewOrEmpty, getNewNavigationBar()));
+        }
+
+        [HttpPost]
+        public IActionResult RecipeCreate(Recipe recipe)
+        {
+            _repoRecipe.ItemAdd(recipe);
+            return RedirectToAction(nameof(RecipesList));
+        }
+
+        [HttpGet]
+        public IActionResult RecipeEdit(int id)
+        {
+            var recipe = _repoRecipe.ItemGetById(id);
+            return View(new RecipeCreateEdit(recipe, getNewNavigationBar()));
+        }
+
+        [HttpPost]
+        public IActionResult RecipeEdit(Recipe recipe)
+        {
+            _repoRecipe.ItemUpdate(recipe);
+            return RedirectToAction(nameof(RecipesList));
+        }
+
+        public IActionResult RecipesList()
+        {
+            var list = _repoRecipe.ItemsGetAll();
+            return View(new RecipesList(list, getNewNavigationBar()));
+        }
+
+        public IActionResult RecipeDetails(int id) => Json(_repoRecipe.ItemGetById(id));
+
 
         #endregion
 
@@ -199,7 +243,6 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult InterviewerEdit(Interviewer interviewer)
         {
-            // TODO custom validation as in PlanungsTool?
             _repoInterviewer.ItemUpdate(interviewer);
             return RedirectToAction(nameof(Index));
         }

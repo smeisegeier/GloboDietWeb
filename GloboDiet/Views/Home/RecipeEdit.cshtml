@@ -1,0 +1,15 @@
+﻿@model GloboDiet.ViewModels.RecipeCreateEdit
+
+<h1>Recipe Edit</h1>
+<h4>Recipe</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="RecipeEdit">
+            <partial name="_Recipe.cshtml"/>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

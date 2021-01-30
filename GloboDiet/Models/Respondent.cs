@@ -23,8 +23,6 @@ namespace GloboDiet.Models
         [DisplayName("Given Name")]
         public string GivenName { get; set; }
 
-        public string Name { get; set; }
-
         public double Age { get => Math.Round((DateTime.Now - DateOfBirth).TotalDays / 365.242199, 1); }
 
 

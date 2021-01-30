@@ -14,8 +14,9 @@ namespace GloboDiet.Models
         public string City { get; set; }
         [Required]
         public string Country { get; set; }
+
         [NotMapped]
-        public string Label { get => $"{City} - {Country}"; }
+        public new string Label { get => $"[{City} - {Country}]"; }
 
         public Location()
         {

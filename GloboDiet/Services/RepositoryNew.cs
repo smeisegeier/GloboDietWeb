@@ -26,7 +26,7 @@ namespace GloboDiet.Services
             _context = context;
         }
 
-        public IEnumerable<TEntity> ItemsGetAll() => _context.Set<TEntity>();
+        public IEnumerable<TEntity> ItemsGetAll() => _context.Set<TEntity>().OrderBy(o => o.Id);
 
 
         public void ItemAdd(TEntity entity)

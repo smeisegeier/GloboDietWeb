@@ -14,7 +14,7 @@ namespace GloboDiet.Models
         public string Code { get; set; }
         [StringLength(30)]
         public string GivenName { get; set; }
-        public string Name { get; set; }
+        //public string Name { get; set; }
 
         public Interviewer() { }
         public static IEnumerable<Interviewer> GetSeededValues()
