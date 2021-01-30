@@ -34,6 +34,11 @@
     <input asp-for="Respondent.DateOfBirth" class="form-control" />
     <span asp-validation-for="Respondent.DateOfBirth" class="text-danger"></span>
 </div>
+@*<div class="form-group">
+        <label asp-for="Respondent.Age" class="control-label"></label>
+        <input asp-for="Respondent.Age" class="form-control" readonly="readonly"/>
+        <span asp-validation-for="Respondent.Age" class="text-danger"></span>
+    </div>*@
 <div class="form-group">
     <label asp-for="Respondent.Height" class="control-label"></label>
     <input asp-for="Respondent.Height" class="form-control" />
@@ -44,3 +49,5 @@
     <input asp-for="Respondent.Weight" class="form-control" />
     <span asp-validation-for="Respondent.Weight" class="text-danger"></span>
 </div>
+
+@Html.ValidationMessage("CustomError", null, new { @class="text-danger"})

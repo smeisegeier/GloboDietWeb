@@ -7,14 +7,15 @@
 @if (SignInManager.IsSignedIn(User))
 {
     // Signed in
-    <div>@User.Identity.Name</div>
-    <form asp-controller="Account" asp-action="Logout" method="post">
-        <input type="submit" value="Logout"/>
-    </form>
+    <a class="navbar-item text-muted mr-2">@User.Identity.Name</a>
+    <a class="btn btn-primary btn-sm mr-2" asp-controller="Account" asp-action="Logout">Logout</a>
 }
 else
 {
     //QAnon
-    <a asp-controller="Account" asp-action="Login">Login</a>
-    <a asp-controller="Account" asp-action="Register">Register</a>
+        <a class="nav-item mr-2" asp-controller="Account" asp-action="Login">Login</a>
+        <a class="nav-item mr-2" asp-controller="Account" asp-action="Register">Register</a>
+
 }
+
+

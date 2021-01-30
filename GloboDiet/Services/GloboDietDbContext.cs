@@ -22,6 +22,19 @@ namespace GloboDiet.Services
         public DbSet<User> User { get; set; }
 
 
+        ///// <summary>
+        ///// Custom configuration for dbcontext here
+        ///// </summary>
+        ///// <param name="modelBuilder"></param>
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    // try to store computed columns
+        //    modelBuilder.Entity<Respondent>()
+        //        .Property(p => p.Age)
+        //        .UsePropertyAccessMode(PropertyAccessMode.Property);
+
+        //    //base.OnModelCreating(modelBuilder);
+        //}
 
         /*
                 /// <summary>
@@ -36,20 +49,6 @@ namespace GloboDiet.Services
                     //optionsBuilder.UseInMemoryDatabase("Test");
                 }
 
-                /// <summary>
-                /// Custom configuration for dbcontext here
-                /// </summary>
-                /// <param name="modelBuilder"></param>
-                protected override void OnModelCreating(ModelBuilder modelBuilder)
-                {
-                    modelBuilder.Entity<Training>()
-                        .HasIndex(i => i.FileName)
-                        .IsUnique()
-                        .IsClustered(false);
-                    modelBuilder.HasDefaultSchema("kettler");
-
-                    base.OnModelCreating(modelBuilder);
-                }
 
         // Test: using dbcontext as repo
         public IEnumerable<TEntity> GetAllEntities<TEntity>() where TEntity : class, IEntity => Set<TEntity>().ToList();

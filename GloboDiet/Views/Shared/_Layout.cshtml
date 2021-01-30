@@ -36,10 +36,10 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-                                Surveys 
+                                Surveys
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/Home/RespondentCreate" ><i class="bi bi-diagram-3-fill"></i> Create Respondent</a>
+                                <a class="dropdown-item" href="/Home/RespondentCreate"><i class="bi bi-diagram-3-fill"></i> Create Respondent</a>
                                 <a class="dropdown-item" href="/Home/RespondentsList">List Respondents <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountRespondents</span></a>
                                 <hr class="dropdown-divider">
                                 <a class="dropdown-item" href="/Home/InterviewCreate">Create Interview</a>
@@ -49,7 +49,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-                                Admin 
+                                Admin
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/Home/InterviewerCreate">Create Interviewer</a>
@@ -62,16 +62,20 @@
                         <li class="nav-item"><a class="nav-link text-info" href="~/admin/index">Admin</a></li>
                     </ul>
                 </div>
-                <span class="navbar-item float-right text-muted">
-                    <span class="badge badge-pill badge-info">sql</span>
-                    <small>@Model.NavigationBar.CurrentSqlConnectionType</small>
-                </span>
-            </div>
+                <div class="float-right">
+                    @*LOGIN HERE*@
+                    @await Html.PartialAsync("_LoginLinks.cshtml")
+                    @*SQL INFO*@
+                    <span class="navbar-item text-muted">
+                        <span class="badge badge-pill badge-info">sql</span>
+                        <small>@Model.NavigationBar.CurrentSqlConnectionType</small>
+                    </span>
+                </div>
+             </div>
         </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            <div>@await Html.PartialAsync("_LoginLinks.cshtml")</div>
             @RenderBody()
         </main>
     </div>

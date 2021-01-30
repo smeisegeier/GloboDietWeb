@@ -67,7 +67,6 @@ namespace GloboDiet.Controllers
         #endregion
 
         #region Respondent
-        [Authorize]
         [HttpGet]
         public IActionResult RespondentCreate()
         {
@@ -91,6 +90,13 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult RespondentEdit(Respondent respondent)
         {
+            if (respondent.Weight > 80)
+                ModelState.AddModelError("CustomError", "too schwer");
+
+            if (!ModelState.IsValid)
+                return View(new RespondentCreateEdit(respondent, getNewNavigationBar()));
+
+
             _repoRespondent.ItemUpdate(respondent);
             return RedirectToAction(nameof(RespondentsList));
         }
@@ -161,7 +167,11 @@ namespace GloboDiet.Controllers
 
         #endregion
 
+        /* admin */
+
         #region Interviewer
+
+        [Authorize]
         [HttpGet]
         public IActionResult InterviewerCreate()
         {
@@ -171,7 +181,7 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult InterviewerCreate(Interviewer interviewer)
         {
-
+            if (!ModelState.IsValid) return View(interviewer);
             _repoInterviewer.ItemAdd(interviewer);
             return Redirect("~/Home/Index");
         }
