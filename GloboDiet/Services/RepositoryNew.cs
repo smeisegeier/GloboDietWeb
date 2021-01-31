@@ -14,7 +14,7 @@ namespace GloboDiet.Services
         void ItemUpdate(TEntity entity);
         void ItemDelete(TEntity entity);
         int ItemsGetCount();
-        void ItemsSeed(IEnumerable<TEntity> entities);
+
         EfCoreHelper.SqlConnectionType GetSqlConnectionType();
     }
     public class RepositoryNew<TEntity> : IRepositoryNew<TEntity> where TEntity : class, IEntity
@@ -51,15 +51,6 @@ namespace GloboDiet.Services
 
         public int ItemsGetCount() => _context.Set<TEntity>().Count();
 
-        // TODO saving should be isolated!
-        public void ItemsSeed(IEnumerable<TEntity> entities)
-        {
-            if (!_context.Set<TEntity>().Any())
-            {
-                _context.Set<TEntity>().AddRange(entities);
-                _context.SaveChanges();
-            }
-        }
 
         public EfCoreHelper.SqlConnectionType GetSqlConnectionType() => _context.GetSqlConnectionType();
 

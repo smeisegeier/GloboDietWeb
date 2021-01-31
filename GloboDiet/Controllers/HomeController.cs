@@ -43,7 +43,7 @@ namespace GloboDiet.Controllers
 
             _nLogger.Info("Controller started");
 
-            seedAll();
+            //seedAll();
         }
 
         // TODO use modal window instead of status area
@@ -60,14 +60,15 @@ namespace GloboDiet.Controllers
         #region Private Area
         private NavigationBar getNewNavigationBar() => new NavigationBar(_repoInterview.ItemsGetCount(), _repoInterviewer.ItemsGetCount(), _repoLocation.ItemsGetCount(), _repoRespondent.ItemsGetCount(), _repoInterview.GetSqlConnectionType());
 
-        private void seedAll()
-        {
-            _repoInterviewer.ItemsSeed(Interviewer.GetSeedsFromMockup());
-            _repoLocation.ItemsSeed(Location.GetSeedsFromMockup());
-            _repoRespondent.ItemsSeed(Respondent.GetSeedsFromMockup());
-            _repoInterview.ItemsSeed(Interview.GetSeedsFromMockup());
-            _repoRecipe.ItemsSeed(Recipe.GetSeedsFromMockup());
-        }
+        //private void seedAll()
+        //{
+
+        //    _repoInterviewer.ItemsSeed(Interviewer.GetSeedsFromMockup());
+        //    _repoLocation.ItemsSeed(Location.GetSeedsFromMockup());
+        //    _repoRespondent.ItemsSeed(Respondent.GetSeedsFromMockup());
+        //    _repoInterview.ItemsSeed(Interview.GetSeedsFromMockup());
+        //    _repoRecipe.ItemsSeed(Recipe.GetSeedsFromMockup());
+        //}
         #endregion
 
         #region Respondent
