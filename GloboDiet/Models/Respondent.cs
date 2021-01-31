@@ -14,17 +14,12 @@ namespace GloboDiet.Models
         Female
     }
 
-    public class Respondent : Base
+    public class Respondent : _ModelBase
     {
-
-        [DisplayName("Respondent Code")]
-        public string Code { get; set; }
-
         [DisplayName("Given Name")]
         public string GivenName { get; set; }
 
         public double Age { get => Math.Round((DateTime.Now - DateOfBirth).TotalDays / 365.242199, 1); }
-
 
         public Gender Gender { get; set; }
 
@@ -46,7 +41,7 @@ namespace GloboDiet.Models
 
         public Respondent() { }
 
-        public static IEnumerable<Respondent> GetSeededValues()
+        public static IEnumerable<Respondent> GetSeedsFromMockup()
         {
             return new List<Respondent>()
                 {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.Models
 {
-    public class Location : Base
+    public class Location : _ModelBase
     {
         [Required]
         public string City { get; set; }
@@ -22,7 +22,7 @@ namespace GloboDiet.Models
         {
         }
 
-        public static IEnumerable<Location> GetSeededValues()
+        public static IEnumerable<Location> GetSeedsFromMockup()
         {
             return new List<Location>()
             {

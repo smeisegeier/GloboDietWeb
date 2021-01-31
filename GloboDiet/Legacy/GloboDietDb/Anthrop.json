@@ -1,0 +1,266 @@
+[
+  {
+    "ANT_VAR": "HEIGHT",
+    "AGE_MIN": 0,
+    "AGE_MAX": 1,
+    "ANT_MIN": 40,
+    "ANT_MAX": 75,
+    "ANT_DEF": 63
+  },
+  {
+    "ANT_VAR": "HEIGHT",
+    "AGE_MIN": 1,
+    "AGE_MAX": 2,
+    "ANT_MIN": 65,
+    "ANT_MAX": 95,
+    "ANT_DEF": 76
+  },
+  {
+    "ANT_VAR": "HEIGHT",
+    "AGE_MIN": 2,
+    "AGE_MAX": 3,
+    "ANT_MIN": 75,
+    "ANT_MAX": 105,
+    "ANT_DEF": 92
+  },
+  {
+    "ANT_VAR": "HEIGHT",
+    "SEX": 1,
+    "AGE_MIN": 3,
+    "AGE_MAX": 6,
+    "ANT_MIN": 87,
+    "ANT_MAX": 123,
+    "ANT_DEF": 105
+  },
+  {
+    "ANT_VAR": "HEIGHT",
+    "SEX": 2,
+    "AGE_MIN": 3,
+    "AGE_MAX": 6,
+    "ANT_MIN": 86,
+    "ANT_MAX": 120,
+    "ANT_DEF": 103
+  },
+  {
+    "ANT_VAR": "HEIGHT",
+    "SEX": 1,
+    "AGE_MIN": 6,
+    "AGE_MAX": 9,
+    "ANT_MIN": 105,
+    "ANT_MAX": 141,
+    "ANT_DEF": 123
+  },
+  {
+    "ANT_VAR": "HEIGHT",
+    "SEX": 2,
+    "AGE_MIN": 6,
+    "AGE_MAX": 9,
+    "ANT_MIN": 104,
+    "ANT_MAX": 140,
+    "ANT_DEF": 121
+  },
+  {
+    "ANT_VAR": "HEIGHT",
+    "SEX": 1,
+    "AGE_MIN": 9,
+    "AGE_MAX": 12,
+    "ANT_MIN": 120,
+    "ANT_MAX": 158,
+    "ANT_DEF": 138
+  },
+  {
+    "ANT_VAR": "HEIGHT",
+    "SEX": 2,
+    "AGE_MIN": 9,
+    "AGE_MAX": 12,
+    "ANT_MIN": 120,
+    "ANT_MAX": 160,
+    "ANT_DEF": 138
+  },
+  {
+    "ANT_VAR": "HEIGHT",
+    "SEX": 1,
+    "AGE_MIN": 12,
+    "AGE_MAX": 15,
+    "ANT_MIN": 133,
+    "ANT_MAX": 182,
+    "ANT_DEF": 156
+  },
+  {
+    "ANT_VAR": "HEIGHT",
+    "SEX": 2,
+    "AGE_MIN": 12,
+    "AGE_MAX": 15,
+    "ANT_MIN": 135,
+    "ANT_MAX": 172,
+    "ANT_DEF": 157
+  },
+  {
+    "ANT_VAR": "HEIGHT",
+    "SEX": 1,
+    "AGE_MIN": 15,
+    "AGE_MAX": 18,
+    "ANT_MIN": 151,
+    "ANT_MAX": 187,
+    "ANT_DEF": 173
+  },
+  {
+    "ANT_VAR": "HEIGHT",
+    "SEX": 2,
+    "AGE_MIN": 15,
+    "AGE_MAX": 18,
+    "ANT_MIN": 150,
+    "ANT_MAX": 174,
+    "ANT_DEF": 162
+  },
+  {
+    "ANT_VAR": "HEIGHT",
+    "SEX": 1,
+    "AGE_MIN": 18,
+    "AGE_MAX": 100,
+    "ANT_MIN": 150,
+    "ANT_MAX": 200,
+    "ANT_DEF": 175
+  },
+  {
+    "ANT_VAR": "HEIGHT",
+    "SEX": 2,
+    "AGE_MIN": 18,
+    "AGE_MAX": 100,
+    "ANT_MIN": 140,
+    "ANT_MAX": 190,
+    "ANT_DEF": 165
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "AGE_MIN": 0,
+    "AGE_MAX": 1,
+    "ANT_MIN": 2,
+    "ANT_MAX": 12,
+    "ANT_DEF": 7
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "AGE_MIN": 1,
+    "AGE_MAX": 2,
+    "ANT_MIN": 7,
+    "ANT_MAX": 15,
+    "ANT_DEF": 11
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "AGE_MIN": 2,
+    "AGE_MAX": 3,
+    "ANT_MIN": 9,
+    "ANT_MAX": 17,
+    "ANT_DEF": 13
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "SEX": 1,
+    "AGE_MIN": 3,
+    "AGE_MAX": 6,
+    "ANT_MIN": 12,
+    "ANT_MAX": 22,
+    "ANT_DEF": 17
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "SEX": 2,
+    "AGE_MIN": 3,
+    "AGE_MAX": 6,
+    "ANT_MIN": 12,
+    "ANT_MAX": 22,
+    "ANT_DEF": 17
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "SEX": 1,
+    "AGE_MIN": 6,
+    "AGE_MAX": 9,
+    "ANT_MIN": 17,
+    "ANT_MAX": 32,
+    "ANT_DEF": 24
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "SEX": 2,
+    "AGE_MIN": 6,
+    "AGE_MAX": 9,
+    "ANT_MIN": 16,
+    "ANT_MAX": 32,
+    "ANT_DEF": 23
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "SEX": 1,
+    "AGE_MIN": 9,
+    "AGE_MAX": 12,
+    "ANT_MIN": 23,
+    "ANT_MAX": 44,
+    "ANT_DEF": 32
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "SEX": 2,
+    "AGE_MIN": 9,
+    "AGE_MAX": 12,
+    "ANT_MIN": 22,
+    "ANT_MAX": 47,
+    "ANT_DEF": 32
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "SEX": 1,
+    "AGE_MIN": 12,
+    "AGE_MAX": 15,
+    "ANT_MIN": 29,
+    "ANT_MAX": 66,
+    "ANT_DEF": 44
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "SEX": 2,
+    "AGE_MIN": 12,
+    "AGE_MAX": 15,
+    "ANT_MIN": 28,
+    "ANT_MAX": 62,
+    "ANT_DEF": 46
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "SEX": 1,
+    "AGE_MIN": 15,
+    "AGE_MAX": 18,
+    "ANT_MIN": 42,
+    "ANT_MAX": 76,
+    "ANT_DEF": 60
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "SEX": 2,
+    "AGE_MIN": 15,
+    "AGE_MAX": 18,
+    "ANT_MIN": 39,
+    "ANT_MAX": 64,
+    "ANT_DEF": 53
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "SEX": 1,
+    "AGE_MIN": 18,
+    "AGE_MAX": 100,
+    "ANT_MIN": 50,
+    "ANT_MAX": 100,
+    "ANT_DEF": 65
+  },
+  {
+    "ANT_VAR": "WEIGHT",
+    "SEX": 2,
+    "AGE_MIN": 18,
+    "AGE_MAX": 100,
+    "ANT_MIN": 45,
+    "ANT_MAX": 80,
+    "ANT_DEF": 55
+  }
+]

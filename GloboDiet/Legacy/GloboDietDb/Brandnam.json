@@ -1,0 +1,3320 @@
+[
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Kaba"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Milka"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Muellermilch"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Nesquick"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Champ"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Fruchtzwerge drink"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Schuettelshake"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Trinkfit"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "McDonald's"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Minus L"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": null,
+    "NAME": "Granovita"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": null,
+    "NAME": "Vitaquell"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": null,
+    "NAME": "Eden"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": null,
+    "NAME": "PROVAMEL"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Fage"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Landliebe"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Danone"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Danino"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Obstgarten"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Danone fuer Kinder"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Danone Extra cremig"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Danone Extra leicht"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Frischgenuss leicht"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Schlemmerjoghurt"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Knusperjoghurt"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Mueller Extra leicht"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Mueller leicht"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Ehrmann"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Almighurt"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Bauer"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Bauer Extra leicht"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Kinderjoghurt"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Alpenland"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Bircher Muesli"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Fru Fru"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Strothmann"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Maxi Becher"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Erlenhof"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Mark Brandenburg"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Nestle"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Der Milde"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Donald"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Zott"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Starfrucht"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Allgaeuer Sahnejoghurt"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Oeing"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Onken"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Suedmilch"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Fruchtkoerble"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Fruttis"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Fruttis junior"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Weissenseer"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Luenebest"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Luenebest Gourmet"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Luenebecher"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Pikanter Joghurt"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Alpenmaedel"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Die Weissen"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Muesli Mix"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Natreen"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Du darfst"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Yovol Drink"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Yo Drink"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Naturkind"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Emmi"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Ehrmann"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Zott"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Danone"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Janis"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Kraft"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Monsterbacke"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Quarkcreme"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Starfrucht"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Onken"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Bioquark Frucht"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Liebster Quark"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Obstgarten"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Fruchtzwerge"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Fruchtzwerge leicht suess"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Riesenfruchtzwerge"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Nordheide"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Landliebe"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Vanilletopf"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Natreen"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Quarktraum"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Du darfst"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Frucht Creme"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Fruchtcreme"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Exquisa"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Milram"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Freche Fruechtchen"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Fruechtetraum"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Zatziki"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Gewuerzquark"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Zatziki"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Gervais"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Bad Kissinger"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Bresso"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Rhoenmilch"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Suedmilch"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Qremor Quark"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "05",
+    "SUBGROUP2": null,
+    "NAME": "Bresso"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "05",
+    "SUBGROUP2": null,
+    "NAME": "Karwendel"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "05",
+    "SUBGROUP2": null,
+    "NAME": "Kraft"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "05",
+    "SUBGROUP2": null,
+    "NAME": "Du darfst"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "05",
+    "SUBGROUP2": null,
+    "NAME": "Ravensburg"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "05",
+    "SUBGROUP2": null,
+    "NAME": "Milkana"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "05",
+    "SUBGROUP2": null,
+    "NAME": "Adler"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "05",
+    "SUBGROUP2": null,
+    "NAME": "Die Weissen"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "05",
+    "SUBGROUP2": null,
+    "NAME": "Jermi"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "05",
+    "SUBGROUP2": null,
+    "NAME": "Bayernland"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "05",
+    "SUBGROUP2": null,
+    "NAME": "Gervais"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "05",
+    "SUBGROUP2": null,
+    "NAME": "Naturkind"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "05",
+    "SUBGROUP2": null,
+    "NAME": "Becel"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Nestle"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Du darfst"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Danone"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Dr. Oetker"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Zott"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Mueller"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Bauer"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Ehrmann"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Frischli"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Emzett"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Ravensburger"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Onken"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Suedmilch"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Schwartau"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Zentis"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "06",
+    "SUBGROUP2": null,
+    "NAME": "Ruf"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "B & B"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Mibell"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Mibell Kaennchen"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Milram"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Libby"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Die Leichte 4"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Baerenmarke"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Baerenmarke Kaffeetraum"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Baerenmarke Feines Kaennchen"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Kaffeegold Kaennchen"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Suedmilch Sahne Kaennchen"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Suedmilch Leichtes Kaennchen"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Milchmaedchen"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Alpensahne"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Becel"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Coffeemate"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Cafita"
+  },
+  {
+    "GROUP": "05",
+    "SUBGROUP1": "07",
+    "SUBGROUP2": null,
+    "NAME": "Completa"
+  },
+  {
+    "GROUP": "06",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Nestle"
+  },
+  {
+    "GROUP": "06",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Brueggen"
+  },
+  {
+    "GROUP": "06",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Dr. Oetker"
+  },
+  {
+    "GROUP": "06",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Hahne"
+  },
+  {
+    "GROUP": "06",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Koelln"
+  },
+  {
+    "GROUP": "06",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Schneekoppe"
+  },
+  {
+    "GROUP": "06",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Kellogg's"
+  },
+  {
+    "GROUP": "06",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Wertkost"
+  },
+  {
+    "GROUP": "06",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Naturkind"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Vita quell"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Deli Pflanzenoel"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Rau Sonin"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Becel Omega 3 Pflanzenoel"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Bertolli Olivenoel"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Mazola Keimoel"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Mazola Rapsoel"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Mazola"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Biskin"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Sojola"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Rapso"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Livio Sonnenblumenoel"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Livio Rapsoel"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Livio"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Bechts"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Fuellhorn"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "La Espanola"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Braendle"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Thomy Gold"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Thomy"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Ja"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Vita Dor"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Luccese"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Bellasan"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Cantinelle"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Castello"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Holstensegen"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Butella"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Gut&Guenstig"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Blauband"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Kraft"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Vitaquell"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "AS"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Die Weissen"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Rau Landkost"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Rau Diaetmargarine"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Sahna"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Sana"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Marina"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Sonja"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Sanella"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Homa Gold"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Homa Gold leicht"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Homa Diaet"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Flora Soft"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Rama"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Rama gesalzen"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Rama balance"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Rama Culinesse"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Laetta"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Leichte Wertkost"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Deli Reform"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Deli Reform die gesunde Pflanzencreme"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Du Darfst"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "DD"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Becel Diaetmargarine"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Becel Leicht Diaetmargarine"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Becel Diaet Pflanzencreme"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Becel Diaet Speisefett"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Palmin Speisefett"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Palmin Speisefett soft"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Biskin"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Biskin Pflanzencreme"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Cremana"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Meylib"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Sojola"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Vital Reformmargarine"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Romi Margarine"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Nimm's leicht"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Othuena"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Geraerer Sanna"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Botteram"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Flora"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Tartrex"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Euko"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "SB"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Hamker Pflanzencreme"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Bertolli Pflanzencreme"
+  },
+  {
+    "GROUP": "10",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Smanta Pflanzencreme"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Albi"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Amecke"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Bad Hoenninger"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Bauer"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Beckers Bester"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Be light"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Bertrams"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Beutelsbacher"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Burkhardt"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Dietz"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Doehles"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Dr. Kochs"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Elmenhorster"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Emig"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Frische"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Frispa"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Fruchtoase"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Fruchtquell"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Fruchttiger"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Fruewe"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Fuellhorn"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Glockengold"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Goldfit"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Goldquell"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Granini"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Grove Fresh"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Gruenfink"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Gut&Guenstig"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Hardthof"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Hitchcock"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Hohes C"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Isabell"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Ja"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Jope"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Junita"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Kela"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Klindworth"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Krings"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Kumpf"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "La Bamba"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Lausitzer"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Lindavia"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Linessa"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Merziger"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Moeller"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Mudder Schulten"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Multi 12"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Natreen"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Pago"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Plein sud"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Possmann"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Premium Kings Fruit"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Punica"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Rabenhorst"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Rapps"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Rauch"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Rio Doro"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Riogrande"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Rotbaeckchen"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Rottaler"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Sachsenobst"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Dr. Steinberger"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Solevita"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Stingel"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Streker"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Tymbark"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Vaihinger"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Valensina"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Schloss Veldenz"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Vitaborn"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Vita Fit"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Voelkel"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Wesergold"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Wolfra"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Extaler"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Selters Lahn"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Appollinaris"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "San Pellegrino"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Perrier"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Vittel"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Harzer"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Spreequelle"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Leisslinger"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Eins"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Rhodius"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Christinen"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Schildetal"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Mineralquelle"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Bismark"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Parkquelle"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Gerolsteiner"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Alosa"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Evian"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Odenwald Quelle"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Odenwald Heilquelle"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Finkenbach Quelle"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Oppacher"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Margon"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Contell"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Stolzenbach Gebirgswasser"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Heppinger"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Staatlich Fachingen"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Fuldataler"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Ambassador"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Lichtenauer"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Ortelsdorfer Azur"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Renata"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Bad Vilbeler"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Neuselters"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Bonaqua"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Volvic"
+  },
+  {
+    "GROUP": "13",
+    "SUBGROUP1": "04",
+    "SUBGROUP2": null,
+    "NAME": "Elisabethenquelle"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Pomme Jacques"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Weisser Bock"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Alter Hochstaetter"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Possmann"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Mueller"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Faxe"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Schultheiss"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Schultheiss Spitzkrug"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Berliner Kindl"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Berliner Kindl Jubilaeum"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Kindl"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Ratskrone"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Haake Beck"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Beck's"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Beck's Spitzen Pilsener"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Holsten"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Luebzer"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Tuborg"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Carlsberg"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Berliner"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Koenig"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Jever"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Budweiser"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Pilsener Urquell"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Warsteiner"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Baerenquell Berliner Pilsener"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Baerenquell spezial"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Rex"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Rex spezial"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Kaiser"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Pilsator"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Buergerbraeu"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Nordbraeu Premium"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Krombacher"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Radeberger"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Rostocker"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Oderland Spitzkrug"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Diamant"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Stoertebeck"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Flensburger"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Bitburger"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "DAB"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Wittinger Premium"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Wernesgruener"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Feldschloesschen"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Lueneburger"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Hasseroeder"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Preussen"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Baron"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Starpils"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Landskron"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Maerkisches"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Tschechisches Bier Premier"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Tucher"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Rathenower"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Oettinger"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Park"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Hansa"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Hannen"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Paulaner"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Franzikaner"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Loewenweisse"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Erdinger"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Schoeffenhofer"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Kilkenny Irish Beer"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Guiness Stout Beer"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Johanniter"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Maerkisches Urbraeu"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Tschechisches Lagerbier"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Oettinger Urtyp"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Rostocker"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Rostocker Festbock"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Habels"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Remmer"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Binding"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Stades"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Dortmunder"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Eichbaum"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Maisel"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Einbecker"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Moenchshof"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Oberdorfer"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Altenmuenster"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Weizenthaler"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Preminger"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Stauder"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Kelts"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Alpirsbacher"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Andechser"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Licher"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Kueppers"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Pfaelzer Gold"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Heidelberger"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Eder"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Bavaria"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Schwanen"
+  },
+  {
+    "GROUP": "14",
+    "SUBGROUP1": "03",
+    "SUBGROUP2": null,
+    "NAME": "Valentins"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Thomy"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Knorr"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Maggi"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Raguletto"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Kraft"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Heinz"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "LaCroix"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Birkel"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Unox"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Keinecke"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Born"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Spaghetti Fix"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Bolognese Fix"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Feinschmecker"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Tomato al gusto"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Spaghetti Sosse"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Nudel Up"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Knoblauch Tomatensosse"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Pasta Sosse"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Carnito"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Barilla"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Del Monte"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "La Mamma"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Kraft"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Knorr"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Die Weissen"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Heinz"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Hela"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Livio"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Kopfstehketchup"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Tomato Joe"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Werder"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Thomy"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Kauffmann"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Original Thueringer Senfketchup"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Original Thueringer Curryketchup"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Original Thueringer Braetelketchup"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Aso"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "01",
+    "NAME": "Heinz"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Salatkroenung"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Kraft"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Tzazikisosse"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Knoblauch Dressing"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Homann"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Thomy"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Schamel"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Kauffmann"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Spreewalder"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Gemuesemeerettich"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Apfelmeerettich"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Kuehne"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Kartoffelsalatsosse"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Joghurt Salatcreme"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Erlenhof"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Livio"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Kopfstehmayonnaise"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Thomy"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Salatcreme"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Joghurtsalatcreme"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Kraft"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Leichte Belvita"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Miracel Whip"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Homilla"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Salatcreme"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Becel"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Salatcreme"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Nadler"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "Unox"
+  },
+  {
+    "GROUP": "15",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": "02",
+    "NAME": "LaCroix"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Sonnenbassermann"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Mikro Suppentopf"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Unox"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Junior"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Heisse Tasse"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Erasco"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Klasse Tasse"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Buchenbusch"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Krila"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Knorr"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Feinschmecker Suppen"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Die Feine Schnelle"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Zimmermann"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Maggi"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Meisterklasse Suppen"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Riesenappetit Suppen"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Kids Terrino"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Fuenf Minuten Terrine"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Suppendrink"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Buss"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Birkel"
+  },
+  {
+    "GROUP": "16",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Minuto"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": null,
+    "SUBGROUP2": null,
+    "NAME": "Yofresh"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Granovita"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Vitaquell"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "01",
+    "SUBGROUP2": null,
+    "NAME": "Eden"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": "01",
+    "NAME": "Schneekoppe"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": "01",
+    "NAME": "Huxolin"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": "01",
+    "NAME": "Cologrin"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": "01",
+    "NAME": "Flarom"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": "01",
+    "NAME": "Natreen"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": "01",
+    "NAME": "Assugrin"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": "01",
+    "NAME": "Nutrasweet"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": "01",
+    "NAME": "Lihn"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": "01",
+    "NAME": "Sachillen Bayer"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": "01",
+    "NAME": "Sionon"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": "01",
+    "NAME": "Suessin"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": "01",
+    "NAME": "Sukrinetten"
+  },
+  {
+    "GROUP": "17",
+    "SUBGROUP1": "02",
+    "SUBGROUP2": "01",
+    "NAME": "Holex"
+  }
+]

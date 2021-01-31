@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.Models
 {
-    public class Recipe : Base
+    public class Recipe : _ModelBase
     {
         public string Description { get; set; }
 
-        public static IEnumerable<Recipe> GetSeededValues()
+        public static IEnumerable<Recipe> GetSeedsFromMockup()
         {
             return new List<Recipe>()
                 {

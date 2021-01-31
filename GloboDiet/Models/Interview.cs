@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.Models
 {
-    public class Interview : Base
+    public class Interview : _ModelBase
     {
 
         public DateTime Timestamp { get; set; } = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, 0);
@@ -24,7 +24,7 @@ namespace GloboDiet.Models
 
         public Interview() { }
 
-        public static IEnumerable<Interview> GetSeededValues() => new List<Interview>()
+        public static IEnumerable<Interview> GetSeedsFromMockup() => new List<Interview>()
         { 
             new Interview()
             {

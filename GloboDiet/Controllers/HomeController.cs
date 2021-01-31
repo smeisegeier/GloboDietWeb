@@ -42,6 +42,7 @@ namespace GloboDiet.Controllers
             _repoRecipe = repoRecipe;
 
             _nLogger.Info("Controller started");
+
             seedAll();
         }
 
@@ -61,11 +62,11 @@ namespace GloboDiet.Controllers
 
         private void seedAll()
         {
-            _repoInterviewer.ItemsSeed(Interviewer.GetSeededValues());
-            _repoLocation.ItemsSeed(Location.GetSeededValues());
-            _repoRespondent.ItemsSeed(Respondent.GetSeededValues());
-            _repoInterview.ItemsSeed(Interview.GetSeededValues());
-            _repoRecipe.ItemsSeed(Recipe.GetSeededValues());
+            _repoInterviewer.ItemsSeed(Interviewer.GetSeedsFromMockup());
+            _repoLocation.ItemsSeed(Location.GetSeedsFromMockup());
+            _repoRespondent.ItemsSeed(Respondent.GetSeedsFromMockup());
+            _repoInterview.ItemsSeed(Interview.GetSeedsFromMockup());
+            _repoRecipe.ItemsSeed(Recipe.GetSeedsFromMockup());
         }
         #endregion
 

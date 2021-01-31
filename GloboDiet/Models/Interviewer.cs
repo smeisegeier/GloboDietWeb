@@ -8,16 +8,15 @@ using System.Threading.Tasks;
 namespace GloboDiet.Models
 {
 
-    public class Interviewer : Base
+    public class Interviewer : _ModelBase
     {
-        [Required(ErrorMessage ="Enter code")]
-        public string Code { get; set; }
+
         [StringLength(30)]
         public string GivenName { get; set; }
         //public string Name { get; set; }
 
         public Interviewer() { }
-        public static IEnumerable<Interviewer> GetSeededValues()
+        public static IEnumerable<Interviewer> GetSeedsFromMockup()
         {
             return new List<Interviewer>()
                 {

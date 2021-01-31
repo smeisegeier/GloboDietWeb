@@ -45,8 +45,8 @@ namespace GloboDiet.Controllers
 
         private void seedAll()
         {
-            _repoInterviewer.ItemsSeed(Interviewer.GetSeededValues());
-            _repoLocation.ItemsSeed(Location.GetSeededValues());
+            _repoInterviewer.ItemsSeed(Interviewer.GetSeedsFromMockup());
+            _repoLocation.ItemsSeed(Location.GetSeedsFromMockup());
         }
         #endregion
 

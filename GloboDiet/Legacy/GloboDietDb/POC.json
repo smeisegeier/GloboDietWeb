@@ -1,0 +1,52 @@
+[
+  {
+    "POC_CODE": "01",
+    "POC_NAME": "zu Hause",
+    "POC_OTHER": 0
+  },
+  {
+    "POC_CODE": "04",
+    "POC_NAME": "bei Freunden/Verwandten",
+    "POC_OTHER": 0
+  },
+  {
+    "POC_CODE": "12",
+    "POC_NAME": "am Arbeitsplatz/in der Schule (mitgebrachte Speisen)",
+    "POC_OTHER": 0
+  },
+  {
+    "POC_CODE": "06",
+    "POC_NAME": "Self-Service/Kantine/(Schul-)Mensa/Cafeteria",
+    "POC_OTHER": 0
+  },
+  {
+    "POC_CODE": "07",
+    "POC_NAME": "Fast Food Restaurant",
+    "POC_OTHER": 0
+  },
+  {
+    "POC_CODE": "08",
+    "POC_NAME": "Kneipe/Cafe/Bar/Coffee shop",
+    "POC_OTHER": 0
+  },
+  {
+    "POC_CODE": "10",
+    "POC_NAME": "Außerhalb (Straße/Markt/Park/Strand etc)",
+    "POC_OTHER": 0
+  },
+  {
+    "POC_CODE": "13",
+    "POC_NAME": "im Restaurant, Hotel",
+    "POC_OTHER": 0
+  },
+  {
+    "POC_CODE": "11",
+    "POC_NAME": "unterwegs (Auto/Zug/Flugzeug/Boot/Fahrrad)",
+    "POC_OTHER": 0
+  },
+  {
+    "POC_CODE": "99",
+    "POC_NAME": "Sonstiges",
+    "POC_OTHER": 1
+  }
+]
