@@ -187,6 +187,8 @@ namespace GloboDiet.Controllers
         #endregion
 
         #region Interview
+
+        /*
         [HttpGet]
         public IActionResult InterviewCreate()
         {
@@ -240,6 +242,7 @@ namespace GloboDiet.Controllers
             _repoInterview.ItemUpdate(interview);
             return RedirectToAction(nameof(InterviewsList));
         }
+        */
 
         public IActionResult InterviewsList()
         {
@@ -360,15 +363,15 @@ namespace GloboDiet.Controllers
         }
 
 
-        [HttpGet]
-        public IActionResult LocationCreateToInterview() => View(new LocationCreateEdit(new Location(), getNewNavigationBar()));
+        //[HttpGet]
+        //public IActionResult LocationCreateToInterview() => View(new LocationCreateEdit(new Location(), getNewNavigationBar()));
 
-        [HttpPost]
-        public IActionResult LocationCreateToInterview(Location location)
-        {
-            _repoLocation.ItemAdd(location);
-            return RedirectToAction(nameof(InterviewCreate));
-        }
+        //[HttpPost]
+        //public IActionResult LocationCreateToInterview(Location location)
+        //{
+        //    _repoLocation.ItemAdd(location);
+        //    return RedirectToAction(nameof(InterviewCreate));
+        //}
 
 
         public IActionResult LocationsList()
