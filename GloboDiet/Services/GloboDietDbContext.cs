@@ -23,6 +23,23 @@ namespace GloboDiet.Services
         public DbSet<User> User { get; set; }
 
 
+        /// <summary>
+        /// Seeding needs to be in context, not in repo - it has to be started 
+        /// on app launch (where no rep is present)
+        /// </summary>
+        public void SeedDb()
+        {
+            Database.EnsureCreated();
+            if (!Set<Interview>().Any()) Set<Interview>().AddRange(Interview.GetSeedsFromMockup());
+            if (!Set<Interviewer>().Any()) Set<Interviewer>().AddRange(Interviewer.GetSeedsFromMockup());
+            if (!Set<Location>().Any()) Set<Location>().AddRange(Location.GetSeedsFromMockup());
+            if (!Set<Respondent>().Any()) Set<Respondent>().AddRange(Respondent.GetSeedsFromMockup());
+            if (!Set<Recipe>().Any()) Set<Recipe>().AddRange(Recipe.GetSeedsFromMockup());
+
+            // Saving is isolated now to prevent FK mismatches
+            SaveChanges();
+        }
+
         ///// <summary>
         ///// Custom configuration for dbcontext here
         ///// </summary>

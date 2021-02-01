@@ -1,3 +1,4 @@
+using GloboDiet.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -16,7 +17,9 @@ namespace GloboDiet
         public static void Main(string[] args)
         {
             _logger.Info("App started");
-            CreateHostBuilder(args).Build().Run();
+            CreateHostBuilder(args).Build()
+                .SeedDb()
+                .Run();
 
             // still is still not visible
             _logger.Info("App closed");

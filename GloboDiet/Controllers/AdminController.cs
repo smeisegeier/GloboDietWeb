@@ -43,11 +43,11 @@ namespace GloboDiet.Controllers
             PillCountLocations = _repoLocation.ItemsGetCount()  
         };
 
-        private void seedAll()
-        {
-            _repoInterviewer.ItemsSeed(Interviewer.GetSeedsFromMockup());
-            _repoLocation.ItemsSeed(Location.GetSeedsFromMockup());
-        }
+        //private void seedAll()
+        //{
+        //    _repoInterviewer.ItemsSeed(Interviewer.GetSeedsFromMockup());
+        //    _repoLocation.ItemsSeed(Location.GetSeedsFromMockup());
+        //}
         #endregion
 
         #region Interviewer
