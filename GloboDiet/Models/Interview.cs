@@ -22,6 +22,8 @@ namespace GloboDiet.Models
 
         public int ResponentId { get; set; }
 
+        public int InterviewerId { get; set; }
+
         public Interview() { }
 
         public static IEnumerable<Interview> GetSeedsFromMockup() => new List<Interview>()

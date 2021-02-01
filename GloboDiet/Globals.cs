@@ -27,7 +27,7 @@ namespace GloboDiet
         /// <summary>
         /// for displaying all possible milestones, is built onetime from enum
         /// </summary>
-        public static List<KeyValuePair<ProcessMilestone, string>> ListOfProcessMilestones { get; } = EnumHelper.GetListWithDescription<ProcessMilestone>();
+        public static List<KeyValuePair<ProcessMilestone, string>> ListOfAllProcessMilestones { get; } = EnumHelper.GetListWithDescription<ProcessMilestone>();
 
 
     }

@@ -215,6 +215,21 @@ namespace GloboDiet.Controllers
 
         #endregion
 
+        #region NewInterview
+
+        [HttpGet]
+        public IActionResult NewInterview020() => View(new NewInterview020(
+            new Interview(),
+            _repoInterviewer.ItemsGetAll(),
+            _repoLocation.ItemsGetAll(),
+            _repoRespondent.ItemsGetAll(),
+            Globals.ProcessMilestone._1_INTERVIEW,
+            getNewNavigationBar()
+            ));
+
+        #endregion
+
+
         /* admin */
 
         #region Interviewer
