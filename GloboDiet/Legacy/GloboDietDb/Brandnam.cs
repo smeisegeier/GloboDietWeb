@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.Legacy.GloboDietDb
 {
-    public class Brandnam
+    public class Brandnam : _LegacyBase
     {
         public string GROUP { get; set; }
         public string SUBGROUP1 { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.ViewModels
 {
-    public class Register : ViewModelBase
+    public class Register : _ViewModelBase
     {
         [Required, MaxLength(255)]
         public string Username { get; set; }

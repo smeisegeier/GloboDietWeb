@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.ViewModels
 {
-    public class InterviewerCreateEdit : ViewModelBase
+    public class InterviewerCreateEdit : _ViewModelBase
     {
         public Interviewer Interviewer { get; set; }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.ViewModels
 {
-    public class RecipeCreateEdit : ViewModelBase
+    public class RecipeCreateEdit : _ViewModelBase
     {
         private Recipe _recipe;
 

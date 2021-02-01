@@ -43,7 +43,6 @@ namespace GloboDiet.Controllers
 
             _nLogger.Info("Controller started");
 
-            //seedAll();
         }
 
         // TODO use modal window instead of status area
@@ -52,8 +51,8 @@ namespace GloboDiet.Controllers
         {
             // testing session mechanics
             _httpContext.Session.SetString("SessionUser", "itsme");
-            // if no content needed just pass ViewModelBase
-            return View(new ViewModelBase(getNewNavigationBar()));
+            // if no content needed just pass _ViewModelBase
+            return View(new _ViewModelBase(getNewNavigationBar()));
         }
 
 
@@ -131,7 +130,7 @@ namespace GloboDiet.Controllers
             }
 
             // ViewModel now also needs the whole List from Process-Enum plus the actual Milestone
-            return View(new InterviewCreateEdit(modelNewOrEmpty, _repoLocation.ItemsGetAll(), EnumHelper.GetListWithDescription<ProcessMilestone>(), ProcessMilestone._2_RESPONDENT, getNewNavigationBar()));
+            return View(new InterviewCreateEdit(modelNewOrEmpty, _repoLocation.ItemsGetAll(), Globals.ProcessMilestone._2_RESPONDENT, getNewNavigationBar()));
         }
 
         [HttpPost]
@@ -156,7 +155,7 @@ namespace GloboDiet.Controllers
         public IActionResult InterviewEdit(int id)
         {
             var interview = _repoInterview.ItemGetById(id);
-            return View(new InterviewCreateEdit(interview, _repoLocation.ItemsGetAll(), EnumHelper.GetListWithDescription<ProcessMilestone>(), ProcessMilestone._3_MEALS, getNewNavigationBar()));
+            return View(new InterviewCreateEdit(interview, _repoLocation.ItemsGetAll(), Globals.ProcessMilestone._3_MEALS, getNewNavigationBar()));
         }
 
         [HttpPost]

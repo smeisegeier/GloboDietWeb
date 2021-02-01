@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.ViewModels
 {
-    public class RecipesList : ViewModelBase
+    public class RecipesList : _ViewModelBase
     {
         public IEnumerable<Recipe> Recipes { get; set; }
 

@@ -1,7 +1,8 @@
-﻿@model GloboDiet.ViewModels.InterviewCreateEdit
+﻿@using GloboDiet
+@model GloboDiet.ViewModels.InterviewCreateEdit
 
 <div class="d-flex justify-content-between border-soft">
-    @foreach (var item in Model.ListOfProcessMilestones)
+    @foreach (var item in Globals.ListOfProcessMilestones)
     {
         @if ((int)item.Key <= (int)Model.CurrentProcessMilestone)
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.ViewModels
 {
-    public class LocationCreateEdit : ViewModelBase
+    public class LocationCreateEdit : _ViewModelBase
     {
         public Location Location { get; set; }
         public string ReturnAction { get; set; }
