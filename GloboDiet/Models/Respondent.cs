@@ -17,7 +17,7 @@ namespace GloboDiet.Models
     public class Respondent : _ModelBase
     {
         [DisplayName("Given Name")]
-        public string GivenName { get; set; }
+        public string GivenName { get; set; } = "John";
 
         public double Age { get => Math.Round((DateTime.Now - DateOfBirth).TotalDays / 365.242199, 1); }
 
@@ -29,12 +29,12 @@ namespace GloboDiet.Models
         [Display(Name = "Height in cm", Prompt = "150 - 230 cm")]
         [Required(ErrorMessage = "Height must be provided")]
         [Range(150, 230)]
-        public int Height { get; set; }
+        public int Height { get; set; } = 175;
 
         [Display(Name = "Weight in kg", Prompt = "30 - 300 kg")]
         [Required(ErrorMessage = "Weight must be provided")]
         [Range(30, 300)]
-        public int Weight { get; set; }
+        public int Weight { get; set; } = 80;
 
         // Navigation property
         public ICollection<Interview> Interviews { get; set; }

@@ -1,7 +1,13 @@
 ﻿@using GloboDiet
-@model GloboDiet.ViewModels.NewInterview020
+@model GloboDiet.ViewModels._ViewModelBase
 
 <div class="d-flex justify-content-between border-soft">
+@if (Model?.CurrentProcessMilestone == null)
+{
+    <div class="border-soft mb-2 text-primary"><strong>empty</strong></div>
+}
+else
+{
     @foreach (var item in Globals.ListOfAllProcessMilestones)
     {
         @if ((int)item.Key <= (int)Model.CurrentProcessMilestone)
@@ -13,4 +19,6 @@
             <div class="border-soft mb-2 text-muted">@item.Value</div>
         }
     }
+}
+
 </div>

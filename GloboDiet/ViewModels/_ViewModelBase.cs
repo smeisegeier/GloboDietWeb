@@ -8,7 +8,10 @@ namespace GloboDiet.ViewModels
 {
     public class _ViewModelBase
     {
-        public NavigationBar NavigationBar { get; set; } 
+        public NavigationBar NavigationBar { get; set; }
+
+        // make the current one more prominent
+        public Globals.ProcessMilestone? CurrentProcessMilestone { get; set; }
 
         public _ViewModelBase(NavigationBar navigationBar)
         {

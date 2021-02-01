@@ -15,14 +15,14 @@ namespace GloboDiet.Models
         [DataType(DataType.Date)]
         public DateTime ReferenceDate { get; set; } = DateTime.Now;
 
-        [Display(Name ="The Location")]
-        [Required]
-        public int LocationId { get; set; }
-        //public Location Location { get; set; }
+        [Display(Name ="Location")]
+        public int? LocationId { get; set; }
 
-        public int ResponentId { get; set; }
+        [Display(Name = "Respondent")]
+        public int? ResponentId { get; set; }
 
-        public int InterviewerId { get; set; }
+        [Display(Name = "Interviewer")]
+        public int? InterviewerId { get; set; }
 
         public Interview() { }
 

@@ -50,7 +50,7 @@ namespace GloboDiet.Controllers
         public IActionResult Index()
         {
             // testing session mechanics
-            _httpContext.Session.SetString("SessionUser", "itsme");
+            //_httpContext.Session.SetString("SessionUser", "itsme");
             // if no content needed just pass _ViewModelBase
             return View(new _ViewModelBase(getNewNavigationBar()));
         }
@@ -59,22 +59,89 @@ namespace GloboDiet.Controllers
         #region Private Area
         private NavigationBar getNewNavigationBar() => new NavigationBar(_repoInterview.ItemsGetCount(), _repoInterviewer.ItemsGetCount(), _repoLocation.ItemsGetCount(), _repoRespondent.ItemsGetCount(), _repoInterview.GetSqlConnectionType());
 
-        //private void seedAll()
-        //{
+        #endregion
 
-        //    _repoInterviewer.ItemsSeed(Interviewer.GetSeedsFromMockup());
-        //    _repoLocation.ItemsSeed(Location.GetSeedsFromMockup());
-        //    _repoRespondent.ItemsSeed(Respondent.GetSeedsFromMockup());
-        //    _repoInterview.ItemsSeed(Interview.GetSeedsFromMockup());
-        //    _repoRecipe.ItemsSeed(Recipe.GetSeedsFromMockup());
-        //}
+        #region NewInterview
+
+        [HttpGet]
+        public IActionResult NewInterview020()
+        {
+            var modelNewOrEmpty = new Interview();
+            if (_httpContext.Session.GetString("InterviewCache") is not null)
+            {
+                modelNewOrEmpty = JsonConvert.DeserializeObject<Interview>(_httpContext.Session.GetString("InterviewCache"));
+            }
+
+            return View(new InterviewCreateEdit(
+            modelNewOrEmpty,
+            _repoInterviewer.ItemsGetAll(),
+            _repoLocation.ItemsGetAll(),
+            _repoRespondent.ItemsGetAll(),
+            Globals.ProcessMilestone._1_INTERVIEW,
+            getNewNavigationBar()
+            ));
+        }
+
+        [HttpPost]
+        public IActionResult NewInterview020(Interview interview)
+        {
+            if (interview.ResponentId is null || interview.ResponentId == 0)
+            { ModelState.AddModelError("CustomError", "No Respondent selected"); }
+            if (interview.InterviewerId is null || interview.InterviewerId == 0)
+            { ModelState.AddModelError("CustomError", "No Interviewer selected"); }
+            if (interview.LocationId is null || interview.LocationId== 0)
+            { ModelState.AddModelError("CustomError", "No Center selected"); }
+
+            if (!ModelState.IsValid)
+            {
+              return View(new InterviewCreateEdit(
+              interview,
+              _repoInterviewer.ItemsGetAll(),
+              _repoLocation.ItemsGetAll(),
+              _repoRespondent.ItemsGetAll(),
+              Globals.ProcessMilestone._1_INTERVIEW,
+              getNewNavigationBar()
+              ));
+            }
+
+            _repoInterview.ItemAdd(interview);
+            return RedirectToAction(nameof(Index));
+        }
+
+        /// <summary>
+        /// xx0 -> POST -> xx1, because the object of xx0 (interview) is needed later
+        /// xx1 ist just relay
+        /// </summary>
+        /// <param name="interview"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult NewInterview021(Interview interview)
+        {
+            // cache object, then redirect
+            _httpContext.Session.SetString("InterviewCache", JsonConvert.SerializeObject(interview));
+            return RedirectToAction(nameof(NewInterview022));
+        }
+
+        // xx1 -> GET -> xx2
+        [HttpGet]
+        public IActionResult NewInterview022() => View(new RespondentCreateEdit(new Respondent(), getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW));
+
+        // xx2 -> GET xx0 (save)
+        // xx2 -> GET xx0 (cancel)
+        [HttpPost]
+        public IActionResult NewInterview022(Respondent respondent)
+        {
+            _repoRespondent.ItemAdd(respondent);
+            return RedirectToAction(nameof(NewInterview020));
+        }
+
         #endregion
 
         #region Respondent
         [HttpGet]
         public IActionResult RespondentCreate()
         {
-            return View(new RespondentCreateEdit(new Respondent(), getNewNavigationBar()));
+            return View(new RespondentCreateEdit(new Respondent(), getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW));
         }
         [HttpPost]
         public IActionResult RespondentCreate(Respondent respondent)
@@ -88,7 +155,7 @@ namespace GloboDiet.Controllers
         public IActionResult RespondentEdit(int id)
         {
             var respondent = _repoRespondent.ItemGetById(id);
-            return View(new RespondentCreateEdit(respondent, getNewNavigationBar()));
+            return View(new RespondentCreateEdit(respondent, getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW));
         }
         [HttpPost]
         public IActionResult RespondentEdit(Respondent respondent)
@@ -103,7 +170,7 @@ namespace GloboDiet.Controllers
             }
 
             if (!ModelState.IsValid)
-                return View(new RespondentCreateEdit(respondent, getNewNavigationBar()));
+                return View(new RespondentCreateEdit(respondent, getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW));
 
 
             _repoRespondent.ItemUpdate(respondent);
@@ -129,8 +196,14 @@ namespace GloboDiet.Controllers
                 modelNewOrEmpty = JsonConvert.DeserializeObject<Interview>(_httpContext.Session.GetString("InterviewCache"));
             }
 
-            // ViewModel now also needs the whole List from Process-Enum plus the actual Milestone
-            return View(new InterviewCreateEdit(modelNewOrEmpty, _repoLocation.ItemsGetAll(), Globals.ProcessMilestone._2_RESPONDENT, getNewNavigationBar()));
+            return View(new InterviewCreateEdit(
+                        modelNewOrEmpty,
+                        _repoInterviewer.ItemsGetAll(),
+                        _repoLocation.ItemsGetAll(),
+                        _repoRespondent.ItemsGetAll(),
+                        Globals.ProcessMilestone._1_INTERVIEW,
+                        getNewNavigationBar()
+                        ));
         }
 
         [HttpPost]
@@ -152,11 +225,14 @@ namespace GloboDiet.Controllers
         }
 
         [HttpGet]
-        public IActionResult InterviewEdit(int id)
-        {
-            var interview = _repoInterview.ItemGetById(id);
-            return View(new InterviewCreateEdit(interview, _repoLocation.ItemsGetAll(), Globals.ProcessMilestone._3_MEALS, getNewNavigationBar()));
-        }
+        public IActionResult InterviewEdit(int id) => View(new InterviewCreateEdit(
+                    _repoInterview.ItemGetById(id),
+                    _repoInterviewer.ItemsGetAll(),
+                    _repoLocation.ItemsGetAll(),
+                    _repoRespondent.ItemsGetAll(),
+                    Globals.ProcessMilestone._1_INTERVIEW,
+                    getNewNavigationBar()
+                    ));
 
         [HttpPost]
         public IActionResult InterviewEdit(Interview interview)
@@ -212,20 +288,6 @@ namespace GloboDiet.Controllers
 
         public IActionResult RecipeDetails(int id) => Json(_repoRecipe.ItemGetById(id));
 
-
-        #endregion
-
-        #region NewInterview
-
-        [HttpGet]
-        public IActionResult NewInterview020() => View(new NewInterview020(
-            new Interview(),
-            _repoInterviewer.ItemsGetAll(),
-            _repoLocation.ItemsGetAll(),
-            _repoRespondent.ItemsGetAll(),
-            Globals.ProcessMilestone._1_INTERVIEW,
-            getNewNavigationBar()
-            ));
 
         #endregion
 
