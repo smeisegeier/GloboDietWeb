@@ -10,7 +10,7 @@ namespace GloboDiet.Models
     {
         public TypeOfMeal() { }
 
-        public static IEnumerable<TypeOfMeal> GetSeedsFromLegacy()
+        public static IList<TypeOfMeal> GetSeedsFromLegacy()
         {
             var legacyList = FCO.GetLegacyObjects<FCO>();
             var newList = new List<TypeOfMeal>();

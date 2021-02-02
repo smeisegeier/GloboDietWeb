@@ -41,7 +41,7 @@ namespace GloboDiet.Models
 
         public Respondent() { }
 
-        public static IEnumerable<Respondent> GetSeedsFromMockup()
+        public static IList<Respondent> GetSeedsFromMockup()
         {
             return new List<Respondent>()
                 {

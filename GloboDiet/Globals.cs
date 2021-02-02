@@ -1,4 +1,6 @@
-﻿using HelperLibrary;
+﻿using GloboDiet.Models;
+using HelperLibrary;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,8 +29,15 @@ namespace GloboDiet
         /// <summary>
         /// for displaying all possible milestones, is built onetime from enum
         /// </summary>
-        public static List<KeyValuePair<ProcessMilestone, string>> ListOfAllProcessMilestones { get; } = EnumHelper.GetListWithDescription<ProcessMilestone>();
+        public static IEnumerable<KeyValuePair<ProcessMilestone, string>> StaticListOfProcessMilestones { get; } = EnumHelper.GetListWithDescription<ProcessMilestone>();
 
+        public static SelectList StaticListOfTypesOfMeal { get; } = new SelectList(TypeOfMeal.GetSeedsFromLegacy(), "Id", "Name");
+
+        public static SelectList StaticListOfPlacesOfMeal { get; } = new SelectList(PlaceOfMeal.GetSeedsFromLegacy(), "Id", "Name");
+
+        public static SelectList StaticListOfBrandnames { get; } = new SelectList(Brandname.GetSeedsFromLegacy(), "Id", "Name");
+
+        public static SelectList StaticListOfEssin { get; } = new SelectList(Essin.GetSeedsFromLegacy(), "Id", "Name");
 
     }
 }

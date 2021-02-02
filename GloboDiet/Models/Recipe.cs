@@ -7,9 +7,8 @@ namespace GloboDiet.Models
 {
     public class Recipe : _ModelBase
     {
-        public string Description { get; set; }
 
-        public static IEnumerable<Recipe> GetSeedsFromMockup()
+        public static IList<Recipe> GetSeedsFromMockup()
         {
             return new List<Recipe>()
                 {

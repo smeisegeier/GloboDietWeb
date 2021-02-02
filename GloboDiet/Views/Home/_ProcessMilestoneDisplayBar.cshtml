@@ -8,7 +8,7 @@
 }
 else
 {
-    @foreach (var item in Globals.ListOfAllProcessMilestones)
+    @foreach (var item in Globals.StaticListOfProcessMilestones)
     {
         @if ((int)item.Key <= (int)Model.CurrentProcessMilestone)
         {

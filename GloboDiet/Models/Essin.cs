@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.Models
 {
+    // Lebensmittelkategorien?
+    // Vorschläge Auswahl Mahlzeiten
     public class Essin : _ModelBase
     {
         public Essin() { }

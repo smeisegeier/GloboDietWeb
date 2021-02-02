@@ -25,7 +25,7 @@ namespace GloboDiet.Models
                 };
         }
 
-        public static IEnumerable<PlaceOfMeal> GetSeedsFromLegacy()
+        public static IList<PlaceOfMeal> GetSeedsFromLegacy()
         {
             var legacyList = POC.GetLegacyObjects<POC>();
             var newList = new List<PlaceOfMeal>();
