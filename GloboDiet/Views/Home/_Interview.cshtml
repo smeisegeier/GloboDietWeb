@@ -22,24 +22,29 @@
     <span asp-validation-for="Interview.ReferenceDate" class="text-danger"></span>
 </div>
 <div class="form-inline">
-    <label asp-for="Interview.LocationId" class="control-label"></label>
-    <select asp-for="Interview.LocationId" class="form-control" asp-items=@Model.ListOfLocations>
+    <label asp-for="Interview.Location" class="control-label"></label>
+    <select asp-for="Interview.Location" class="form-control" asp-items=@Model.ListOfLocations>
         <option selected="selected" value="">Please select</option>
     </select>
-    <span asp-validation-for="Interview.LocationId" class="text-danger"></span>
+    <span asp-validation-for="Interview.Location" class="text-danger"></span>
 </div>
 <div class="form-inline">
-    <label asp-for="Interview.InterviewerId" class="control-label"></label>
-    <select asp-for="Interview.InterviewerId" class="form-control" asp-items=@Model.ListOfInterviewers>
+    <label asp-for="Interview.Interviewer" class="control-label"></label>
+    <select asp-for="Interview.Interviewer" class="form-control" asp-items=@Model.ListOfInterviewers>
         <option selected="selected" value="">Please select</option>
     </select>
-    <span asp-validation-for="Interview.InterviewerId" class="text-danger"></span>
+    <span asp-validation-for="Interview.Interviewer" class="text-danger"></span>
 </div>
 <div class="form-inline">
-    <label asp-for="Interview.ResponentId" class="control-label"></label>
-    <select asp-for="Interview.ResponentId" class="form-control" asp-items=@Model.ListOfRespondents>
+    <label asp-for="Interview.Respondent" class="control-label"></label>
+    <select asp-for="Interview.Respondent" class="form-control" asp-items=@Model.ListOfRespondents>
     </select>
-    <span asp-validation-for="Interview.ResponentId" class="text-danger"></span>
+    <span asp-validation-for="Interview.Respondent" class="text-danger"></span>
     <input type="submit" value="+" name="submit" class="btn btn-info" formaction="NewInterview021"/>
 </div>
+<h1>List of Meals</h1>
+<div class="form-inline">
+    <input type="submit" value="+" name="submit" class="btn btn-info" formaction="NewInterview041"/>
+</div>
 <partial name="_MealList.cshtml"/>
+

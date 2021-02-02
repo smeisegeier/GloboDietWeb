@@ -16,25 +16,21 @@ namespace GloboDiet.Models
         public DateTime ReferenceDate { get; set; } = DateTime.Now;
 
         [Display(Name ="Location")]
-        public int? LocationId { get; set; }
+        public Location Location { get; set; }
 
         [Display(Name = "Respondent")]
-        public int? ResponentId { get; set; }
+        public Respondent Respondent { get; set; }
 
         [Display(Name = "Interviewer")]
-        public int? InterviewerId { get; set; }
+        public Interviewer Interviewer { get; set; }
 
         public ICollection<Meal> Meals { get; set; }
 
         public Interview() 
         {
-            Meals = new List<Meal>()
-            {
-                new Meal() { StartingHour = 9, PlaceOfMeal = PlaceOfMeal.GetSeedsFromLegacy()[0], TypeOfMeal = TypeOfMeal.GetSeedsFromLegacy()[1]}
-            };
         }
 
-        public static IEnumerable<Interview> GetSeedsFromMockup() => new List<Interview>()
+        public static IList<Interview> GetSeedsFromMockup() => new List<Interview>()
         { 
             new Interview()
             {
