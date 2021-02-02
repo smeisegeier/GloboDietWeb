@@ -11,6 +11,8 @@ namespace GloboDiet.Legacy.GloboDietDb
     {
         public _LegacyBase() { }
 
+        // TODO improve method -> general type 
+
         /// <summary>
         /// Gets all lines from SQL table as List of this object
         /// </summary>

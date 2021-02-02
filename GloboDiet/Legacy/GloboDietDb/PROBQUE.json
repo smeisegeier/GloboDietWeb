@@ -1,0 +1,110 @@
+[
+  {
+    "PQ_CODE": "001",
+    "PQ_TEXT": "Gemüse"
+  },
+  {
+    "PQ_CODE": "002",
+    "PQ_TEXT": "Zwiebeln, Knoblauch"
+  },
+  {
+    "PQ_CODE": "003",
+    "PQ_TEXT": "Früchte und Trockenfrüchte"
+  },
+  {
+    "PQ_CODE": "004",
+    "PQ_TEXT": "Zitrone und Zitronensaft"
+  },
+  {
+    "PQ_CODE": "005",
+    "PQ_TEXT": "Nüsse und Körner"
+  },
+  {
+    "PQ_CODE": "006",
+    "PQ_TEXT": "Milch"
+  },
+  {
+    "PQ_CODE": "007",
+    "PQ_TEXT": "Sahne, Kaffeesahne und -weisser"
+  },
+  {
+    "PQ_CODE": "008",
+    "PQ_TEXT": "Käse"
+  },
+  {
+    "PQ_CODE": "009",
+    "PQ_TEXT": "Joghurt"
+  },
+  {
+    "PQ_CODE": "010",
+    "PQ_TEXT": "Vanillesosse"
+  },
+  {
+    "PQ_CODE": "011",
+    "PQ_TEXT": "Brot, Brotwürfel"
+  },
+  {
+    "PQ_CODE": "012",
+    "PQ_TEXT": "Frühstücksflocken/Müsli/Kleie"
+  },
+  {
+    "PQ_CODE": "013",
+    "PQ_TEXT": "Fleisch- und Wurstwaren"
+  },
+  {
+    "PQ_CODE": "014",
+    "PQ_TEXT": "Eier"
+  },
+  {
+    "PQ_CODE": "015",
+    "PQ_TEXT": "Fett"
+  },
+  {
+    "PQ_CODE": "016",
+    "PQ_TEXT": "Zucker/Süsstoff/Marmelade/Honig"
+  },
+  {
+    "PQ_CODE": "017",
+    "PQ_TEXT": "Sirup"
+  },
+  {
+    "PQ_CODE": "018",
+    "PQ_TEXT": "Eiscreme, Sorbet"
+  },
+  {
+    "PQ_CODE": "019",
+    "PQ_TEXT": "Waffeln, Kekse"
+  },
+  {
+    "PQ_CODE": "020",
+    "PQ_TEXT": "Kaffee, Tee, Kräutertee"
+  },
+  {
+    "PQ_CODE": "021",
+    "PQ_TEXT": "Wasser"
+  },
+  {
+    "PQ_CODE": "022",
+    "PQ_TEXT": "Sosse und Dressing"
+  },
+  {
+    "PQ_CODE": "023",
+    "PQ_TEXT": "Süsse Sosse"
+  },
+  {
+    "PQ_CODE": "024",
+    "PQ_TEXT": "Alkohol"
+  },
+  {
+    "PQ_CODE": "025",
+    "PQ_TEXT": "Speisewürzen, Speisezutaten"
+  },
+  {
+    "PQ_CODE": "026",
+    "PQ_TEXT": "Nicht alkoholische Getränke"
+  },
+  {
+    "PQ_CODE": "027",
+    "PQ_TEXT": "Salat"
+  }
+]

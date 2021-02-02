@@ -16,6 +16,7 @@ namespace GloboDiet.Models
     {
         public int Id { get; set; }
         public string Name { get; set; } = "NotSet";
+        public string Description { get; set; } = "NotSet";
 
         [Required(ErrorMessage = "Enter code")]
         public string Code { get; set; } = "0";

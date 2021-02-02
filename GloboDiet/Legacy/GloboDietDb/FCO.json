@@ -1,0 +1,79 @@
+[
+  {
+    "FCM_CODE": "01",
+    "FCM_NAME": "Vorm Frühstück (Aufwachen)",
+    "FCM_MODE": "0",
+    "FCM_SNAME": "Aufwachen",
+    "FCM_PRINCIPAL": 0
+  },
+  {
+    "FCM_CODE": "02",
+    "FCM_NAME": "Frühstück",
+    "FCM_MODE": "0",
+    "FCM_SNAME": "Frühstück",
+    "FCM_PRINCIPAL": 1
+  },
+  {
+    "FCM_CODE": "03",
+    "FCM_NAME": "Vormittags",
+    "FCM_MODE": "1",
+    "FCM_SNAME": "Vesper",
+    "FCM_PRINCIPAL": 0
+  },
+  {
+    "FCM_CODE": "04",
+    "FCM_NAME": "Vorm Mittagessen",
+    "FCM_MODE": "0",
+    "FCM_SNAME": "Aperitif",
+    "FCM_PRINCIPAL": 0
+  },
+  {
+    "FCM_CODE": "05",
+    "FCM_NAME": "Mittagessen",
+    "FCM_MODE": "0",
+    "FCM_SNAME": "Mittag",
+    "FCM_PRINCIPAL": 1
+  },
+  {
+    "FCM_CODE": "06",
+    "FCM_NAME": "Nach dem Mittagessen",
+    "FCM_MODE": "0",
+    "FCM_SNAME": ">M-Essen",
+    "FCM_PRINCIPAL": 0
+  },
+  {
+    "FCM_CODE": "07",
+    "FCM_NAME": "Nachmittags",
+    "FCM_MODE": "1",
+    "FCM_SNAME": "Vesper",
+    "FCM_PRINCIPAL": 0
+  },
+  {
+    "FCM_CODE": "08",
+    "FCM_NAME": "Vorm Abendessen",
+    "FCM_MODE": "0",
+    "FCM_SNAME": "Aperitif",
+    "FCM_PRINCIPAL": 0
+  },
+  {
+    "FCM_CODE": "09",
+    "FCM_NAME": "Abendessen",
+    "FCM_MODE": "0",
+    "FCM_SNAME": "Abendessen",
+    "FCM_PRINCIPAL": 1
+  },
+  {
+    "FCM_CODE": "10",
+    "FCM_NAME": "Nach Abendessen",
+    "FCM_MODE": "0",
+    "FCM_SNAME": ">A-Essen",
+    "FCM_PRINCIPAL": 0
+  },
+  {
+    "FCM_CODE": "11",
+    "FCM_NAME": "Abends",
+    "FCM_MODE": "1",
+    "FCM_SNAME": "Nachts",
+    "FCM_PRINCIPAL": 0
+  }
+]
