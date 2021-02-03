@@ -35,14 +35,11 @@ namespace GloboDiet.ViewModels
             Interview = interview;
             ListOfInterviewers = new SelectList(listOfInterviewers, "Id", "Label");
             ListOfLocations = new SelectList(listOfLocations, "Id", "Label");
-            ListOfRespondents = new SelectList(listOfRespondents, "Id", "Label");
-            var y = ListOfRespondents.OrderByDescending(o => o.Value).FirstOrDefault().Value;
-            ListOfRespondents.OrderByDescending(o => o.Value).FirstOrDefault().Selected = true;
+            ListOfRespondents = new SelectList(new List<Respondent>() { interview.Respondent }, "Id", "Label");
+            //ListOfRespondents.OrderByDescending(o => o.Value).FirstOrDefault().Selected = true;
 
             CurrentProcessMilestone = currentProcessMilestone;
             NavigationBar = navigationBar;
         }
-
-
     }
 }
