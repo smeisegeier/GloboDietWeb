@@ -11,6 +11,7 @@ namespace GloboDiet.Services
         IEnumerable<TEntity> ItemsGetAll();
         TEntity ItemGetById(int id);
         void ItemAdd(TEntity entity);
+        void ItemAddOrUpdate(TEntity entity);
         void ItemUpdate(TEntity entity);
         void ItemDelete(TEntity entity);
         int ItemsGetCount();
@@ -32,6 +33,19 @@ namespace GloboDiet.Services
         public void ItemAdd(TEntity entity)
         {
             _context.Set<TEntity>().Add(entity);
+            _context.SaveChanges();
+        }
+
+        public void ItemAddOrUpdate(TEntity entity)
+        {
+            if (_context.Set<TEntity>().Contains(entity))
+            {
+                _context.Set<TEntity>().Update(entity);
+            }
+            else
+            {
+                _context.Set<TEntity>().Add(entity);
+            }
             _context.SaveChanges();
         }
 
