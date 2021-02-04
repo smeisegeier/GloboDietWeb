@@ -19,6 +19,7 @@ namespace GloboDiet.Services
         public DbSet<Respondent> Respondents { get; set; }
         public DbSet<PlaceOfMeal> PlacesOfMeal { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<Meal> Meals { get; set; }
 
         public DbSet<User> User { get; set; }
 

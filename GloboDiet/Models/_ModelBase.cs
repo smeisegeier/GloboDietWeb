@@ -29,7 +29,9 @@ namespace GloboDiet.Models
 
         /* convenience props*/
         [NotMapped]
-        public string Label => $"[{Code} | {Name}]";
+        public string Label => ToString();
+
+        public override string ToString() => $"[{Id} | {Name}]";
 
     }
 }
