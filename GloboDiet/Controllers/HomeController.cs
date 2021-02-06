@@ -52,8 +52,6 @@ namespace GloboDiet.Controllers
             _repoRecipe = repoRecipe;
             _repoMeal = repoMeal;
 
-            _nLogger.Info("Controller started");
-
         }
 
         // TODO use modal window instead of status area
@@ -81,7 +79,7 @@ namespace GloboDiet.Controllers
             if (modelNullOrReturned is not null)
                 modelNullOrReturned.RespondentId = _repoRespondent.ItemsGetAll().LastOrDefault().Id;
 
-            return View(new InterviewCreateEdit(
+            var newModel = new InterviewCreateEdit(
             modelNullOrReturned ?? new Interview(),
             _repoInterviewer.ItemsGetAll(),
             _repoLocation.ItemsGetAll(),
@@ -89,8 +87,13 @@ namespace GloboDiet.Controllers
             _repoMeal.ItemsGetAll(),
             Globals.ProcessMilestone._1_INTERVIEW,
             getNewNavigationBar()
-            ));
+            );
+
+            _nLogger.Debug("\n"+newModel.ToJson());
+            return View(newModel);
+
         }
+        // TODO Get-Clipboard | ConvertFrom-Json | ConvertTo-Json
 
         [HttpPost]
         public IActionResult NewInterview020(Interview interview)
@@ -180,6 +183,8 @@ namespace GloboDiet.Controllers
         public IActionResult NewInterview042(Meal meal)
         {
             _repoMeal.ItemAdd(meal);
+            _nLogger.Debug(_repoMeal.ItemsGetCount());
+            _nLogger.Debug(_repoMeal.ItemsGetAll().ToList().Select(s=>s.Label));
             return RedirectToAction(nameof(NewInterview020));
         }
         #endregion

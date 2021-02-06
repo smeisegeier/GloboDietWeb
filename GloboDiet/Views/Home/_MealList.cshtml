@@ -16,8 +16,8 @@
         </tr>
     </thead>
     <tbody>
-@if (Model?.Interview?.Meals is not null) {
-        @foreach (var item in Model.Interview.Meals) {
+@if (Model?.ListOfMeals is not null) {
+        @foreach (var item in Model.ListOfMeals) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.StartingHour)

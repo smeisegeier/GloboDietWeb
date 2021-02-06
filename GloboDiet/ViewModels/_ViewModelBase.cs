@@ -1,4 +1,5 @@
 ﻿using HelperLibrary;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,5 +24,7 @@ namespace GloboDiet.ViewModels
         {
             NavigationBar = new NavigationBar(0, 0, 0, 0, EfCoreHelper.SqlConnectionType.UNKNOWN);
         }
+
+        public string ToJson() => JsonConvert.SerializeObject(this);
     }
 }
