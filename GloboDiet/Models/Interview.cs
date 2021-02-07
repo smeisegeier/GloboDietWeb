@@ -25,7 +25,7 @@ namespace GloboDiet.Models
         public int InterviewerId { get; set; }
         public virtual Interviewer Interviewer { get; set; }
 
-        public IEnumerable<Meal> Meals { get; set; }
+        public virtual IEnumerable<Meal> Meals { get; set; }
 
         public Interview()
         {

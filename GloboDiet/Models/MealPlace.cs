@@ -9,29 +9,28 @@ using GloboDiet.Extensions;
 
 namespace GloboDiet.Models
 {
-    [Table(nameof(GloboDietDbContext.PlacesOfMeal))]
-    public class PlaceOfMeal : _ModelBase
+    public class MealPlace : _ModelBase
     {
-        public PlaceOfMeal()
+        public MealPlace()
         {
         }
 
-        public static List<PlaceOfMeal> GetSeedsFromMockup()
+        public static List<MealPlace> GetSeedsFromMockup()
         {
-            return new List<PlaceOfMeal>()
+            return new List<MealPlace>()
                 {
-                    new PlaceOfMeal() { Name = "vor Ort"},
-                    new PlaceOfMeal() { Name = "im Bus"}
+                    new MealPlace() { Name = "vor Ort"},
+                    new MealPlace() { Name = "im Bus"}
                 };
         }
 
-        public static IList<PlaceOfMeal> GetSeedsFromLegacy()
+        public static IList<MealPlace> GetSeedsFromLegacy()
         {
             var legacyList = POC.GetLegacyObjects<POC>();
-            var newList = new List<PlaceOfMeal>();
+            var newList = new List<MealPlace>();
             foreach (var item in legacyList)
             {
-                newList.Add(new PlaceOfMeal()
+                newList.Add(new MealPlace()
                 {
                     Name = item.POC_NAME,
                     Code = item.POC_CODE

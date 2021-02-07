@@ -31,13 +31,11 @@ namespace GloboDiet
         /// </summary>
         public static IEnumerable<KeyValuePair<ProcessMilestone, string>> StaticListOfProcessMilestones { get; } = EnumHelper.GetListWithDescription<ProcessMilestone>();
 
-        public static SelectList StaticListOfTypesOfMeal { get; } = new SelectList(TypeOfMeal.GetSeedsFromLegacy(), "Id", "Name");
+        public static SelectList StaticListOfMealTypes { get; set; }
+        public static SelectList StaticListOfMealPlaces { get; set; } 
+        public static SelectList StaticListOfBrandnames { get; set; }
 
-        public static SelectList StaticListOfPlacesOfMeal { get; } = new SelectList(PlaceOfMeal.GetSeedsFromLegacy(), "Id", "Name");
-
-        public static SelectList StaticListOfBrandnames { get; } = new SelectList(Brandname.GetSeedsFromLegacy(), "Id", "Name");
-
-        public static SelectList StaticListOfEssin { get; } = new SelectList(Essin.GetSeedsFromLegacy(), "Id", "Name");
+        //public static SelectList StaticListOfEssins { get; } = new SelectList(Essin.GetSeedsFromLegacy(), "Id", "Name");
 
     }
 }

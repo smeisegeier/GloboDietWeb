@@ -42,7 +42,9 @@ namespace GloboDiet
 
             services.AddMvc();
             //services.AddDbContext<GloboDietDbContext>(options => options.UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDiet;trusted_connection=true;"));
-            services.AddDbContext<GloboDietDbContext>(options => options.UseInMemoryDatabase("Test"));
+            services.AddDbContext<GloboDietDbContext>(options => options
+                .UseLazyLoadingProxies()
+                .UseInMemoryDatabase("Test"));
             services.AddScoped(typeof(IRepositoryNew<>), typeof(RepositoryNew<>));
 
             // enable session stuff

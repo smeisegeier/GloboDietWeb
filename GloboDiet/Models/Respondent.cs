@@ -37,7 +37,7 @@ namespace GloboDiet.Models
         public int Weight { get; set; } = 80;
 
         // Navigation property
-        public ICollection<Interview> Interviews { get; set; }
+        public virtual ICollection<Interview> Interviews { get; set; }
 
         public Respondent() { }
 

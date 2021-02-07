@@ -11,12 +11,12 @@ namespace GloboDiet.Models
         [Range(0,23)]
         public int StartingHour { get; set; }
 
-        public int TypeOfMealId { get; set; }
-        public TypeOfMeal TypeOfMeal { get; set; }
+        public int MealTypeId { get; set; }
+        public virtual MealType MealType { get; set; }
 
-        public int PlaceOfMealId { get; set; }
-        public PlaceOfMeal PlaceOfMeal { get; set; }
+        public int MealPlaceId { get; set; }
+        public virtual MealPlace MealPlace { get; set; }
 
-        public ICollection<Essin> Essins{ get; set; }
+        public virtual ICollection<Essin> Essins{ get; set; }
     }
 }

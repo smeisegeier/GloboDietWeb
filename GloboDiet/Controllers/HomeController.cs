@@ -32,6 +32,9 @@ namespace GloboDiet.Controllers
         private readonly IRepositoryNew<Respondent> _repoRespondent;
         private readonly IRepositoryNew<Recipe> _repoRecipe;
         private readonly IRepositoryNew<Meal> _repoMeal;
+        private readonly IRepositoryNew<MealType> _repoMealType;
+        private readonly IRepositoryNew<MealPlace> _repoMealPlace;
+        private readonly IRepositoryNew<Brandname> _repoBrandname;
 
         public HomeController(IWebHostEnvironment webHostEnvironment,
             IHttpContextAccessor httpContextAccessor,
@@ -40,7 +43,10 @@ namespace GloboDiet.Controllers
             IRepositoryNew<Location> repoLocation,
             IRepositoryNew<Respondent> repoRespondent,
             IRepositoryNew<Recipe> repoRecipe,
-            IRepositoryNew<Meal> repoMeal
+            IRepositoryNew<Meal> repoMeal,
+            IRepositoryNew<MealType> repoMealType,
+            IRepositoryNew<MealPlace> repoMealPlace,
+            IRepositoryNew<Brandname> repoBrandname
             )
         {
             _webHostEnvironment = webHostEnvironment;
@@ -51,7 +57,9 @@ namespace GloboDiet.Controllers
             _repoRespondent = repoRespondent;
             _repoRecipe = repoRecipe;
             _repoMeal = repoMeal;
-
+            _repoMealType = repoMealType;
+            _repoMealPlace = repoMealPlace;
+            _repoBrandname = repoBrandname;
         }
 
         // TODO use modal window instead of status area
@@ -296,6 +304,8 @@ namespace GloboDiet.Controllers
             return RedirectToAction(nameof(InterviewsList));
         }
         */
+
+        // TODO Edit / details -> template? css? view?
 
         public IActionResult InterviewsList()
         {
