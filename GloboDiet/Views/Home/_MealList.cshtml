@@ -7,10 +7,10 @@
                 @Html.DisplayNameFor(model => model.Interview.Meals.First().StartingHour)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Interview.Meals.First().TypeOfMeal)
+                @Html.DisplayNameFor(model => model.Interview.Meals.First().TypeOfMealId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Interview.Meals.First().PlaceOfMeal)
+                @Html.DisplayNameFor(model => model.Interview.Meals.First().PlaceOfMealId)
             </th>
             <th></th>
         </tr>
@@ -23,10 +23,10 @@
                 @Html.DisplayFor(modelItem => item.StartingHour)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TypeOfMeal.Label)
+                @Html.DisplayFor(modelItem => item.TypeOfMealId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PlaceOfMeal.Label)
+                @Html.DisplayFor(modelItem => item.PlaceOfMealId)
             </td>
             <td>
                 <a asp-action="#" asp-route-id="@item.Id">Edit</a> |

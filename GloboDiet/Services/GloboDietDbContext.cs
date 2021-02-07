@@ -17,10 +17,16 @@ namespace GloboDiet.Services
         public DbSet<Interviewer> Interviewers { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<Respondent> Respondents { get; set; }
-        public DbSet<PlaceOfMeal> PlacesOfMeal { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<Meal> Meals { get; set; }
 
+
+        /* Lookup Tables*/
+        public DbSet<TypeOfMeal> TypesOfMeal { get; set; }
+        public DbSet<PlaceOfMeal> PlacesOfMeal { get; set; }
+
+
+        /* User Manager*/
         public DbSet<User> User { get; set; }
 
 

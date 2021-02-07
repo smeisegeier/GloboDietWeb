@@ -1,11 +1,13 @@
 ﻿using GloboDiet.Legacy.GloboDietDb;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace GloboDiet.Models
 {
+    [Table("TypesOfMeal")]
     public class TypeOfMeal : _ModelBase
     {
         public TypeOfMeal() { }
