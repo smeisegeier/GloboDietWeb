@@ -15,7 +15,7 @@ namespace GloboDiet.ViewModels
 
         public IEnumerable<SelectListItem> ListOfInterviewers { get; set; }
         public IEnumerable<SelectListItem> ListOfLocations { get; set; }
-        public IEnumerable<SelectListItem> ListOfRespondents { get; set; }
+//        public IEnumerable<SelectListItem> ListOfRespondents { get; set; }
 
         public IEnumerable<Meal> ListOfMeals { get; set; }
 
@@ -23,7 +23,7 @@ namespace GloboDiet.ViewModels
         public InterviewCreateEdit(Interview interview,
             IEnumerable<Interviewer> listOfInterviewers,
             IEnumerable<Location> listOfLocations,
-            IEnumerable<Respondent> listOfRespondents,
+            //IEnumerable<Respondent> listOfRespondents,
             IEnumerable<Meal> listOfMeals,
             Globals.ProcessMilestone currentProcessMilestone,
             NavigationBar navigationBar)
@@ -31,7 +31,7 @@ namespace GloboDiet.ViewModels
             Interview = interview;
             ListOfInterviewers = new SelectList(listOfInterviewers, "Id", "Label");
             ListOfLocations = new SelectList(listOfLocations, "Id", "Label");
-            ListOfRespondents = new SelectList(listOfRespondents, "Id", "Label");
+            //ListOfRespondents = new SelectList(listOfRespondents, "Id", "Label");
             //ListOfRespondents.OrderByDescending(o => o.Value).FirstOrDefault().Selected = true;
 
             ListOfMeals = listOfMeals;
@@ -72,13 +72,27 @@ namespace GloboDiet.ViewModels
             set { Interview.InterviewerId = value; }
         }
 
+        //[Display(Name = "Respondent")]
+        //public int RespondentId
+        //{
+        //    get => Interview.RespondentId;
+        //    set { Interview.RespondentId = value; }
+        //}
+        
         [Display(Name = "Respondent")]
-        public int RespondentId
+        public Respondent Respondent
         {
-            get => Interview.RespondentId;
-            set { Interview.RespondentId = value; }
+            get => Interview.Respondent;
+            set { Interview.Respondent = value; }
         }
 
+        [Display(Name = "Respondent")]
+        public string RespondentLabel {
+            get {
+                string x = Interview?.Respondent?.Label;
+                return string.IsNullOrEmpty(x)? "empty" : x;
+            }
+        }
         //public Interviewer Interviewer
         //{
         //    get => Interview.Interviewer;

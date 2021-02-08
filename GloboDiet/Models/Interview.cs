@@ -29,6 +29,7 @@ namespace GloboDiet.Models
 
         public Interview()
         {
+           //RespondentId = 1;
         }
 
         public static IList<Interview> GetSeedsFromMockup() => new List<Interview>()
