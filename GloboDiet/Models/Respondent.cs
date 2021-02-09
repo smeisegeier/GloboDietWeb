@@ -17,27 +17,18 @@ namespace GloboDiet.Models
 
     public class Respondent : _ModelBase
     {
-        [DisplayName("Given Name")]
         public string GivenName { get; set; }
 
         public double Age { get => Math.Round((DateTime.Now - DateOfBirth).TotalDays / 365.242199, 1); }
 
         public Gender Gender { get; set; }
 
-        [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; } = DateTimeHelper.GetDateTimeFromString("1980-01-01", "yyyy-MM-dd");
 
-        [Display(Name = "Height in cm", Prompt = "150 - 230 cm")]
-        [Required(ErrorMessage = "Height must be provided")]
-        [Range(150, 230)]
         public int Height { get; set; } = 175;
 
-        [Display(Name = "Weight in kg", Prompt = "30 - 300 kg")]
-        [Required(ErrorMessage = "Weight must be provided")]
-        [Range(30, 300)]
         public int Weight { get; set; } = 80;
 
-        // TODO !check Navigation property
         [ForeignKey("Interview")]
         public int InterviewId { get; set; }
         public virtual Interview Interview { get; set; }

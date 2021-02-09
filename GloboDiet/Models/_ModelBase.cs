@@ -24,12 +24,11 @@ namespace GloboDiet.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime? UpdatedAt { get; set; }
 
-        // TODO calculated column?
         public Guid Guid { get; private set; } = new Guid();
 
         /* convenience props*/
-        [NotMapped]
         public string Label => ToString();
+
 
         public override string ToString() => $"[{Id} | {Name}]";
 

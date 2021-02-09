@@ -66,8 +66,6 @@ namespace GloboDiet.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
-            // testing session mechanics
-            //_httpContext.Session.SetString("SessionUser", "itsme");
             // if no content needed just pass _ViewModelBase
             return View(new _ViewModelBase(getNewNavigationBar()));
         }
@@ -90,12 +88,9 @@ namespace GloboDiet.Controllers
         [HttpGet]
         public IActionResult NewInterview020(int id)
         {
-            // TODO exception
-            var interviewNewOrFromDb = _repoInterview.ItemGetById(id) ?? new Interview();
-
-            //Interview modelNullOrReturned = TempData.Get<Interview>(); //TempData.Get<Interview>("Interview");
-            //if (modelNullOrReturned is not null)
-            //    modelNullOrReturned.RespondentId = _repoRespondent.ItemsGetAll().LastOrDefault().Id;
+            var interviewNewOrFromDb = _repoInterview.ItemGetById(id);
+            if (interviewNewOrFromDb is null)
+                throw new Exception("Interview defect");
 
             var newModel = new InterviewCreateEdit(
             interviewNewOrFromDb,
@@ -105,8 +100,6 @@ namespace GloboDiet.Controllers
             Globals.ProcessMilestone._1_INTERVIEW,
             getNewNavigationBar()
             );
-
-            //_nLogger.Debug("\n" + newModel.ToJson());
             return View(newModel);
 
         }
@@ -169,7 +162,7 @@ namespace GloboDiet.Controllers
             var interviewFromDB = _repoInterview.ItemGetById(id);
             var respondentFromDb = _repoRespondent.ItemGetById((int)interviewFromDB.RespondentId);
             
-            // HACK manual override
+            // HACK manual override - w/o it Id's are not working
             respondentFromDb.InterviewId = interviewFromDB.Id;
 
             return View(new RespondentCreateEdit(respondentFromDb, getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW));
@@ -189,11 +182,10 @@ namespace GloboDiet.Controllers
 
         #region 04x
         [HttpPost]
-        public IActionResult NewInterview041(Interview interview)
+        public IActionResult NewInterview041(Interview model)
         {
             // cache object, then redirect
-            TempData.Set(interview);
-            // id is 0, because from x40 only create is available, no edit 
+            _repoInterview.ItemUpdate(model);
             return RedirectToAction(nameof(NewInterview042), new { id = 0 });
         }
 

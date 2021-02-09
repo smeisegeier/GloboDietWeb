@@ -1,6 +1,8 @@
 ﻿using GloboDiet.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,13 +23,10 @@ namespace GloboDiet.ViewModels
 
         public int Id { get => _respondent.Id; }
 
+        [DisplayFormat(NullDisplayText = "Label is null")]
         public string Label { get => _respondent.Label; }
 
-        public int InterviewId
-        {
-            get => _respondent.InterviewId;
-            set { _respondent.InterviewId = value; }
-        }
+        public int InterviewId => _respondent.InterviewId;
 
         public string Name
         {
@@ -39,6 +38,8 @@ namespace GloboDiet.ViewModels
             get => _respondent.Code;
             set { _respondent.Code = value; }
         }
+
+        [DisplayName("Given Name")]
 
         public string GivenName
         {
@@ -52,22 +53,27 @@ namespace GloboDiet.ViewModels
             set { _respondent.Gender= value; }
         }
 
+        [DataType(DataType.Date)]
         public DateTime DateOfBirth
         {
             get => _respondent.DateOfBirth;
             set { _respondent.DateOfBirth = value; }
         }
 
-        public double Age
-        {
-            get => _respondent.Age;
-        }
+        public double Age => _respondent.Age;
 
+        [Display(Name = "Height in cm", Prompt = "150 - 230 cm")]
+        [Required(ErrorMessage = "Height must be provided")]
+        [Range(150, 230)]
         public int Height
         {
             get => _respondent.Height;
             set { _respondent.Height = value; }
         }
+
+        [Display(Name = "Weight in kg", Prompt = "30 - 300 kg")]
+        [Required(ErrorMessage = "Weight must be provided")]
+        [Range(30, 300)]
         public int Weight
         {
             get => _respondent.Weight;

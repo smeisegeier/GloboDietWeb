@@ -15,7 +15,7 @@ namespace GloboDiet.ViewModels
 
         public IEnumerable<SelectListItem> ListOfInterviewers { get; set; }
         public IEnumerable<SelectListItem> ListOfLocations { get; set; }
-//        public IEnumerable<SelectListItem> ListOfRespondents { get; set; }
+        //        public IEnumerable<SelectListItem> ListOfRespondents { get; set; }
 
         public IEnumerable<Meal> ListOfMeals { get; set; }
 
@@ -43,6 +43,7 @@ namespace GloboDiet.ViewModels
 
         public int Id { get => Interview.Id; }
 
+        [DisplayFormat(NullDisplayText = "Label is null")]
         public string Label { get => Interview.Label; }
 
         public DateTime Timestamp
@@ -75,29 +76,20 @@ namespace GloboDiet.ViewModels
             get => Interview.InterviewerId;
             set { Interview.InterviewerId = value; }
         }
-        
-        [Display(Name = "respondent")]
-        public Respondent Respondent
-        {
-            get => Interview.Respondent;
-            set { Interview.Respondent = value; }
-        }
 
+        // No Id, linking is done on entity, not on viewmodel
         [Display(Name = "respondent")]
-        public string RespondentLabel {
-            get {
-                string x = Interview?.Respondent?.Label;
-                return string.IsNullOrEmpty(x)? "empty" : x;
+        //[DisplayFormat(NullDisplayText = "is null")] // still not working
+        public string RespondentLabel //=> Interview?.Respondent?.Label;
+        {
+            get
+            {
+                string x = Interview.Respondent?.Label;
+                return string.IsNullOrEmpty(x) ? "empty" : x;
             }
-        }
+}
 
-        // HACK
-        [Display(Name = "respondent")]
-        public int? RespondentId
-        {
-            get => Interview.RespondentId;
-            set { Interview.RespondentId = value; }
-        }
+
 
     }
 }
