@@ -17,7 +17,7 @@ namespace GloboDiet.Models
     public class Respondent : _ModelBase
     {
         [DisplayName("Given Name")]
-        public string GivenName { get; set; } = "John";
+        public string GivenName { get; set; }
 
         public double Age { get => Math.Round((DateTime.Now - DateOfBirth).TotalDays / 365.242199, 1); }
 
@@ -37,7 +37,7 @@ namespace GloboDiet.Models
         public int Weight { get; set; } = 80;
 
         // Navigation property
-        public virtual ICollection<Interview> Interviews { get; set; }
+        public int InterviewId { get; set; }
 
         public Respondent() { }
 

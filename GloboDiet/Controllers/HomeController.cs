@@ -81,92 +81,111 @@ namespace GloboDiet.Controllers
         #region 02x
 
         [HttpGet]
-        public IActionResult NewInterview020()
+        public IActionResult NewInterview020Create()
         {
-            Interview modelNullOrReturned = TempData.Get<Interview>(); //TempData.Get<Interview>("Interview");
-            if (modelNullOrReturned is not null)
-                modelNullOrReturned.RespondentId = _repoRespondent.ItemsGetAll().LastOrDefault().Id;
+            var newId = _repoInterview.ItemAdd(new Interview());
+            return RedirectToAction(nameof(NewInterview020), new { id = newId });
+        }
+
+        [HttpGet]
+        public IActionResult NewInterview020(int id)
+        {
+            // TODO exception
+            var interviewNewOrFromDb = _repoInterview.ItemGetById(id) ?? new Interview();
+
+            //Interview modelNullOrReturned = TempData.Get<Interview>(); //TempData.Get<Interview>("Interview");
+            //if (modelNullOrReturned is not null)
+            //    modelNullOrReturned.RespondentId = _repoRespondent.ItemsGetAll().LastOrDefault().Id;
 
             var newModel = new InterviewCreateEdit(
-            modelNullOrReturned ?? new Interview(),
+            interviewNewOrFromDb,
             _repoInterviewer.ItemsGetAll(),
             _repoLocation.ItemsGetAll(),
-            //new List<Respondent>() { _repoRespondent.ItemsGetAll().LastOrDefault() },
             _repoMeal.ItemsGetAll(),
             Globals.ProcessMilestone._1_INTERVIEW,
             getNewNavigationBar()
             );
 
-            _nLogger.Debug("\n"+newModel.ToJson());
+            //_nLogger.Debug("\n" + newModel.ToJson());
             return View(newModel);
 
         }
         // TODO Get-Clipboard | ConvertFrom-Json | ConvertTo-Json
 
         [HttpPost]
-        public IActionResult NewInterview020(Interview interview)
+        public IActionResult NewInterview020(Interview model)
         {
-            if (interview.RespondentId == 0)
-            { ModelState.AddModelError("CustomError", "No Respondent selected"); }
-            if (interview.InterviewerId == 0)
-            { ModelState.AddModelError("CustomError", "No Interviewer selected"); }
-            if (interview.LocationId == 0)
-            { ModelState.AddModelError("CustomError", "No Center selected"); }
+            //if (interview.RespondentId == 0)
+            //{ ModelState.AddModelError("CustomError", "No _respondent selected"); }
+            //if (interview.InterviewerId == 0)
+            //{ ModelState.AddModelError("CustomError", "No Interviewer selected"); }
+            //if (interview.LocationId == 0)
+            //{ ModelState.AddModelError("CustomError", "No Center selected"); }
 
             if (!ModelState.IsValid)
             {
+                // TODO create helper method
                 return View(new InterviewCreateEdit(
-                interview,
+                model,
                 _repoInterviewer.ItemsGetAll(),
                 _repoLocation.ItemsGetAll(),
-                //new List<Respondent>() { _repoRespondent.ItemsGetAll().LastOrDefault() },
                 _repoMeal.ItemsGetAll(),
-
                 Globals.ProcessMilestone._1_INTERVIEW,
                 getNewNavigationBar()
                 ));
             }
 
-            _repoInterview.ItemAddOrUpdate(interview);
+            _repoInterview.ItemUpdate(model);
             return RedirectToAction(nameof(Index));
         }
 
         /// <summary>
-        /// xx0 -> POST -> xx1, because the object of xx0 (interview) is needed later
+        /// xx0 -> POST -> xx1, because the object of xx0 (interview) must now be cached
         /// xx1 ist just relay
         /// </summary>
         /// <param name="interview"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult NewInterview021(Interview interview)
+        public IActionResult NewInterview021(Interview model)
         {
-            // cache object, then redirect
-            TempData.Set(interview);
-            return RedirectToAction(nameof(NewInterview022), new { id = interview.RespondentId });
+            var interview = model;
+            if (interview.RespondentId is null || interview.RespondentId == 0)
+                interview.RespondentId = _repoRespondent.ItemAdd(new Respondent());
+ 
+            _repoInterview.ItemUpdate(interview);
+
+            return RedirectToAction(nameof(NewInterview022), new { id = interview.Id });
         }
 
         // xx1 -> GET -> xx2
         /// <summary>
-        /// CreateOrEdit Respondent. Called from xx1
+        /// CreateOrEdit _respondent. Called from xx1
         /// </summary>
-        /// <param name="id">RespondentId of parent interview object. This can be 0 for create new.</param>
+        /// <param name="id">Id of _respondent object.</param>
         /// <returns></returns>
         [HttpGet]
         public IActionResult NewInterview022(int id)
         {
-            Respondent respondentNewOrFromDb = new Respondent();
-            if (id != 0)
-            {   respondentNewOrFromDb = _repoRespondent.ItemGetById(id);   }
-            return View(new RespondentCreateEdit(respondentNewOrFromDb, getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW));
+            // TODO why new Respondetn??
+            var interviewFromDB = _repoInterview.ItemGetById(id);
+            var respondentFromDb = _repoRespondent.ItemGetById((int)interviewFromDB.RespondentId);
+            
+            // HACK manual override
+            respondentFromDb.InterviewId = interviewFromDB.Id;
+            //_respondent respondentNewOrFromDb = new _respondent();
+            //if (id != 0)
+            //{   respondentNewOrFromDb = _repoRespondent.ItemGetById(id);   }
+            return View(new RespondentCreateEdit(respondentFromDb, getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW));
         }
 
         // xx2 -> GET xx0 (save)
         // xx2 -> GET xx0 (cancel)
         [HttpPost]
-        public IActionResult NewInterview022(Respondent respondent)
+        public IActionResult NewInterview022(Respondent model)
         {
-            _repoRespondent.ItemAddOrUpdate(respondent);
-            return RedirectToAction(nameof(NewInterview020));
+            _repoRespondent.ItemUpdate(model);
+            _nLogger.Debug($"Label{model.Label}, Id {model.Id}, Interv {model.InterviewId}");
+            return RedirectToAction(nameof(NewInterview020), new { id = model.InterviewId });
         }
         #endregion
 
@@ -177,7 +196,7 @@ namespace GloboDiet.Controllers
             // cache object, then redirect
             TempData.Set(interview);
             // id is 0, because from x40 only create is available, no edit 
-            return RedirectToAction(nameof(NewInterview042), new { id = 0});
+            return RedirectToAction(nameof(NewInterview042), new { id = 0 });
         }
 
         /// <summary>

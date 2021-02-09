@@ -19,7 +19,7 @@ namespace GloboDiet
             [Description("Interview started")]
             _1_INTERVIEW = 1,
 
-            [Description("Respondent created")]
+            [Description("_respondent created")]
             _2_RESPONDENT = 2,
 
             [Description("Meals created")]

@@ -67,7 +67,7 @@ namespace GloboDiet.Services
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
         //    // try to store computed columns
-        //    modelBuilder.Entity<Respondent>()
+        //    modelBuilder.Entity<_respondent>()
         //        .Property(p => p.Age)
         //        .UsePropertyAccessMode(PropertyAccessMode.Property);
 

@@ -23,7 +23,7 @@ namespace GloboDiet.ViewModels
         public InterviewCreateEdit(Interview interview,
             IEnumerable<Interviewer> listOfInterviewers,
             IEnumerable<Location> listOfLocations,
-            //IEnumerable<Respondent> listOfRespondents,
+            //IEnumerable<_respondent> listOfRespondents,
             IEnumerable<Meal> listOfMeals,
             Globals.ProcessMilestone currentProcessMilestone,
             NavigationBar navigationBar)
@@ -39,7 +39,11 @@ namespace GloboDiet.ViewModels
             NavigationBar = navigationBar;
         }
 
+        public InterviewCreateEdit() { }
+
         public int Id { get => Interview.Id; }
+
+        public string Label { get => Interview.Label; }
 
         public DateTime Timestamp
         {
@@ -60,33 +64,33 @@ namespace GloboDiet.ViewModels
         }
 
         [Display(Name = "Location")]
-        public int LocationId
+        public int? LocationId
         {
             get => Interview.LocationId;
             set { Interview.LocationId = value; }
         }
         [Display(Name = "Interviewer")]
-        public int InterviewerId
+        public int? InterviewerId
         {
             get => Interview.InterviewerId;
             set { Interview.InterviewerId = value; }
         }
 
-        //[Display(Name = "Respondent")]
+        //[Display(Name = "_respondent")]
         //public int RespondentId
         //{
         //    get => Interview.RespondentId;
         //    set { Interview.RespondentId = value; }
         //}
         
-        [Display(Name = "Respondent")]
+        [Display(Name = "respondent")]
         public Respondent Respondent
         {
             get => Interview.Respondent;
             set { Interview.Respondent = value; }
         }
 
-        [Display(Name = "Respondent")]
+        [Display(Name = "respondent")]
         public string RespondentLabel {
             get {
                 string x = Interview?.Respondent?.Label;
