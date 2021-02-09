@@ -1,22 +1,23 @@
 ﻿using GloboDiet.Legacy.GloboDietDb;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace GloboDiet.Models
 {
-    public class TypeOfMeal : _ModelBase
+    public class MealType : _ModelBase
     {
-        public TypeOfMeal() { }
+        public MealType() { }
 
-        public static IList<TypeOfMeal> GetSeedsFromLegacy()
+        public static IList<MealType> GetSeedsFromLegacy()
         {
             var legacyList = FCO.GetLegacyObjects<FCO>();
-            var newList = new List<TypeOfMeal>();
+            var newList = new List<MealType>();
             foreach (var item in legacyList)
             {
-                newList.Add(new TypeOfMeal()
+                newList.Add(new MealType()
                 {
                     Name = item.FCM_SNAME,
                     Code = item.FCM_CODE,

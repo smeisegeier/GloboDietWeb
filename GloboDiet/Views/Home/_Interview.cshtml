@@ -23,25 +23,23 @@
 </div>
 <div class="form-inline">
     <label asp-for="LocationId" class="control-label"></label>
-    <select asp-for="LocationId" class="form-control" asp-items=@Model.ListOfLocations>
-        <option selected="selected" value="">Please select</option>
+    <select asp-for="LocationId" class="form-control" asp-items=@Model.ListOfLocations autofocus>
+        <option selected value="">Please select</option>
     </select>
     <span asp-validation-for="LocationId" class="text-danger"></span>
 </div>
 <div class="form-inline">
     <label asp-for="InterviewerId" class="control-label"></label>
     <select asp-for="InterviewerId" class="form-control" asp-items=@Model.ListOfInterviewers>
-        <option selected="selected" value="">Please select</option>
+        <option selected value="">Please select</option>
     </select>
     <span asp-validation-for="InterviewerId" class="text-danger"></span>
 </div>
 <div class="form-inline">
-    <label asp-for="RespondentId" class="control-label"></label>
-    <select asp-for="RespondentId" class="form-control" asp-items=@Model.ListOfRespondents>
-        
-    </select>
-    <span asp-validation-for="RespondentId" class="text-danger"></span>
-    <input type="submit" value="+" name="submit" class="btn btn-info" formaction="NewInterview021"/>
+    <label asp-for="RespondentLabel" class="control-label"></label>
+    <input asp-for="RespondentLabel" class="form-control" readonly/>
+    <span asp-validation-for="RespondentLabel" class="text-danger"></span>
+    <input type="submit" value="+" name="submit" class="btn btn-info" formaction="/Home/NewInterview021"/>
 </div>
 <h1>List of Meals</h1>
 <div class="form-inline">

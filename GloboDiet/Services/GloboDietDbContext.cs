@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GloboDiet.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GloboDiet.Services
 {
@@ -17,10 +18,17 @@ namespace GloboDiet.Services
         public DbSet<Interviewer> Interviewers { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<Respondent> Respondents { get; set; }
-        public DbSet<PlaceOfMeal> PlacesOfMeal { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<Meal> Meals { get; set; }
 
+
+        /* Lookup Tables*/
+        public DbSet<MealType> MealTypes { get; set; }
+        public DbSet<MealPlace> MealPlaces { get; set; }
+        public DbSet<Brandname> Brandnames { get; set; }
+
+
+        /* User Manager*/
         public DbSet<User> User { get; set; }
 
 
@@ -31,6 +39,12 @@ namespace GloboDiet.Services
         public void SeedDb()
         {
             Database.EnsureCreated();
+            /*1) Lookup tables*/
+            if (!Set<MealType>().Any()) Set<MealType>().AddRange(MealType.GetSeedsFromLegacy());
+            if (!Set<MealPlace>().Any()) Set<MealPlace>().AddRange(MealPlace.GetSeedsFromLegacy());
+            if (!Set<Brandname>().Any()) Set<Brandname>().AddRange(Brandname.GetSeedsFromLegacy());
+
+            /*2) Entites */
             if (!Set<Interview>().Any()) Set<Interview>().AddRange(Interview.GetSeedsFromMockup());
             if (!Set<Interviewer>().Any()) Set<Interviewer>().AddRange(Interviewer.GetSeedsFromMockup());
             if (!Set<Location>().Any()) Set<Location>().AddRange(Location.GetSeedsFromMockup());
@@ -39,6 +53,11 @@ namespace GloboDiet.Services
 
             // Saving is isolated now to prevent FK mismatches
             SaveChanges();
+
+            /* setup Static selectlists from Lookup */
+            Globals.StaticListOfMealTypes = new SelectList(Set<MealType>().ToList(), "Id", "Name");
+            Globals.StaticListOfMealPlaces = new SelectList(Set<MealPlace>().ToList(), "Id", "Name");
+            Globals.StaticListOfBrandnames = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
         }
 
         ///// <summary>
@@ -48,7 +67,7 @@ namespace GloboDiet.Services
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
         //    // try to store computed columns
-        //    modelBuilder.Entity<Respondent>()
+        //    modelBuilder.Entity<_respondent>()
         //        .Property(p => p.Age)
         //        .UsePropertyAccessMode(PropertyAccessMode.Property);
 

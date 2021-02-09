@@ -15,7 +15,7 @@ namespace GloboDiet.ViewModels
 
         public IEnumerable<SelectListItem> ListOfInterviewers { get; set; }
         public IEnumerable<SelectListItem> ListOfLocations { get; set; }
-        public IEnumerable<SelectListItem> ListOfRespondents { get; set; }
+//        public IEnumerable<SelectListItem> ListOfRespondents { get; set; }
 
         public IEnumerable<Meal> ListOfMeals { get; set; }
 
@@ -23,7 +23,7 @@ namespace GloboDiet.ViewModels
         public InterviewCreateEdit(Interview interview,
             IEnumerable<Interviewer> listOfInterviewers,
             IEnumerable<Location> listOfLocations,
-            IEnumerable<Respondent> listOfRespondents,
+            //IEnumerable<_respondent> listOfRespondents,
             IEnumerable<Meal> listOfMeals,
             Globals.ProcessMilestone currentProcessMilestone,
             NavigationBar navigationBar)
@@ -31,7 +31,7 @@ namespace GloboDiet.ViewModels
             Interview = interview;
             ListOfInterviewers = new SelectList(listOfInterviewers, "Id", "Label");
             ListOfLocations = new SelectList(listOfLocations, "Id", "Label");
-            ListOfRespondents = new SelectList(listOfRespondents, "Id", "Label");
+            //ListOfRespondents = new SelectList(listOfRespondents, "Id", "Label");
             //ListOfRespondents.OrderByDescending(o => o.Value).FirstOrDefault().Selected = true;
 
             ListOfMeals = listOfMeals;
@@ -39,7 +39,11 @@ namespace GloboDiet.ViewModels
             NavigationBar = navigationBar;
         }
 
+        public InterviewCreateEdit() { }
+
         public int Id { get => Interview.Id; }
+
+        public string Label { get => Interview.Label; }
 
         public DateTime Timestamp
         {
@@ -60,25 +64,39 @@ namespace GloboDiet.ViewModels
         }
 
         [Display(Name = "Location")]
-        public int LocationId
+        public int? LocationId
         {
             get => Interview.LocationId;
             set { Interview.LocationId = value; }
         }
         [Display(Name = "Interviewer")]
-        public int InterviewerId
+        public int? InterviewerId
         {
             get => Interview.InterviewerId;
             set { Interview.InterviewerId = value; }
         }
 
-        [Display(Name = "Respondent")]
-        public int RespondentId
+        //[Display(Name = "_respondent")]
+        //public int RespondentId
+        //{
+        //    get => Interview.RespondentId;
+        //    set { Interview.RespondentId = value; }
+        //}
+        
+        [Display(Name = "respondent")]
+        public Respondent Respondent
         {
-            get => Interview.RespondentId;
-            set { Interview.RespondentId = value; }
+            get => Interview.Respondent;
+            set { Interview.Respondent = value; }
         }
 
+        [Display(Name = "respondent")]
+        public string RespondentLabel {
+            get {
+                string x = Interview?.Respondent?.Label;
+                return string.IsNullOrEmpty(x)? "empty" : x;
+            }
+        }
         //public Interviewer Interviewer
         //{
         //    get => Interview.Interviewer;

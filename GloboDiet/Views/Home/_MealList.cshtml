@@ -7,29 +7,29 @@
                 @Html.DisplayNameFor(model => model.Interview.Meals.First().StartingHour)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Interview.Meals.First().TypeOfMeal)
+                @Html.DisplayNameFor(model => model.Interview.Meals.First().MealType.Label)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Interview.Meals.First().PlaceOfMeal)
+                @Html.DisplayNameFor(model => model.Interview.Meals.First().MealPlace.Label)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@if (Model?.Interview?.Meals is not null) {
-        @foreach (var item in Model.Interview.Meals) {
+@if (Model?.ListOfMeals is not null) {
+        @foreach (var item in Model.ListOfMeals) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.StartingHour)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TypeOfMeal.Label)
+                @Html.DisplayFor(modelItem => item.MealType.Label)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PlaceOfMeal.Label)
+                @Html.DisplayFor(modelItem => item.MealPlace.Label)
             </td>
             <td>
-                <a asp-action="#" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="NewInterview042" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="#" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="#" asp-route-id="@item.Id">Delete</a>
             </td>

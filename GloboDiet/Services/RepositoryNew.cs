@@ -10,9 +10,9 @@ namespace GloboDiet.Services
     {
         IEnumerable<TEntity> ItemsGetAll();
         TEntity ItemGetById(int id);
-        void ItemAdd(TEntity entity);
-        void ItemAddOrUpdate(TEntity entity);
-        void ItemUpdate(TEntity entity);
+        int ItemAdd(TEntity entity);
+        int ItemAddOrUpdate(TEntity entity);
+        int ItemUpdate(TEntity entity);
         void ItemDelete(TEntity entity);
         int ItemsGetCount();
 
@@ -29,14 +29,24 @@ namespace GloboDiet.Services
 
         public IEnumerable<TEntity> ItemsGetAll() => _context.Set<TEntity>().OrderBy(o => o.Id);
 
-
-        public void ItemAdd(TEntity entity)
+        /// <summary>
+        /// Saves entity to Db
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns>freshly created id</returns>
+        public int ItemAdd(TEntity entity)
         {
             _context.Set<TEntity>().Add(entity);
             _context.SaveChanges();
+            return entity.Id;
         }
 
-        public void ItemAddOrUpdate(TEntity entity)
+        /// <summary>
+        /// Saves entity to Db
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns>id of entity</returns>
+        public int ItemAddOrUpdate(TEntity entity)
         {
             if (_context.Set<TEntity>().Contains(entity))
             {
@@ -47,12 +57,14 @@ namespace GloboDiet.Services
                 _context.Set<TEntity>().Add(entity);
             }
             _context.SaveChanges();
+            return entity.Id;
         }
 
-        public void ItemUpdate(TEntity entity)
+        public int ItemUpdate(TEntity entity)
         {
             _context.Set<TEntity>().Update(entity);
             _context.SaveChanges();
+            return entity.Id;
         }
 
         public void ItemDelete(TEntity entity)
