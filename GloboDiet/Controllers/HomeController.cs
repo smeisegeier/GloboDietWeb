@@ -166,24 +166,22 @@ namespace GloboDiet.Controllers
         [HttpGet]
         public IActionResult NewInterview022(int id)
         {
-            // TODO why new Respondetn??
             var interviewFromDB = _repoInterview.ItemGetById(id);
             var respondentFromDb = _repoRespondent.ItemGetById((int)interviewFromDB.RespondentId);
             
             // HACK manual override
             respondentFromDb.InterviewId = interviewFromDB.Id;
-            //_respondent respondentNewOrFromDb = new _respondent();
-            //if (id != 0)
-            //{   respondentNewOrFromDb = _repoRespondent.ItemGetById(id);   }
+
             return View(new RespondentCreateEdit(respondentFromDb, getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW));
         }
 
         // xx2 -> GET xx0 (save)
         // xx2 -> GET xx0 (cancel)
         [HttpPost]
-        public IActionResult NewInterview022(Respondent model)
+        public IActionResult NewInterview022(Respondent model, string submit)
         {
-            _repoRespondent.ItemUpdate(model);
+            if (submit!="Cancel")
+                _repoRespondent.ItemUpdate(model);
             _nLogger.Debug($"Label{model.Label}, Id {model.Id}, Interv {model.InterviewId}");
             return RedirectToAction(nameof(NewInterview020), new { id = model.InterviewId });
         }

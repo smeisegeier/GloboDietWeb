@@ -45,11 +45,12 @@ namespace GloboDiet.Services
             if (!Set<Brandname>().Any()) Set<Brandname>().AddRange(Brandname.GetSeedsFromLegacy());
 
             /*2) Entites */
-            if (!Set<Interview>().Any()) Set<Interview>().AddRange(Interview.GetSeedsFromMockup());
             if (!Set<Interviewer>().Any()) Set<Interviewer>().AddRange(Interviewer.GetSeedsFromMockup());
             if (!Set<Location>().Any()) Set<Location>().AddRange(Location.GetSeedsFromMockup());
-            if (!Set<Respondent>().Any()) Set<Respondent>().AddRange(Respondent.GetSeedsFromMockup());
             if (!Set<Recipe>().Any()) Set<Recipe>().AddRange(Recipe.GetSeedsFromMockup());
+
+            //if (!Set<Respondent>().Any()) Set<Respondent>().AddRange(Respondent.GetSeedsFromMockup());
+            //if (!Set<Interview>().Any()) Set<Interview>().AddRange(Interview.GetSeedsFromMockup());
 
             // Saving is isolated now to prevent FK mismatches
             SaveChanges();

@@ -11,7 +11,7 @@ namespace GloboDiet.Models
     {
 
         public DateTime Timestamp { get; set; } = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, 0);
-        public int Number { get; set; } = 1;
+        public int Number { get; set; } = 13;
 
         public DateTime ReferenceDate { get; set; } = DateTime.Now;
 
@@ -29,7 +29,6 @@ namespace GloboDiet.Models
 
         public Interview()
         {
-           //RespondentId = 1;
         }
 
         public static IList<Interview> GetSeedsFromMockup() => new List<Interview>()

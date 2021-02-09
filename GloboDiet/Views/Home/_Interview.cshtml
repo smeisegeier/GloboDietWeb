@@ -37,6 +37,7 @@
 </div>
 <div class="form-inline">
     <label asp-for="RespondentLabel" class="control-label"></label>
+    <input asp-for="RespondentId" class="form-control" readonly/>
     <input asp-for="RespondentLabel" class="form-control" readonly/>
     <span asp-validation-for="RespondentLabel" class="text-danger"></span>
     <input type="submit" value="+" name="submit" class="btn btn-info" formaction="/Home/NewInterview021"/>

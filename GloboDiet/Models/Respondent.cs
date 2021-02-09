@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using GloboDiet.Services;
@@ -36,8 +37,10 @@ namespace GloboDiet.Models
         [Range(30, 300)]
         public int Weight { get; set; } = 80;
 
-        // Navigation property
+        // TODO !check Navigation property
+        [ForeignKey("Interview")]
         public int InterviewId { get; set; }
+        public virtual Interview Interview { get; set; }
 
         public Respondent() { }
 

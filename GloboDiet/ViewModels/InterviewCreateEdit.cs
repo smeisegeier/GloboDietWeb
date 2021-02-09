@@ -75,13 +75,6 @@ namespace GloboDiet.ViewModels
             get => Interview.InterviewerId;
             set { Interview.InterviewerId = value; }
         }
-
-        //[Display(Name = "_respondent")]
-        //public int RespondentId
-        //{
-        //    get => Interview.RespondentId;
-        //    set { Interview.RespondentId = value; }
-        //}
         
         [Display(Name = "respondent")]
         public Respondent Respondent
@@ -97,10 +90,14 @@ namespace GloboDiet.ViewModels
                 return string.IsNullOrEmpty(x)? "empty" : x;
             }
         }
-        //public Interviewer Interviewer
-        //{
-        //    get => Interview.Interviewer;
-        //    set { Interview.Interviewer = value; }
-        //}
+
+        // HACK
+        [Display(Name = "respondent")]
+        public int? RespondentId
+        {
+            get => Interview.RespondentId;
+            set { Interview.RespondentId = value; }
+        }
+
     }
 }
