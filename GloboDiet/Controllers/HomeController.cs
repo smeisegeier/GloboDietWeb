@@ -181,34 +181,41 @@ namespace GloboDiet.Controllers
         #endregion
 
         #region 04x
+
         [HttpPost]
         public IActionResult NewInterview041(Interview model)
         {
             // cache object, then redirect
+            // TODO id = 0 was right, i think
             _repoInterview.ItemUpdate(model);
-            return RedirectToAction(nameof(NewInterview042), new { id = 0 });
+            return RedirectToAction(nameof(NewInterview042), new { interviewId = model.Id, mealId = 0 });
         }
 
         /// <summary>
-        /// CreateOrEdit Meal
+        /// CreateOrEdit _meal
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-        public IActionResult NewInterview042(int id)
+        public IActionResult NewInterview042(int interviewId, int mealId)
         {
             var mealNewOrFromDb = new Meal();
-            if (id != 0)
-            { mealNewOrFromDb = _repoMeal.ItemGetById(id); }
+            if (mealId != 0)
+            { mealNewOrFromDb = _repoMeal.ItemGetById(mealId); }
+            mealNewOrFromDb.InterviewId = interviewId;
+
             return View(new MealCreateEdit(mealNewOrFromDb, getNewNavigationBar()));
         }
 
         [HttpPost]
-        public IActionResult NewInterview042(Meal meal)
+        public IActionResult NewInterview042(Meal model)
         {
-            _repoMeal.ItemAddOrUpdate(meal);
+            _repoMeal.ItemAddOrUpdate(model);
+            var interviewId = _repoInterview.ItemGetById(model.InterviewId);
+
+
+
             //_nLogger.Debug(_repoMeal.ItemsGetCount());
-            //_nLogger.Debug(_repoMeal.ItemsGetAll().ToList().Select(s=>s.Label));
             return RedirectToAction(nameof(NewInterview020));
         }
         #endregion

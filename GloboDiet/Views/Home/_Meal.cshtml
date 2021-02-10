@@ -3,21 +3,25 @@
 
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 <div class="form-group">
-    <label asp-for="Meal.StartingHour" class="control-label"></label>
-    <input asp-for="Meal.StartingHour" class="form-control" autofocus />
-    <span asp-validation-for="Meal.StartingHour" class="text-danger"></span>
+    <input asp-for="InterviewId" hidden />
+    <input asp-for="Id" readonly/>
 </div>
 <div class="form-group">
-    <label asp-for="Meal.MealTypeId" class="control-label"></label>
-    <select asp-for="Meal.MealTypeId" class="form-control" asp-items=@Globals.StaticListOfMealTypes>
-        <option selected disabled value="">Please select</option>
-    </select>
-    <span asp-validation-for="Meal.MealTypeId" class="text-danger"></span>
+    <label asp-for="StartingHour" class="control-label"></label>
+    <input asp-for="StartingHour" class="form-control" autofocus />
+    <span asp-validation-for="StartingHour" class="text-danger"></span>
 </div>
 <div class="form-group">
-    <label asp-for="Meal.MealPlaceId" class="control-label"></label>
-    <select asp-for="Meal.MealPlaceId" class="form-control" asp-items=@Globals.StaticListOfMealPlaces>
+    <label asp-for="MealTypeId" class="control-label"></label>
+    <select asp-for="MealTypeId" class="form-control" asp-items=@Globals.StaticListOfMealTypes>
         <option selected disabled value="">Please select</option>
     </select>
-    <span asp-validation-for="Meal.MealPlaceId" class="text-danger"></span>
+    <span asp-validation-for="MealTypeId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="MealPlaceId" class="control-label"></label>
+    <select asp-for="MealPlaceId" class="form-control" asp-items=@Globals.StaticListOfMealPlaces>
+        <option selected disabled value="">Please select</option>
+    </select>
+    <span asp-validation-for="MealPlaceId" class="text-danger"></span>
 </div>
