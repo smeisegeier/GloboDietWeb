@@ -34,8 +34,9 @@ namespace GloboDiet.Models
         public virtual Interview Interview { get; set; }
 
         public Respondent() { }
+        public Respondent(int interviewId) { InterviewId = interviewId; }
 
-      
+
 
         public static IList<Respondent> GetSeedsFromMockup()
         {

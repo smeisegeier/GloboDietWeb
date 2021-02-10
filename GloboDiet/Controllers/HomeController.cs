@@ -89,22 +89,22 @@ namespace GloboDiet.Controllers
         public IActionResult NewInterview020(int id)
         {
             var interviewNewOrFromDb = _repoInterview.ItemGetById(id);
-            if (interviewNewOrFromDb is null)
-                throw new Exception("Interview defect");
+            if (interviewNewOrFromDb is not Interview)
+                { throw new Exception("Interview defect"); }
 
             var newModel = new InterviewCreateEdit(
-            interviewNewOrFromDb,
-            _repoInterviewer.ItemsGetAll(),
-            _repoLocation.ItemsGetAll(),
-            _repoMeal.ItemsGetAll(),
-            Globals.ProcessMilestone._1_INTERVIEW,
-            getNewNavigationBar()
-            );
+                interviewNewOrFromDb,
+                _repoInterviewer.ItemsGetAll(),
+                _repoLocation.ItemsGetAll(),
+                _repoMeal.ItemsGetAll(),
+                Globals.ProcessMilestone._1_INTERVIEW,
+                getNewNavigationBar()
+                );
             return View(newModel);
 
         }
         // TODO Get-Clipboard | ConvertFrom-Json | ConvertTo-Json
-
+        // TODO use session Id
         [HttpPost]
         public IActionResult NewInterview020(Interview model)
         {
@@ -119,13 +119,13 @@ namespace GloboDiet.Controllers
             {
                 // TODO create helper method
                 return View(new InterviewCreateEdit(
-                model,
-                _repoInterviewer.ItemsGetAll(),
-                _repoLocation.ItemsGetAll(),
-                _repoMeal.ItemsGetAll(),
-                Globals.ProcessMilestone._1_INTERVIEW,
-                getNewNavigationBar()
-                ));
+                    model,
+                    _repoInterviewer.ItemsGetAll(),
+                    _repoLocation.ItemsGetAll(),
+                    _repoMeal.ItemsGetAll(),
+                    Globals.ProcessMilestone._1_INTERVIEW,
+                    getNewNavigationBar()
+                    ));
             }
 
             _repoInterview.ItemUpdate(model);
@@ -141,31 +141,30 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult NewInterview021(Interview model)
         {
-            var interview = model;
-            if (interview.RespondentId is null || interview.RespondentId == 0)
-                interview.RespondentId = _repoRespondent.ItemAdd(new Respondent());
- 
-            _repoInterview.ItemUpdate(interview);
+            // cache interview
+            _repoInterview.ItemUpdate(model);
+            // ensure respondent
+            if (model.RespondentId is null || model.RespondentId == 0)
+                model.RespondentId = _repoRespondent.ItemAdd(new Respondent(model.Id));
 
-            return RedirectToAction(nameof(NewInterview022), new { id = interview.Id });
+            return RedirectToAction(nameof(NewInterview022), new { id = model.RespondentId });
         }
 
         // xx1 -> GET -> xx2
         /// <summary>
         /// CreateOrEdit _respondent. Called from xx1
         /// </summary>
-        /// <param name="id">Id of _respondent object.</param>
+        /// <param name="id">Id of respondent object.</param>
         /// <returns></returns>
         [HttpGet]
         public IActionResult NewInterview022(int id)
         {
-            var interviewFromDB = _repoInterview.ItemGetById(id);
-            var respondentFromDb = _repoRespondent.ItemGetById((int)interviewFromDB.RespondentId);
-            
-            // HACK manual override - w/o it Id's are not working
-            respondentFromDb.InterviewId = interviewFromDB.Id;
-
-            return View(new RespondentCreateEdit(respondentFromDb, getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW));
+            var respondentFromDb = _repoRespondent.ItemGetById(id);
+            return View(new RespondentCreateEdit(
+                respondentFromDb, 
+                getNewNavigationBar(), 
+                Globals.ProcessMilestone._1_INTERVIEW
+                ));
         }
 
         // xx2 -> GET xx0 (save)
@@ -173,9 +172,9 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult NewInterview022(Respondent model, string submit)
         {
-            if (submit!="Cancel")
-                _repoRespondent.ItemUpdate(model);
-            _nLogger.Debug($"Label{model.Label}, Id {model.Id}, Interv {model.InterviewId}");
+            if (submit != "Cancel")
+                { _repoRespondent.ItemUpdate(model); }
+            //_nLogger.Debug($"Label{model.Label}, Id {model.Id}, Interv {model.InterviewId}");
             return RedirectToAction(nameof(NewInterview020), new { id = model.InterviewId });
         }
         #endregion
@@ -186,37 +185,31 @@ namespace GloboDiet.Controllers
         public IActionResult NewInterview041(Interview model)
         {
             // cache object, then redirect
-            // TODO id = 0 was right, i think
             _repoInterview.ItemUpdate(model);
-            return RedirectToAction(nameof(NewInterview042), new { interviewId = model.Id, mealId = 0 });
+            // create new meal w/ reference to parent
+            var newMealId = _repoMeal.ItemAdd(new Meal(model.Id));
+            return RedirectToAction(nameof(NewInterview042), new { id = newMealId });
         }
 
         /// <summary>
         /// CreateOrEdit _meal
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">id of meal</param>
         /// <returns></returns>
         [HttpGet]
-        public IActionResult NewInterview042(int interviewId, int mealId)
+        public IActionResult NewInterview042(int id)
         {
-            var mealNewOrFromDb = new Meal();
-            if (mealId != 0)
-            { mealNewOrFromDb = _repoMeal.ItemGetById(mealId); }
-            mealNewOrFromDb.InterviewId = interviewId;
-
+            var mealNewOrFromDb = _repoMeal.ItemGetById(id);
             return View(new MealCreateEdit(mealNewOrFromDb, getNewNavigationBar()));
         }
 
         [HttpPost]
-        public IActionResult NewInterview042(Meal model)
+        public IActionResult NewInterview042(Meal model, string submit)
         {
-            _repoMeal.ItemAddOrUpdate(model);
-            var interviewId = _repoInterview.ItemGetById(model.InterviewId);
-
-
-
+            if (submit != "Cancel")
+                { _repoMeal.ItemAddOrUpdate(model); }
             //_nLogger.Debug(_repoMeal.ItemsGetCount());
-            return RedirectToAction(nameof(NewInterview020));
+            return RedirectToAction(nameof(NewInterview020), new { id = model.InterviewId });
         }
         #endregion
 

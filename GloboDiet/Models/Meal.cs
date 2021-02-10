@@ -22,5 +22,11 @@ namespace GloboDiet.Models
         public int InterviewId { get; set; }
 
         public virtual ICollection<Essin> Essins{ get; set; }
+
+        public Meal() { }
+
+        // ctor for 
+        public Meal(int interviewId) { InterviewId = interviewId; }
+
     }
 }

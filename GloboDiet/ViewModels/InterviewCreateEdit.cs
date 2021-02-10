@@ -10,12 +10,11 @@ namespace GloboDiet.ViewModels
 {
     public class InterviewCreateEdit : _ViewModelBase
     {
-
+        // TODO cleanup
         public Interview Interview { get; set; }
 
         public IEnumerable<SelectListItem> ListOfInterviewers { get; set; }
         public IEnumerable<SelectListItem> ListOfLocations { get; set; }
-        //        public IEnumerable<SelectListItem> ListOfRespondents { get; set; }
 
         public IEnumerable<Meal> ListOfMeals { get; set; }
 
@@ -23,7 +22,6 @@ namespace GloboDiet.ViewModels
         public InterviewCreateEdit(Interview interview,
             IEnumerable<Interviewer> listOfInterviewers,
             IEnumerable<Location> listOfLocations,
-            //IEnumerable<_respondent> listOfRespondents,
             IEnumerable<Meal> listOfMeals,
             Globals.ProcessMilestone currentProcessMilestone,
             NavigationBar navigationBar)
@@ -31,8 +29,6 @@ namespace GloboDiet.ViewModels
             Interview = interview;
             ListOfInterviewers = new SelectList(listOfInterviewers, "Id", "Label");
             ListOfLocations = new SelectList(listOfLocations, "Id", "Label");
-            //ListOfRespondents = new SelectList(listOfRespondents, "Id", "Label");
-            //ListOfRespondents.OrderByDescending(o => o.Value).FirstOrDefault().Selected = true;
 
             ListOfMeals = listOfMeals;
             CurrentProcessMilestone = currentProcessMilestone;
@@ -77,7 +73,8 @@ namespace GloboDiet.ViewModels
             set { Interview.InterviewerId = value; }
         }
 
-        // No Id, linking is done on entity, not on viewmodel
+        public int? RespondentId => Interview.RespondentId;
+
         [Display(Name = "respondent")]
         //[DisplayFormat(NullDisplayText = "is null")] // still not working
         public string RespondentLabel //=> Interview?.Respondent?.Label;
