@@ -46,6 +46,7 @@ namespace GloboDiet
                 .UseLazyLoadingProxies()
                 .UseInMemoryDatabase("Test"));
             services.AddScoped(typeof(IRepositoryNew<>), typeof(RepositoryNew<>));
+            services.AddSingleton<LookupData>();
 
             // enable session stuff
             services.AddHttpContextAccessor();

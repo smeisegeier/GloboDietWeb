@@ -10,83 +10,72 @@ namespace GloboDiet.ViewModels
 {
     public class InterviewCreateEdit : _ViewModelBase
     {
-        // TODO cleanup
-        public Interview Interview { get; set; }
+        private Interview _interview { get; set; }
 
-        public IEnumerable<SelectListItem> ListOfInterviewers { get; set; }
-        public IEnumerable<SelectListItem> ListOfLocations { get; set; }
-
-        public IEnumerable<Meal> ListOfMeals { get; set; }
-
+        public IEnumerable<SelectListItem> DropdownInterviewers { get; }
+        public IEnumerable<SelectListItem> DropdownLocations { get; }
 
         public InterviewCreateEdit(Interview interview,
             IEnumerable<Interviewer> listOfInterviewers,
             IEnumerable<Location> listOfLocations,
-            IEnumerable<Meal> listOfMeals,
             Globals.ProcessMilestone currentProcessMilestone,
             NavigationBar navigationBar)
         {
-            Interview = interview;
-            ListOfInterviewers = new SelectList(listOfInterviewers, "Id", "Label");
-            ListOfLocations = new SelectList(listOfLocations, "Id", "Label");
-
-            ListOfMeals = listOfMeals;
+            _interview = interview;
+            DropdownInterviewers = new SelectList(listOfInterviewers, "Id", "Label");
+            DropdownLocations = new SelectList(listOfLocations, "Id", "Label");
             CurrentProcessMilestone = currentProcessMilestone;
             NavigationBar = navigationBar;
         }
 
         public InterviewCreateEdit() { }
 
-        public int Id { get => Interview.Id; }
+        public int Id { get => _interview.Id; }
 
         [DisplayFormat(NullDisplayText = "Label is null")]
-        public string Label { get => Interview.Label; }
+        public string Label { get => _interview.Label; }
 
         public DateTime Timestamp
         {
-            get => Interview.Timestamp;
-            set { Interview.Timestamp = value; }
+            get => _interview.Timestamp;
+            set { _interview.Timestamp = value; }
         }
 
         public int Number
         {
-            get => Interview.Number;
-            set { Interview.Number = value; }
+            get => _interview.Number;
+            set { _interview.Number = value; }
         }
         [DataType(DataType.Date)]
         public DateTime ReferenceDate
         {
-            get => Interview.ReferenceDate;
-            set { Interview.ReferenceDate = value; }
+            get => _interview.ReferenceDate;
+            set { _interview.ReferenceDate = value; }
         }
 
         [Display(Name = "Location")]
         public int? LocationId
         {
-            get => Interview.LocationId;
-            set { Interview.LocationId = value; }
+            get => _interview.LocationId;
+            set { _interview.LocationId = value; }
         }
         [Display(Name = "Interviewer")]
         public int? InterviewerId
         {
-            get => Interview.InterviewerId;
-            set { Interview.InterviewerId = value; }
+            get => _interview.InterviewerId;
+            set { _interview.InterviewerId = value; }
         }
 
-        public int? RespondentId => Interview.RespondentId;
+        public int? RespondentId => _interview.RespondentId;
 
-        [Display(Name = "respondent")]
+        [Display(Name = "Active Respondent")]
         //[DisplayFormat(NullDisplayText = "is null")] // still not working
-        public string RespondentLabel //=> Interview?.Respondent?.Label;
-        {
-            get
-            {
-                string x = Interview.Respondent?.Label;
-                return string.IsNullOrEmpty(x) ? "empty" : x;
-            }
-}
+        public string RespondentLabel => string.IsNullOrEmpty(_interview.Respondent?.Label) ? "empty" : _interview.Respondent?.Label;
 
-
-
+        public IEnumerable<Meal> Meals 
+        { 
+            get => _interview.Meals;
+            set { _interview.Meals = value; } 
+        }
     }
 }

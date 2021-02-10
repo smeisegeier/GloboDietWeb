@@ -8,17 +8,17 @@ namespace GloboDiet.Models
 {
     // Lebensmittelkategorien?
     // Vorschläge Auswahl Mahlzeiten
-    public class Essin : _ModelBase
+    public class Ingredient : _ModelBase
     {
-        public Essin() { }
+        public Ingredient() { }
 
-        public static IEnumerable<Essin> GetSeedsFromLegacy()
+        public static IEnumerable<Ingredient> GetSeedsFromLegacy()
         {
             var legacyList = PROBQUE.GetLegacyObjects<PROBQUE>();
-            var newList = new List<Essin>();
+            var newList = new List<Ingredient>();
             foreach (var item in legacyList)
             {
-                newList.Add(new Essin()
+                newList.Add(new Ingredient()
                 {
                     Code = item.PQ_CODE,
                     Name = item.PQ_TEXT

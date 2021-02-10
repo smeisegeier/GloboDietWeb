@@ -15,15 +15,15 @@ namespace GloboDiet.Models
 
         public DateTime ReferenceDate { get; set; } = DateTime.Now;
 
-        public int? LocationId { get; set; }
-        public virtual Location Location { get; set; }
+        public int? InterviewerId { get; set; }
 
+        public int? LocationId { get; set; }
 
         public int? RespondentId { get; set; }
+
+        // needed to resolve Label for display
         public virtual Respondent Respondent { get; set; }
 
-        public int? InterviewerId { get; set; }
-        public virtual Interviewer Interviewer { get; set; }
 
         public virtual IEnumerable<Meal> Meals { get; set; }
 
