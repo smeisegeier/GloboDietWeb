@@ -12,7 +12,7 @@ namespace GloboDiet.Models
         public int MealId { get; set; }
 
         public int IngredientId { get; set; }
-        public virtual Ingredient Ingredient { get; set; }
+        //public virtual Ingredient Ingredient { get; set; }
 
         public int Quantity { get; set; }
     }
