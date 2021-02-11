@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,6 +19,8 @@ namespace GloboDiet.ViewModels
         }
 
         public int Id => _meal.Id;
+
+        [ForeignKey(nameof(Interview))]
         public int InterviewId => _meal.InterviewId;
 
         public int StartingHour
@@ -37,5 +40,10 @@ namespace GloboDiet.ViewModels
             set { _meal.MealPlaceId = value; }
         }
 
+        public IEnumerable<MealElement> MealElements
+        {
+            get => _meal.MealElements;
+            set { _meal.MealElements = value; }
+        }
     }
 }

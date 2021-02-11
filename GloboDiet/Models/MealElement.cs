@@ -11,9 +11,16 @@ namespace GloboDiet.Models
         [ForeignKey(nameof(Meal))]
         public int MealId { get; set; }
 
-        public int IngredientId { get; set; }
-        //public virtual Ingredient Ingredient { get; set; }
-
         public int Quantity { get; set; }
+
+        public MealElement()
+        {
+
+        }
+
+        public MealElement(int mealId)
+        {
+            MealId = mealId;
+        }
     }
 }

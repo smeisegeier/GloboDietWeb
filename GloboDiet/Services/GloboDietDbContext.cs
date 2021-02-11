@@ -24,6 +24,7 @@ namespace GloboDiet.Services
         public DbSet<Respondent> Respondents { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<Meal> Meals { get; set; }
+        public DbSet<MealElement> MealElements { get; set; }
 
 
         /* Lookup Tables*/
@@ -59,14 +60,13 @@ namespace GloboDiet.Services
             SaveChanges();
 
             /* setup Static selectlists from Lookup */
-            Globals.StaticListOfMealTypes = new SelectList(Set<MealType>().ToList(), "Id", "Name");
-            Globals.StaticListOfMealPlaces = new SelectList(Set<MealPlace>().ToList(), "Id", "Name");
-            Globals.StaticListOfBrandnames = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
+            //Globals.StaticListOfMealTypes = new SelectList(Set<MealType>().ToList(), "Id", "Name");
+            //Globals.StaticListOfMealPlaces = new SelectList(Set<MealPlace>().ToList(), "Id", "Name");
+            //Globals.StaticListOfBrandnames = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
 
             _lookupData.DropdownMealTypes = new SelectList(Set<MealType>().ToList(), "Id", "Name");
             _lookupData.DropdownMealPlaces = new SelectList(Set<MealPlace>().ToList(), "Id", "Name");
             _lookupData.DropdownBrandnames = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
-            _lookupData.DropdownIngredients = new SelectList(Set<Ingredient>().ToList(), "Id", "Name");
         }
 
         ///// <summary>

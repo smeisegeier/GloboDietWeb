@@ -24,6 +24,7 @@ namespace GloboDiet.Controllers
         private readonly IWebHostEnvironment _webHostEnvironment;
         private static NLog.Logger _nLogger = NLog.LogManager.GetCurrentClassLogger();
         private readonly HttpContext _httpContext;
+        private readonly LookupData _lookupData;
 
         // example for domain repo
         private readonly IRepositoryNew<Interview> _repoInterview;
@@ -31,27 +32,28 @@ namespace GloboDiet.Controllers
         private readonly IRepositoryNew<Location> _repoLocation;
         private readonly IRepositoryNew<Respondent> _repoRespondent;
         private readonly IRepositoryNew<Meal> _repoMeal;
+        private readonly IRepositoryNew<MealElement> _repoMealElement;
 
         public HomeController(IWebHostEnvironment webHostEnvironment,
             IHttpContextAccessor httpContextAccessor,
+            LookupData lookupData,
             IRepositoryNew<Interview> repoInterview,
             IRepositoryNew<Interviewer> repoInterviewer,
             IRepositoryNew<Location> repoLocation,
             IRepositoryNew<Respondent> repoRespondent,
-            IRepositoryNew<Recipe> repoRecipe,
             IRepositoryNew<Meal> repoMeal,
-            IRepositoryNew<MealType> repoMealType,
-            IRepositoryNew<MealPlace> repoMealPlace,
-            IRepositoryNew<Brandname> repoBrandname
+            IRepositoryNew<MealElement> repoMealElement
             )
         {
             _webHostEnvironment = webHostEnvironment;
             _httpContext = httpContextAccessor.HttpContext;
+            _lookupData = lookupData;
             _repoInterview = repoInterview;
             _repoInterviewer = repoInterviewer;
             _repoLocation = repoLocation;
             _repoRespondent = repoRespondent;
             _repoMeal = repoMeal;
+            _repoMealElement = repoMealElement;
         }
 
         // TODO use modal window instead of status area
@@ -131,12 +133,11 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult NewInterview021(Interview model)
         {
-            // cache interview
-            _repoInterview.ItemUpdate(model);
-            // ensure respondent
+            // 1) ensure respondent
             if (model.RespondentId is null || model.RespondentId == 0)
                 model.RespondentId = _repoRespondent.ItemAdd(new Respondent(model.Id));
-
+            // 2) cache interview to register potential new Respondent
+            _repoInterview.ItemUpdate(model);
             return RedirectToAction(nameof(NewInterview022), new { id = model.RespondentId });
         }
 
@@ -203,6 +204,33 @@ namespace GloboDiet.Controllers
         #endregion
 
 
+        // TODO fix
+        [HttpPost]
+        public IActionResult CreateEditMealElement_PRE(Meal model)
+        {
+            // cache object, then redirect
+            _repoMeal.ItemUpdate(model);
+            // create new mealele w/ reference to parent
+            var newMealElementId = _repoMealElement.ItemAdd(new MealElement(model.Id));
+            return RedirectToAction(nameof(CreateEditMealElement), new { id = newMealElementId });
+        }
+
+        [HttpGet]
+        public IActionResult CreateEditMealElement(int id)
+        {
+            var mealElementNewOrFromDb = _repoMealElement.ItemGetById(id);
+            return View(new MealElementCreateEdit(mealElementNewOrFromDb, getNewNavigationBar()));
+        }
+
+        [HttpPost]
+        public IActionResult CreateEditMealElement(MealElement model, string submit)
+        {
+            if (submit != "Cancel")
+            { _repoMealElement.ItemAddOrUpdate(model); }
+            return RedirectToAction(nameof(NewInterview042), new { id = model.MealId });
+        }
+
+
         #region Respondent
         [HttpGet]
         public IActionResult RespondentCreate()
@@ -253,94 +281,7 @@ namespace GloboDiet.Controllers
         // TODO Edit / details -> template? css? view?
 
 
-        /* admin */
 
-        #region Interviewer
-
-        [HttpGet]
-        public IActionResult InterviewerCreate()
-        {
-            return View(new InterviewerCreateEdit(new Interviewer(), getNewNavigationBar()));
-        }
-
-        [HttpPost]
-        public IActionResult InterviewerCreate(Interviewer interviewer)
-        {
-            if (!ModelState.IsValid) return View(interviewer);
-            _repoInterviewer.ItemAdd(interviewer);
-            return Redirect("~/Home/Index");
-        }
-
-        [HttpGet]
-        public IActionResult InterviewerEdit(int id)
-        {
-            var interviewer = _repoInterviewer.ItemGetById(id);
-            return View(new InterviewerCreateEdit(interviewer, getNewNavigationBar()));
-        }
-
-        [HttpPost]
-        public IActionResult InterviewerEdit(Interviewer interviewer)
-        {
-            _repoInterviewer.ItemUpdate(interviewer);
-            return RedirectToAction(nameof(Index));
-        }
-
-        public IActionResult InterviewersList()
-        {
-            var list = _repoInterviewer.ItemsGetAll();
-            return View(new InterviewersList(list, getNewNavigationBar()));
-        }
-
-        public IActionResult InterviewerDetails(int id) => Json(_repoInterviewer.ItemGetById(id));
-
-        #endregion
-
-        #region Location
-        [HttpGet]
-        public IActionResult LocationCreate(string returnAction = null)
-        {
-            return View(new ViewModels.LocationCreateEdit(new Location(), getNewNavigationBar(), returnAction));
-        }
-        [HttpPost]
-        public IActionResult LocationCreate(Location location, string ReturnAction)
-        {
-            _repoLocation.ItemAdd(location);
-            // get Referer
-            //return Redirect(Request.Headers["Referer"].ToString());
-            return RedirectToAction(ReturnAction);
-        }
-
-        [HttpGet]
-        public IActionResult LocationEdit(int id) => View(new LocationCreateEdit(_repoLocation.ItemGetById(id), getNewNavigationBar()));
-
-        [HttpPost]
-        public IActionResult LocationEdit(Location location)
-        {
-            _repoLocation.ItemUpdate(location);
-            return RedirectToAction(nameof(Index));
-        }
-
-
-        //[HttpGet]
-        //public IActionResult LocationCreateToInterview() => View(new LocationCreateEdit(new Location(), getNewNavigationBar()));
-
-        //[HttpPost]
-        //public IActionResult LocationCreateToInterview(Location location)
-        //{
-        //    _repoLocation.ItemAdd(location);
-        //    return RedirectToAction(nameof(InterviewCreate));
-        //}
-
-
-        public IActionResult LocationsList()
-        {
-            var list = _repoLocation.ItemsGetAll();
-            return View(new LocationsList(list, getNewNavigationBar()));
-        }
-        public IActionResult LocationDetails(int id) => Json(_repoLocation.ItemGetById(id));
-
-
-        #endregion
 
         #region Artefacts
         // POST: HomeController/Create

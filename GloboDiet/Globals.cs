@@ -14,6 +14,7 @@ namespace GloboDiet
     /// </summary>
     public static class Globals
     {
+        // removing this means injecting LookupData in several controllers
         public enum ProcessMilestone
         {
             [Description("Interview started")]
@@ -29,11 +30,11 @@ namespace GloboDiet
         /// <summary>
         /// for displaying all possible milestones, is built onetime from enum
         /// </summary>
-        public static IEnumerable<KeyValuePair<ProcessMilestone, string>> StaticListOfProcessMilestones { get; } = EnumHelper.GetListWithDescription<ProcessMilestone>();
+        //public static IEnumerable<KeyValuePair<ProcessMilestone, string>> StaticListOfProcessMilestones { get; } = EnumHelper.GetListWithDescription<ProcessMilestone>();
 
-        public static SelectList StaticListOfMealTypes { get; set; }
-        public static SelectList StaticListOfMealPlaces { get; set; } 
-        public static SelectList StaticListOfBrandnames { get; set; }
+        //public static SelectList StaticListOfMealTypes { get; set; }
+        //public static SelectList StaticListOfMealPlaces { get; set; } 
+        //public static SelectList StaticListOfBrandnames { get; set; }
 
         //public static SelectList StaticListOfEssins { get; } = new SelectList(Essin.GetSeedsFromLegacy(), "Id", "Name");
 

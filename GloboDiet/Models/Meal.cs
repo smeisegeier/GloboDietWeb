@@ -21,7 +21,8 @@ namespace GloboDiet.Models
         [ForeignKey(nameof(Interview))]
         public int InterviewId { get; set; }
 
-        public virtual ICollection<MealElement> MealElements{ get; set; }
+        // TODO klären liste
+        public virtual IEnumerable<MealElement> MealElements{ get; set; }
 
         public Meal() { }
 
