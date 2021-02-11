@@ -12,7 +12,11 @@ namespace GloboDiet.Services
 {
     public class GloboDietDbContext : IdentityDbContext
     {
-        public GloboDietDbContext(DbContextOptions<GloboDietDbContext> options) : base(options) { }
+        private LookupData _lookupData;
+        public GloboDietDbContext(DbContextOptions<GloboDietDbContext> options, LookupData lookupData) : base(options) 
+        {
+            _lookupData = lookupData;
+        }
 
         public DbSet<Interview> Interviews { get; set; }
         public DbSet<Interviewer> Interviewers { get; set; }
@@ -47,7 +51,6 @@ namespace GloboDiet.Services
             /*2) Entites */
             if (!Set<Interviewer>().Any()) Set<Interviewer>().AddRange(Interviewer.GetSeedsFromMockup());
             if (!Set<Location>().Any()) Set<Location>().AddRange(Location.GetSeedsFromMockup());
-            if (!Set<Recipe>().Any()) Set<Recipe>().AddRange(Recipe.GetSeedsFromMockup());
 
             //if (!Set<Respondent>().Any()) Set<Respondent>().AddRange(Respondent.GetSeedsFromMockup());
             //if (!Set<Interview>().Any()) Set<Interview>().AddRange(Interview.GetSeedsFromMockup());
@@ -59,6 +62,11 @@ namespace GloboDiet.Services
             Globals.StaticListOfMealTypes = new SelectList(Set<MealType>().ToList(), "Id", "Name");
             Globals.StaticListOfMealPlaces = new SelectList(Set<MealPlace>().ToList(), "Id", "Name");
             Globals.StaticListOfBrandnames = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
+
+            _lookupData.DropdownMealTypes = new SelectList(Set<MealType>().ToList(), "Id", "Name");
+            _lookupData.DropdownMealPlaces = new SelectList(Set<MealPlace>().ToList(), "Id", "Name");
+            _lookupData.DropdownBrandnames = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
+            _lookupData.DropdownIngredients = new SelectList(Set<Ingredient>().ToList(), "Id", "Name");
         }
 
         ///// <summary>

@@ -30,11 +30,7 @@ namespace GloboDiet.Controllers
         private readonly IRepositoryNew<Interviewer> _repoInterviewer;
         private readonly IRepositoryNew<Location> _repoLocation;
         private readonly IRepositoryNew<Respondent> _repoRespondent;
-        private readonly IRepositoryNew<Recipe> _repoRecipe;
         private readonly IRepositoryNew<Meal> _repoMeal;
-        private readonly IRepositoryNew<MealType> _repoMealType;
-        private readonly IRepositoryNew<MealPlace> _repoMealPlace;
-        private readonly IRepositoryNew<Brandname> _repoBrandname;
 
         public HomeController(IWebHostEnvironment webHostEnvironment,
             IHttpContextAccessor httpContextAccessor,
@@ -55,11 +51,7 @@ namespace GloboDiet.Controllers
             _repoInterviewer = repoInterviewer;
             _repoLocation = repoLocation;
             _repoRespondent = repoRespondent;
-            _repoRecipe = repoRecipe;
             _repoMeal = repoMeal;
-            _repoMealType = repoMealType;
-            _repoMealPlace = repoMealPlace;
-            _repoBrandname = repoBrandname;
         }
 
         // TODO use modal window instead of status area
@@ -96,7 +88,6 @@ namespace GloboDiet.Controllers
                 interviewNewOrFromDb,
                 _repoInterviewer.ItemsGetAll(),
                 _repoLocation.ItemsGetAll(),
-                _repoMeal.ItemsGetAll(),
                 Globals.ProcessMilestone._1_INTERVIEW,
                 getNewNavigationBar()
                 );
@@ -109,7 +100,7 @@ namespace GloboDiet.Controllers
         public IActionResult NewInterview020(Interview model)
         {
             //if (interview.RespondentId == 0)
-            //{ ModelState.AddModelError("CustomError", "No _respondent selected"); }
+            //{ ModelState.AddModelError("CustomError", "No Respondent selected"); }
             //if (interview.InterviewerId == 0)
             //{ ModelState.AddModelError("CustomError", "No Interviewer selected"); }
             //if (interview.LocationId == 0)
@@ -122,7 +113,6 @@ namespace GloboDiet.Controllers
                     model,
                     _repoInterviewer.ItemsGetAll(),
                     _repoLocation.ItemsGetAll(),
-                    _repoMeal.ItemsGetAll(),
                     Globals.ProcessMilestone._1_INTERVIEW,
                     getNewNavigationBar()
                     ));
@@ -208,7 +198,6 @@ namespace GloboDiet.Controllers
         {
             if (submit != "Cancel")
                 { _repoMeal.ItemAddOrUpdate(model); }
-            //_nLogger.Debug(_repoMeal.ItemsGetCount());
             return RedirectToAction(nameof(NewInterview020), new { id = model.InterviewId });
         }
         #endregion
@@ -261,61 +250,7 @@ namespace GloboDiet.Controllers
         public IActionResult RespondentDetails(int id) => Json(_repoRespondent.ItemGetById(id));
 
         #endregion
-
-        #region Interview
-
-
         // TODO Edit / details -> template? css? view?
-
-        public IActionResult InterviewsList()
-        {
-            var list = _repoInterview.ItemsGetAll();
-            return View(new InterviewsList(list, getNewNavigationBar()));
-        }
-
-        public IActionResult InterviewDetails(int id) => Json(_repoInterview.ItemGetById(id));
-
-        #endregion
-
-        #region Recipe
-        [HttpGet]
-        public IActionResult RecipeCreate()
-        {
-            var modelNewOrEmpty = new Recipe();
-            return View(new RecipeCreateEdit(modelNewOrEmpty, getNewNavigationBar()));
-        }
-
-        [HttpPost]
-        public IActionResult RecipeCreate(Recipe recipe)
-        {
-            _repoRecipe.ItemAdd(recipe);
-            return RedirectToAction(nameof(RecipesList));
-        }
-
-        [HttpGet]
-        public IActionResult RecipeEdit(int id)
-        {
-            var recipe = _repoRecipe.ItemGetById(id);
-            return View(new RecipeCreateEdit(recipe, getNewNavigationBar()));
-        }
-
-        [HttpPost]
-        public IActionResult RecipeEdit(Recipe recipe)
-        {
-            _repoRecipe.ItemUpdate(recipe);
-            return RedirectToAction(nameof(RecipesList));
-        }
-
-        public IActionResult RecipesList()
-        {
-            var list = _repoRecipe.ItemsGetAll();
-            return View(new RecipesList(list, getNewNavigationBar()));
-        }
-
-        public IActionResult RecipeDetails(int id) => Json(_repoRecipe.ItemGetById(id));
-
-
-        #endregion
 
 
         /* admin */

@@ -4,20 +4,20 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Interview.Meals.First().StartingHour)
+                @Html.DisplayNameFor(model => model.Meals.First().StartingHour)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Interview.Meals.First().MealType.Label)
+                @Html.DisplayNameFor(model => model.Meals.First().MealType.Label)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Interview.Meals.First().MealPlace.Label)
+                @Html.DisplayNameFor(model => model.Meals.First().MealPlace.Label)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@if (Model?.ListOfMeals is not null) {
-        @foreach (var item in Model.ListOfMeals) {
+@if (Model?.Meals is not null) {
+        @foreach (var item in Model.Meals) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.StartingHour)
