@@ -1,0 +1,30 @@
+﻿@model GloboDiet.ViewModels.MealElementCreateEdit
+
+<partial name="_ProcessMilestoneDisplayBar.cshtml" />
+
+
+<h4>MealElement</h4>
+
+<form asp-action="MealElement3Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <input asp-for="MealId" hidden />
+        <label asp-for="Id" class="control-label"></label>
+        <input asp-for="Id" class="form-control alert-danger" readonly="readonly" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control alert-danger" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Quantity" class="control-label"></label>
+        <input asp-for="Quantity" class="form-control alert-primary" />
+        <span asp-validation-for="Quantity" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" name="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
