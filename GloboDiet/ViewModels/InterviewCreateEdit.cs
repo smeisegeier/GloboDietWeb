@@ -18,14 +18,11 @@ namespace GloboDiet.ViewModels
         public InterviewCreateEdit(Interview interview,
             IEnumerable<Interviewer> listOfInterviewers,
             IEnumerable<Location> listOfLocations,
-            Globals.ProcessMilestone currentProcessMilestone,
-            NavigationBar navigationBar)
+            NavigationBar navigationBar) : base(navigationBar, Globals.ProcessMilestone._1_INTERVIEW)
         {
             _interview = interview;
             DropdownInterviewers = new SelectList(listOfInterviewers, "Id", "Label");
             DropdownLocations = new SelectList(listOfLocations, "Id", "Label");
-            CurrentProcessMilestone = currentProcessMilestone;
-            NavigationBar = navigationBar;
         }
 
         public InterviewCreateEdit() { }

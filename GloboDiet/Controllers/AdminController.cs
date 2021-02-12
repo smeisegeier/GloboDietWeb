@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class AdminController : Controller
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
@@ -43,11 +43,6 @@ namespace GloboDiet.Controllers
             PillCountLocations = _repoLocation.ItemsGetCount()  
         };
 
-        //private void seedAll()
-        //{
-        //    _repoInterviewer.ItemsSeed(Interviewer.GetSeedsFromMockup());
-        //    _repoLocation.ItemsSeed(Location.GetSeedsFromMockup());
-        //}
         #endregion
 
         #region Interviewer

@@ -61,7 +61,8 @@ namespace GloboDiet.Controllers
         public IActionResult Index()
         {
             // if no content needed just pass _ViewModelBase
-            return View(new _ViewModelBase(getNewNavigationBar()));
+            //return View(new _ViewModelBase(getNewNavigationBar()));
+            return RedirectToActionPermanent(nameof(Interview1List));
         }
 
 
@@ -90,7 +91,6 @@ namespace GloboDiet.Controllers
                 interviewNewOrFromDb,
                 _repoInterviewer.ItemsGetAll(),
                 _repoLocation.ItemsGetAll(),
-                Globals.ProcessMilestone._1_INTERVIEW,
                 getNewNavigationBar()
                 );
             return View(newModel);
@@ -115,7 +115,6 @@ namespace GloboDiet.Controllers
                     model,
                     _repoInterviewer.ItemsGetAll(),
                     _repoLocation.ItemsGetAll(),
-                    Globals.ProcessMilestone._1_INTERVIEW,
                     getNewNavigationBar()
                     ));
             }
@@ -123,18 +122,19 @@ namespace GloboDiet.Controllers
             _repoInterview.ItemUpdate(model);
             return RedirectToAction(nameof(Index));
         }
-        public IActionResult Interview1Details(int id) => Json(_repoInterview.ItemGetById(id));
 
+        [HttpGet]
+        public IActionResult Interview1List() => View(new InterviewsList(
+            _repoInterview.ItemsGetAll(),
+            getNewNavigationBar()
+            ));
+
+        public IActionResult Interview1Details(int id) => Json(_repoInterview.ItemGetById(id));
 
         #endregion
 
         #region Respondent
-        /// <summary>
-        /// xx0 -> POST -> xx1, because the object of xx0 (interview) must now be cached
-        /// xx1 ist just relay
-        /// </summary>
-        /// <param name="interview"></param>
-        /// <returns></returns>
+
         [HttpPost]
         public IActionResult Respondent2Create(Interview model)
         {
@@ -146,12 +146,6 @@ namespace GloboDiet.Controllers
             return RedirectToAction(nameof(Respondent2Edit), new { id = model.RespondentId });
         }
 
-        // xx1 -> GET -> xx2
-        /// <summary>
-        /// CreateOrEdit _respondent. Called from xx1
-        /// </summary>
-        /// <param name="id">Id of respondent object.</param>
-        /// <returns></returns>
         [HttpGet]
         public IActionResult Respondent2Edit(int id)
         {
@@ -163,8 +157,6 @@ namespace GloboDiet.Controllers
                 ));
         }
 
-        // xx2 -> GET xx0 (save)
-        // xx2 -> GET xx0 (cancel)
         [HttpPost]
         public IActionResult Respondent2Edit(Respondent model, string submit)
         {
@@ -190,11 +182,6 @@ namespace GloboDiet.Controllers
             return RedirectToAction(nameof(Meal2Edit), new { id = newMealId });
         }
 
-        /// <summary>
-        /// CreateOrEdit _meal
-        /// </summary>
-        /// <param name="id">id of meal</param>
-        /// <returns></returns>
         [HttpGet]
         public IActionResult Meal2Edit(int id)
         {
@@ -211,7 +198,6 @@ namespace GloboDiet.Controllers
         }
 
         public IActionResult Meal2Details(int id) => Json(_repoMeal.ItemGetById(id));
-
 
         #endregion
 
@@ -236,6 +222,7 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult MealElement3Edit(MealElement model, string submit)
         {
+            // TODO cancel triggers validation..
             if (submit != "Cancel")
             { _repoMealElement.ItemAddOrUpdate(model); }
             return RedirectToAction(nameof(Meal2Edit), new { id = model.MealId });

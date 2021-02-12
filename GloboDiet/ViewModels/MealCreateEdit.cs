@@ -12,10 +12,9 @@ namespace GloboDiet.ViewModels
     {
         private Meal _meal { get; set; }
 
-        public MealCreateEdit(Meal meal, NavigationBar navigationBar)
+        public MealCreateEdit(Meal meal, NavigationBar navigationBar) : base(navigationBar, Globals.ProcessMilestone._3_MEALS)
         {
             _meal = meal;
-            NavigationBar = navigationBar;
         }
 
         public int Id => _meal.Id;

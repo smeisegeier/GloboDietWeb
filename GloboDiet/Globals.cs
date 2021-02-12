@@ -17,14 +17,18 @@ namespace GloboDiet
         // removing this means injecting LookupData in several controllers
         public enum ProcessMilestone
         {
+            //[Description("No display")]
+            //_0_EMPTY = 0,
+
             [Description("Interview started")]
             _1_INTERVIEW = 1,
 
-            [Description("_respondent created")]
+            [Description("Respondent created")]
             _2_RESPONDENT = 2,
 
             [Description("Meals created")]
             _3_MEALS = 3
+
         }
 
         /// <summary>

@@ -9,24 +9,21 @@ namespace GloboDiet.ViewModels
 {
     public class _ViewModelBase
     {
-        public NavigationBar NavigationBar { get; set; }
+        public NavigationBar NavigationBar { get; }
 
-        // make the current one more prominent
-        public Globals.ProcessMilestone? CurrentProcessMilestone { get; set; }
+        public Globals.ProcessMilestone? CurrentProcessMilestone { get; }
 
-        public _ViewModelBase(NavigationBar navigationBar)
+        public _ViewModelBase(NavigationBar navigationBar, Globals.ProcessMilestone currentProcessMilestone = default(Globals.ProcessMilestone))
         {
             NavigationBar = navigationBar;
+            CurrentProcessMilestone = currentProcessMilestone;
         }
 
-        // parameterless for modelbinder calls. All displayelements are empty / default
-        public _ViewModelBase()
+        // parameterless for modelbinder calls / empty displayelements
+        public _ViewModelBase() : this(new NavigationBar(0, 0, 0, 0, EfCoreHelper.SqlConnectionType.UNKNOWN))
         {
-            NavigationBar = new NavigationBar(0, 0, 0, 0, EfCoreHelper.SqlConnectionType.UNKNOWN);
         }
 
-        //public _ViewModelBase() { }
 
-        public string ToJson() => JsonConvert.SerializeObject(this);
     }
 }

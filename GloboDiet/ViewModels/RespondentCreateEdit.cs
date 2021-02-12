@@ -12,11 +12,9 @@ namespace GloboDiet.ViewModels
     {
         private Respondent _respondent { get; set; }
 
-        public RespondentCreateEdit(Respondent respondent, NavigationBar navigationBar, Globals.ProcessMilestone currentProcessMilestone)
+        public RespondentCreateEdit(Respondent respondent, NavigationBar navigationBar, Globals.ProcessMilestone currentProcessMilestone) : base(navigationBar, currentProcessMilestone)
         {
             _respondent = respondent;
-            NavigationBar = navigationBar;
-            CurrentProcessMilestone = currentProcessMilestone;
         }
 
         public RespondentCreateEdit() {}
