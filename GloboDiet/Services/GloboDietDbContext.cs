@@ -67,6 +67,7 @@ namespace GloboDiet.Services
             _lookupData.DropdownMealTypes = new SelectList(Set<MealType>().ToList(), "Id", "Name");
             _lookupData.DropdownMealPlaces = new SelectList(Set<MealPlace>().ToList(), "Id", "Name");
             _lookupData.DropdownBrandnames = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
+            _lookupData.DropdownIngredients = new SelectList(Set<Ingredient>().ToList(), "Id", "Name");
         }
 
         ///// <summary>

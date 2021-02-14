@@ -14,14 +14,14 @@ namespace GloboDiet.Models
 
         public static IEnumerable<Ingredient> GetSeedsFromLegacy()
         {
-            var legacyList = PROBQUE.GetLegacyObjects<PROBQUE>();
+            var legacyList = Foods.GetLegacyObjects<Foods>();
             var newList = new List<Ingredient>();
             foreach (var item in legacyList)
             {
                 newList.Add(new Ingredient()
                 {
-                    Code = item.PQ_CODE,
-                    Name = item.PQ_TEXT
+                    Code = item.FOODNUM,
+                    Name = item.NAME
                 });
             }
             return newList;
