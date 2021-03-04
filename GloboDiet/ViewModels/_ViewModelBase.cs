@@ -11,7 +11,9 @@ namespace GloboDiet.ViewModels
     {
         public NavigationBar NavigationBar { get; set; }
 
-        public Globals.ProcessMilestone? CurrentProcessMilestone { get; }
+        public Globals.ProcessMilestone? CurrentProcessMilestone { get; set; }
+
+        // TODO +Label
 
         // standard ctor
         public _ViewModelBase(NavigationBar navigationBar, Globals.ProcessMilestone currentProcessMilestone = default(Globals.ProcessMilestone))

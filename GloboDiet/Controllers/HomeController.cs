@@ -147,23 +147,19 @@ namespace GloboDiet.Controllers
         }
 
         [HttpGet]
-        public IActionResult Respondent2Edit(int id, int? test)
-        {
-            var respondentFromDb = _repoRespondent.ItemGetById(id);
-            return View(new RespondentCreateEdit(
-                respondentFromDb, 
-                getNewNavigationBar(), 
-                Globals.ProcessMilestone._1_INTERVIEW
-                ));
-        }
+        public IActionResult Respondent2Edit(int id) => View(_repoRespondent
+            .ItemGetById(id)
+            .ToViewModel(getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW)
+            );
 
         [HttpPost]
-        public IActionResult Respondent2Edit(Respondent model, string submit)
+        public IActionResult Respondent2Edit(RespondentCreateEdit respondentCreateEdit, string submit)
         {
+            Respondent respondent = respondentCreateEdit.ToModel();
             if (submit != "Cancel")
-                { _repoRespondent.ItemUpdate(model); }
+                { _repoRespondent.ItemUpdate(respondent); }
             //_nLogger.Debug($"Label{model.Label}, Id {model.Id}, Interv {model.InterviewId}");
-            return RedirectToAction(nameof(Interview1Edit), new { id = model.InterviewId });
+            return RedirectToAction(nameof(Interview1Edit), new { id = respondent.InterviewId });
         }
 
         public IActionResult Respondent2Details(int id) => Json(_repoRespondent.ItemGetById(id));

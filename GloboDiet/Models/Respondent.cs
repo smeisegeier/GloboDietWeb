@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using GloboDiet.Services;
+using GloboDiet.ViewModels;
 using HelperLibrary;
 namespace GloboDiet.Models
 {
@@ -46,5 +47,23 @@ namespace GloboDiet.Models
                     new Respondent() { Name = "lolman", GivenName = "Gary", Code="DA12-B01",Height=182, Weight=98, DateOfBirth=DateTimeHelper.GetDateTimeFromString("1988-11-07", "yyyy-MM-dd"), Gender=Gender.Male}
                 };
         }
+
+        public RespondentCreateEdit ToViewModel(NavigationBar navigationBar, Globals.ProcessMilestone processMilestone) => new RespondentCreateEdit
+        {
+            Id = this.Id,
+            GivenName = this.GivenName,
+            Age = this.Age,
+            Code = this.Code,
+            DateOfBirth = this.DateOfBirth,
+            Gender = this.Gender,
+            Height = this.Height,
+            InterviewId = this.InterviewId,
+            Label = this.Label,
+            Name = this.Name,
+            Weight = this.Weight,
+            
+            NavigationBar = navigationBar,
+            CurrentProcessMilestone = processMilestone
+        };
     }
 }
