@@ -1,4 +1,5 @@
 ﻿using GloboDiet.Services;
+using GloboDiet.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -24,5 +25,21 @@ namespace GloboDiet.Models
                     new Interviewer() { Name = "Shaw", GivenName = "Peter", Code="D2"}
                 };
         }
+
+        //public static implicit operator InterviewerCreateEdit(Interviewer interviewer) => new InterviewerCreateEdit
+        //{ Id = interviewer.Id, GivenName = interviewer.GivenName, Name = interviewer.Name };
+
+        //public static implicit operator Interviewer(InterviewerCreateEdit interviewerCreateEdit) => new Interviewer
+        //{ Id = interviewerCreateEdit.Id, GivenName = interviewerCreateEdit.GivenName, Name = interviewerCreateEdit.Name };
+
+        public InterviewerCreateEdit ToViewModel(NavigationBar navigationBar) => new InterviewerCreateEdit()
+        {
+            Id = this.Id,
+            Code = this.Code,
+            GivenName = this.GivenName,
+            Name = this.Name,
+            NavigationBar = navigationBar
+        };
+
     }
 }

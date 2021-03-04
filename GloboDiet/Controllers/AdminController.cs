@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AdminController : Controller
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
@@ -48,31 +48,28 @@ namespace GloboDiet.Controllers
         #region Interviewer
 
         [HttpGet]
-        public IActionResult InterviewerCreate()
-        {
-            return View(new InterviewerCreateEdit(new Interviewer(), getNewNavigationBar()));
-        }
+        public IActionResult InterviewerCreate() => View(new Interviewer().ToViewModel(getNewNavigationBar()));
 
         [HttpPost]
-        public IActionResult InterviewerCreate(Interviewer interviewer)
+        public IActionResult InterviewerCreate(InterviewerCreateEdit interviewerCreateEdit)
         {
-            if (!ModelState.IsValid) return View(interviewer);
-            _repoInterviewer.ItemAdd(interviewer);
-            return Redirect("~/Home/Index");
+            if (!ModelState.IsValid) 
+                return View(interviewerCreateEdit);
+            _repoInterviewer.ItemAdd(interviewerCreateEdit.ToModel());
+            return RedirectToAction(nameof(InterviewersList));
         }
 
         [HttpGet]
-        public IActionResult InterviewerEdit(int id)
-        {
-            var interviewer = _repoInterviewer.ItemGetById(id);
-            return View(new InterviewerCreateEdit(interviewer, getNewNavigationBar()));
-        }
+        public IActionResult InterviewerEdit(int id) => View(_repoInterviewer
+            .ItemGetById(id)
+            .ToViewModel(getNewNavigationBar())
+            );
 
         [HttpPost]
-        public IActionResult InterviewerEdit(Interviewer interviewer)
+        public IActionResult InterviewerEdit(InterviewerCreateEdit interviewerCreateEdit)
         {
-            _repoInterviewer.ItemUpdate(interviewer);
-            return RedirectToAction(nameof(Index));
+            _repoInterviewer.ItemUpdate(interviewerCreateEdit.ToModel());
+            return RedirectToAction(nameof(InterviewersList));
         }
 
         public IActionResult InterviewersList()

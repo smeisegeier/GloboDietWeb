@@ -61,8 +61,8 @@ namespace GloboDiet.Controllers
         public IActionResult Index()
         {
             // if no content needed just pass _ViewModelBase
-            //return View(new _ViewModelBase(getNewNavigationBar()));
-            return RedirectToActionPermanent(nameof(Interview1List));
+            return View(new _ViewModelBase(getNewNavigationBar()));
+            //return RedirectToActionPermanent(nameof(Interview1List));
         }
 
 
@@ -147,7 +147,7 @@ namespace GloboDiet.Controllers
         }
 
         [HttpGet]
-        public IActionResult Respondent2Edit(int id)
+        public IActionResult Respondent2Edit(int id, int? test)
         {
             var respondentFromDb = _repoRespondent.ItemGetById(id);
             return View(new RespondentCreateEdit(
