@@ -10,9 +10,11 @@ namespace GloboDiet.ViewModels
     {
         public IEnumerable<Location> Locations { get; set; }
 
-        public LocationsList(IEnumerable<Location> locations, NavigationBar navigationBar) : base(navigationBar)
+        public LocationsList(IEnumerable<Location> locations, NavigationBar navigationBar)
         {
             Locations = locations;
+            NavigationBar = navigationBar;
+            CurrentProcessMilestone = Globals.ProcessMilestone._1_INTERVIEW;
         }
     }
 }

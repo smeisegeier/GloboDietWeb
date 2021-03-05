@@ -26,10 +26,7 @@ namespace GloboDiet.Models
 
         public Guid Guid { get; private set; } = Guid.NewGuid();
 
-        /* convenience props*/
-        public string Label => ToString();
-
-
+ 
         public override string ToString() => $"[{Id} | {Name}]";
 
     }

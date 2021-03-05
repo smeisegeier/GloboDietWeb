@@ -10,39 +10,37 @@ namespace GloboDiet.ViewModels
 {
     public class MealCreateEdit : _ViewModelBase
     {
-        private Meal _meal { get; set; }
 
-        public MealCreateEdit(Meal meal, NavigationBar navigationBar) : base(navigationBar, Globals.ProcessMilestone._3_MEALS)
-        {
-            _meal = meal;
-        }
-
-        public int Id => _meal.Id;
+        public new int Id { get; set; }
 
         [ForeignKey(nameof(Interview))]
-        public int InterviewId => _meal.InterviewId;
+        public int InterviewId { get; set; }
 
-        public int StartingHour
-        {
-            get => _meal.StartingHour;
-            set { _meal.StartingHour = value; }
-        }
-        public int MealTypeId
-        {
-            get => _meal.MealTypeId;
-            set { _meal.MealTypeId = value; }
-        }
+        public int StartingHour { get; set; }
+        public int MealTypeId { get; set; }
+        public string MealTypeLabel { get; set; }
 
-        public int MealPlaceId
-        {
-            get => _meal.MealPlaceId;
-            set { _meal.MealPlaceId = value; }
-        }
+        public int MealPlaceId { get; set; }
+        public string MealPlaceLabel { get; set; }
 
-        public IEnumerable<MealElement> MealElements
+        public IList<MealElement> MealElements { get; set; }
+
+        public static implicit operator MealCreateEdit(Meal model)
         {
-            get => _meal.MealElements;
-            set { _meal.MealElements = value; }
+            var viewModel = new MealCreateEdit
+            {
+                Id = model.Id,
+                InterviewId = model.InterviewId,
+                MealPlaceId = model.MealPlaceId,
+                MealTypeId = model.MealPlaceId,
+                StartingHour = model.StartingHour,
+                MealElements = new List<MealElement>(),
+
+                MealPlaceLabel = model.MealPlace?.ToString(),
+                MealTypeLabel = model.MealType?.ToString(),
+            };
+            model.MealElements?.ToList().ForEach(item => { viewModel.MealElements.Add(item); });
+            return viewModel;
         }
     }
 }

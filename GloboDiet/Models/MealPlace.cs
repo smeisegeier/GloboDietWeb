@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GloboDiet.Legacy.GloboDietDb;
 using GloboDiet.Services;
 using GloboDiet.Extensions;
+using GloboDiet.ViewModels;
 
 namespace GloboDiet.Models
 {
@@ -38,6 +39,13 @@ namespace GloboDiet.Models
             }
             return newList;
         }
+
+        public static implicit operator MealPlace(MealPlaceCreateEdit viewModel) => new MealPlace
+        {
+            Id = viewModel.Id,
+            Name = viewModel.Name,
+            Code = viewModel.Code
+        };
 
     }
 }

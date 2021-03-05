@@ -24,5 +24,8 @@ namespace GloboDiet.ViewModels
             CurrentSqlConnectionType = currentSqlConnectionType;
         }
         public NavigationBar() {}
+
+        public static NavigationBar GetEmptyNavigationBar()
+            => new NavigationBar(0, 0, 0, 0, EfCoreHelper.SqlConnectionType.UNKNOWN);
     }
 }

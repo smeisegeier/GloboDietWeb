@@ -16,9 +16,10 @@ namespace GloboDiet.ViewModels
         [Display(Name = "Remember Me")]
         public bool RememberMe { get; set; }
 
-        public Login(string returnUrl, NavigationBar navigationBar) : base(navigationBar)
+        public Login(string returnUrl, NavigationBar navigationBar)
         {
             ReturnUrl = returnUrl;
+            NavigationBar = navigationBar;
         }
 
         public Login() { }

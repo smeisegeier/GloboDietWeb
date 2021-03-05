@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GloboDiet.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -21,13 +22,38 @@ namespace GloboDiet.Models
         [ForeignKey(nameof(Interview))]
         public int InterviewId { get; set; }
 
-        // TODO klären liste
-        public virtual IEnumerable<MealElement> MealElements{ get; set; }
+        public virtual IList<MealElement> MealElements{ get; set; }
 
         public Meal() { }
 
-        // ctor for 
+        // ctor for call w/ parent id
         public Meal(int interviewId) { InterviewId = interviewId; }
 
+        //public MealCreateEdit ToViewModel(NavigationBar navigationBar) => new MealCreateEdit
+        //{
+        //    Id = this.Id,
+        //    InterviewId = this.InterviewId,
+        //    MealPlaceId = this.MealPlaceId,
+        //    MealTypeId = this.MealPlaceId,
+        //    StartingHour = this.StartingHour,
+        //    MealElements = this.MealElements,
+        //    NavigationBar = navigationBar
+        //};
+
+
+        public static implicit operator Meal(MealCreateEdit viewModel)
+        {
+            var model = new Meal
+            {
+                Id = viewModel.Id,
+                InterviewId = viewModel.InterviewId,
+                MealPlaceId = viewModel.MealPlaceId,
+                MealTypeId = viewModel.MealPlaceId,
+                StartingHour = viewModel.StartingHour,
+                MealElements = new List<MealElement>()
+            };
+            viewModel.MealElements?.ToList().ForEach(item => { model.MealElements.Add(item); });
+            return model;
+        }
     }
 }

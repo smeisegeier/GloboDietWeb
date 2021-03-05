@@ -3,6 +3,7 @@ using GloboDiet.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,7 +15,10 @@ namespace GloboDiet.Models
 
         [StringLength(30)]
         public string GivenName { get; set; }
-        //public string Name { get; set; }
+
+        // needed for dropdown
+        [NotMapped]
+        public string Label { get => ToString(); }
 
         public Interviewer() { }
         public static IEnumerable<Interviewer> GetSeedsFromMockup()
@@ -32,14 +36,14 @@ namespace GloboDiet.Models
         //public static implicit operator Interviewer(InterviewerCreateEdit interviewerCreateEdit) => new Interviewer
         //{ Id = interviewerCreateEdit.Id, GivenName = interviewerCreateEdit.GivenName, Name = interviewerCreateEdit.Name };
 
-        public InterviewerCreateEdit ToViewModel(NavigationBar navigationBar) => new InterviewerCreateEdit()
-        {
-            Id = this.Id,
-            Code = this.Code,
-            GivenName = this.GivenName,
-            Name = this.Name,
-            NavigationBar = navigationBar
-        };
 
+
+        public static implicit operator Interviewer(InterviewerCreateEdit viewModel) => new Interviewer
+        {
+            Id = viewModel.Id,
+            Code = viewModel.Code,
+            GivenName = viewModel.GivenName,
+            Name = viewModel.Name,
+        };
     }
 }

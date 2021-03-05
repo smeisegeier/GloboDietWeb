@@ -10,28 +10,30 @@ namespace GloboDiet.ViewModels
     public class MealElementCreateEdit : _ViewModelBase
     {
 
-        private MealElement _mealElement { get; set; }
+        //private MealElement _mealElement { get; set; }
 
-        public MealElementCreateEdit(MealElement mealElement, NavigationBar navigationBar) : base(navigationBar, Globals.ProcessMilestone._3_MEALS)
-        {
-            _mealElement = mealElement;
-        }
+        //public MealElementCreateEdit(MealElement mealElement, NavigationBar navigationBar) : base(navigationBar, Globals.ProcessMilestone._3_MEALS)
+        //{
+        //    _mealElement = mealElement;
+        //}
 
-        public int Id => _mealElement.Id;
+        public new int Id { get; set; } 
 
         [ForeignKey(nameof(Meal))]
-        public int MealId => _mealElement.MealId;
+        public int MealId { get; set; }
 
-        public string Name
-        {
-            get => _mealElement.Name;
-            set { _mealElement.Name = value; }
-        }
+        public new string Name { get; set; }
 
-        public int Quantity
+        public int Quantity { get; set; }
+
+        public static implicit operator MealElementCreateEdit(MealElement model) => new MealElementCreateEdit
         {
-            get => _mealElement.Quantity;
-            set { _mealElement.Quantity = value; }
-        }
+            Id = model.Id,
+            MealId = model.MealId,
+            Name = model.Name,
+            Quantity = model.Quantity
+        };
+
+
     }
 }

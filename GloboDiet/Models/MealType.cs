@@ -1,4 +1,5 @@
 ﻿using GloboDiet.Legacy.GloboDietDb;
+using GloboDiet.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -26,5 +27,12 @@ namespace GloboDiet.Models
             }
             return newList;
         }
+
+        public static implicit operator MealType(MealTypeCreateEdit viewModel) => new MealType
+        {
+            Id = viewModel.Id,
+            Description = viewModel.Description,
+            Code = viewModel.Code
+        };
     }
 }

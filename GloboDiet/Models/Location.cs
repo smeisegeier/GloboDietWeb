@@ -1,4 +1,5 @@
 ﻿using GloboDiet.Services;
+using GloboDiet.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -15,8 +16,9 @@ namespace GloboDiet.Models
         [Required]
         public string Country { get; set; }
 
+        // needed for dropdown
         [NotMapped]
-        public new string Label { get => $"[{City} - {Country}]"; }
+        public string Label { get => ToString(); }
 
         public Location()
         {
@@ -30,5 +32,19 @@ namespace GloboDiet.Models
                 new Location() { City = "Potsdam", Country = "DE" }
             };
         }
+
+        public override string ToString() => $"[{City} - {Country}]";
+
+        public static implicit operator Location(LocationCreateEdit viewModel)
+        {
+            var model = new Location
+            {
+                Id = viewModel.Id,
+                City = viewModel.City,
+                Country = viewModel.Country
+            };
+            return model;
+        }
+
     }
 }

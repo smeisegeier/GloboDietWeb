@@ -48,27 +48,34 @@ namespace GloboDiet.Controllers
         #region Interviewer
 
         [HttpGet]
-        public IActionResult InterviewerCreate() => View(new Interviewer().ToViewModel(getNewNavigationBar()));
+        public IActionResult InterviewerCreate()
+        {
+            InterviewerCreateEdit vm = new Interviewer();
+            vm.Init(getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW);
+            return View(vm);
+        }
 
         [HttpPost]
         public IActionResult InterviewerCreate(InterviewerCreateEdit interviewerCreateEdit)
         {
             if (!ModelState.IsValid) 
                 return View(interviewerCreateEdit);
-            _repoInterviewer.ItemAdd(interviewerCreateEdit.ToModel());
+            _repoInterviewer.ItemAdd(interviewerCreateEdit);
             return RedirectToAction(nameof(InterviewersList));
         }
 
         [HttpGet]
-        public IActionResult InterviewerEdit(int id) => View(_repoInterviewer
-            .ItemGetById(id)
-            .ToViewModel(getNewNavigationBar())
-            );
+        public IActionResult InterviewerEdit(int id)
+        {
+            InterviewerCreateEdit vm = _repoInterviewer.ItemGetById(id);
+            vm.Init(getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW);
+            return View(vm);
+        }
 
         [HttpPost]
         public IActionResult InterviewerEdit(InterviewerCreateEdit interviewerCreateEdit)
         {
-            _repoInterviewer.ItemUpdate(interviewerCreateEdit.ToModel());
+            _repoInterviewer.ItemUpdate(interviewerCreateEdit);
             return RedirectToAction(nameof(InterviewersList));
         }
 
@@ -84,9 +91,11 @@ namespace GloboDiet.Controllers
 
         #region Location
         [HttpGet]
-        public IActionResult LocationCreate(string returnAction = null)
+        public IActionResult LocationCreate()
         {
-            return View(new ViewModels.LocationCreateEdit(new Location(), getNewNavigationBar(), returnAction));
+            LocationCreateEdit vm = new LocationCreateEdit();
+            vm.Init(getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW);
+            return View(vm);
         }
         [HttpPost]
         public IActionResult LocationCreate(Location location, string ReturnAction)
@@ -98,7 +107,12 @@ namespace GloboDiet.Controllers
         }
 
         [HttpGet]
-        public IActionResult LocationEdit(int id) => View(new LocationCreateEdit(_repoLocation.ItemGetById(id), getNewNavigationBar()));
+        public IActionResult LocationEdit(int id)
+        {
+            LocationCreateEdit vm = _repoLocation.ItemGetById(id);
+            vm.Init(getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW);
+            return View(vm);
+        }
 
         [HttpPost]
         public IActionResult LocationEdit(Location location)
@@ -109,7 +123,7 @@ namespace GloboDiet.Controllers
 
 
         [HttpGet]
-        public IActionResult LocationCreateToInterview() => View(new LocationCreateEdit(new Location(), getNewNavigationBar()));
+        //public IActionResult LocationCreateToInterview() => View(new LocationCreateEdit(new Location(), getNewNavigationBar()));
 
         [HttpPost]
         public IActionResult LocationCreateToInterview(Location location)

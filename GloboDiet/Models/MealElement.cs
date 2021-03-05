@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GloboDiet.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -13,14 +14,19 @@ namespace GloboDiet.Models
 
         public int Quantity { get; set; }
 
-        public MealElement()
-        {
-
-        }
+        public MealElement() { }
 
         public MealElement(int mealId)
         {
             MealId = mealId;
         }
+
+        public static implicit operator MealElement(MealElementCreateEdit viewModel) => new MealElement
+        {
+            Id = viewModel.Id,
+            MealId = viewModel.MealId,
+            Name = viewModel.Name,
+            Quantity = viewModel.Quantity
+        };
     }
 }

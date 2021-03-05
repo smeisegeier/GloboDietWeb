@@ -48,22 +48,35 @@ namespace GloboDiet.Models
                 };
         }
 
-        public RespondentCreateEdit ToViewModel(NavigationBar navigationBar, Globals.ProcessMilestone processMilestone) => new RespondentCreateEdit
-        {
-            Id = this.Id,
-            GivenName = this.GivenName,
-            Age = this.Age,
-            Code = this.Code,
-            DateOfBirth = this.DateOfBirth,
-            Gender = this.Gender,
-            Height = this.Height,
-            InterviewId = this.InterviewId,
-            Label = this.Label,
-            Name = this.Name,
-            Weight = this.Weight,
+        //public RespondentCreateEdit ToViewModel(NavigationBar navigationBar, Globals.ProcessMilestone processMilestone) => new RespondentCreateEdit
+        //{
+        //    Id = this.Id,
+        //    GivenName = this.GivenName,
+        //    Age = this.Age,
+        //    Code = this.Code,
+        //    DateOfBirth = this.DateOfBirth,
+        //    Gender = this.Gender,
+        //    Height = this.Height,
+        //    InterviewId = this.InterviewId,
+        //    Name = this.Name,
+        //    Weight = this.Weight,
             
-            NavigationBar = navigationBar,
-            CurrentProcessMilestone = processMilestone
+        //    NavigationBar = navigationBar,
+        //    CurrentProcessMilestone = processMilestone
+        //};
+
+        public static implicit operator Respondent(RespondentCreateEdit viewModel) => new Respondent
+        {
+            Id = viewModel.Id,
+            GivenName = viewModel.GivenName,
+            Code = viewModel.Code,
+            DateOfBirth = viewModel.DateOfBirth,
+            Gender = viewModel.Gender,
+            Height = viewModel.Height,
+            InterviewId = viewModel.InterviewId,
+            Name = viewModel.Name,
+            Weight = viewModel.Weight,
         };
+
     }
 }

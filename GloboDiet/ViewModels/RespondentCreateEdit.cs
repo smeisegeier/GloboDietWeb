@@ -10,24 +10,7 @@ namespace GloboDiet.ViewModels
 {
     public class RespondentCreateEdit : _ViewModelBase
     {
-        //private Respondent _respondent { get; set; }
-
-        //public RespondentCreateEdit(Respondent respondent, NavigationBar navigationBar, Globals.ProcessMilestone currentProcessMilestone) : base(navigationBar, currentProcessMilestone)
-        //{
-        //    _respondent = respondent;
-        //}
-
-        //public RespondentCreateEdit() {}
-
-        public int Id { get; set; }
-
-        [DisplayFormat(NullDisplayText = "Label is null")]
-        public string Label { get; set; }
-
         public int InterviewId { get; set; }
-
-        public string Name { get; set; }
-        public string Code { get; set; }
 
         [DisplayName("Given Name")]
         public string GivenName { get; set; }
@@ -49,18 +32,18 @@ namespace GloboDiet.ViewModels
         [Range(30, 300)]
         public int Weight { get; set; }
 
-        public Respondent ToModel() => new Respondent
+        public static implicit operator RespondentCreateEdit(Respondent model) => new RespondentCreateEdit
         {
-            Id = this.Id,
-            GivenName = this.GivenName,
-            Code = this.Code,
-            DateOfBirth = this.DateOfBirth,
-            Gender = this.Gender,
-            Height = this.Height,
-            InterviewId = this.InterviewId,
-            Name = this.Name,
-            Weight = this.Weight,
-
+            Id = model.Id,
+            GivenName = model.GivenName,
+            Age = model.Age,
+            Code = model.Code,
+            DateOfBirth = model.DateOfBirth,
+            Gender = model.Gender,
+            Height = model.Height,
+            InterviewId = model.InterviewId,
+            Name = model.Name,
+            Weight = model.Weight,
         };
 
     }
