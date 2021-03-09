@@ -94,14 +94,13 @@ namespace GloboDiet.Controllers
                 getNewNavigationBar(),
                 Globals.ProcessMilestone._1_INTERVIEW
                 );
-
             return View(interviewCreateEdit);
 
         }
         // TODO Get-Clipboard | ConvertFrom-Json | ConvertTo-Json
         // TODO use session Id
         [HttpPost]
-        public IActionResult Interview1Edit(InterviewCreateEdit interviewCreateEdit)
+        public IActionResult Interview1Edit(InterviewCreateEdit interviewCreateEdit, string submit)
         {
             //if (interview.RespondentId == 0)
             //{ ModelState.AddModelError("CustomError", "No Respondent selected"); }
@@ -115,7 +114,14 @@ namespace GloboDiet.Controllers
                 return View(interviewCreateEdit);
             }
             Interview interview = interviewCreateEdit;
-            _repoInterview.ItemUpdate(interview);
+            if (submit == "Cancel")
+            {
+                _repoInterview.ItemDelete(interview);
+            }
+            else
+            {
+                _repoInterview.ItemUpdate(interview);
+            }
             return RedirectToAction(nameof(Index));
         }
 
@@ -195,8 +201,15 @@ namespace GloboDiet.Controllers
         public IActionResult Meal2Edit(MealCreateEdit mealCreateEdit, string submit)
         {
             Meal meal = mealCreateEdit;
-            if (submit != "Cancel")
-            { _repoMeal.ItemAddOrUpdate(meal); }
+            if (submit == "Cancel")
+            {
+                _repoMeal.ItemDelete(meal);
+            }
+            else
+            {
+                _repoMeal.ItemUpdate(meal);
+            }
+
             return RedirectToAction(nameof(Interview1Edit), new { id = meal.InterviewId });
         }
 
@@ -229,9 +242,14 @@ namespace GloboDiet.Controllers
         public IActionResult MealElement3Edit(MealElementCreateEdit viewModel, string submit)
         {
             MealElement model = viewModel;
-            // TODO cancel triggers validation..
-            if (submit != "Cancel")
-            { _repoMealElement.ItemAddOrUpdate(model); }
+            if (submit == "Cancel")
+            { 
+                _repoMealElement.ItemDelete(model); 
+            }
+            else
+            {
+                _repoMealElement.ItemUpdate(model);
+            }
             return RedirectToAction(nameof(Meal2Edit), new { id = model.MealId });
         }
 

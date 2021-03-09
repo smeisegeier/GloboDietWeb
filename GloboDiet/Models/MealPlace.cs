@@ -29,14 +29,14 @@ namespace GloboDiet.Models
         {
             var legacyList = POC.GetLegacyObjects<POC>();
             var newList = new List<MealPlace>();
-            foreach (var item in legacyList)
+            legacyList?.ToList().ForEach(item =>
             {
                 newList.Add(new MealPlace()
                 {
                     Name = item.POC_NAME,
                     Code = item.POC_CODE
-                }) ;
-            }
+                });
+            });
             return newList;
         }
 
