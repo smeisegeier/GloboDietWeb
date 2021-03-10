@@ -102,6 +102,7 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult Interview1Edit(InterviewCreateEdit interviewCreateEdit, string submit)
         {
+            // TODO ModelState checks
             //if (interview.RespondentId == 0)
             //{ ModelState.AddModelError("CustomError", "No Respondent selected"); }
             //if (interview.InterviewerId == 0)
@@ -126,15 +127,16 @@ namespace GloboDiet.Controllers
         }
 
         [HttpGet]
-        public IActionResult Interview1List()
-        //{
-        //    var interviewsList = new InterviewsList();
-        //    interviewsList.Init(_repoInterview.ItemsGetAll(), getNewNavigationBar());
-        //}
-        => View(new InterviewsList(
-        _repoInterview.ItemsGetAll(),
-        getNewNavigationBar()
-        ));
+        public IActionResult Interview1List() => View(new InterviewsList(
+            _repoInterview.ItemsGetAll(),
+            getNewNavigationBar()
+            ));
+
+        public IActionResult Interview1Delete(int id)
+        {
+            _repoInterview.ItemDelete(id);
+            return RedirectToAction(nameof(Interview1List));
+        }
 
         public IActionResult Interview1Details(int id) => Json(_repoInterview.ItemGetById(id));
 
@@ -166,14 +168,16 @@ namespace GloboDiet.Controllers
         public IActionResult Respondent2Edit(RespondentCreateEdit respondentCreateEdit, string submit)
         {
             Respondent respondent = respondentCreateEdit;
+            // special case: cancel -> no db operation
             if (submit != "Cancel")
-            { _repoRespondent.ItemUpdate(respondent); }
+            {
+                _repoRespondent.ItemUpdate(respondent);
+            }
             //_nLogger.Debug($"Label{model.Label}, Id {model.Id}, Interv {model.InterviewId}");
             return RedirectToAction(nameof(Interview1Edit), new { id = respondent.InterviewId });
         }
 
         public IActionResult Respondent2Details(int id) => Json(_repoRespondent.ItemGetById(id));
-
         #endregion
 
         #region Meal
@@ -209,11 +213,17 @@ namespace GloboDiet.Controllers
             {
                 _repoMeal.ItemUpdate(meal);
             }
-
             return RedirectToAction(nameof(Interview1Edit), new { id = meal.InterviewId });
         }
 
         public IActionResult Meal2Details(int id) => Json(_repoMeal.ItemGetById(id));
+
+        public IActionResult Meal2Delete(int id)
+        {
+            var meal = _repoMeal.ItemGetById(id);
+            _repoMeal.ItemDelete(meal);
+            return RedirectToAction(nameof(Interview1Edit), new { id = meal.InterviewId });
+        }
 
         #endregion
 
@@ -243,8 +253,8 @@ namespace GloboDiet.Controllers
         {
             MealElement model = viewModel;
             if (submit == "Cancel")
-            { 
-                _repoMealElement.ItemDelete(model); 
+            {
+                _repoMealElement.ItemDelete(model);
             }
             else
             {
@@ -253,9 +263,17 @@ namespace GloboDiet.Controllers
             return RedirectToAction(nameof(Meal2Edit), new { id = model.MealId });
         }
 
+        public IActionResult MealElement3Delete(int id)
+        {
+            var mealElement = _repoMealElement.ItemGetById(id);
+            _repoMealElement.ItemDelete(mealElement);
+            return RedirectToAction(nameof(Meal2Edit), new { id = mealElement.MealId });
+        }
+        public IActionResult MealElement3Details(int id) => Json(_repoMealElement.ItemGetById(id));
+
+
         #endregion
 
-        // TODO Edit / details -> template? css? view?
 
         #region Artefacts
         // POST: HomeController/Create

@@ -14,6 +14,7 @@ namespace GloboDiet.Services
         int ItemAddOrUpdate(TEntity entity);
         int ItemUpdate(TEntity entity);
         void ItemDelete(TEntity entity);
+        void ItemDelete(int id);
         int ItemsGetCount();
 
         EfCoreHelper.SqlConnectionType GetSqlConnectionType();
@@ -71,6 +72,11 @@ namespace GloboDiet.Services
         {
             _context.Set<TEntity>().Remove(entity);
             _context.SaveChanges();
+        }
+
+        public void ItemDelete(int id)
+        {
+            ItemDelete(ItemGetById(id));
         }
 
         public TEntity ItemGetById(int id) => _context.Set<TEntity>().FirstOrDefault(x => x.Id == id);
