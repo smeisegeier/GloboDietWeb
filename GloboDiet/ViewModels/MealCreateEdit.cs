@@ -17,10 +17,10 @@ namespace GloboDiet.ViewModels
         public int InterviewId { get; set; }
 
         public int StartingHour { get; set; }
-        public int MealTypeId { get; set; }
+        public int? MealTypeId { get; set; }
         public string MealTypeLabel { get; set; }
 
-        public int MealPlaceId { get; set; }
+        public int? MealPlaceId { get; set; }
         public string MealPlaceLabel { get; set; }
 
         public IList<MealElement> MealElements { get; set; }

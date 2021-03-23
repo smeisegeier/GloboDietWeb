@@ -13,10 +13,10 @@ namespace GloboDiet.Models
         [Range(0,23)]
         public int StartingHour { get; set; }
 
-        public int MealTypeId { get; set; }
+        public int? MealTypeId { get; set; }
         public virtual MealType MealType { get; set; }
 
-        public int MealPlaceId { get; set; }
+        public int? MealPlaceId { get; set; }
         public virtual MealPlace MealPlace { get; set; }
 
         [ForeignKey(nameof(Interview))]

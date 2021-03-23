@@ -16,6 +16,7 @@ using Newtonsoft.Json;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
 using GloboDiet.Extensions;
+using System.Net;
 
 namespace GloboDiet.Controllers
 {
@@ -85,7 +86,11 @@ namespace GloboDiet.Controllers
         {
             var interviewNewOrFromDb = _repoInterview.ItemGetById(id);
             if (interviewNewOrFromDb is not Interview)
-            { throw new Exception("Interview defect"); }
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return NotFound(); //Content("lol");
+                //throw new Exception("Interview defect"); 
+            }
 
             InterviewCreateEdit interviewCreateEdit = interviewNewOrFromDb;
             interviewCreateEdit.Init(
@@ -102,7 +107,7 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult Interview1Edit(InterviewCreateEdit interviewCreateEdit, string submit)
         {
-            // TODO ModelState checks
+            // TODO ModelState checks https://blog.zhaytam.com/2019/04/13/asp-net-core-checking-modelstate-isvalid-is-boring/
             //if (interview.RespondentId == 0)
             //{ ModelState.AddModelError("CustomError", "No Respondent selected"); }
             //if (interview.InterviewerId == 0)

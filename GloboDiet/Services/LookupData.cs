@@ -11,7 +11,7 @@ using GloboDiet;
 namespace GloboDiet.Services
 {
     /// <summary>
-    /// Singleton class
+    /// Singleton class. Comprises all data that are read once at appstart (Lookup tables, const)
     /// </summary>
     public class LookupData
     {
