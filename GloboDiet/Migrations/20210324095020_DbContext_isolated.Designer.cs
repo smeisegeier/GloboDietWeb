@@ -4,14 +4,16 @@ using GloboDiet.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GloboDiet.Migrations
 {
     [DbContext(typeof(GloboDietDbContext))]
-    partial class GloboDietDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210324095020_DbContext_isolated")]
+    partial class DbContext_isolated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

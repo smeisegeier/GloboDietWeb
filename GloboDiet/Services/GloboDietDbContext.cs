@@ -10,7 +10,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GloboDiet.Services
 {
-    public class GloboDietDbContext : IdentityDbContext
+    // Update-Database -Context GloboDietDbContext
+    public class GloboDietDbContext : DbContext
     {
         private LookupData _lookupData;
         public GloboDietDbContext(DbContextOptions<GloboDietDbContext> options, LookupData lookupData) : base(options) 
@@ -32,9 +33,6 @@ namespace GloboDiet.Services
         public DbSet<MealPlace> MealPlaces { get; set; }
         public DbSet<Brandname> Brandnames { get; set; }
 
-
-        /* User Manager*/
-        public DbSet<User> User { get; set; }
 
 
         /// <summary>

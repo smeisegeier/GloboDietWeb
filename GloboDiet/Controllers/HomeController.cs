@@ -68,6 +68,7 @@ namespace GloboDiet.Controllers
 
 
         #region Private Area
+        // TODO can this be protected
         private NavigationBar getNewNavigationBar() => new NavigationBar(_repoInterview.ItemsGetCount(), _repoInterviewer.ItemsGetCount(), _repoLocation.ItemsGetCount(), _repoRespondent.ItemsGetCount(), _repoInterview.GetSqlConnectionType());
 
         #endregion
@@ -103,7 +104,6 @@ namespace GloboDiet.Controllers
 
         }
         // TODO Get-Clipboard | ConvertFrom-Json | ConvertTo-Json
-        // TODO use session Id
         [HttpPost]
         public IActionResult Interview1Edit(InterviewCreateEdit interviewCreateEdit, string submit)
         {

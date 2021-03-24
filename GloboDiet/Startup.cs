@@ -30,8 +30,29 @@ namespace GloboDiet
                config.Password.RequireUppercase = false;
                config.Password.RequireNonAlphanumeric = false;
             })
-                .AddEntityFrameworkStores<GloboDietDbContext>()
+                .AddEntityFrameworkStores<MyIdentityDbContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddMvc();
+            services.AddDbContext<MyIdentityDbContext>(options => options
+                .UseSqlServer("server=(localdb)\\mssqllocaldb;database=UserManager;trusted_connection=true;"));
+            services.AddDbContext<GloboDietDbContext>(options => options
+                .UseLazyLoadingProxies()
+                .UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDietWeb;trusted_connection=true;"));
+            //services.AddDbContext<GloboDietDbContext>(options => options
+            //    .UseLazyLoadingProxies()
+            //    .UseInMemoryDatabase("Test"));
+
+            services.AddScoped(typeof(IRepositoryNew<>), typeof(RepositoryNew<>));
+            services.AddSingleton<LookupData>();
+
+            // enable session / cookie stuff
+            services.AddHttpContextAccessor();
+            services.AddSession(options =>
+            {
+                options.Cookie.IsEssential = true;
+            });
+            services.AddDistributedMemoryCache();
 
             services.ConfigureApplicationCookie(config =>
             {
@@ -39,24 +60,6 @@ namespace GloboDiet
                 //config.LoginPath = "";
                 config.ExpireTimeSpan = TimeSpan.FromMinutes(5);
             });
-
-            services.AddMvc();
-            services.AddDbContext<GloboDietDbContext>(options => options
-                .UseLazyLoadingProxies()
-                .UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDietWeb;trusted_connection=true;"));
-            //services.AddDbContext<GloboDietDbContext>(options => options
-            //    .UseLazyLoadingProxies()
-            //    .UseInMemoryDatabase("Test"));
-            services.AddScoped(typeof(IRepositoryNew<>), typeof(RepositoryNew<>));
-            services.AddSingleton<LookupData>();
-
-            // enable session stuff
-            services.AddHttpContextAccessor();
-            services.AddSession(options =>
-            {
-                options.Cookie.IsEssential = true;
-            });
-            services.AddDistributedMemoryCache();
 
             // option tempdata
             //services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();

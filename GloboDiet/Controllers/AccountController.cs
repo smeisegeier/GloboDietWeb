@@ -24,10 +24,7 @@ namespace GloboDiet.Controllers
         private NavigationBar getNewNavigationBar() => new NavigationBar(0, 0, 0, 0, HelperLibrary.EfCoreHelper.SqlConnectionType.UNKNOWN);
 
         [HttpGet]
-        public IActionResult Register()
-        {
-            return View(new Register());
-        }
+        public IActionResult Register()=> View(new Register().Init());
 
         [HttpPost]
         public async Task<IActionResult> Register(Register viewModel)
@@ -52,11 +49,7 @@ namespace GloboDiet.Controllers
 
 
         [HttpGet]
-        public IActionResult Login(string returnUrl = "")
-        {
-            var model = new Login(returnUrl, getNewNavigationBar());
-            return View(new Login());
-        }
+        public IActionResult Login(string returnUrl = "") => View(new Login(returnUrl).Init());
 
         [HttpPost]
         public async Task<IActionResult> Login(Login viewModel)

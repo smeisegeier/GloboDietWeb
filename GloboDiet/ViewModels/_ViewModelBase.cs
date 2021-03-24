@@ -26,24 +26,12 @@ namespace GloboDiet.ViewModels
 
         public string Label => $"[{Id} | {Name}]";
 
-
-        /*
-        // standard ctor
-        public _ViewModelBase(NavigationBar navigationBar, Globals.ProcessMilestone currentProcessMilestone = default(Globals.ProcessMilestone))
-        {
-            NavigationBar = navigationBar;
-            CurrentProcessMilestone = currentProcessMilestone;
-        }
-
-        // parameterless for modelbinder calls / empty displayelements
-        public _ViewModelBase() : this(new NavigationBar(0, 0, 0, 0, EfCoreHelper.SqlConnectionType.UNKNOWN))
-        {
-        }
-        */
-        public void Init(NavigationBar navigationBar = null, Globals.ProcessMilestone currentProcessMilestone = default(Globals.ProcessMilestone))
+        // returns this to allow chaining
+        public _ViewModelBase Init(NavigationBar navigationBar = null, Globals.ProcessMilestone currentProcessMilestone = default(Globals.ProcessMilestone))
         {
             NavigationBar = navigationBar?? NavigationBar.GetEmptyNavigationBar();
             CurrentProcessMilestone = currentProcessMilestone;
+            return this;
         }
     }
 }
