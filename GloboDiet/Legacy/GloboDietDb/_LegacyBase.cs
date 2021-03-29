@@ -9,6 +9,7 @@ namespace GloboDiet.Legacy.GloboDietDb
 {
     public abstract class _LegacyBase
     {
+
         public _LegacyBase() { }
 
         /// <summary>

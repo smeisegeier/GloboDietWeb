@@ -32,6 +32,7 @@ namespace GloboDiet.Services
         public DbSet<MealType> MealTypes { get; set; }
         public DbSet<MealPlace> MealPlaces { get; set; }
         public DbSet<Brandname> Brandnames { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
 
 
 
@@ -46,26 +47,20 @@ namespace GloboDiet.Services
             if (!Set<MealType>().Any()) Set<MealType>().AddRange(MealType.GetSeedsFromLegacy());
             if (!Set<MealPlace>().Any()) Set<MealPlace>().AddRange(MealPlace.GetSeedsFromLegacy());
             if (!Set<Brandname>().Any()) Set<Brandname>().AddRange(Brandname.GetSeedsFromLegacy());
+            if (!Set<Ingredient>().Any()) Set<Ingredient>().AddRange(Ingredient.GetSeedsFromLegacy());
 
             /*2) Entites */
             if (!Set<Interviewer>().Any()) Set<Interviewer>().AddRange(Interviewer.GetSeedsFromMockup());
             if (!Set<Location>().Any()) Set<Location>().AddRange(Location.GetSeedsFromMockup());
 
-            //if (!Set<Respondent>().Any()) Set<Respondent>().AddRange(Respondent.GetSeedsFromMockup());
-            //if (!Set<Interview>().Any()) Set<Interview>().AddRange(Interview.GetSeedsFromMockup());
-
             // Saving is isolated now to prevent FK mismatches
             SaveChanges();
 
             /* setup Static selectlists from Lookup */
-            //Globals.StaticListOfMealTypes = new SelectList(Set<MealType>().ToList(), "Id", "Name");
-            //Globals.StaticListOfMealPlaces = new SelectList(Set<MealPlace>().ToList(), "Id", "Name");
-            //Globals.StaticListOfBrandnames = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
-
             _lookupData.DropdownMealTypes = new SelectList(Set<MealType>().ToList(), "Id", "Name");
             _lookupData.DropdownMealPlaces = new SelectList(Set<MealPlace>().ToList(), "Id", "Name");
             _lookupData.DropdownBrandnames = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
-            //_lookupData.DropdownIngredients = new SelectList(Set<>().ToList(), "Id", "Name");
+            _lookupData.DropdownIngredients = new SelectList(Set<Ingredient>().ToList(), "Id", "Label");
         }
 
         ///// <summary>

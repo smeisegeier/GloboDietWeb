@@ -21,7 +21,7 @@ namespace GloboDiet
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            // Identity setup
+            #region ID
             services.AddIdentity<User, IdentityRole>(config =>
             {
                config.Password.RequiredLength = 3;
@@ -36,16 +36,21 @@ namespace GloboDiet
             services.AddMvc();
             services.AddDbContext<MyIdentityDbContext>(options => options
                 .UseSqlServer("server=(localdb)\\mssqllocaldb;database=UserManager;trusted_connection=true;"));
-            services.AddDbContext<GloboDietDbContext>(options => options
-                .UseLazyLoadingProxies()
-                .UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDietWeb;trusted_connection=true;"));
+            #endregion
+
+            #region services
             //services.AddDbContext<GloboDietDbContext>(options => options
             //    .UseLazyLoadingProxies()
-            //    .UseInMemoryDatabase("Test"));
+            //    .UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDietWeb;trusted_connection=true;"));
+            services.AddDbContext<GloboDietDbContext>(options => options
+                .UseLazyLoadingProxies()
+                .UseInMemoryDatabase("Test"));
 
             services.AddScoped(typeof(IRepositoryNew<>), typeof(RepositoryNew<>));
             services.AddSingleton<LookupData>();
+            #endregion
 
+            #region session
             // enable session / cookie stuff
             services.AddHttpContextAccessor();
             services.AddSession(options =>
@@ -63,6 +68,7 @@ namespace GloboDiet
 
             // option tempdata
             //services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

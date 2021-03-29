@@ -247,10 +247,15 @@ namespace GloboDiet.Controllers
         [HttpGet]
         public IActionResult MealElement3Edit(int id)
         {
-            var mealElementNewOrFromDb = _repoMealElement.ItemGetById(id);
-            MealElementCreateEdit mealElementCreateEdit = mealElementNewOrFromDb;
-            mealElementCreateEdit.Init(getNewNavigationBar());
-            return View(mealElementCreateEdit);
+            //var mealElementNewOrFromDb = _repoMealElement.ItemGetById(id);
+            //MealElementCreateEdit mealElementCreateEdit = mealElementNewOrFromDb;
+            //mealElementCreateEdit.Init(getNewNavigationBar());
+            //return View(mealElementCreateEdit);
+            return View(((MealElementCreateEdit)_repoMealElement
+                .ItemGetById(id)
+                )
+                .Init(getNewNavigationBar())
+                );
         }
 
         [HttpPost]

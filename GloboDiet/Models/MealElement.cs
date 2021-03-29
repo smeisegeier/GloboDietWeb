@@ -9,24 +9,34 @@ namespace GloboDiet.Models
 {
     public class MealElement : _ModelBase
     {
+
         [ForeignKey(nameof(Meal))]
         public int MealId { get; set; }
 
+        [ForeignKey(nameof(Ingredient))]
+        public int IngredientId { get; set; }
+        public virtual Ingredient Ingredient { get; set; }
         public int Quantity { get; set; }
 
-        public MealElement() { }
 
+        public MealElement() { }
         public MealElement(int mealId)
         {
             MealId = mealId;
         }
 
-        public static implicit operator MealElement(MealElementCreateEdit viewModel) => new MealElement
+        public static implicit operator MealElement(MealElementCreateEdit viewModel)
         {
-            Id = viewModel.Id,
-            MealId = viewModel.MealId,
-            Name = viewModel.Name,
-            Quantity = viewModel.Quantity
-        };
+            var mealElement = new MealElement
+            {
+                Id = viewModel.Id,
+                MealId = viewModel.MealId,
+                Name = viewModel.Name,
+                Quantity = viewModel.Quantity,
+                IngredientId = viewModel.IngredientId
+            };
+            return mealElement;
+        }
+
     }
 }

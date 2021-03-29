@@ -1,4 +1,5 @@
 ﻿@model GloboDiet.ViewModels.MealCreateEdit
+@using GloboDiet.ViewModels 
 
 <table class="table table-striped">
     <thead>
@@ -10,6 +11,9 @@
                 @Html.DisplayNameFor(model => model.MealElements.First().Name)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.MealElements.First().IngredientId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.MealElements.First().Quantity)
             </th>
             <th></th>
@@ -17,13 +21,16 @@
     </thead>
     <tbody>
 @if (Model?.MealElements is not null) {
-        @foreach (var item in Model.MealElements) {
+        @foreach (MealElementCreateEdit item in Model.MealElements) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IngredientLabel)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Quantity)
