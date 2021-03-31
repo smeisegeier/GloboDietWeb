@@ -19,6 +19,13 @@ namespace GloboDiet.ViewModels
         public int IngredientId { get; set; }
         public string IngredientLabel { get; set; }
 
+
+        [ForeignKey(nameof(IngredientGroup))]
+        [Display(Name = "IngredientGroup")]
+        public int IngredientGroupId { get; set; }
+        public string IngredientGroupLabel { get; set; }
+
+
         public int Quantity { get; set; }
 
         public static implicit operator MealElementCreateEdit(MealElement model)
@@ -30,7 +37,9 @@ namespace GloboDiet.ViewModels
                 Name = model.Name,
                 Quantity = model.Quantity,
                 IngredientId = model.IngredientId,
-                IngredientLabel = model.Ingredient is null ? "empty" : model.Ingredient.Label
+                IngredientLabel = model.Ingredient is null ? "empty" : model.Ingredient.Label,
+                IngredientGroupId = model.IngredientGroupId,
+                IngredientGroupLabel = model.IngredientGroup is null ? "empty" : model.IngredientGroup.Label
             };
             return mealElementCreateEdit;
         }

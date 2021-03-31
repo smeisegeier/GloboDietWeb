@@ -36,5 +36,9 @@ namespace GloboDiet.Services
         public SelectList DropdownMealPlaces { get; set; }
         public SelectList DropdownBrandnames { get; set; }
         public SelectList DropdownIngredients { get; set; }
+        public SelectList DropdownIngredientGroups { get; set; }
+
+        // repo service cannot referenced here, for it has a shorter scope
+
     }
 }

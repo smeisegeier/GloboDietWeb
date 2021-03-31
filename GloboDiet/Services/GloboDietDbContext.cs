@@ -33,6 +33,7 @@ namespace GloboDiet.Services
         public DbSet<MealPlace> MealPlaces { get; set; }
         public DbSet<Brandname> Brandnames { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<IngredientGroup> IngredientGroups { get; set; }
 
 
 
@@ -48,6 +49,7 @@ namespace GloboDiet.Services
             if (!Set<MealPlace>().Any()) Set<MealPlace>().AddRange(MealPlace.GetSeedsFromLegacy());
             if (!Set<Brandname>().Any()) Set<Brandname>().AddRange(Brandname.GetSeedsFromLegacy());
             if (!Set<Ingredient>().Any()) Set<Ingredient>().AddRange(Ingredient.GetSeedsFromLegacy());
+            if (!Set<IngredientGroup>().Any()) Set<IngredientGroup>().AddRange(IngredientGroup.GetSeedsFromLegacy());
 
             /*2) Entites */
             if (!Set<Interviewer>().Any()) Set<Interviewer>().AddRange(Interviewer.GetSeedsFromMockup());
@@ -61,6 +63,7 @@ namespace GloboDiet.Services
             _lookupData.DropdownMealPlaces = new SelectList(Set<MealPlace>().ToList(), "Id", "Name");
             _lookupData.DropdownBrandnames = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
             _lookupData.DropdownIngredients = new SelectList(Set<Ingredient>().ToList(), "Id", "Label");
+            _lookupData.DropdownIngredientGroups = new SelectList(Set<IngredientGroup>().ToList(), "Id", "Label");
         }
 
         ///// <summary>

@@ -18,6 +18,10 @@ namespace GloboDiet.Models
         public string Name { get; set; } = "NotSet";
         public string Description { get; set; } = "NotSet";
 
+        // HACK deviant from ToString :o
+        public string Label => $"[{Code} | {Name}]";
+
+
         [Required(ErrorMessage = "Enter code")]
         public string Code { get; set; } = "00";
 

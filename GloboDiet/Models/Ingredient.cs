@@ -10,8 +10,6 @@ namespace GloboDiet.Models
     // Vorschläge Auswahl Mahlzeiten
     public class Ingredient : _ModelBase
     {
-        public string Label => $"[{Code} | {Name}]";
-
         public Ingredient() { }
 
         public static IEnumerable<Ingredient> GetSeedsFromLegacy()

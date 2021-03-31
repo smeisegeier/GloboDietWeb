@@ -68,7 +68,7 @@ namespace GloboDiet.Controllers
 
 
         #region Private Area
-        // TODO can this be protected
+        // TODO can this be protected, or can login controller be on a seperate layout
         private NavigationBar getNewNavigationBar() => new NavigationBar(_repoInterview.ItemsGetCount(), _repoInterviewer.ItemsGetCount(), _repoLocation.ItemsGetCount(), _repoRespondent.ItemsGetCount(), _repoInterview.GetSqlConnectionType());
 
         #endregion

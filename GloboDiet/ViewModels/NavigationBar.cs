@@ -8,6 +8,8 @@ namespace GloboDiet.ViewModels
 {
     public class NavigationBar
     {
+        // should navbar have repo inside?
+
         public int PillCountInterviews { get; set; }
         public int PillCountInterviewers { get; set; }
         public int PillCountLocations { get; set; }

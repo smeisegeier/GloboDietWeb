@@ -10,7 +10,7 @@ namespace GloboDiet.ViewModels
 {
     public class InterviewCreateEdit : _ViewModelBase
     {
-        // TODO use lokkup
+        // Interviewr and Locations are NO lookup data
         public IEnumerable<SelectListItem> DropdownInterviewers { get; set; }
         public IEnumerable<SelectListItem> DropdownLocations { get; set; }
 

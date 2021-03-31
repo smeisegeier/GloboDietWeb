@@ -18,7 +18,7 @@ namespace GloboDiet.Models
 
         // needed for dropdown
         [NotMapped]
-        public string Label { get => ToString(); }
+        public new string Label { get => ToString(); }
 
         public Interviewer() { }
         public static IEnumerable<Interviewer> GetSeedsFromMockup()

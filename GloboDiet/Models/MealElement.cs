@@ -16,6 +16,12 @@ namespace GloboDiet.Models
         [ForeignKey(nameof(Ingredient))]
         public int IngredientId { get; set; }
         public virtual Ingredient Ingredient { get; set; }
+
+
+        [ForeignKey(nameof(IngredientGroup))]
+        public int IngredientGroupId { get; set; }
+        public virtual IngredientGroup IngredientGroup { get; set; }
+
         public int Quantity { get; set; }
 
 
@@ -33,7 +39,8 @@ namespace GloboDiet.Models
                 MealId = viewModel.MealId,
                 Name = viewModel.Name,
                 Quantity = viewModel.Quantity,
-                IngredientId = viewModel.IngredientId
+                IngredientId = viewModel.IngredientId,
+                IngredientGroupId = viewModel.IngredientGroupId
             };
             return mealElement;
         }
