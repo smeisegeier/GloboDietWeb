@@ -6,21 +6,35 @@ using System.Linq;
 using System.Threading.Tasks;
 using GloboDiet.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GloboDiet.Services
 {
-    public class GloboDietDbContext : IdentityDbContext
+    // Update-Database -Context GloboDietDbContext
+    public class GloboDietDbContext : DbContext
     {
-        public GloboDietDbContext(DbContextOptions<GloboDietDbContext> options) : base(options) { }
+        private LookupData _lookupData;
+        public GloboDietDbContext(DbContextOptions<GloboDietDbContext> options, LookupData lookupData) : base(options) 
+        {
+            _lookupData = lookupData;
+        }
 
         public DbSet<Interview> Interviews { get; set; }
         public DbSet<Interviewer> Interviewers { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<Respondent> Respondents { get; set; }
-        public DbSet<PlaceOfMeal> PlacesOfMeal { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<Meal> Meals { get; set; }
+        public DbSet<MealElement> MealElements { get; set; }
 
-        public DbSet<User> User { get; set; }
+
+        /* Lookup Tables*/
+        public DbSet<MealType> MealTypes { get; set; }
+        public DbSet<MealPlace> MealPlaces { get; set; }
+        public DbSet<Brandname> Brandnames { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<IngredientGroup> IngredientGroups { get; set; }
+
 
 
         /// <summary>
@@ -30,14 +44,26 @@ namespace GloboDiet.Services
         public void SeedDb()
         {
             Database.EnsureCreated();
-            if (!Set<Interview>().Any()) Set<Interview>().AddRange(Interview.GetSeedsFromMockup());
+            /*1) Lookup tables*/
+            if (!Set<MealType>().Any()) Set<MealType>().AddRange(MealType.GetSeedsFromLegacy());
+            if (!Set<MealPlace>().Any()) Set<MealPlace>().AddRange(MealPlace.GetSeedsFromLegacy());
+            if (!Set<Brandname>().Any()) Set<Brandname>().AddRange(Brandname.GetSeedsFromLegacy());
+            if (!Set<Ingredient>().Any()) Set<Ingredient>().AddRange(Ingredient.GetSeedsFromLegacy());
+            if (!Set<IngredientGroup>().Any()) Set<IngredientGroup>().AddRange(IngredientGroup.GetSeedsFromLegacy());
+
+            /*2) Entites */
             if (!Set<Interviewer>().Any()) Set<Interviewer>().AddRange(Interviewer.GetSeedsFromMockup());
             if (!Set<Location>().Any()) Set<Location>().AddRange(Location.GetSeedsFromMockup());
-            if (!Set<Respondent>().Any()) Set<Respondent>().AddRange(Respondent.GetSeedsFromMockup());
-            if (!Set<Recipe>().Any()) Set<Recipe>().AddRange(Recipe.GetSeedsFromMockup());
 
             // Saving is isolated now to prevent FK mismatches
             SaveChanges();
+
+            /* setup Static selectlists from Lookup */
+            _lookupData.DropdownMealTypes = new SelectList(Set<MealType>().ToList(), "Id", "Name");
+            _lookupData.DropdownMealPlaces = new SelectList(Set<MealPlace>().ToList(), "Id", "Name");
+            _lookupData.DropdownBrandnames = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
+            _lookupData.DropdownIngredients = new SelectList(Set<Ingredient>().ToList(), "Id", "Label");
+            _lookupData.DropdownIngredientGroups = new SelectList(Set<IngredientGroup>().ToList(), "Id", "Label");
         }
 
         ///// <summary>
@@ -47,7 +73,7 @@ namespace GloboDiet.Services
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
         //    // try to store computed columns
-        //    modelBuilder.Entity<Respondent>()
+        //    modelBuilder.Entity<_respondent>()
         //        .Property(p => p.Age)
         //        .UsePropertyAccessMode(PropertyAccessMode.Property);
 

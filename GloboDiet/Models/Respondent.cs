@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using GloboDiet.Services;
+using GloboDiet.ViewModels;
 using HelperLibrary;
 namespace GloboDiet.Models
 {
@@ -16,30 +18,26 @@ namespace GloboDiet.Models
 
     public class Respondent : _ModelBase
     {
-        [DisplayName("Given Name")]
-        public string GivenName { get; set; } = "John";
+        public string GivenName { get; set; }
 
         public double Age { get => Math.Round((DateTime.Now - DateOfBirth).TotalDays / 365.242199, 1); }
 
         public Gender Gender { get; set; }
 
-        [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; } = DateTimeHelper.GetDateTimeFromString("1980-01-01", "yyyy-MM-dd");
 
-        [Display(Name = "Height in cm", Prompt = "150 - 230 cm")]
-        [Required(ErrorMessage = "Height must be provided")]
-        [Range(150, 230)]
         public int Height { get; set; } = 175;
 
-        [Display(Name = "Weight in kg", Prompt = "30 - 300 kg")]
-        [Required(ErrorMessage = "Weight must be provided")]
-        [Range(30, 300)]
         public int Weight { get; set; } = 80;
 
-        // Navigation property
-        public ICollection<Interview> Interviews { get; set; }
+        [ForeignKey("Interview")]
+        public int InterviewId { get; set; }
+        public virtual Interview Interview { get; set; }
 
         public Respondent() { }
+        public Respondent(int interviewId) { InterviewId = interviewId; }
+
+
 
         public static IList<Respondent> GetSeedsFromMockup()
         {
@@ -49,5 +47,36 @@ namespace GloboDiet.Models
                     new Respondent() { Name = "lolman", GivenName = "Gary", Code="DA12-B01",Height=182, Weight=98, DateOfBirth=DateTimeHelper.GetDateTimeFromString("1988-11-07", "yyyy-MM-dd"), Gender=Gender.Male}
                 };
         }
+
+        //public RespondentCreateEdit ToViewModel(NavigationBar navigationBar, Globals.ProcessMilestone processMilestone) => new RespondentCreateEdit
+        //{
+        //    Id = this.Id,
+        //    GivenName = this.GivenName,
+        //    Age = this.Age,
+        //    Code = this.Code,
+        //    DateOfBirth = this.DateOfBirth,
+        //    Gender = this.Gender,
+        //    Height = this.Height,
+        //    InterviewId = this.InterviewId,
+        //    Name = this.Name,
+        //    Weight = this.Weight,
+            
+        //    NavigationBar = navigationBar,
+        //    CurrentProcessMilestone = processMilestone
+        //};
+
+        public static implicit operator Respondent(RespondentCreateEdit viewModel) => new Respondent
+        {
+            Id = viewModel.Id,
+            GivenName = viewModel.GivenName,
+            Code = viewModel.Code,
+            DateOfBirth = viewModel.DateOfBirth,
+            Gender = viewModel.Gender,
+            Height = viewModel.Height,
+            InterviewId = viewModel.InterviewId,
+            Name = viewModel.Name,
+            Weight = viewModel.Weight,
+        };
+
     }
 }

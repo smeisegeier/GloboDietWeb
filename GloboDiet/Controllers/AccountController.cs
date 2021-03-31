@@ -9,25 +9,23 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : _ControllerBase
     {
 
         private UserManager<User> _userManager;
         private SignInManager<User> _signInManager;
 
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
+        public AccountController(UserManager<User> userManager,
+            SignInManager<User> signInManager
+            )
         {
             _userManager = userManager;
             _signInManager = signInManager;
         }
 
-        private NavigationBar getNewNavigationBar() => new NavigationBar(0, 0, 0, 0, HelperLibrary.EfCoreHelper.SqlConnectionType.UNKNOWN);
 
         [HttpGet]
-        public IActionResult Register()
-        {
-            return View(new Register());
-        }
+        public IActionResult Register()=> View(new Register().Init());
 
         [HttpPost]
         public async Task<IActionResult> Register(Register viewModel)
@@ -52,11 +50,7 @@ namespace GloboDiet.Controllers
 
 
         [HttpGet]
-        public IActionResult Login(string returnUrl = "")
-        {
-            var model = new Login(returnUrl, getNewNavigationBar());
-            return View(new Login());
-        }
+        public IActionResult Login(string returnUrl = "") => View(new Login(returnUrl).Init());
 
         [HttpPost]
         public async Task<IActionResult> Login(Login viewModel)

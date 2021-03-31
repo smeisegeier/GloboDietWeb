@@ -10,9 +10,11 @@ namespace GloboDiet.ViewModels
     {
         public IEnumerable<Interviewer> Interviewers { get; set; }
 
-        public InterviewersList(IEnumerable<Interviewer> interviewers, NavigationBar navigationBar) : base(navigationBar)
+        public InterviewersList(IEnumerable<Interviewer> interviewers, NavigationBar navigationBar)
         {
             Interviewers = interviewers;
+            NavigationBar = navigationBar;
+            CurrentProcessMilestone = Globals.ProcessMilestone._1_INTERVIEW;
         }
     }
 }

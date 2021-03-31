@@ -13,7 +13,6 @@ namespace GloboDiet.Extensions
         public static IHost SeedDb(this IHost host)
         {
             // host -> scope -> serviceProvider -> context
-
             var preContext = host
                 .Services.CreateScope()
                 .ServiceProvider.GetRequiredService<GloboDietDbContext>();

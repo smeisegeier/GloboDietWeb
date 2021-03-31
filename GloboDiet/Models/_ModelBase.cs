@@ -18,18 +18,20 @@ namespace GloboDiet.Models
         public string Name { get; set; } = "NotSet";
         public string Description { get; set; } = "NotSet";
 
+        // HACK deviant from ToString :o
+        public string Label => $"[{Code} | {Name}]";
+
+
         [Required(ErrorMessage = "Enter code")]
-        public string Code { get; set; } = "0";
+        public string Code { get; set; } = "00";
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime? UpdatedAt { get; set; }
 
-        // TODO calculated column?
-        public Guid Guid { get; private set; } = new Guid();
+        public Guid Guid { get; private set; } = Guid.NewGuid();
 
-        /* convenience props*/
-        [NotMapped]
-        public string Label => $"[{Code} | {Name}]";
+ 
+        public override string ToString() => $"[{Id} | {Name}]";
 
     }
 }

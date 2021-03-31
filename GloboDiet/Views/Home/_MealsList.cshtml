@@ -1,0 +1,40 @@
+﻿@model GloboDiet.ViewModels.InterviewCreateEdit
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Meals.First().StartingHour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meals.First().MealTypeLabel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meals.First().MealPlaceLabel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@if (Model?.Meals is not null) {
+        @foreach (var item in Model.Meals) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartingHour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MealTypeLabel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MealPlaceLabel)
+            </td>
+            <td>
+                <a asp-action="Meal2Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Meal2Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Meal2Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    }
+    </tbody>
+</table>

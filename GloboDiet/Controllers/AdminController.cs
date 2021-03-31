@@ -13,20 +13,22 @@ using System.Threading.Tasks;
 namespace GloboDiet.Controllers
 {
     //[Authorize]
-    public class AdminController : Controller
+    public class AdminController : _ControllerBase
     {
-        private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly HttpContext _httpContext;
 
-        private readonly IRepositoryNew<Interviewer> _repoInterviewer;
-        private readonly IRepositoryNew<Location> _repoLocation;
-
-        public AdminController(IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor, IRepositoryNew<Interviewer> repoInterviewer, IRepositoryNew<Location> repoLocation)
+        public AdminController(IWebHostEnvironment webHostEnvironment,
+            IHttpContextAccessor httpContextAccessor,
+            IRepositoryNew<Interview> repoInterview,
+            IRepositoryNew<Interviewer> repoInterviewer,
+            IRepositoryNew<Location> repoLocation,
+            IRepositoryNew<Respondent> repoRespondent)
         {
             _webHostEnvironment = webHostEnvironment;
             _httpContext = httpContextAccessor.HttpContext;
+            _repoInterview = repoInterview;
             _repoInterviewer = repoInterviewer;
             _repoLocation = repoLocation;
+            _repoRespondent = repoRespondent;
         }
 
         public IActionResult Index()
@@ -34,50 +36,40 @@ namespace GloboDiet.Controllers
             return Content(_httpContext.Session.GetString("SessionUser"));
         }
 
-        #region private area
-        //private NavigationBar getNewNavigationBar() => new NavigationBar(0, _repoInterviewer.ItemsGetCount(), _repoLocation.ItemsGetCount(), 0, 0);
-        private NavigationBar getNewNavigationBar() => new NavigationBar()
-        {
-            CurrentSqlConnectionType = _repoInterviewer.GetSqlConnectionType(),
-            PillCountInterviewers = _repoInterviewer.ItemsGetCount(),
-            PillCountLocations = _repoLocation.ItemsGetCount()  
-        };
 
-        //private void seedAll()
-        //{
-        //    _repoInterviewer.ItemsSeed(Interviewer.GetSeedsFromMockup());
-        //    _repoLocation.ItemsSeed(Location.GetSeedsFromMockup());
-        //}
-        #endregion
 
         #region Interviewer
 
         [HttpGet]
         public IActionResult InterviewerCreate()
         {
-            return View(new InterviewerCreateEdit(new Interviewer(), getNewNavigationBar()));
+            InterviewerCreateEdit vm = new Interviewer();
+            vm.Init(getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW);
+            return View(vm);
         }
 
         [HttpPost]
-        public IActionResult InterviewerCreate(Interviewer interviewer)
+        public IActionResult InterviewerCreate(InterviewerCreateEdit interviewerCreateEdit)
         {
-            if (!ModelState.IsValid) return View(interviewer);
-            _repoInterviewer.ItemAdd(interviewer);
-            return Redirect("~/Home/Index");
+            if (!ModelState.IsValid) 
+                return View(interviewerCreateEdit);
+            _repoInterviewer.ItemAdd(interviewerCreateEdit);
+            return RedirectToAction(nameof(InterviewersList));
         }
 
         [HttpGet]
         public IActionResult InterviewerEdit(int id)
         {
-            var interviewer = _repoInterviewer.ItemGetById(id);
-            return View(new InterviewerCreateEdit(interviewer, getNewNavigationBar()));
+            InterviewerCreateEdit vm = _repoInterviewer.ItemGetById(id);
+            vm.Init(getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW);
+            return View(vm);
         }
 
         [HttpPost]
-        public IActionResult InterviewerEdit(Interviewer interviewer)
+        public IActionResult InterviewerEdit(InterviewerCreateEdit interviewerCreateEdit)
         {
-            _repoInterviewer.ItemUpdate(interviewer);
-            return RedirectToAction(nameof(Index));
+            _repoInterviewer.ItemUpdate(interviewerCreateEdit);
+            return RedirectToAction(nameof(InterviewersList));
         }
 
         public IActionResult InterviewersList()
@@ -92,9 +84,11 @@ namespace GloboDiet.Controllers
 
         #region Location
         [HttpGet]
-        public IActionResult LocationCreate(string returnAction = null)
+        public IActionResult LocationCreate()
         {
-            return View(new ViewModels.LocationCreateEdit(new Location(), getNewNavigationBar(), returnAction));
+            LocationCreateEdit vm = new LocationCreateEdit();
+            vm.Init(getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW);
+            return View(vm);
         }
         [HttpPost]
         public IActionResult LocationCreate(Location location, string ReturnAction)
@@ -106,7 +100,12 @@ namespace GloboDiet.Controllers
         }
 
         [HttpGet]
-        public IActionResult LocationEdit(int id) => View(new LocationCreateEdit(_repoLocation.ItemGetById(id), getNewNavigationBar()));
+        public IActionResult LocationEdit(int id)
+        {
+            LocationCreateEdit vm = _repoLocation.ItemGetById(id);
+            vm.Init(getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW);
+            return View(vm);
+        }
 
         [HttpPost]
         public IActionResult LocationEdit(Location location)
@@ -117,7 +116,7 @@ namespace GloboDiet.Controllers
 
 
         [HttpGet]
-        public IActionResult LocationCreateToInterview() => View(new LocationCreateEdit(new Location(), getNewNavigationBar()));
+        //public IActionResult LocationCreateToInterview() => View(new LocationCreateEdit(new Location(), getNewNavigationBar()));
 
         [HttpPost]
         public IActionResult LocationCreateToInterview(Location location)

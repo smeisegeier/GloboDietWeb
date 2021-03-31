@@ -1,4 +1,6 @@
 ﻿using GloboDiet.Services;
+using GloboDiet.ViewModels;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,27 +13,25 @@ namespace GloboDiet.Models
     {
 
         public DateTime Timestamp { get; set; } = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, 0);
-        public int Number { get; set; } = 1;
-        [DataType(DataType.Date)]
+        public int Number { get; set; } = 13;
+
         public DateTime ReferenceDate { get; set; } = DateTime.Now;
 
-        [Display(Name ="Location")]
-        public Location Location { get; set; }
+        public int? InterviewerId { get; set; }
 
-        [Display(Name = "Respondent")]
-        public Respondent Respondent { get; set; }
+        public int? LocationId { get; set; }
 
-        [Display(Name = "Interviewer")]
-        public Interviewer Interviewer { get; set; }
+        public int? RespondentId { get; set; }
 
-        public ICollection<Meal> Meals { get; set; }
+        // needed to resolve Label for display
+        public virtual Respondent Respondent { get; set; }
 
-        public Interview() 
-        {
-        }
+        public virtual IList<Meal> Meals { get; set; }
+
+        public Interview() { }
 
         public static IList<Interview> GetSeedsFromMockup() => new List<Interview>()
-        { 
+        {
             new Interview()
             {
                 Number = 13,
@@ -39,5 +39,42 @@ namespace GloboDiet.Models
                 Timestamp = DateTime.Now
             }
         };
+
+        //public InterviewCreateEdit ToViewModel(IEnumerable<Interviewer> listOfInterviewers, IEnumerable<Location> listOfLocations, NavigationBar navigation)
+        //{
+        //    var vm = new InterviewCreateEdit
+        //    {
+        //        Id = this.Id,
+        //        InterviewerId = this.InterviewerId,
+        //        LocationId = this.LocationId,
+        //        Number = this.Number,
+        //        RespondentLabel = this.Respondent?.Label,
+        //        RespondentId = this.RespondentId,
+        //        ReferenceDate = this.ReferenceDate,
+        //        Timestamp = this.Timestamp,
+        //        Meals = this.Meals,
+        //        NavigationBar = navigation,
+        //    };
+        //    vm.InitDropdowns(listOfInterviewers, listOfLocations);
+        //    return vm;
+        //}
+
+        public static implicit operator Interview(InterviewCreateEdit viewModel)
+        {
+            var model = new Interview
+            {
+                Id = viewModel.Id,
+                InterviewerId = viewModel.InterviewerId,
+                LocationId = viewModel.LocationId,
+                Number = viewModel.Number,
+                RespondentId = viewModel.RespondentId,
+                ReferenceDate = viewModel.ReferenceDate,
+                Timestamp = viewModel.Timestamp,
+                Meals = new List<Meal>()
+            };
+            viewModel.Meals?.ToList().ForEach(item => { model.Meals.Add(item); });
+            return model;
+        }
+
     }
 }

@@ -1,0 +1,23 @@
+﻿@model GloboDiet.ViewModels._ViewModelBase
+@inject GloboDiet.Services.LookupData LookupData
+
+<div class="d-flex justify-content-between border-soft">
+    @if (Model.CurrentProcessMilestone == default(GloboDiet.Globals.ProcessMilestone))
+    {
+    <div class="border-soft mb-2 text-primary"><strong>No Display</strong></div>
+    }
+    else
+    {
+    @foreach (var item in LookupData.StaticListOfProcessMilestones)
+        {
+        @if ((int)item.Key <= (int)Model.CurrentProcessMilestone)
+            {
+            <div class="border-soft mb-2 text-primary"><strong>@item.Value</strong></div>
+            }
+            else
+            {
+            <div class="border-soft mb-2 text-muted">@item.Value</div>
+            }
+        }
+    }
+</div>

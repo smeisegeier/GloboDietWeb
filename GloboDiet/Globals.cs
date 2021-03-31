@@ -14,8 +14,12 @@ namespace GloboDiet
     /// </summary>
     public static class Globals
     {
+        // removing this means injecting LookupData in several controllers
         public enum ProcessMilestone
         {
+            //[Description("No display")]
+            //_0_EMPTY = 0,
+
             [Description("Interview started")]
             _1_INTERVIEW = 1,
 
@@ -24,20 +28,19 @@ namespace GloboDiet
 
             [Description("Meals created")]
             _3_MEALS = 3
+
         }
 
         /// <summary>
         /// for displaying all possible milestones, is built onetime from enum
         /// </summary>
-        public static IEnumerable<KeyValuePair<ProcessMilestone, string>> StaticListOfProcessMilestones { get; } = EnumHelper.GetListWithDescription<ProcessMilestone>();
+        //public static IEnumerable<KeyValuePair<ProcessMilestone, string>> StaticListOfProcessMilestones { get; } = EnumHelper.GetListWithDescription<ProcessMilestone>();
 
-        public static SelectList StaticListOfTypesOfMeal { get; } = new SelectList(TypeOfMeal.GetSeedsFromLegacy(), "Id", "Name");
+        //public static SelectList StaticListOfMealTypes { get; set; }
+        //public static SelectList StaticListOfMealPlaces { get; set; } 
+        //public static SelectList StaticListOfBrandnames { get; set; }
 
-        public static SelectList StaticListOfPlacesOfMeal { get; } = new SelectList(PlaceOfMeal.GetSeedsFromLegacy(), "Id", "Name");
-
-        public static SelectList StaticListOfBrandnames { get; } = new SelectList(Brandname.GetSeedsFromLegacy(), "Id", "Name");
-
-        public static SelectList StaticListOfEssin { get; } = new SelectList(Essin.GetSeedsFromLegacy(), "Id", "Name");
+        //public static SelectList StaticListOfEssins { get; } = new SelectList(Essin.GetSeedsFromLegacy(), "Id", "Name");
 
     }
 }

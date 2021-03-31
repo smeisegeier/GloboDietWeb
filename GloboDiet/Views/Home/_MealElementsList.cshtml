@@ -1,0 +1,47 @@
+﻿@model GloboDiet.ViewModels.MealCreateEdit
+@using GloboDiet.ViewModels 
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MealElements.First().Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MealElements.First().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MealElements.First().IngredientId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MealElements.First().Quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@if (Model?.MealElements is not null) {
+        @foreach (MealElementCreateEdit item in Model.MealElements) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IngredientLabel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                <a asp-action="MealElement3Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="MealElement3Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="MealElement3Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    }
+    </tbody>
+</table>
