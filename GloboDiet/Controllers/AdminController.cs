@@ -13,20 +13,22 @@ using System.Threading.Tasks;
 namespace GloboDiet.Controllers
 {
     //[Authorize]
-    public class AdminController : Controller
+    public class AdminController : _ControllerBase
     {
-        private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly HttpContext _httpContext;
 
-        private readonly IRepositoryNew<Interviewer> _repoInterviewer;
-        private readonly IRepositoryNew<Location> _repoLocation;
-
-        public AdminController(IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor, IRepositoryNew<Interviewer> repoInterviewer, IRepositoryNew<Location> repoLocation)
+        public AdminController(IWebHostEnvironment webHostEnvironment,
+            IHttpContextAccessor httpContextAccessor,
+            IRepositoryNew<Interview> repoInterview,
+            IRepositoryNew<Interviewer> repoInterviewer,
+            IRepositoryNew<Location> repoLocation,
+            IRepositoryNew<Respondent> repoRespondent)
         {
             _webHostEnvironment = webHostEnvironment;
             _httpContext = httpContextAccessor.HttpContext;
+            _repoInterview = repoInterview;
             _repoInterviewer = repoInterviewer;
             _repoLocation = repoLocation;
+            _repoRespondent = repoRespondent;
         }
 
         public IActionResult Index()
@@ -34,16 +36,7 @@ namespace GloboDiet.Controllers
             return Content(_httpContext.Session.GetString("SessionUser"));
         }
 
-        #region private area
-        //private NavigationBar getNewNavigationBar() => new NavigationBar(0, _repoInterviewer.ItemsGetCount(), _repoLocation.ItemsGetCount(), 0, 0);
-        private NavigationBar getNewNavigationBar() => new NavigationBar()
-        {
-            CurrentSqlConnectionType = _repoInterviewer.GetSqlConnectionType(),
-            PillCountInterviewers = _repoInterviewer.ItemsGetCount(),
-            PillCountLocations = _repoLocation.ItemsGetCount()  
-        };
 
-        #endregion
 
         #region Interviewer
 

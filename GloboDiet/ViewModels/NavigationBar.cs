@@ -8,7 +8,6 @@ namespace GloboDiet.ViewModels
 {
     public class NavigationBar
     {
-        // should navbar have repo inside?
 
         public int PillCountInterviews { get; set; }
         public int PillCountInterviewers { get; set; }
@@ -25,6 +24,8 @@ namespace GloboDiet.ViewModels
             PillCountRespondents = pillCountRespondents;
             CurrentSqlConnectionType = currentSqlConnectionType;
         }
+
+        // cannot DI from repo service since this is no MVC controller
         public NavigationBar() {}
 
         public static NavigationBar GetEmptyNavigationBar()

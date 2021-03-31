@@ -9,19 +9,20 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : _ControllerBase
     {
 
         private UserManager<User> _userManager;
         private SignInManager<User> _signInManager;
 
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
+        public AccountController(UserManager<User> userManager,
+            SignInManager<User> signInManager
+            )
         {
             _userManager = userManager;
             _signInManager = signInManager;
         }
 
-        private NavigationBar getNewNavigationBar() => new NavigationBar(0, 0, 0, 0, HelperLibrary.EfCoreHelper.SqlConnectionType.UNKNOWN);
 
         [HttpGet]
         public IActionResult Register()=> View(new Register().Init());

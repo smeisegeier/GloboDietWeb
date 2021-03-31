@@ -20,21 +20,9 @@ using System.Net;
 
 namespace GloboDiet.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : _ControllerBase
     {
-        private readonly IWebHostEnvironment _webHostEnvironment;
-        private static NLog.Logger _nLogger = NLog.LogManager.GetCurrentClassLogger();
-        private readonly HttpContext _httpContext;
-        private readonly LookupData _lookupData;
-
-        // example for domain repo
-        private readonly IRepositoryNew<Interview> _repoInterview;
-        private readonly IRepositoryNew<Interviewer> _repoInterviewer;
-        private readonly IRepositoryNew<Location> _repoLocation;
-        private readonly IRepositoryNew<Respondent> _repoRespondent;
-        private readonly IRepositoryNew<Meal> _repoMeal;
-        private readonly IRepositoryNew<MealElement> _repoMealElement;
-
+      
         public HomeController(IWebHostEnvironment webHostEnvironment,
             IHttpContextAccessor httpContextAccessor,
             LookupData lookupData,
@@ -44,7 +32,7 @@ namespace GloboDiet.Controllers
             IRepositoryNew<Respondent> repoRespondent,
             IRepositoryNew<Meal> repoMeal,
             IRepositoryNew<MealElement> repoMealElement
-            )
+            ) 
         {
             _webHostEnvironment = webHostEnvironment;
             _httpContext = httpContextAccessor.HttpContext;
@@ -56,6 +44,7 @@ namespace GloboDiet.Controllers
             _repoMeal = repoMeal;
             _repoMealElement = repoMealElement;
         }
+        
 
         // TODO use modal window instead of status area
         [AllowAnonymous]
@@ -67,11 +56,7 @@ namespace GloboDiet.Controllers
         }
 
 
-        #region Private Area
-        // TODO can this be protected, or can login controller be on a seperate layout
-        private NavigationBar getNewNavigationBar() => new NavigationBar(_repoInterview.ItemsGetCount(), _repoInterviewer.ItemsGetCount(), _repoLocation.ItemsGetCount(), _repoRespondent.ItemsGetCount(), _repoInterview.GetSqlConnectionType());
 
-        #endregion
 
         #region Interview
 
