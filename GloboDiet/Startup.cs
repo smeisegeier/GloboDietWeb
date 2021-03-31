@@ -39,12 +39,23 @@ namespace GloboDiet
             #endregion
 
             #region services
-            //services.AddDbContext<GloboDietDbContext>(options => options
-            //    .UseLazyLoadingProxies()
-            //    .UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDietWeb;trusted_connection=true;"));
+            /*
+            services.AddDbContext<GloboDietDbContext>(options => options
+                .UseLazyLoadingProxies()
+                .UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDietWeb;trusted_connection=true;"));
+            */
+
+
+            // TODO check compiler directives
+            services.AddDbContext<GloboDietDbContext>(options => options
+                .UseLazyLoadingProxies()
+                .UseSqlServer(@"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=DemoSqlDb;User ID = PlanungstoolSqlUser@demosqlserverxd;Password=>m{tM$MW;Trusted_Connection=False;Encrypt=True;"));
+            
+            /*
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
                 .UseInMemoryDatabase("Test"));
+            */
 
             services.AddScoped(typeof(IRepositoryNew<>), typeof(RepositoryNew<>));
             services.AddSingleton<LookupData>();
