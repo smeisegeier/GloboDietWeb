@@ -34,8 +34,13 @@ namespace GloboDiet
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
+            /*
             services.AddDbContext<MyIdentityDbContext>(options => options
                 .UseSqlServer("server=(localdb)\\mssqllocaldb;database=UserManager;trusted_connection=true;"));
+            */
+            services.AddDbContext<MyIdentityDbContext>(options => options
+                .UseInMemoryDatabase("User"));
+
             #endregion
 
             #region services
@@ -45,12 +50,10 @@ namespace GloboDiet
                 .UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDietWeb;trusted_connection=true;"));
             */
 
-
             // TODO check compiler directives
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
-                .UseSqlServer(@"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=DemoSqlDb;User ID = PlanungstoolSqlUser@demosqlserverxd;Password=>m{tM$MW;Trusted_Connection=False;Encrypt=True;"));
-            
+                .UseSqlServer(@"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=GloboDietWeb;User ID = GloboDietWebUser@demosqlserverxd;Password=tsM3PhbtZWn91;Trusted_Connection=False;Encrypt=True;"));
             /*
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
