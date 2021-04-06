@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace GloboDiet.Services
 {
     // Update-Database -Context GloboDietDbContext
+    // Update-Database -Context MyIdentityDbContext
+
     public class GloboDietDbContext : DbContext
     {
         private LookupData _lookupData;

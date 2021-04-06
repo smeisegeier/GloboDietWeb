@@ -8,14 +8,14 @@
     }
   },
   "profiles": {
-    "local": {
+    "dev": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Azure": {
+    "prod": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
