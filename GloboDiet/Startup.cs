@@ -1,3 +1,10 @@
+//#define SESSION
+
+//#define ENV_DEVMEMORY
+#define ENV_DEVLOCAL
+//#define ENV_RKI
+//#define ENV_AZURE
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -12,15 +19,28 @@ using Microsoft.EntityFrameworkCore;
 using GloboDiet.Services;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace GloboDiet
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; set; }
+        public IWebHostEnvironment Environment { get; set; }
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
+        {
+            Configuration = configuration;
+            Environment = environment;
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+
             #region ID
             services.AddIdentity<User, IdentityRole>(config =>
             {
@@ -32,25 +52,42 @@ namespace GloboDiet
             })
                 .AddEntityFrameworkStores<MyIdentityDbContext>()
                 .AddDefaultTokenProviders();
-
-            services.AddMvc();
-            services.AddDbContext<MyIdentityDbContext>(options => options
-                .UseSqlServer("server=(localdb)\\mssqllocaldb;database=UserManager;trusted_connection=true;"));
             #endregion
 
             #region services
             //services.AddDbContext<GloboDietDbContext>(options => options
             //    .UseLazyLoadingProxies()
-            //    .UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDietWeb;trusted_connection=true;"));
+            //    .UseSqlServer(Configuration.GetConnectionString("db"))
+            //);
+#if ENV_DEVLOCAL
+            services.AddDbContext<GloboDietDbContext>(options => options
+                .UseLazyLoadingProxies()
+                .UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDietWeb;trusted_connection=true;"));
+            services.AddDbContext<MyIdentityDbContext>(options => options
+                .UseSqlServer("server=(localdb)\\mssqllocaldb;database=UserManager;trusted_connection=true;"));
+#endif
+#if ENV_AZURE
+            services.AddDbContext<GloboDietDbContext>(options => options
+                .UseLazyLoadingProxies()
+                .UseSqlServer(@"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=GloboDietWeb;User ID = GloboDietWebUser@demosqlserverxd;Password=tsM3PhbtZWn91;Trusted_Connection=False;Encrypt=True;"));
+            services.AddDbContext<MyIdentityDbContext>(options => options
+                .UseLazyLoadingProxies()
+                .UseSqlServer(@"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=UserManager;User ID = UserManagerUser@demosqlserverxd;Password=tsM3PhbtZWn91;Trusted_Connection=False;Encrypt=True;"));
+#endif
+#if ENV_DEVMEMORY
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
                 .UseInMemoryDatabase("Test"));
+            services.AddDbContext<MyIdentityDbContext>(options => options
+                .UseInMemoryDatabase("User"));
+#endif
 
             services.AddScoped(typeof(IRepositoryNew<>), typeof(RepositoryNew<>));
             services.AddSingleton<LookupData>();
-            #endregion
+#endregion
 
-            #region session
+#region session
+#if SESSION
             // enable session / cookie stuff
             services.AddHttpContextAccessor();
             services.AddSession(options =>
@@ -68,7 +105,8 @@ namespace GloboDiet
 
             // option tempdata
             //services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
-            #endregion
+#endif
+#endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -80,13 +118,16 @@ namespace GloboDiet
             }
             app.UseStaticFiles();
             //app.UseApiResponseAndExceptionWrapper(new AutoWrapperOptions() { IsApiOnly = false, IsDebug = true }); // use before routing
-            app.UseSession();
-            app.UseHttpsRedirection();
 
+#if SESSION
+            app.UseSession();
+#endif
+            app.UseHttpsRedirection();
             app.UseRouting();
             // must appear between Routing and Endpoints:
             app.UseAuthentication();
             app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
