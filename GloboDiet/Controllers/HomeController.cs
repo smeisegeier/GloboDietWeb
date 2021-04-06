@@ -20,7 +20,7 @@ using System.Net;
 
 namespace GloboDiet.Controllers
 {
-    public class HomeController : _ControllerBase
+    public class HomeController : _ControllerBase 
     {
 
         public HomeController(IWebHostEnvironment webHostEnvironment,
