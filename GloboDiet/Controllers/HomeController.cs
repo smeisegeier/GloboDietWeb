@@ -22,7 +22,7 @@ namespace GloboDiet.Controllers
 {
     public class HomeController : _ControllerBase
     {
-      
+
         public HomeController(IWebHostEnvironment webHostEnvironment,
             IHttpContextAccessor httpContextAccessor,
             LookupData lookupData,
@@ -32,7 +32,7 @@ namespace GloboDiet.Controllers
             IRepositoryNew<Respondent> repoRespondent,
             IRepositoryNew<Meal> repoMeal,
             IRepositoryNew<MealElement> repoMealElement
-            ) 
+            )
         {
             _webHostEnvironment = webHostEnvironment;
             _httpContext = httpContextAccessor.HttpContext;
@@ -44,7 +44,7 @@ namespace GloboDiet.Controllers
             _repoMeal = repoMeal;
             _repoMealElement = repoMealElement;
         }
-        
+
 
         // TODO use modal window instead of status area
         [AllowAnonymous]
@@ -92,6 +92,13 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult Interview1Edit(InterviewCreateEdit interviewCreateEdit, string submit)
         {
+            // cancel out immediately
+            Interview interview = interviewCreateEdit;
+            if (submit == "Cancel")
+            {
+                _repoInterview.ItemDelete(interview);
+            }
+
             // TODO ModelState checks https://blog.zhaytam.com/2019/04/13/asp-net-core-checking-modelstate-isvalid-is-boring/
             //if (interview.RespondentId == 0)
             //{ ModelState.AddModelError("CustomError", "No Respondent selected"); }
@@ -104,15 +111,7 @@ namespace GloboDiet.Controllers
             {
                 return View(interviewCreateEdit);
             }
-            Interview interview = interviewCreateEdit;
-            if (submit == "Cancel")
-            {
-                _repoInterview.ItemDelete(interview);
-            }
-            else
-            {
-                _repoInterview.ItemUpdate(interview);
-            }
+            _repoInterview.ItemUpdate(interview);
             return RedirectToAction(nameof(Index));
         }
 
