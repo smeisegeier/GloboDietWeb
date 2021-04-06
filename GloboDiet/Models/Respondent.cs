@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GloboDiet.Services;
 using GloboDiet.ViewModels;
-using HelperLibrary;
+using DextersLabor;
 namespace GloboDiet.Models
 {
     public enum Gender

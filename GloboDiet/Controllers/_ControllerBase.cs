@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using HelperLibrary;
+using DextersLabor;
 using Microsoft.AspNetCore.Hosting;
 using GloboDiet.Models;
 using GloboDiet.Services;
