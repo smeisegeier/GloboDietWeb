@@ -1,5 +1,4 @@
-﻿
-/*
+﻿/*
 
 -- login
 CREATE LOGIN [UserManagerUser] WITH PASSWORD='tsM3PhbtZWn91'
