@@ -84,9 +84,9 @@ namespace GloboDiet
 
             services.AddScoped(typeof(IRepositoryNew<>), typeof(RepositoryNew<>));
             services.AddSingleton<LookupData>();
-#endregion
+        #endregion
 
-#region session
+        #region session
 #if SESSION
             // enable session / cookie stuff
             services.AddHttpContextAccessor();
