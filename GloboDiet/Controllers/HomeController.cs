@@ -56,8 +56,6 @@ namespace GloboDiet.Controllers
         }
 
 
-
-
         #region Interview
 
         [HttpGet]
