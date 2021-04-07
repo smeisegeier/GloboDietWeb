@@ -1,9 +1,9 @@
 //#define SESSION
 
 //#define ENV_DEVMEMORY
-#define ENV_DEVLOCAL
+//#define ENV_DEVLOCAL
 //#define ENV_RKI
-//#define ENV_AZURE
+#define ENV_AZURE
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,6 +21,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using System.Globalization;
 
 namespace GloboDiet
 {
@@ -41,7 +42,14 @@ namespace GloboDiet
         {
             services.AddMvc()
                 .AddNewtonsoftJson(options => options
-                    .SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); ;
+                    .SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+            #region Culture
+            var cultureInfo = new CultureInfo("de-DE");
+            cultureInfo.NumberFormat.CurrencySymbol = "€";
+            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+            #endregion
 
             #region ID
             services.AddIdentity<User, IdentityRole>(config =>
@@ -88,27 +96,27 @@ namespace GloboDiet
             services.AddSingleton<LookupData>();
         #endregion
 
-        #region session
+            #region session
 #if SESSION
-            // enable session / cookie stuff
-            services.AddHttpContextAccessor();
-            services.AddSession(options =>
-            {
-                options.Cookie.IsEssential = true;
-            });
-            services.AddDistributedMemoryCache();
+                // enable session / cookie stuff
+                services.AddHttpContextAccessor();
+                services.AddSession(options =>
+                {
+                    options.Cookie.IsEssential = true;
+                });
+                services.AddDistributedMemoryCache();
 
-            services.ConfigureApplicationCookie(config =>
-            {
-                config.Cookie.Name = "GloboDietCookie";
-                //config.LoginPath = "";
-                config.ExpireTimeSpan = TimeSpan.FromMinutes(5);
-            });
+                services.ConfigureApplicationCookie(config =>
+                {
+                    config.Cookie.Name = "GloboDietCookie";
+                    //config.LoginPath = "";
+                    config.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+                });
 
-            // option tempdata
-            //services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
+                // option tempdata
+                //services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
 #endif
-#endregion
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -92,7 +92,7 @@ namespace GloboDiet.Controllers
         {
             // cancel out immediately
             Interview interview = interviewCreateEdit;
-            if (submit == "Cancel")
+            if (submit == "Cancel" && interview.IsCachedOnly)
             {
                 _repoInterview.ItemDelete(interview);
             }
@@ -109,6 +109,8 @@ namespace GloboDiet.Controllers
                 {
                     return View(interviewCreateEdit);
                 }
+                // now save
+                interview.IsCachedOnly = false;
                 _repoInterview.ItemUpdate(interview);
             }
             return RedirectToAction(nameof(Index));
