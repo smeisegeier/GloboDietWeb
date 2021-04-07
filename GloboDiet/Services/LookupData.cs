@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using GloboDiet;
+using System.Reflection;
 
 namespace GloboDiet.Services
 {
@@ -40,5 +41,23 @@ namespace GloboDiet.Services
 
         // repo service cannot referenced here, for it has a shorter scope
 
+        /// <summary>
+        /// Delivers AssemblyVersion, also from pipe when in azure.
+        /// This cannot be outsourced.
+        /// </summary>
+        public string SoftwareVersion
+        {
+            get
+            {
+                string version = string.Format(
+                    "{0}.{1}.{2}.{3}",
+                    Assembly.GetExecutingAssembly().GetName().Version.Major.ToString(),
+                    Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString(),
+                    Assembly.GetExecutingAssembly().GetName().Version.Build.ToString(),
+                    Assembly.GetExecutingAssembly().GetName().Version.Revision.ToString()
+                    );
+                return version;
+            }
+        }
     }
 }

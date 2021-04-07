@@ -1,5 +1,5 @@
 ﻿@model GloboDiet.ViewModels._ViewModelBase
-@using DextersLabor;
+@inject GloboDiet.Services.LookupData LookupData
 
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +91,7 @@
                     <span class="navbar-item text-muted">
                         <span class="badge badge-pill badge-info">version
                     </span>
-                        <small>@DextersLabor.ReflectionHelper.SoftwareVersion</small>
+                        <small>@LookupData.SoftwareVersion</small>
                     </span>
                     <span class="navbar-item text-muted">
                         <span class="badge badge-pill badge-info">sql</span>
