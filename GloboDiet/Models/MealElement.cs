@@ -14,12 +14,12 @@ namespace GloboDiet.Models
         public int MealId { get; set; }
 
         [ForeignKey(nameof(Ingredient))]
-        public int IngredientId { get; set; }
+        public int? IngredientId { get; set; }
         public virtual Ingredient Ingredient { get; set; }
 
 
         [ForeignKey(nameof(IngredientGroup))]
-        public int IngredientGroupId { get; set; }
+        public int? IngredientGroupId { get; set; }
         public virtual IngredientGroup IngredientGroup { get; set; }
 
         public int Quantity { get; set; }

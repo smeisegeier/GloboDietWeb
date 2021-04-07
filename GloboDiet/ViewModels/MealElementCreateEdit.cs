@@ -16,13 +16,13 @@ namespace GloboDiet.ViewModels
 
         [ForeignKey(nameof(Ingredient))]
         [Display(Name = "Ingredient")]
-        public int IngredientId { get; set; }
+        public int? IngredientId { get; set; }
         public string IngredientLabel { get; set; }
 
 
         [ForeignKey(nameof(IngredientGroup))]
         [Display(Name = "IngredientGroup")]
-        public int IngredientGroupId { get; set; }
+        public int? IngredientGroupId { get; set; }
         public string IngredientGroupLabel { get; set; }
 
 

@@ -1,9 +1,9 @@
 //#define SESSION
 
 //#define ENV_DEVMEMORY
-//#define ENV_DEVLOCAL
+#define ENV_DEVLOCAL
 //#define ENV_RKI
-#define ENV_AZURE
+//#define ENV_AZURE
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -39,7 +39,9 @@ namespace GloboDiet
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc()
+                .AddNewtonsoftJson(options => options
+                    .SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); ;
 
             #region ID
             services.AddIdentity<User, IdentityRole>(config =>

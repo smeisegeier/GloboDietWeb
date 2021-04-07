@@ -56,8 +56,6 @@ namespace GloboDiet.Controllers
         }
 
 
-
-
         #region Interview
 
         [HttpGet]
@@ -98,20 +96,21 @@ namespace GloboDiet.Controllers
             {
                 _repoInterview.ItemDelete(interview);
             }
-
-            // TODO ModelState checks https://blog.zhaytam.com/2019/04/13/asp-net-core-checking-modelstate-isvalid-is-boring/
-            //if (interview.RespondentId == 0)
-            //{ ModelState.AddModelError("CustomError", "No Respondent selected"); }
-            //if (interview.InterviewerId == 0)
-            //{ ModelState.AddModelError("CustomError", "No Interviewer selected"); }
-            //if (interview.LocationId == 0)
-            //{ ModelState.AddModelError("CustomError", "No Center selected"); }
-
-            if (!ModelState.IsValid)
+            else
             {
-                return View(interviewCreateEdit);
+                // TODO ModelState checks https://blog.zhaytam.com/2019/04/13/asp-net-core-checking-modelstate-isvalid-is-boring/
+                //if (interview.RespondentId == 0)
+                //{ ModelState.AddModelError("CustomError", "No Respondent selected"); }
+                //if (interview.InterviewerId == 0)
+                //{ ModelState.AddModelError("CustomError", "No Interviewer selected"); }
+                //if (interview.LocationId == 0)
+                //{ ModelState.AddModelError("CustomError", "No Center selected"); }
+                if (!ModelState.IsValid)
+                {
+                    return View(interviewCreateEdit);
+                }
+                _repoInterview.ItemUpdate(interview);
             }
-            _repoInterview.ItemUpdate(interview);
             return RedirectToAction(nameof(Index));
         }
 
