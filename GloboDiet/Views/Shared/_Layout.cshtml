@@ -1,4 +1,5 @@
 ﻿@model GloboDiet.ViewModels._ViewModelBase
+@using DextersLabor;
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,14 +19,14 @@
 
     <script>
         $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-            $(".dropdown-toggle").dropdown();
+        $('[data-toggle="tooltip"]').tooltip()
+        $(".dropdown-toggle").dropdown();
         });
         $(document).ready(function () {
-            $('.js-example-basic-single').select2();
+        $('.js-example-basic-single').select2();
         });
         $(document).ready(function () {
-            $('.js-example-basic-multiple').select2();
+        $('.js-example-basic-multiple').select2();
         });
 
     </script>
@@ -44,30 +45,30 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         @*                        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-                Surveys
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/Home/Interview1List">List Interviews <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountInterviews</span></a>
-                <hr class="dropdown-divider">
-                <a class="dropdown-item" href="/Home/RespondentCreate"><i class="bi bi-diagram-3-fill"></i> Create Respondent</a>
-                <a class="dropdown-item" href="/Home/RespondentsList">List Respondents <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountRespondents</span></a>
-                <hr class="dropdown-divider">
-                <a class="dropdown-item" href="/Home/RecipeCreate">Create Recipe</a>
-                <a class="dropdown-item" href="/Home/RecipesList">List Recipes</a>
-            </div>
-        </li>*@
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                        Surveys
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/Home/Interview1List">List Interviews <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountInterviews</span></a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item" href="/Home/RespondentCreate"><i class="bi bi-diagram-3-fill"></i> Create Respondent</a>
+                        <a class="dropdown-item" href="/Home/RespondentsList">List Respondents <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountRespondents</span></a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item" href="/Home/RecipeCreate">Create Recipe</a>
+                        <a class="dropdown-item" href="/Home/RecipesList">List Recipes</a>
+                        </div>
+                        </li>*@
                         <li class="nav-item"><a class="nav-link text-info" href="/Home/Interview1Create"><i class="bi bi-diagram-3-fill"></i> 24h Recall <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountInterviews</span></a></li>
 
                         @*                        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-        24h-Recall
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="/Home/NewInterview020">New Interview</a>
-        <hr class="dropdown-divider">
-        </div>
-        </li>*@
+                        <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                        24h-Recall
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/Home/NewInterview020">New Interview</a>
+                        <hr class="dropdown-divider">
+                        </div>
+                        </li>*@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
                                 Admin
@@ -88,6 +89,11 @@
                     @await Html.PartialAsync("_LoginLinks.cshtml")
                     @*SQL INFO*@
                     <span class="navbar-item text-muted">
+                        <span class="badge badge-pill badge-info">version
+                    </span>
+                        <small>@DextersLabor.ReflectionHelper.SoftwareVersion</small>
+                    </span>
+                    <span class="navbar-item text-muted">
                         <span class="badge badge-pill badge-info">sql</span>
                         <small>@Model.NavigationBar.CurrentSqlConnectionType</small>
                     </span>
@@ -107,11 +113,11 @@
         <ul class="container list-group list-group-horizontal">
             @if (ViewData.ModelState["CustomError"] is null)
             {
-                <li class="list-group-item list-group-item-success">No complex errors</li>
+            <li class="list-group-item list-group-item-success">No complex errors</li>
             }
             else
             {
-                <li class="list-group-item list-group-item-alert">@Html.ValidationMessage("CustomError")</li>
+            <li class="list-group-item list-group-item-alert">@Html.ValidationMessage("CustomError")</li>
             }
             @*            <li class="list-group-item list-group-item-primary">Respondent</li>
             <li class="list-group-item list-group-item-success">Respondent</li>
