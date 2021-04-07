@@ -28,6 +28,8 @@ namespace GloboDiet.Models
 
         public virtual IList<Meal> Meals { get; set; }
 
+        public bool IsCachedOnly { get; set; } = true;
+
         public Interview() { }
 
         public static IList<Interview> GetSeedsFromMockup() => new List<Interview>()
@@ -70,7 +72,8 @@ namespace GloboDiet.Models
                 RespondentId = viewModel.RespondentId,
                 ReferenceDate = viewModel.ReferenceDate,
                 Timestamp = viewModel.Timestamp,
-                Meals = new List<Meal>()
+                Meals = new List<Meal>(),
+                IsCachedOnly = viewModel.IsCachedOnly 
             };
             viewModel.Meals?.ToList().ForEach(item => { model.Meals.Add(item); });
             return model;

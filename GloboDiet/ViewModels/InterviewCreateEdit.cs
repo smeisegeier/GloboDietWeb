@@ -47,6 +47,7 @@ namespace GloboDiet.ViewModels
 
         public IList<MealCreateEdit> Meals { get; set; }
 
+        public bool IsCachedOnly { get; set; } = true;
 
         public static implicit operator InterviewCreateEdit(Interview model)
         {
@@ -60,6 +61,7 @@ namespace GloboDiet.ViewModels
                 ReferenceDate = model.ReferenceDate,
                 Timestamp = model.Timestamp,
                 Meals = new List<MealCreateEdit>(),
+                IsCachedOnly = model.IsCachedOnly,
 
                 RespondentLabel = model.Respondent is null ? "empty" : model.Respondent.ToString()
             };
