@@ -4,6 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>be9e4500-e3d6-4f8f-941d-406eadc02a65</UserSecretsId>
     <AssemblyVersion>0.8.0.0</AssemblyVersion>
+    <PackageIcon>apple.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,6 +36,10 @@
     <None Include="..\.editorconfig" Link=".editorconfig" />
     <None Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\images\favicon.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
     </None>
   </ItemGroup>
 
