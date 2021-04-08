@@ -38,7 +38,6 @@ namespace GloboDiet.Models
         public Respondent(int interviewId) { InterviewId = interviewId; }
 
 
-
         public static IList<Respondent> GetSeedsFromMockup()
         {
             return new List<Respondent>()
@@ -75,7 +74,7 @@ namespace GloboDiet.Models
             Height = viewModel.Height,
             InterviewId = viewModel.InterviewId,
             Name = viewModel.Name,
-            Weight = viewModel.Weight,
+            Weight = viewModel.Weight
         };
 
     }

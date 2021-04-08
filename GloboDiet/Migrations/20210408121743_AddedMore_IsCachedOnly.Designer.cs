@@ -4,14 +4,16 @@ using GloboDiet.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GloboDiet.Migrations
 {
     [DbContext(typeof(GloboDietDbContext))]
-    partial class GloboDietDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210408121743_AddedMore_IsCachedOnly")]
+    partial class AddedMore_IsCachedOnly
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

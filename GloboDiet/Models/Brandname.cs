@@ -21,7 +21,7 @@ namespace GloboDiet.Models
                     Name = item.NAME
                 });
             }
-            return newList;
+            return newList.OrderBy(x => x.Name);
         }
     }
 }

@@ -24,6 +24,8 @@ namespace GloboDiet.Models
 
         public virtual IList<MealElement> MealElements{ get; set; }
 
+        public bool IsCachedOnly { get; set; } = true;
+
         public Meal() { }
 
         // ctor for call w/ parent id
@@ -50,7 +52,8 @@ namespace GloboDiet.Models
                 MealPlaceId = viewModel.MealPlaceId,
                 MealTypeId = viewModel.MealPlaceId,
                 StartingHour = viewModel.StartingHour,
-                MealElements = new List<MealElement>()
+                MealElements = new List<MealElement>(),
+                IsCachedOnly = viewModel.IsCachedOnly
             };
             viewModel.MealElements?.ToList().ForEach(item => { model.MealElements.Add(item); });
             return model;

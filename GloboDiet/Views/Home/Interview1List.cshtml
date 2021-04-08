@@ -21,10 +21,10 @@
         </tr>
     </thead>
     <tbody>
-    @if (@Model.Interviews is not null && @Model.Interviews.Any())
-    {
-        @foreach (var item in Model.Interviews)
+        @if (@Model.Interviews is not null && @Model.Interviews.Any())
         {
+        @foreach (var item in Model.Interviews)
+            {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
@@ -45,6 +45,81 @@
             </td>
         </tr>
         }
-    }
+        }
     </tbody>
 </table>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" name="exampleModal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 50%;" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Interviews.First().Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Interviews.First().Timestamp)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Interviews.First().Number)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Interviews.First().ReferenceDate)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (@Model.Interviews is not null && @Model.Interviews.Any())
+                        {
+                        @foreach (var item in Model.Interviews)
+                            {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Timestamp)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Number)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReferenceDate)
+                            </td>
+                            <td>
+                                <a asp-action="Interview1Edit" asp-route-id="@item.Id">Edit</a> |
+                                <a asp-action="Interview1Details" asp-route-id="@item.Id">Details</a> |
+                                <a asp-action="Interview1Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+                        }
+                                    }
+                    </tbody>
+                </table>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

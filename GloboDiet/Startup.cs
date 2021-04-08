@@ -5,6 +5,10 @@
 //#define ENV_RKI
 #define ENV_AZURE
 
+/*
+ Update-Database -Context GloboDietDbContext
+*/
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;

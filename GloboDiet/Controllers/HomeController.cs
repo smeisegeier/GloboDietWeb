@@ -55,6 +55,7 @@ namespace GloboDiet.Controllers
             return RedirectToActionPermanent(nameof(Interview1List));
         }
 
+        public IActionResult Test() => View();
 
         #region Interview
 
@@ -195,12 +196,13 @@ namespace GloboDiet.Controllers
         public IActionResult Meal2Edit(MealCreateEdit mealCreateEdit, string submit)
         {
             Meal meal = mealCreateEdit;
-            if (submit == "Cancel")
+            if (submit == "Cancel" && meal.IsCachedOnly)
             {
                 _repoMeal.ItemDelete(meal);
             }
             else
             {
+                meal.IsCachedOnly = false;
                 _repoMeal.ItemUpdate(meal);
             }
             return RedirectToAction(nameof(Interview1Edit), new { id = meal.InterviewId });
@@ -247,12 +249,13 @@ namespace GloboDiet.Controllers
         public IActionResult MealElement3Edit(MealElementCreateEdit viewModel, string submit)
         {
             MealElement model = viewModel;
-            if (submit == "Cancel")
+            if (submit == "Cancel" && model.IsCachedOnly)
             {
                 _repoMealElement.ItemDelete(model);
             }
             else
             {
+                model.IsCachedOnly = false;
                 _repoMealElement.ItemUpdate(model);
             }
             return RedirectToAction(nameof(Meal2Edit), new { id = model.MealId });
