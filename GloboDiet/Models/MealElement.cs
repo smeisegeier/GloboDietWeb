@@ -32,6 +32,8 @@ namespace GloboDiet.Models
 
         public bool IsCachedOnly { get; set; } = true;
 
+        public string ImagePath { get; set; }
+
         public MealElement() { }
         public MealElement(int mealId)
         {
@@ -49,7 +51,8 @@ namespace GloboDiet.Models
                 IngredientId = viewModel.IngredientId,
                 IngredientGroupId = viewModel.IngredientGroupId,
                 BrandnameId = viewModel.BrandnameId,
-                IsCachedOnly = viewModel.IsCachedOnly
+                IsCachedOnly = viewModel.IsCachedOnly,
+                ImagePath = viewModel.ImagePath
             };
             return mealElement;
         }

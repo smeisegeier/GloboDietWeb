@@ -34,6 +34,7 @@ namespace GloboDiet.ViewModels
         public int Quantity { get; set; }
 
         public bool IsCachedOnly { get; set; } = true;
+        public string ImagePath { get; set; }
 
         public static implicit operator MealElementCreateEdit(MealElement model)
         {
@@ -49,7 +50,8 @@ namespace GloboDiet.ViewModels
                 IngredientGroupLabel = model.IngredientGroup is null ? "empty" : model.IngredientGroup.Label,
                 BrandnameId = model.BrandnameId,
                 BrandnameLabel = model.Brandname is null ? "empty" : model.Brandname.Label,
-                IsCachedOnly = model.IsCachedOnly
+                IsCachedOnly = model.IsCachedOnly,
+                ImagePath = model.ImagePath
             };
             return mealElementCreateEdit;
         }

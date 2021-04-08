@@ -47,6 +47,13 @@
         <span asp-validation-for="BrandnameId" class="text-danger"></span>
     </div>
 
+    <div class="form-group">
+        <label class="control-label">image</label>
+        <img src="@Model.ImagePath" width="40" height="40" />
+        <input asp-for="ImagePath" hidden />
+        <input type="submit" value="+" name="submit" class="btn btn-info" formaction="/Home/ImageSelector4Create" />
+    </div>
+
     <partial name="/Views/Shared/_OkCancelButtons.cshtml" />
 </form>
 
