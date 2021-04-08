@@ -25,6 +25,8 @@ namespace GloboDiet.ViewModels
 
         public IList<MealElement> MealElements { get; set; }
 
+        public bool IsCachedOnly { get; set; } = true;
+
         public static implicit operator MealCreateEdit(Meal model)
         {
             var viewModel = new MealCreateEdit
@@ -38,6 +40,7 @@ namespace GloboDiet.ViewModels
 
                 MealPlaceLabel = model.MealPlace?.ToString(),
                 MealTypeLabel = model.MealType?.ToString(),
+                IsCachedOnly = model.IsCachedOnly
             };
             model.MealElements?.ToList().ForEach(item => { viewModel.MealElements.Add(item); });
             return viewModel;

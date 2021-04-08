@@ -6,6 +6,7 @@
 <form asp-action="MealElement3Edit">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="form-group">
+        <input asp-for="IsCachedOnly" hidden />
         <input asp-for="MealId" hidden />
         <label asp-for="Id" class="control-label"></label>
         <input asp-for="Id" class="form-control alert-danger" readonly="readonly" />
@@ -23,7 +24,7 @@
 
     <div class="form-group">
         <label asp-for="IngredientGroupId" class="control-label"></label>
-        <select asp-for="IngredientGroupId" class="js-example-basic-single" asp-items=@LookupData.DropdownIngredientGroups autofocus>
+        <select asp-for="IngredientGroupId" class="js-example-basic-single" style="width: 50%" asp-items=@LookupData.DropdownIngredientGroups autofocus>
             <option selected disabled value="">Please select</option>
         </select>
         <span asp-validation-for="IngredientGroupId" class="text-danger"></span>
@@ -32,15 +33,20 @@
 
     <div class="form-group">
         <label asp-for="IngredientId" class="control-label"></label>
-        <select asp-for="IngredientId" class="js-example-basic-single" asp-items=@LookupData.DropdownIngredients autofocus>
+        <select asp-for="IngredientId" class="js-example-basic-single" style="width: 50%"  asp-items=@LookupData.DropdownIngredients autofocus>
             <option selected disabled value="">Please select</option>
         </select>
         <span asp-validation-for="IngredientId" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <input type="submit" name="submit" value="Ok" class="btn btn-primary" />
-        <input type="submit" name="submit" value="Cancel" class="btn btn-primary" formnovalidate />
+        <label asp-for="BrandnameId" class="control-label"></label>
+        <select asp-for="BrandnameId" class="js-example-basic-single" style="width: 50%" asp-items=@LookupData.DropdownBrandnames autofocus>
+            <option selected disabled value="">Please select</option>
+        </select>
+        <span asp-validation-for="BrandnameId" class="text-danger"></span>
     </div>
+
+    <partial name="/Views/Shared/_OkCancelButtons.cshtml" />
 </form>
 

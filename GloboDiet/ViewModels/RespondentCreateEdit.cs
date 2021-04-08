@@ -32,6 +32,7 @@ namespace GloboDiet.ViewModels
         [Range(30, 300)]
         public int Weight { get; set; }
 
+
         public static implicit operator RespondentCreateEdit(Respondent model) => new RespondentCreateEdit
         {
             Id = model.Id,
@@ -43,7 +44,7 @@ namespace GloboDiet.ViewModels
             Height = model.Height,
             InterviewId = model.InterviewId,
             Name = model.Name,
-            Weight = model.Weight,
+            Weight = model.Weight
         };
 
     }

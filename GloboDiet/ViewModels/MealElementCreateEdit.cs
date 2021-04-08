@@ -26,7 +26,14 @@ namespace GloboDiet.ViewModels
         public string IngredientGroupLabel { get; set; }
 
 
+        [ForeignKey(nameof(Brandname))]
+        [Display(Name = "Brand")]
+        public int? BrandnameId { get; set; }
+        public string BrandnameLabel  { get; set; }
+
         public int Quantity { get; set; }
+
+        public bool IsCachedOnly { get; set; } = true;
 
         public static implicit operator MealElementCreateEdit(MealElement model)
         {
@@ -39,7 +46,10 @@ namespace GloboDiet.ViewModels
                 IngredientId = model.IngredientId,
                 IngredientLabel = model.Ingredient is null ? "empty" : model.Ingredient.Label,
                 IngredientGroupId = model.IngredientGroupId,
-                IngredientGroupLabel = model.IngredientGroup is null ? "empty" : model.IngredientGroup.Label
+                IngredientGroupLabel = model.IngredientGroup is null ? "empty" : model.IngredientGroup.Label,
+                BrandnameId = model.BrandnameId,
+                BrandnameLabel = model.Brandname is null ? "empty" : model.Brandname.Label,
+                IsCachedOnly = model.IsCachedOnly
             };
             return mealElementCreateEdit;
         }
