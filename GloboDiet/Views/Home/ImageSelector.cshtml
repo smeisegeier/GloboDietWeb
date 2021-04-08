@@ -1,0 +1,11 @@
+﻿@model GloboDiet.ViewModels.ImageSelector
+<h4>Select image</h4>
+<form asp-action="ImageSelector">
+    @foreach (var item in @Model.ListOfTestImages)
+        {
+                <button type="submit" name="submit" value="@item.Path">
+                    <img class="img" src="@item.Path" width="60" height="60" />
+                </button>
+        }
+</form>
+

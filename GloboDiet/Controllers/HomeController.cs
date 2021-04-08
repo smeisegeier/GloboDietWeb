@@ -17,6 +17,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
 using GloboDiet.Extensions;
 using System.Net;
+using System.IO;
 
 namespace GloboDiet.Controllers
 {
@@ -55,7 +56,24 @@ namespace GloboDiet.Controllers
             return RedirectToActionPermanent(nameof(Interview1List));
         }
 
-        public IActionResult Test() => View();
+        [HttpGet]
+        public IActionResult ImageSelector()
+        {
+            var fileArray = FileHelper.GetFileInfoFromDirectory(Path.Combine(_webHostEnvironment.WebRootPath,"images"));
+            var imgList = new List<Image>();
+            fileArray?.ToList().ForEach(src =>
+                {
+                    imgList.Add(new Image("/images/"+ src.Name));
+                });
+            return View(new ImageSelector().Init(imgList, getNewNavigationBar()));
+        }
+
+        [HttpPost]
+        public IActionResult ImageSelector(string submit)
+        {
+            return Content(submit);
+        }
+
 
         #region Interview
 
