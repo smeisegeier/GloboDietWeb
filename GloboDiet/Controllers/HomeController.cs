@@ -21,7 +21,7 @@ using System.IO;
 
 namespace GloboDiet.Controllers
 {
-    public class HomeController : _ControllerBase 
+    public class HomeController : _ControllerBase
     {
 
         public HomeController(IWebHostEnvironment webHostEnvironment,
@@ -56,22 +56,40 @@ namespace GloboDiet.Controllers
             return RedirectToActionPermanent(nameof(Interview1List));
         }
 
-        [HttpGet]
-        public IActionResult ImageSelector()
-        {
-            var fileArray = FileHelper.GetFileInfoFromDirectory(Path.Combine(_webHostEnvironment.WebRootPath,"images"));
-            var imgList = new List<Image>();
-            fileArray?.ToList().ForEach(src =>
-                {
-                    imgList.Add(new Image("/images/"+ src.Name));
-                });
-            return View(new ImageSelector().Init(imgList, getNewNavigationBar()));
-        }
+        //[HttpGet]
+        //public IActionResult ImageSelector()
+        //{
+        //    var fileArray = FileHelper.GetFileInfoFromDirectory(Path.Combine(_webHostEnvironment.WebRootPath,"images"));
+        //    var imgList = new List<Image>();
+        //    fileArray?.ToList().ForEach(src =>
+        //        {
+        //            imgList.Add(new Image("/images/"+ src.Name));
+        //        });
+        //    return View(new ImageSelector().Init(imgList, getNewNavigationBar()));
+        //}
 
         [HttpPost]
-        public IActionResult ImageSelector(string submit)
+        public IActionResult ImageSelector4Create(MealElementCreateEdit mealElementCreateEdit)
         {
-            return Content(submit);
+            var mealElement = mealElementCreateEdit;
+            // 2) cache interview to register potential new Respondent
+            _repoMealElement.ItemUpdate(mealElement);
+
+            var fileArray = FileHelper.GetFileInfoFromDirectory(Path.Combine(_webHostEnvironment.WebRootPath, "images"));
+            var imgList = new List<Image>();
+            fileArray?.ToList().ForEach(src =>
+            {
+                imgList.Add(new Image("/images/" + src.Name));
+            });
+            return View(new ImageSelectorCreateEdit().Init(imgList, mealElement.Id, getNewNavigationBar()));
+        }
+        [HttpPost]
+        public IActionResult ImageSelector4Save(string submit, ImageSelectorCreateEdit viewModel)
+        {
+            var mealElement = _repoMealElement.ItemGetById(viewModel.MealElementId);
+            mealElement.ImagePath = submit;
+            _repoMealElement.ItemUpdate(mealElement);
+            return RedirectToAction(nameof(MealElement3Edit), new { id = viewModel.MealElementId});
         }
 
 

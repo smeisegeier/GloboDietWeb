@@ -49,8 +49,9 @@
 
     <div class="form-group">
         <label class="control-label">image</label>
-        <img src="/images/favicon.ico" width="60" height="60" />
-        <input type="submit" value="+" name="submit" class="btn btn-info" formaction="/Home/ImageSelector" />
+        <img src="@Model.ImagePath" width="40" height="40" />
+        <input asp-for="ImagePath" hidden />
+        <input type="submit" value="+" name="submit" class="btn btn-info" formaction="/Home/ImageSelector4Create" />
     </div>
 
     <partial name="/Views/Shared/_OkCancelButtons.cshtml" />
