@@ -59,5 +59,7 @@ namespace GloboDiet.Services
                 return version;
             }
         }
+
+        public EfCoreHelper.SqlConnectionType SqlConnectionType { get; set; }
     }
 }

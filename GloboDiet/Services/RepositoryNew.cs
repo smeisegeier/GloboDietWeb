@@ -17,7 +17,6 @@ namespace GloboDiet.Services
         void ItemDelete(int id);
         int ItemsGetCount();
 
-        EfCoreHelper.SqlConnectionType GetSqlConnectionType();
     }
     public class RepositoryNew<TEntity> : IRepositoryNew<TEntity> where TEntity : class, IEntity
     {
@@ -84,7 +83,7 @@ namespace GloboDiet.Services
         public int ItemsGetCount() => _context.Set<TEntity>().Count();
 
 
-        public EfCoreHelper.SqlConnectionType GetSqlConnectionType() => _context.GetSqlConnectionType();
+        //public EfCoreHelper.SqlConnectionType GetSqlConnectionType() => _context.GetSqlConnectionType();
 
     }
 }

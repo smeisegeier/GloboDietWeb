@@ -1,9 +1,9 @@
 //#define SESSION
 
-//#define ENV_DEVMEMORY
+#define ENV_DEVMEMORY
 //#define ENV_DEVLOCAL
 //#define ENV_RKI
-#define ENV_AZURE
+//#define ENV_AZURE
 
 /*
  Update-Database -Context GloboDietDbContext
@@ -69,10 +69,6 @@ namespace GloboDiet
             #endregion
 
             #region services
-            //services.AddDbContext<GloboDietDbContext>(options => options
-            //    .UseLazyLoadingProxies()
-            //    .UseSqlServer(Configuration.GetConnectionString("db"))
-            //);
 #if ENV_DEVLOCAL
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
@@ -95,10 +91,9 @@ namespace GloboDiet
             services.AddDbContext<MyIdentityDbContext>(options => options
                 .UseInMemoryDatabase("User"));
 #endif
-
             services.AddScoped(typeof(IRepositoryNew<>), typeof(RepositoryNew<>));
             services.AddSingleton<LookupData>();
-        #endregion
+            #endregion
 
             #region session
 #if SESSION

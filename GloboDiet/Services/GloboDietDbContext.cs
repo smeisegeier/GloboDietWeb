@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using GloboDiet.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using DextersLabor;
 
 namespace GloboDiet.Services
 {
@@ -16,7 +17,7 @@ namespace GloboDiet.Services
     public class GloboDietDbContext : DbContext
     {
         private LookupData _lookupData;
-        public GloboDietDbContext(DbContextOptions<GloboDietDbContext> options, LookupData lookupData) : base(options) 
+        public GloboDietDbContext(DbContextOptions<GloboDietDbContext> options, LookupData lookupData) : base(options)
         {
             _lookupData = lookupData;
         }
@@ -36,7 +37,6 @@ namespace GloboDiet.Services
         public DbSet<Brandname> Brandnames { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<IngredientGroup> IngredientGroups { get; set; }
-
 
 
         /// <summary>
@@ -66,7 +66,42 @@ namespace GloboDiet.Services
             _lookupData.DropdownBrandnames = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
             _lookupData.DropdownIngredients = new SelectList(Set<Ingredient>().ToList(), "Id", "Label");
             _lookupData.DropdownIngredientGroups = new SelectList(Set<IngredientGroup>().ToList(), "Id", "Label");
+
+            /* setup misc*/
+            _lookupData.SqlConnectionType = EfCoreHelper.GetSqlConnectionType(this);
         }
+
+        /* AUDIT STUFF
+
+
+        public DbSet<AuditEntry> AuditEntries { get; set; }
+        public DbSet<AuditEntryProperty> AuditEntryProperties { get; set; }
+
+        public override int SaveChanges()
+        {
+            var audit = new Audit();
+            audit.CreatedBy = "ContentCreator"; //Globals.LoginMitarbeiter?.ToString() ?? "Default";
+            audit.PreSaveChanges(this);
+            var rowsAffected = base.SaveChanges();
+            audit.PostSaveChanges();
+
+            if (audit.Configuration.AutoSavePreAction != null)
+            {
+                audit.Configuration.AutoSavePreAction(this, audit);
+                base.SaveChanges();
+            }
+            return rowsAffected;
+        }
+
+        public void SaveChangesWithAudit()
+        {
+            var audit = new Audit();
+            audit.CreatedBy = "ContentCreator"; //Globals.LoginMitarbeiter?.ToString() ?? "Default";
+            this.SaveChanges(audit);
+        }
+        */
+
+
 
         ///// <summary>
         ///// Custom configuration for dbcontext here
@@ -82,26 +117,48 @@ namespace GloboDiet.Services
         //    //base.OnModelCreating(modelBuilder);
         //}
 
+
         /*
-                /// <summary>
-                /// This is only needed when NOT using DI, but creating new context()
-                /// Not recommended
-                /// </summary>
-                /// <param name="optionsBuilder"></param>
-                protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-                {
-                    //optionsBuilder.UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDiet;trusted_connection=true;");
-                    //optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
-                    //optionsBuilder.UseInMemoryDatabase("Test");
-                }
+        #region generic CRUD
+        public IEnumerable<TEntity> ItemsGetAll<TEntity>() where TEntity : class, IEntity => Set<TEntity>().ToList().OrderBy(o => o.Id);
+        public TEntity ItemGetById<TEntity>(int id) where TEntity : class, IEntity => ItemsGetAll<TEntity>().FirstOrDefault(x => x.Id == id);
 
+        public void ItemAdd<TEntity>(TEntity entity) where TEntity : class, IEntity
+        {
+            Set<TEntity>().Add(entity);
+            SaveChanges();
+        }
 
-        // Test: using dbcontext as repo
-        public IEnumerable<TEntity> GetAllEntities<TEntity>() where TEntity : class, IEntity => Set<TEntity>().ToList();
-        public TEntity GetEntityById<TEntity>(int id) where TEntity : class, IEntity => GetAllEntities<TEntity>().FirstOrDefault(x => x.Id == id);
-        public void AddEntityNoSave<TEntity>(TEntity entity) where TEntity : class, IEntity  => Set<TEntity>().Add(entity);
-        public void UpdateEntityNoSave<TEntity>(TEntity entity) where TEntity : class, IEntity => Set<TEntity>().Update(entity);
-        public void DeleteEntityNoSave<TEntity>(TEntity entity) where TEntity : class, IEntity => Set<TEntity>().Remove(entity);
+        public int ItemUpdate<TEntity>(TEntity entity) where TEntity : class, IEntity
+        {
+            Set<TEntity>().Update(entity);
+            SaveChanges();
+            return entity.Id;
+        }
+        public int ItemAddOrUpdate<TEntity>(TEntity entity) where TEntity : class, IEntity
+        {
+            if (Set<TEntity>().Contains(entity))
+            {
+                Set<TEntity>().Update(entity);
+            }
+            else
+            {
+                Set<TEntity>().Add(entity);
+            }
+            SaveChanges();
+            return entity.Id;
+        }
+
+        public void ItemDelete<TEntity>(TEntity entity) where TEntity : class, IEntity
+        {
+            Set<TEntity>().Remove(entity);
+            SaveChanges();
+        }
+        public void ItemDelete<TEntity>(int id) where TEntity : class, IEntity => ItemDelete<IEntity>(ItemGetById<IEntity>(id));
+
+        public int ItemsGetCount<TEntity>(TEntity entity) where TEntity : class, IEntity => Set<TEntity>().Count();
+        #endregion
         */
+
     }
 }
