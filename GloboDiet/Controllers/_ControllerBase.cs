@@ -34,19 +34,19 @@ namespace GloboDiet.Controllers
         protected HttpContext _httpContext;
         protected LookupData _lookupData;
 
-        // example for domain repo
-        protected IRepositoryNew<Interview> _repoInterview;
-        protected IRepositoryNew<Interviewer> _repoInterviewer;
-        protected IRepositoryNew<Location> _repoLocation;
-        protected IRepositoryNew<Respondent> _repoRespondent;
-        protected IRepositoryNew<Meal> _repoMeal;
-        protected IRepositoryNew<MealElement> _repoMealElement;
-        
+        protected GloboDietDbContext _context;
+
         public _ControllerBase()
         {
         }
 
-        protected NavigationBar getNewNavigationBar() => new NavigationBar(_repoInterview.ItemsGetCount(), _repoInterviewer.ItemsGetCount(), _repoLocation.ItemsGetCount(), _repoRespondent.ItemsGetCount(), _lookupData.SqlConnectionType);
+        protected NavigationBar getNewNavigationBar() => new NavigationBar(
+            _context.ItemsGetCount<Interview>(),
+            _context.ItemsGetCount<Interviewer>(),
+            _context.ItemsGetCount<Location>(),
+            _context.ItemsGetCount<Respondent>(),
+            _lookupData.SqlConnectionType
+            );
 
     }
 }

@@ -118,15 +118,15 @@ namespace GloboDiet.Services
         //}
 
 
-        /*
         #region generic CRUD
         public IEnumerable<TEntity> ItemsGetAll<TEntity>() where TEntity : class, IEntity => Set<TEntity>().ToList().OrderBy(o => o.Id);
         public TEntity ItemGetById<TEntity>(int id) where TEntity : class, IEntity => ItemsGetAll<TEntity>().FirstOrDefault(x => x.Id == id);
 
-        public void ItemAdd<TEntity>(TEntity entity) where TEntity : class, IEntity
+        public int ItemAdd<TEntity>(TEntity entity) where TEntity : class, IEntity
         {
             Set<TEntity>().Add(entity);
             SaveChanges();
+            return entity.Id;
         }
 
         public int ItemUpdate<TEntity>(TEntity entity) where TEntity : class, IEntity
@@ -156,9 +156,7 @@ namespace GloboDiet.Services
         }
         public void ItemDelete<TEntity>(int id) where TEntity : class, IEntity => ItemDelete<IEntity>(ItemGetById<IEntity>(id));
 
-        public int ItemsGetCount<TEntity>(TEntity entity) where TEntity : class, IEntity => Set<TEntity>().Count();
+        public int ItemsGetCount<TEntity>() where TEntity : class, IEntity => Set<TEntity>().Count();
         #endregion
-        */
-
     }
 }

@@ -17,26 +17,17 @@ namespace GloboDiet.Controllers
     {
 
         public AdminController(IWebHostEnvironment webHostEnvironment,
-            IHttpContextAccessor httpContextAccessor,
-            IRepositoryNew<Interview> repoInterview,
-            IRepositoryNew<Interviewer> repoInterviewer,
-            IRepositoryNew<Location> repoLocation,
-            IRepositoryNew<Respondent> repoRespondent)
+            IHttpContextAccessor httpContextAccessor, GloboDietDbContext context)
         {
             _webHostEnvironment = webHostEnvironment;
             _httpContext = httpContextAccessor.HttpContext;
-            _repoInterview = repoInterview;
-            _repoInterviewer = repoInterviewer;
-            _repoLocation = repoLocation;
-            _repoRespondent = repoRespondent;
+            _context = context;
         }
 
         public IActionResult Index()
         {
             return Content(_httpContext.Session.GetString("SessionUser"));
         }
-
-
 
         #region Interviewer
 
@@ -53,14 +44,14 @@ namespace GloboDiet.Controllers
         {
             if (!ModelState.IsValid) 
                 return View(interviewerCreateEdit);
-            _repoInterviewer.ItemAdd(interviewerCreateEdit);
+            _context.ItemAdd<Interviewer>(interviewerCreateEdit);
             return RedirectToAction(nameof(InterviewersList));
         }
 
         [HttpGet]
         public IActionResult InterviewerEdit(int id)
         {
-            InterviewerCreateEdit vm = _repoInterviewer.ItemGetById(id);
+            InterviewerCreateEdit vm = _context.ItemGetById<Interviewer>(id);
             vm.Init(getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW);
             return View(vm);
         }
@@ -68,17 +59,17 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult InterviewerEdit(InterviewerCreateEdit interviewerCreateEdit)
         {
-            _repoInterviewer.ItemUpdate(interviewerCreateEdit);
+            _context.ItemUpdate<Interviewer>(interviewerCreateEdit);
             return RedirectToAction(nameof(InterviewersList));
         }
 
         public IActionResult InterviewersList()
         {
-            var list = _repoInterviewer.ItemsGetAll();
+            var list = _context.ItemsGetAll<Interviewer>();
             return View(new InterviewersList(list, getNewNavigationBar()));
         }
 
-        public IActionResult InterviewerDetails(int id) => Json(_repoInterviewer.ItemGetById(id));
+        public IActionResult InterviewerDetails(int id) => Json(_context.ItemGetById<Interviewer>(id));
 
         #endregion
 
@@ -93,7 +84,7 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult LocationCreate(Location location, string ReturnAction)
         {
-            _repoLocation.ItemAdd(location);
+            _context.ItemAdd<Location>(location);
             // get Referer
             //return Redirect(Request.Headers["Referer"].ToString());
             return RedirectToAction(ReturnAction);
@@ -102,7 +93,7 @@ namespace GloboDiet.Controllers
         [HttpGet]
         public IActionResult LocationEdit(int id)
         {
-            LocationCreateEdit vm = _repoLocation.ItemGetById(id);
+            LocationCreateEdit vm = _context.ItemGetById<Location>(id);
             vm.Init(getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW);
             return View(vm);
         }
@@ -110,7 +101,7 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult LocationEdit(Location location)
         {
-            _repoLocation.ItemUpdate(location);
+            _context.ItemUpdate<Location>(location);
             return RedirectToAction(nameof(Index));
         }
 
@@ -121,17 +112,17 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult LocationCreateToInterview(Location location)
         {
-            _repoLocation.ItemAdd(location);
+            _context.ItemAdd<Location>(location);
             return RedirectToAction("InterviewCreate", "Home");
         }
 
 
         public IActionResult LocationsList()
         {
-            var list = _repoLocation.ItemsGetAll();
+            var list = _context.ItemsGetAll<Location>();
             return View(new LocationsList(list, getNewNavigationBar()));
         }
-        public IActionResult LocationDetails(int id) => Json(_repoLocation.ItemGetById(id));
+        public IActionResult LocationDetails(int id) => Json(_context.ItemGetById<Location>(id));
 
 
         #endregion

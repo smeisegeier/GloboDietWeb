@@ -91,7 +91,7 @@ namespace GloboDiet
             services.AddDbContext<MyIdentityDbContext>(options => options
                 .UseInMemoryDatabase("User"));
 #endif
-            services.AddScoped(typeof(IRepositoryNew<>), typeof(RepositoryNew<>));
+            //services.AddScoped(typeof(IRepositoryNew<>), typeof(RepositoryNew<>));
             services.AddSingleton<LookupData>();
             #endregion
 

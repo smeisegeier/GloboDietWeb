@@ -27,23 +27,13 @@ namespace GloboDiet.Controllers
         public HomeController(IWebHostEnvironment webHostEnvironment,
             IHttpContextAccessor httpContextAccessor,
             LookupData lookupData,
-            IRepositoryNew<Interview> repoInterview,
-            IRepositoryNew<Interviewer> repoInterviewer,
-            IRepositoryNew<Location> repoLocation,
-            IRepositoryNew<Respondent> repoRespondent,
-            IRepositoryNew<Meal> repoMeal,
-            IRepositoryNew<MealElement> repoMealElement
+            GloboDietDbContext context
             )
         {
             _webHostEnvironment = webHostEnvironment;
             _httpContext = httpContextAccessor.HttpContext;
             _lookupData = lookupData;
-            _repoInterview = repoInterview;
-            _repoInterviewer = repoInterviewer;
-            _repoLocation = repoLocation;
-            _repoRespondent = repoRespondent;
-            _repoMeal = repoMeal;
-            _repoMealElement = repoMealElement;
+            _context = context;
         }
 
 
@@ -73,7 +63,7 @@ namespace GloboDiet.Controllers
         {
             var mealElement = mealElementCreateEdit;
             // 2) cache interview to register potential new Respondent
-            _repoMealElement.ItemUpdate(mealElement);
+            _context.ItemUpdate<MealElement>(mealElement);
 
             var fileArray = FileHelper.GetFileInfoFromDirectory(Path.Combine(_webHostEnvironment.WebRootPath, "images"));
             var imgList = new List<Image>();
@@ -86,10 +76,10 @@ namespace GloboDiet.Controllers
         [HttpPost]
         public IActionResult ImageSelector4Save(string submit, ImageSelectorCreateEdit viewModel)
         {
-            var mealElement = _repoMealElement.ItemGetById(viewModel.MealElementId);
+            var mealElement = _context.ItemGetById<MealElement>(viewModel.MealElementId);
             mealElement.ImagePath = submit;
-            _repoMealElement.ItemUpdate(mealElement);
-            return RedirectToAction(nameof(MealElement3Edit), new { id = viewModel.MealElementId});
+            _context.ItemUpdate<MealElement>(mealElement);
+            return RedirectToAction(nameof(MealElement3Edit), new { id = viewModel.MealElementId });
         }
 
 
@@ -98,14 +88,14 @@ namespace GloboDiet.Controllers
         [HttpGet]
         public IActionResult Interview1Create()
         {
-            var newId = _repoInterview.ItemAdd(new Interview());
+            var newId = _context.ItemAdd<Interview>(new Interview());
             return RedirectToAction(nameof(Interview1Edit), new { id = newId });
         }
 
         [HttpGet]
         public IActionResult Interview1Edit(int id)
         {
-            var interviewNewOrFromDb = _repoInterview.ItemGetById(id);
+            var interviewNewOrFromDb = _context.ItemGetById<Interview>(id);
             if (interviewNewOrFromDb is not Interview)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
@@ -115,8 +105,8 @@ namespace GloboDiet.Controllers
 
             InterviewCreateEdit interviewCreateEdit = interviewNewOrFromDb;
             interviewCreateEdit.Init(
-                _repoInterviewer.ItemsGetAll(),
-                _repoLocation.ItemsGetAll(),
+                _context.ItemsGetAll<Interviewer>(),
+                _context.ItemsGetAll<Location>(),
                 getNewNavigationBar(),
                 Globals.ProcessMilestone._1_INTERVIEW
                 );
@@ -131,7 +121,7 @@ namespace GloboDiet.Controllers
             Interview interview = interviewCreateEdit;
             if (submit == "Cancel" && interview.IsCachedOnly)
             {
-                _repoInterview.ItemDelete(interview);
+                _context.ItemDelete<Interview>(interview);
             }
             else
             {
@@ -148,24 +138,24 @@ namespace GloboDiet.Controllers
                 }
                 // now save
                 interview.IsCachedOnly = false;
-                _repoInterview.ItemUpdate(interview);
+                _context.ItemUpdate<Interview>(interview);
             }
             return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
         public IActionResult Interview1List() => View(new InterviewsList(
-            _repoInterview.ItemsGetAll(),
+            _context.ItemsGetAll<Interview>(),
             getNewNavigationBar()
             ));
 
         public IActionResult Interview1Delete(int id)
         {
-            _repoInterview.ItemDelete(id);
+            _context.ItemDelete<Interview>(id);
             return RedirectToAction(nameof(Interview1List));
         }
 
-        public IActionResult Interview1Details(int id) => Json(_repoInterview.ItemGetById(id));
+        public IActionResult Interview1Details(int id) => Json(_context.ItemGetById<Interview>(id));
 
         #endregion
 
@@ -177,16 +167,16 @@ namespace GloboDiet.Controllers
             Interview interview = interviewCreateEdit;
             // 1) ensure respondent
             if (interview.RespondentId is null || interview.RespondentId == 0)
-                interview.RespondentId = _repoRespondent.ItemAdd(new Respondent(interview.Id));
+                interview.RespondentId = _context.ItemAdd<Respondent>(new Respondent(interview.Id));
             // 2) cache interview to register potential new Respondent
-            _repoInterview.ItemUpdate(interview);
+            _context.ItemUpdate<Interview>(interview);
             return RedirectToAction(nameof(Respondent2Edit), new { id = interview.RespondentId });
         }
 
         [HttpGet]
         public IActionResult Respondent2Edit(int id)
         {
-            RespondentCreateEdit respondentCreateEdit = _repoRespondent.ItemGetById(id);
+            RespondentCreateEdit respondentCreateEdit = _context.ItemGetById<Respondent>(id);
             respondentCreateEdit.Init(getNewNavigationBar(), Globals.ProcessMilestone._1_INTERVIEW);
             return View(respondentCreateEdit);
         }
@@ -198,13 +188,13 @@ namespace GloboDiet.Controllers
             // special case: cancel -> no db operation
             if (submit != "Cancel")
             {
-                _repoRespondent.ItemUpdate(respondent);
+                _context.ItemUpdate<Respondent>(respondent);
             }
             //_nLogger.Debug($"Label{model.Label}, Id {model.Id}, Interv {model.InterviewId}");
             return RedirectToAction(nameof(Interview1Edit), new { id = respondent.InterviewId });
         }
 
-        public IActionResult Respondent2Details(int id) => Json(_repoRespondent.ItemGetById(id));
+        public IActionResult Respondent2Details(int id) => Json(_context.ItemGetById<Respondent>(id));
         #endregion
 
         #region Meal
@@ -214,16 +204,16 @@ namespace GloboDiet.Controllers
         {
             var interview = interviewCreateEdit;
             // cache parent, then redirect
-            _repoInterview.ItemUpdate(interview);
+            _context.ItemUpdate<Interview>(interview);
             // create new object w/ reference to parent
-            var newMealId = _repoMeal.ItemAdd(new Meal(interview.Id));
+            var newMealId = _context.ItemAdd<Meal>(new Meal(interview.Id));
             return RedirectToAction(nameof(Meal2Edit), new { id = newMealId });
         }
 
         [HttpGet]
         public IActionResult Meal2Edit(int id)
         {
-            MealCreateEdit viewModel = _repoMeal.ItemGetById(id);
+            MealCreateEdit viewModel = _context.ItemGetById<Meal>(id);
             viewModel.Init(getNewNavigationBar());
             return View(viewModel);
         }
@@ -234,22 +224,22 @@ namespace GloboDiet.Controllers
             Meal meal = mealCreateEdit;
             if (submit == "Cancel" && meal.IsCachedOnly)
             {
-                _repoMeal.ItemDelete(meal);
+                _context.ItemDelete<Meal>(meal);
             }
             else
             {
                 meal.IsCachedOnly = false;
-                _repoMeal.ItemUpdate(meal);
+                _context.ItemUpdate<Meal>(meal);
             }
             return RedirectToAction(nameof(Interview1Edit), new { id = meal.InterviewId });
         }
 
-        public IActionResult Meal2Details(int id) => Json(_repoMeal.ItemGetById(id));
+        public IActionResult Meal2Details(int id) => Json(_context.ItemGetById<Meal>(id));
 
         public IActionResult Meal2Delete(int id)
         {
-            var meal = _repoMeal.ItemGetById(id);
-            _repoMeal.ItemDelete(meal);
+            var meal = _context.ItemGetById<Meal>(id);
+            _context.ItemDelete<Meal>(meal);
             return RedirectToAction(nameof(Interview1Edit), new { id = meal.InterviewId });
         }
 
@@ -261,9 +251,9 @@ namespace GloboDiet.Controllers
         {
             Meal model = viewModel;
             // cache parent, then redirect
-            _repoMeal.ItemUpdate(model);
+            _context.ItemUpdate<Meal>(model);
             // create new obj w/ reference to model
-            var newMealElementId = _repoMealElement.ItemAdd(new MealElement(model.Id));
+            var newMealElementId = _context.ItemAdd<MealElement>(new MealElement(model.Id));
             return RedirectToAction(nameof(MealElement3Edit), new { id = newMealElementId });
         }
 
@@ -274,8 +264,8 @@ namespace GloboDiet.Controllers
             //MealElementCreateEdit mealElementCreateEdit = mealElementNewOrFromDb;
             //mealElementCreateEdit.Init(getNewNavigationBar());
             //return View(mealElementCreateEdit);
-            return View(((MealElementCreateEdit)_repoMealElement
-                .ItemGetById(id)
+            return View(((MealElementCreateEdit)_context
+                .ItemGetById<MealElement>(id)
                 )
                 .Init(getNewNavigationBar())
                 );
@@ -287,23 +277,23 @@ namespace GloboDiet.Controllers
             MealElement model = viewModel;
             if (submit == "Cancel" && model.IsCachedOnly)
             {
-                _repoMealElement.ItemDelete(model);
+                _context.ItemDelete<MealElement>(model);
             }
             else
             {
                 model.IsCachedOnly = false;
-                _repoMealElement.ItemUpdate(model);
+                _context.ItemUpdate<MealElement>(model);
             }
             return RedirectToAction(nameof(Meal2Edit), new { id = model.MealId });
         }
 
         public IActionResult MealElement3Delete(int id)
         {
-            var mealElement = _repoMealElement.ItemGetById(id);
-            _repoMealElement.ItemDelete(mealElement);
+            var mealElement = _context.ItemGetById<MealElement>(id);
+            _context.ItemDelete<MealElement>(mealElement);
             return RedirectToAction(nameof(Meal2Edit), new { id = mealElement.MealId });
         }
-        public IActionResult MealElement3Details(int id) => Json(_repoMealElement.ItemGetById(id));
+        public IActionResult MealElement3Details(int id) => Json(_context.ItemGetById<MealElement>(id));
 
 
         #endregion
