@@ -154,9 +154,8 @@ namespace GloboDiet.Services
             Set<TEntity>().Remove(entity);
             SaveChanges();
         }
-        public void ItemDelete<TEntity>(int id) where TEntity : class, IEntity => ItemDelete<IEntity>(ItemGetById<IEntity>(id));
-
         public int ItemsGetCount<TEntity>() where TEntity : class, IEntity => Set<TEntity>().Count();
+
         #endregion
     }
 }

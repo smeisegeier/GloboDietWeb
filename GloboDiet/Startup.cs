@@ -1,7 +1,7 @@
 //#define SESSION
 
-#define ENV_DEVMEMORY
-//#define ENV_DEVLOCAL
+//#define ENV_DEVMEMORY
+#define ENV_DEVLOCAL
 //#define ENV_RKI
 //#define ENV_AZURE
 
@@ -71,7 +71,7 @@ namespace GloboDiet
             #region services
 #if ENV_DEVLOCAL
             services.AddDbContext<GloboDietDbContext>(options => options
-                .UseLazyLoadingProxies()
+                //.UseLazyLoadingProxies()
                 .UseSqlServer("server=(localdb)\\mssqllocaldb;database=GloboDietWeb;trusted_connection=true;"));
             services.AddDbContext<MyIdentityDbContext>(options => options
                 .UseSqlServer("server=(localdb)\\mssqllocaldb;database=UserManager;trusted_connection=true;"));

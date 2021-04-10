@@ -95,7 +95,15 @@ namespace GloboDiet.Controllers
         [HttpGet]
         public IActionResult Interview1Edit(int id)
         {
-            var interviewNewOrFromDb = _context.ItemGetById<Interview>(id);
+            //var interviewNewOrFromDb = _context.ItemGetById<Interview>(id);
+            var interviewNewOrFromDb = _context.Set<Interview>()
+                .Include(i => i.Respondent)
+                // inlude also deeper level of model
+                .Include(i => i.Meals).ThenInclude(i => i.MealPlace)
+                .Include(i => i.Meals).ThenInclude(i => i.MealType)
+                .ToList()
+                .FirstOrDefault(x => x.Id == id);
+
             if (interviewNewOrFromDb is not Interview)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
@@ -151,14 +159,21 @@ namespace GloboDiet.Controllers
 
         public IActionResult Interview1Delete(int id)
         {
-            _context.ItemDelete<Interview>(id);
+            _context.ItemDelete<Interview>(_context.ItemGetById<Interview>(id));
             return RedirectToAction(nameof(Interview1List));
         }
 
-        public IActionResult Interview1Details(int id) => Json(_context.ItemGetById<Interview>(id));
+        public IActionResult Interview1Details(int id) => Json(_context.Set<Interview>()
+            .Include(i => i.Respondent)
+            .Include(i => i.Meals).ThenInclude(i => i.MealType)
+            .Include(i => i.Meals).ThenInclude(i => i.MealPlace)
+            .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.Ingredient)
+            .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.IngredientGroup)
+            .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.Brandname)
+            .ToList().FirstOrDefault(x => x.Id == id)
+            );
 
         #endregion
-
         #region Respondent
 
         [HttpPost]
@@ -213,7 +228,13 @@ namespace GloboDiet.Controllers
         [HttpGet]
         public IActionResult Meal2Edit(int id)
         {
-            MealCreateEdit viewModel = _context.ItemGetById<Meal>(id);
+            //MealCreateEdit viewModel = _context.ItemGetById<Meal>(id);
+            MealCreateEdit viewModel = _context.Set<Meal>()
+                .Include(i => i.MealElements)
+                .ThenInclude(i => i.Ingredient)
+                .ToList()
+                .FirstOrDefault(x => x.Id == id);
+
             viewModel.Init(getNewNavigationBar());
             return View(viewModel);
         }
@@ -234,7 +255,14 @@ namespace GloboDiet.Controllers
             return RedirectToAction(nameof(Interview1Edit), new { id = meal.InterviewId });
         }
 
-        public IActionResult Meal2Details(int id) => Json(_context.ItemGetById<Meal>(id));
+        public IActionResult Meal2Details(int id) => Json(_context.Set<Meal>()
+            .Include(i => i.MealType)
+            .Include(i => i.MealPlace)
+            .Include(i => i.MealElements).ThenInclude(i => i.Ingredient)
+            .Include(i => i.MealElements).ThenInclude(i => i.IngredientGroup)
+            .Include(i => i.MealElements).ThenInclude(i => i.Brandname)
+            .ToList().FirstOrDefault(x => x.Id == id)
+            );
 
         public IActionResult Meal2Delete(int id)
         {
@@ -293,7 +321,13 @@ namespace GloboDiet.Controllers
             _context.ItemDelete<MealElement>(mealElement);
             return RedirectToAction(nameof(Meal2Edit), new { id = mealElement.MealId });
         }
-        public IActionResult MealElement3Details(int id) => Json(_context.ItemGetById<MealElement>(id));
+        public IActionResult MealElement3Details(int id) => Json(
+            _context.Set<MealElement>()
+                .Include(i => i.Ingredient)
+                .Include(i => i.IngredientGroup)
+                .Include(i => i.Brandname)
+                .ToList().FirstOrDefault(x => x.Id == id)
+            );
 
 
         #endregion
