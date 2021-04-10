@@ -8,6 +8,7 @@ using GloboDiet.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using DextersLabor;
+using Z.EntityFramework.Plus;
 
 namespace GloboDiet.Services
 {
@@ -58,7 +59,7 @@ namespace GloboDiet.Services
             if (!Set<Location>().Any()) Set<Location>().AddRange(Location.GetSeedsFromMockup());
 
             // Saving is isolated now to prevent FK mismatches
-            SaveChanges();
+            base.SaveChanges();
 
             /* setup Static selectlists from Lookup */
             _lookupData.DropdownMealTypes = new SelectList(Set<MealType>().ToList(), "Id", "Name");
@@ -69,11 +70,16 @@ namespace GloboDiet.Services
 
             /* setup misc*/
             _lookupData.SqlConnectionType = EfCoreHelper.GetSqlConnectionType(this);
+
+            /* setup Audit*/
+            AuditManager.DefaultConfiguration.AutoSavePreAction = (context, audit) =>
+            {
+                AuditEntries.AddRange(audit.Entries);
+                base.SaveChanges();
+            };
         }
 
-        /* AUDIT STUFF
-
-
+        //  AUDIT STUFF
         public DbSet<AuditEntry> AuditEntries { get; set; }
         public DbSet<AuditEntryProperty> AuditEntryProperties { get; set; }
 
@@ -81,6 +87,7 @@ namespace GloboDiet.Services
         {
             var audit = new Audit();
             audit.CreatedBy = "ContentCreator"; //Globals.LoginMitarbeiter?.ToString() ?? "Default";
+            //audit.Configuration.IgnorePropertyUnchanged = false;
             audit.PreSaveChanges(this);
             var rowsAffected = base.SaveChanges();
             audit.PostSaveChanges();
@@ -93,15 +100,30 @@ namespace GloboDiet.Services
             return rowsAffected;
         }
 
-        public void SaveChangesWithAudit()
+
+
+
+        //public void SaveChangesWithAudit()
+        //{
+        //    var audit = new Audit();
+        //    audit.CreatedBy = "ContentCreator"; //Globals.LoginMitarbeiter?.ToString() ?? "Default";
+        //    this.SaveChanges(audit);
+        //}
+
+        /*
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var audit = new Audit();
-            audit.CreatedBy = "ContentCreator"; //Globals.LoginMitarbeiter?.ToString() ?? "Default";
-            this.SaveChanges(audit);
+            AuditManager.DefaultConfiguration.AutoSavePreAction = (context, audit) =>
+            //ADD "Where(x => x.AuditEntryID == 0)" to allow multiple SaveChanges with same Audit
+            (context as GloboDietDbContext).AuditEntries.AddRange(audit.Entries);
+            //{
+            //    var mycontext = new PlanungDbContext();
+            //    mycontext.AuditEntries.AddRange(audit.Entries);
+            //    mycontext.SaveChanges(); // das is neu
+            //};
+            base.OnConfiguring(optionsBuilder);
         }
         */
-
-
 
         ///// <summary>
         ///// Custom configuration for dbcontext here

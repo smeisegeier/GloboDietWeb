@@ -26,6 +26,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 using System.Globalization;
+using Z.EntityFramework.Plus;
 
 namespace GloboDiet
 {
@@ -78,7 +79,7 @@ namespace GloboDiet
 #endif
 #if ENV_AZURE
             services.AddDbContext<GloboDietDbContext>(options => options
-                .UseLazyLoadingProxies()
+                //.UseLazyLoadingProxies()
                 .UseSqlServer(@"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=GloboDietWeb;User ID = GloboDietWebUser@demosqlserverxd;Password=tsM3PhbtZWn91;Trusted_Connection=False;Encrypt=True;"));
             services.AddDbContext<MyIdentityDbContext>(options => options
                 .UseLazyLoadingProxies()
@@ -86,7 +87,7 @@ namespace GloboDiet
 #endif
 #if ENV_DEVMEMORY
             services.AddDbContext<GloboDietDbContext>(options => options
-                .UseLazyLoadingProxies()
+                //.UseLazyLoadingProxies()
                 .UseInMemoryDatabase("Test"));
             services.AddDbContext<MyIdentityDbContext>(options => options
                 .UseInMemoryDatabase("User"));
@@ -94,6 +95,7 @@ namespace GloboDiet
             //services.AddScoped(typeof(IRepositoryNew<>), typeof(RepositoryNew<>));
             services.AddSingleton<LookupData>();
             #endregion
+
 
             #region session
 #if SESSION
