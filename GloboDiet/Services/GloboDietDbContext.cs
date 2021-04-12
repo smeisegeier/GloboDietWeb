@@ -21,6 +21,13 @@ namespace GloboDiet.Services
         public GloboDietDbContext(DbContextOptions<GloboDietDbContext> options, LookupData lookupData) : base(options)
         {
             _lookupData = lookupData;
+
+            /* setup Audit*/
+            AuditManager.DefaultConfiguration.AutoSavePreAction = (context, audit) =>
+            {
+                (context as GloboDietDbContext).AuditEntries.AddRange(audit.Entries);
+                //base.SaveChanges();
+            };
         }
 
         public DbSet<Interview> Interviews { get; set; }
@@ -71,59 +78,36 @@ namespace GloboDiet.Services
             /* setup misc*/
             _lookupData.SqlConnectionType = EfCoreHelper.GetSqlConnectionType(this);
 
-            /* setup Audit*/
-            AuditManager.DefaultConfiguration.AutoSavePreAction = (context, audit) =>
-            {
-                AuditEntries.AddRange(audit.Entries);
-                base.SaveChanges();
-            };
         }
 
-        //  AUDIT STUFF
         public DbSet<AuditEntry> AuditEntries { get; set; }
         public DbSet<AuditEntryProperty> AuditEntryProperties { get; set; }
 
-        public override int SaveChanges()
-        {
-            var audit = new Audit();
-            audit.CreatedBy = "ContentCreator"; //Globals.LoginMitarbeiter?.ToString() ?? "Default";
-            //audit.Configuration.IgnorePropertyUnchanged = false;
-            audit.PreSaveChanges(this);
-            var rowsAffected = base.SaveChanges();
-            audit.PostSaveChanges();
 
-            if (audit.Configuration.AutoSavePreAction != null)
-            {
-                audit.Configuration.AutoSavePreAction(this, audit);
-                base.SaveChanges();
-            }
-            return rowsAffected;
-        }
-
-
-
-
-        //public void SaveChangesWithAudit()
+        //public override int SaveChanges()
         //{
         //    var audit = new Audit();
         //    audit.CreatedBy = "ContentCreator"; //Globals.LoginMitarbeiter?.ToString() ?? "Default";
-        //    this.SaveChanges(audit);
+        //    //audit.Configuration.IgnorePropertyUnchanged = false;
+        //    audit.PreSaveChanges(this);
+        //    var rowsAffected = base.SaveChanges();
+        //    audit.PostSaveChanges();
+
+        //    if (audit.Configuration.AutoSavePreAction != null)
+        //    {
+        //        audit.Configuration.AutoSavePreAction(this, audit);
+        //        base.SaveChanges();
+        //    }
+        //    return rowsAffected;
         //}
 
-        /*
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+        public void SaveChangesWithAudit()
         {
-            AuditManager.DefaultConfiguration.AutoSavePreAction = (context, audit) =>
-            //ADD "Where(x => x.AuditEntryID == 0)" to allow multiple SaveChanges with same Audit
-            (context as GloboDietDbContext).AuditEntries.AddRange(audit.Entries);
-            //{
-            //    var mycontext = new PlanungDbContext();
-            //    mycontext.AuditEntries.AddRange(audit.Entries);
-            //    mycontext.SaveChanges(); // das is neu
-            //};
-            base.OnConfiguring(optionsBuilder);
+            var audit = new Audit();
+            audit.CreatedBy = "ContentCreator"; //Globals.LoginMitarbeiter?.ToString() ?? "Default";
+            this.SaveChanges(audit);
         }
-        */
 
         ///// <summary>
         ///// Custom configuration for dbcontext here
@@ -147,14 +131,15 @@ namespace GloboDiet.Services
         public int ItemAdd<TEntity>(TEntity entity) where TEntity : class, IEntity
         {
             Set<TEntity>().Add(entity);
-            SaveChanges();
+            SaveChangesWithAudit();
             return entity.Id;
         }
 
         public int ItemUpdate<TEntity>(TEntity entity) where TEntity : class, IEntity
         {
             Set<TEntity>().Update(entity);
-            SaveChanges();
+            //Entry(entity).State = EntityState.Modified;
+            SaveChangesWithAudit();
             return entity.Id;
         }
         public int ItemAddOrUpdate<TEntity>(TEntity entity) where TEntity : class, IEntity
@@ -167,14 +152,14 @@ namespace GloboDiet.Services
             {
                 Set<TEntity>().Add(entity);
             }
-            SaveChanges();
+            SaveChangesWithAudit();
             return entity.Id;
         }
 
         public void ItemDelete<TEntity>(TEntity entity) where TEntity : class, IEntity
         {
             Set<TEntity>().Remove(entity);
-            SaveChanges();
+            SaveChangesWithAudit();
         }
         public int ItemsGetCount<TEntity>() where TEntity : class, IEntity => Set<TEntity>().Count();
 
