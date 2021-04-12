@@ -19,6 +19,7 @@ namespace GloboDiet.ViewModels
 
         [Range(0,23)]
         public int StartingHour { get; set; }
+
         public int? MealTypeId { get; set; }
         public string MealTypeLabel { get; set; }
 
