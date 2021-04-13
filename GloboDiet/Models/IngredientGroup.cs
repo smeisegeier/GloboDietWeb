@@ -24,7 +24,7 @@ namespace GloboDiet.Models
                     Description = srcitem.NAME
                 });
             });
-            return newList;
+            return newList.OrderBy(o => o.Code);
         }
     }
 

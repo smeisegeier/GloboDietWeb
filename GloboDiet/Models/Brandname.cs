@@ -8,6 +8,7 @@ namespace GloboDiet.Models
 {
     public class Brandname : _ModelBase 
     {
+        public string Group { get; set; }
         public Brandname() { }
 
         public static IEnumerable<Brandname> GetSeedsFromLegacy()
@@ -18,7 +19,8 @@ namespace GloboDiet.Models
             {
                 newList.Add(new Brandname()
                 {
-                    Name = item.NAME
+                    Name = item.NAME,
+                    Group = item.GROUP
                 });
             }
             return newList.OrderBy(x => x.Name);

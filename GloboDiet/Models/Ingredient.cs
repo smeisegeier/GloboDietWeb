@@ -10,6 +10,8 @@ namespace GloboDiet.Models
     // Vorschläge Auswahl Mahlzeiten
     public class Ingredient : _ModelBase
     {
+        public string Group { get; set; }
+
         public Ingredient() { }
 
         public static IEnumerable<Ingredient> GetSeedsFromLegacy()
@@ -22,6 +24,7 @@ namespace GloboDiet.Models
                 newList.Add(new Ingredient()
                 {
                     Code = srcitem.FOODNUM,
+                    Group = srcitem.GROUP,
                     Name = srcitem.NAME
                 });
             });

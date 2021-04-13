@@ -24,7 +24,7 @@
 
     <div class="form-group">
         <label asp-for="IngredientGroupId" class="control-label"></label>
-        <select asp-for="IngredientGroupId" class="js-example-basic-single" style="width: 50%" asp-items=@LookupData.DropdownIngredientGroups autofocus>
+        <select asp-for="IngredientGroupId" id="groups" class="js-example-basic-single" style="width: 50%" asp-items=@LookupData.DropdownIngredientGroups autofocus>
             <option selected disabled value="">Please select</option>
         </select>
         <span asp-validation-for="IngredientGroupId" class="text-danger"></span>
@@ -33,7 +33,7 @@
 
     <div class="form-group">
         <label asp-for="IngredientId" class="control-label"></label>
-        <select asp-for="IngredientId" class="js-example-basic-single" style="width: 50%"  asp-items=@LookupData.DropdownIngredients autofocus>
+        <select asp-for="IngredientId" id="ingredients" class="js-example-basic-single" style="width: 50%" asp-items=@LookupData.DropdownIngredients autofocus>
             <option selected disabled value="">Please select</option>
         </select>
         <span asp-validation-for="IngredientId" class="text-danger"></span>
@@ -41,7 +41,7 @@
 
     <div class="form-group">
         <label asp-for="BrandnameId" class="control-label"></label>
-        <select asp-for="BrandnameId" class="js-example-basic-single" style="width: 50%" asp-items=@LookupData.DropdownBrandnames autofocus>
+        <select asp-for="BrandnameId" id="brandnames" class="js-example-basic-single" style="width: 50%" asp-items=@LookupData.DropdownBrandnames autofocus>
             <option selected disabled value="">Please select</option>
         </select>
         <span asp-validation-for="BrandnameId" class="text-danger"></span>
@@ -56,4 +56,25 @@
 
     <partial name="/Views/Shared/_OkCancelButtons.cshtml" />
 </form>
-
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#groups").on("change", function () {
+            $list = $("#ingredients");
+            $.ajax({
+                url: "/getCities",
+                type: "GET",
+                data: { id: $("#groups").val() }, //id of the state which is used to extract cities
+                traditional: true,
+                success: function (result) {
+                    $list.empty();
+                    $.each(result, function (i, item) {
+                        $list.append('<option value="' + item["CityId"] + '"> ' + item["Name"] + ' </option>');
+                    });
+                },
+                error: function () {
+                    alert("Something went wrong call the police");
+                }
+            });
+        });
+    });
+</script>
