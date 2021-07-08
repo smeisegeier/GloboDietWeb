@@ -1,5 +1,10 @@
 ﻿@model GloboDiet.ViewModels.MealElementCreateEdit
 @inject GloboDiet.Services.LookupData LookupData
+@using Microsoft.AspNetCore.Mvc.Rendering;
+
+@{
+    var DropdownIngredientsFiltered = new SelectList(LookupData.ListOfIngredients.Where(x => x.Group == "03"), "Id", "Label"); 
+}
 
 <h4>MealElement</h4>
 
@@ -33,7 +38,7 @@
 
     <div class="form-group">
         <label asp-for="IngredientId" class="control-label"></label>
-        <select asp-for="IngredientId" id="ingredients" class="js-example-basic-single" style="width: 50%" asp-items=@LookupData.DropdownIngredients autofocus>
+        <select asp-for="IngredientId" id="ingredients" class="js-example-basic-single" style="width: 50%" asp-items=DropdownIngredientsFiltered autofocus>
             <option selected disabled value="">Please select</option>
         </select>
         <span asp-validation-for="IngredientId" class="text-danger"></span>
@@ -59,22 +64,23 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $("#groups").on("change", function () {
-            $list = $("#ingredients");
-            $.ajax({
-                url: "/getCities",
-                type: "GET",
-                data: { id: $("#groups").val() }, //id of the state which is used to extract cities
-                traditional: true,
-                success: function (result) {
-                    $list.empty();
-                    $.each(result, function (i, item) {
-                        $list.append('<option value="' + item["CityId"] + '"> ' + item["Name"] + ' </option>');
-                    });
-                },
-                error: function () {
-                    alert("Something went wrong call the police");
-                }
-            });
+
+            //$list = $("#ingredients");
+            //$.ajax({
+            //    url: "/getCities",
+            //    type: "GET",
+            //    data: { id: $("#groups").val() }, //id of the state which is used to extract cities
+            //    traditional: true,
+            //    success: function (result) {
+            //        $list.empty();
+            //        $.each(result, function (i, item) {
+            //            $list.append('<option value="' + item["CityId"] + '"> ' + item["Name"] + ' </option>');
+            //        });
+            //    },
+            //    error: function () {
+            //        alert("Something went wrong call the police");
+            //    }
+            //});
         });
     });
 </script>

@@ -75,6 +75,9 @@ namespace GloboDiet.Services
             _lookupData.DropdownIngredients = new SelectList(Set<Ingredient>().ToList(), "Id", "Label");
             _lookupData.DropdownIngredientGroups = new SelectList(Set<IngredientGroup>().ToList(), "Id", "Label");
 
+
+            _lookupData.ListOfIngredients = Set<Ingredient>().ToList();
+
             /* setup misc*/
             _lookupData.SqlConnectionType = EfCoreHelper.GetSqlConnectionType(this);
 

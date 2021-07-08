@@ -42,5 +42,6 @@ namespace GloboDiet
 
         //public static SelectList StaticListOfEssins { get; } = new SelectList(Essin.GetSeedsFromLegacy(), "Id", "Name");
 
+
     }
 }

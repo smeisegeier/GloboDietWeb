@@ -11,7 +11,7 @@ namespace GloboDiet.Models
 {
     public class Interview : _ModelBase
     {
-
+        // CRIT XML serializer
         public DateTime Timestamp { get; set; } = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, 0);
         public int Number { get; set; } = 13;
 

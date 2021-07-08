@@ -39,6 +39,12 @@ namespace GloboDiet.Services
         public SelectList DropdownIngredients { get; set; }
         public SelectList DropdownIngredientGroups { get; set; }
 
+        // Test: Filtered Lists via Knockout
+        public List<Ingredient> ListOfIngredients { get; set; }
+
+
+
+
         // repo service cannot referenced here, for it has a shorter scope
 
         /// <summary>
