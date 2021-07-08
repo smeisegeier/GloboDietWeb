@@ -11,8 +11,10 @@ namespace GloboDiet.Models
 {
     public class Interview : _ModelBase
     {
-        // CRIT XML serializer
+
+
         public DateTime Timestamp { get; set; } = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+        
         public int Number { get; set; } = 13;
 
         public DateTime ReferenceDate { get; set; } = DateTime.Now;
@@ -26,7 +28,7 @@ namespace GloboDiet.Models
         // needed to resolve Label for display
         public virtual Respondent Respondent { get; set; }
 
-        public virtual IList<Meal> Meals { get; set; }
+        public virtual List<Meal> Meals { get; set; }
 
         public bool IsCachedOnly { get; set; } = true;
 
@@ -38,7 +40,18 @@ namespace GloboDiet.Models
             {
                 Number = 13,
                 ReferenceDate = DateTime.Now,
-                Timestamp = DateTime.Now
+                Timestamp = DateTime.Now,
+                InterviewerId=1,
+                LocationId=2,
+                RespondentId=1,
+                Code="011",
+                IsCachedOnly=false,
+                Id=1,
+                Name="why",
+                Description="gfe",
+                CreatedAt = DateTime.Now,
+                Meals = Meal.GetSeedsFromMockup(),
+
             }
         };
 
@@ -73,7 +86,7 @@ namespace GloboDiet.Models
                 ReferenceDate = viewModel.ReferenceDate,
                 Timestamp = viewModel.Timestamp,
                 Meals = new List<Meal>(),
-                IsCachedOnly = viewModel.IsCachedOnly 
+                IsCachedOnly = viewModel.IsCachedOnly
             };
             viewModel.Meals?.ToList().ForEach(item => { model.Meals.Add(item); });
             return model;

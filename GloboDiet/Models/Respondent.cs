@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using GloboDiet.Services;
 using GloboDiet.ViewModels;
 using DextersLabor;
+using System.Xml.Serialization;
+
 namespace GloboDiet.Models
 {
     public enum Gender
@@ -30,8 +32,11 @@ namespace GloboDiet.Models
 
         public int Weight { get; set; } = 80;
 
+        [XmlIgnore]
         [ForeignKey("Interview")]
         public int InterviewId { get; set; }
+
+        [XmlIgnore]
         public virtual Interview Interview { get; set; }
 
         public Respondent() { }
@@ -42,27 +47,22 @@ namespace GloboDiet.Models
         {
             return new List<Respondent>()
                 {
-                    new Respondent() { Name = "Simpson", GivenName = "Meredith", Code="1700025",Height=165, Weight=70, DateOfBirth=DateTimeHelper.GetDateTimeFromString("1970-05-13", "yyyy-MM-dd"), Gender=Gender.Female},
-                    new Respondent() { Name = "lolman", GivenName = "Gary", Code="DA12-B01",Height=182, Weight=98, DateOfBirth=DateTimeHelper.GetDateTimeFromString("1988-11-07", "yyyy-MM-dd"), Gender=Gender.Male}
+                    new Respondent()
+                    {
+                        GivenName="lol",
+                        Gender = GloboDiet.Models.Gender.Female,
+                        DateOfBirth = new DateTime(1980, 5,17),
+                        Height=178,
+                        Weight=80,
+                        InterviewId=1,
+                        Id=1,
+                        Name="xde",
+                        Description="-- desc --",
+                        Code="07",
+                        CreatedAt=DateTime.Now
+                    }
                 };
         }
-
-        //public RespondentCreateEdit ToViewModel(NavigationBar navigationBar, Globals.ProcessMilestone processMilestone) => new RespondentCreateEdit
-        //{
-        //    Id = this.Id,
-        //    GivenName = this.GivenName,
-        //    Age = this.Age,
-        //    Code = this.Code,
-        //    DateOfBirth = this.DateOfBirth,
-        //    Gender = this.Gender,
-        //    Height = this.Height,
-        //    InterviewId = this.InterviewId,
-        //    Name = this.Name,
-        //    Weight = this.Weight,
-            
-        //    NavigationBar = navigationBar,
-        //    CurrentProcessMilestone = processMilestone
-        //};
 
         public static implicit operator Respondent(RespondentCreateEdit viewModel) => new Respondent
         {

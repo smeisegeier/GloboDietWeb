@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace GloboDiet.Models
 {
@@ -19,10 +20,11 @@ namespace GloboDiet.Models
         public int? MealPlaceId { get; set; }
         public virtual MealPlace MealPlace { get; set; }
 
+        [XmlIgnore]
         [ForeignKey(nameof(Interview))]
         public int InterviewId { get; set; }
 
-        public virtual IList<MealElement> MealElements{ get; set; }
+        public virtual List<MealElement> MealElements{ get; set; }
 
         public bool IsCachedOnly { get; set; } = true;
 
@@ -30,18 +32,6 @@ namespace GloboDiet.Models
 
         // ctor for call w/ parent id
         public Meal(int interviewId) { InterviewId = interviewId; }
-
-        //public MealCreateEdit ToViewModel(NavigationBar navigationBar) => new MealCreateEdit
-        //{
-        //    Id = this.Id,
-        //    InterviewId = this.InterviewId,
-        //    MealPlaceId = this.MealPlaceId,
-        //    MealTypeId = this.MealPlaceId,
-        //    StartingHour = this.StartingHour,
-        //    MealElements = this.MealElements,
-        //    NavigationBar = navigationBar
-        //};
-
 
         public static implicit operator Meal(MealCreateEdit viewModel)
         {
@@ -57,6 +47,26 @@ namespace GloboDiet.Models
             };
             viewModel.MealElements?.ToList().ForEach(item => { model.MealElements.Add(item); });
             return model;
+        }
+
+        public static List<Meal> GetSeedsFromMockup()
+        {
+            return new List<Meal>()
+                {
+                    new Meal()
+                    {
+                        StartingHour=8,
+                        MealTypeId=1,
+                        MealPlaceId=5,
+                        InterviewId=1,
+                        Id=1,
+                        Name="xde",
+                        Description="-- desc --",
+                        Code="07",
+                        CreatedAt=DateTime.Now,
+                        MealElements = MealElement.GetSeedsFromMockup(),
+                    }
+                };
         }
     }
 }

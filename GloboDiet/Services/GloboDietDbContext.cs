@@ -64,6 +64,8 @@ namespace GloboDiet.Services
             /*2) Entites */
             if (!Set<Interviewer>().Any()) Set<Interviewer>().AddRange(Interviewer.GetSeedsFromMockup());
             if (!Set<Location>().Any()) Set<Location>().AddRange(Location.GetSeedsFromMockup());
+            if (!Set<Respondent>().Any()) Set<Respondent>().AddRange(Respondent.GetSeedsFromMockup());
+            if (!Set<Interview>().Any()) Set<Interview>().AddRange(Interview.GetSeedsFromMockup());
 
             // Saving is isolated now to prevent FK mismatches
             base.SaveChanges();
@@ -166,6 +168,22 @@ namespace GloboDiet.Services
         }
         public int ItemsGetCount<TEntity>() where TEntity : class, IEntity => Set<TEntity>().Count();
 
+        #endregion
+        #region domain CRUD
+        /// <summary>
+        /// Gets Interview from collection by id, and returns the whole dependant model.
+        /// This is designed around eager loading.
+        /// </summary>
+        /// <param name="id">id of object</param>
+        /// <returns>object tree in collection</returns>
+        public Interview InterviewGetByIdEagerLoading(int id) => Set<Interview>()
+            .Include(i => i.Respondent)
+            .Include(i => i.Meals).ThenInclude(i => i.MealType)
+            .Include(i => i.Meals).ThenInclude(i => i.MealPlace)
+            .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.Ingredient)
+            .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.IngredientGroup)
+            .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.Brandname)
+            .ToList().FirstOrDefault(x => x.Id == id);
         #endregion
     }
 }

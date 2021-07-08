@@ -152,15 +152,12 @@ namespace GloboDiet.Controllers
             return RedirectToAction(nameof(Interview1List));
         }
 
-        public IActionResult Interview1Details(int id) => Json(_context.Set<Interview>()
-            .Include(i => i.Respondent)
-            .Include(i => i.Meals).ThenInclude(i => i.MealType)
-            .Include(i => i.Meals).ThenInclude(i => i.MealPlace)
-            .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.Ingredient)
-            .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.IngredientGroup)
-            .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.Brandname)
-            .ToList().FirstOrDefault(x => x.Id == id)
+        public IActionResult Interview1Details(int id) => Json(_context
             );
+
+        public IActionResult Interview1Xml(int id) => Content(
+            _context.InterviewGetByIdEagerLoading(id)
+            .ToXml());
 
         #endregion
         #region Respondent
