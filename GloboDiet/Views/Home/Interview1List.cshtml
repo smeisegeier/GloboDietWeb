@@ -54,6 +54,7 @@
     Launch demo modal
 </button>
 
+
 <!-- Modal -->
 <div class="modal fade" name="exampleModal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="max-width: 50%;" role="document">
@@ -126,24 +127,31 @@
 
 <!-- This is a *view* - HTML markup that defines the appearance of your UI -->
 <select data-bind=" options: tickets,
-                    optionsCaption: 'Time to choose',                
-                    optionsText: 'label',
-                    value: chosenTicket"></select>
-<button data-bind=" enable: chosenTicket, click: resetTicket" >Clear</button>
+optionsCaption: 'Time to choose',
+optionsText: 'label',
+value: chosenTicket"></select>
+<button data-bind=" enable: chosenTicket, click: resetTicket">Clear</button>
 <p data-bind="with: chosenTicket">
     You have chosen <span data-bind="text: name"></span>/<span data-bind="text: price"></span>
 </p>
 
-<script type="text/javascript">
+<script>
     // Overall viewmodel for this screen, along with initial state
-function ReservationsViewModel()
-{
+    function ReservationsViewModel()
+    {
     this.tickets = [
     {name:"lol", price: 17, label: 'kiloh'},
     {name:"xDE", price: 99, label: 'defff09'}
     ];
     this.chosenTicket = ko.observable();
     this.resetTicket = function() { this.chosenTicket(null) }
-}
-ko.applyBindings(new ReservationsViewModel());
+    }
+    var test = []
+    ko.applyBindings(new ReservationsViewModel());
 </script>
+
+
+<script>
+    new CascadingDropdown("primary", "secondary");
+</script>
+

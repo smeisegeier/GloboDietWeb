@@ -1,0 +1,11 @@
+﻿{
+  "compilerOptions": {
+    "lib": [ "dom", "es2015", "es2015.iterable", "es2015.promise"],
+    "target": "es5", // es5 wird compiliert, ist der aktuelle JS standard
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "outFile": "wwwroot/js/site.js"
+  },                                  
+  "compileOnSave": true,
+  "exclude": [ "node_modules" ]
+}
