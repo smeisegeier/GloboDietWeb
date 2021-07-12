@@ -31,6 +31,12 @@ namespace GloboDiet.ViewModels
         public int? BrandnameId { get; set; }
         public string BrandnameLabel  { get; set; }
 
+        [ForeignKey(nameof(FoodImage))]
+        [Display(Name = "FoodImage")]
+        public int? FoodImageId { get; set; }
+        public string FoodImagePath { get; set; }
+
+
         public int Quantity { get; set; }
 
         public bool IsCachedOnly { get; set; } = true;
@@ -50,8 +56,9 @@ namespace GloboDiet.ViewModels
                 IngredientGroupLabel = model.IngredientGroup is null ? "empty" : model.IngredientGroup.Label,
                 BrandnameId = model.BrandnameId,
                 BrandnameLabel = model.Brandname is null ? "empty" : model.Brandname.Label,
+                FoodImageId = model.FoodImageId,
                 IsCachedOnly = model.IsCachedOnly,
-                ImagePath = model.ImagePath
+                FoodImagePath = model.FoodImage is null ? "lol" : model.FoodImage.IconPath.ToString(),
             };
             return mealElementCreateEdit;
         }

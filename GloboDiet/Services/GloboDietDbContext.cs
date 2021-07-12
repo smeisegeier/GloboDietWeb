@@ -22,12 +22,12 @@ namespace GloboDiet.Services
         {
             _lookupData = lookupData;
 
-            /* setup Audit*/
-            AuditManager.DefaultConfiguration.AutoSavePreAction = (context, audit) =>
-            {
-                (context as GloboDietDbContext).AuditEntries.AddRange(audit.Entries);
-                //base.SaveChanges();
-            };
+            ///* setup Audit*/
+            //AuditManager.DefaultConfiguration.AutoSavePreAction = (context, audit) =>
+            //{
+            //    (context as GloboDietDbContext).AuditEntries.AddRange(audit.Entries);
+            //    //base.SaveChanges();
+            //};
         }
 
         public DbSet<Interview> Interviews { get; set; }
@@ -45,6 +45,7 @@ namespace GloboDiet.Services
         public DbSet<Brandname> Brandnames { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<IngredientGroup> IngredientGroups { get; set; }
+        public DbSet<FoodImage> FoodImages { get; set; }
 
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace GloboDiet.Services
         {
             Database.EnsureCreated();
             /*1) Lookup tables*/
+            if (!Set<FoodImage>().Any()) Set<FoodImage>().AddRange(FoodImage.GetSeedsFromLegacy());
             if (!Set<MealType>().Any()) Set<MealType>().AddRange(MealType.GetSeedsFromLegacy());
             if (!Set<MealPlace>().Any()) Set<MealPlace>().AddRange(MealPlace.GetSeedsFromLegacy());
             if (!Set<Brandname>().Any()) Set<Brandname>().AddRange(Brandname.GetSeedsFromLegacy());
@@ -70,23 +72,25 @@ namespace GloboDiet.Services
             // Saving is isolated now to prevent FK mismatches
             base.SaveChanges();
 
-            /* setup Static selectlists from Lookup */
+            /* setup lists and selectlists from Lookup, these wont change during runtime */
+
+            // TODO is this really good? could be part of repo access
+            _lookupData.ListOfAllIngredients = Set<Ingredient>().ToList();
+            _lookupData.ListOfAllFoodImages = Set<FoodImage>().ToList();
+
             _lookupData.DropdownMealTypes = new SelectList(Set<MealType>().ToList(), "Id", "Name");
             _lookupData.DropdownMealPlaces = new SelectList(Set<MealPlace>().ToList(), "Id", "Name");
             _lookupData.DropdownBrandnames = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
             _lookupData.DropdownIngredients = new SelectList(Set<Ingredient>().ToList(), "Id", "Label");
             _lookupData.DropdownIngredientGroups = new SelectList(Set<IngredientGroup>().ToList(), "Id", "Label");
 
-
-            _lookupData.ListOfIngredients = Set<Ingredient>().ToList();
-
             /* setup misc*/
             _lookupData.SqlConnectionType = EfCoreHelper.GetSqlConnectionType(this);
 
         }
 
-        public DbSet<AuditEntry> AuditEntries { get; set; }
-        public DbSet<AuditEntryProperty> AuditEntryProperties { get; set; }
+        //public DbSet<AuditEntry> AuditEntries { get; set; }
+        //public DbSet<AuditEntryProperty> AuditEntryProperties { get; set; }
 
 
         //public override int SaveChanges()
@@ -107,12 +111,12 @@ namespace GloboDiet.Services
         //}
 
 
-        public void SaveChangesWithAudit()
-        {
-            var audit = new Audit();
-            audit.CreatedBy = "ContentCreator"; //Globals.LoginMitarbeiter?.ToString() ?? "Default";
-            this.SaveChanges(audit);
-        }
+        //public void SaveChangesWithAudit()
+        //{
+        //    var audit = new Audit();
+        //    audit.CreatedBy = "ContentCreator"; //Globals.LoginMitarbeiter?.ToString() ?? "Default";
+        //    this.SaveChanges(audit);
+        //}
 
         ///// <summary>
         ///// Custom configuration for dbcontext here
@@ -136,7 +140,7 @@ namespace GloboDiet.Services
         public int ItemAdd<TEntity>(TEntity entity) where TEntity : class, IEntity
         {
             Set<TEntity>().Add(entity);
-            SaveChangesWithAudit();
+            SaveChanges();
             return entity.Id;
         }
 
@@ -144,7 +148,7 @@ namespace GloboDiet.Services
         {
             Set<TEntity>().Update(entity);
             //Entry(entity).State = EntityState.Modified;
-            SaveChangesWithAudit();
+            SaveChanges();
             return entity.Id;
         }
         public int ItemAddOrUpdate<TEntity>(TEntity entity) where TEntity : class, IEntity
@@ -157,33 +161,34 @@ namespace GloboDiet.Services
             {
                 Set<TEntity>().Add(entity);
             }
-            SaveChangesWithAudit();
+            SaveChanges();
             return entity.Id;
         }
 
         public void ItemDelete<TEntity>(TEntity entity) where TEntity : class, IEntity
         {
             Set<TEntity>().Remove(entity);
-            SaveChangesWithAudit();
+            SaveChanges();
         }
         public int ItemsGetCount<TEntity>() where TEntity : class, IEntity => Set<TEntity>().Count();
 
         #endregion
         #region domain CRUD
-        /// <summary>
-        /// Gets Interview from collection by id, and returns the whole dependant model.
-        /// This is designed around eager loading.
-        /// </summary>
-        /// <param name="id">id of object</param>
-        /// <returns>object tree in collection</returns>
-        public Interview InterviewGetByIdEagerLoading(int id) => Set<Interview>()
-            .Include(i => i.Respondent)
-            .Include(i => i.Meals).ThenInclude(i => i.MealType)
-            .Include(i => i.Meals).ThenInclude(i => i.MealPlace)
-            .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.Ingredient)
-            .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.IngredientGroup)
-            .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.Brandname)
-            .ToList().FirstOrDefault(x => x.Id == id);
+        ///// <summary>
+        ///// Gets Interview from collection by id, and returns the whole dependant model.
+        ///// This is designed around eager loading.
+        ///// </summary>
+        ///// <param name="id">id of object</param>
+        ///// <returns>object tree in collection</returns>
+        //public Interview InterviewGetByIdEagerLoading(int id) => Set<Interview>()
+        //    .Include(i => i.Respondent)
+        //    .Include(i => i.Meals).ThenInclude(i => i.MealType)
+        //    .Include(i => i.Meals).ThenInclude(i => i.MealPlace)
+        //    .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.Ingredient)
+        //    .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.IngredientGroup)
+        //    .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.Brandname)
+        //    .Include(i => i.Meals).ThenInclude(i => i.MealElements).ThenInclude(i => i.FoodImage)
+        //    .ToList().FirstOrDefault(x => x.Id == id);
         #endregion
     }
 }

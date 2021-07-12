@@ -54,19 +54,21 @@ namespace GloboDiet.Controllers
             // 2) cache interview to register potential new Respondent
             _context.ItemUpdate<MealElement>(mealElement);
 
-            var fileArray = FileHelper.GetFileInfoFromDirectory(Path.Combine(_webHostEnvironment.WebRootPath, "images"));
-            var imgList = new List<Image>();
-            fileArray?.ToList().ForEach(src =>
-            {
-                imgList.Add(new Image("/images/" + src.Name));
-            });
-            return View(new ImageSelectorCreateEdit().Init(imgList, mealElement.Id, getNewNavigationBar()));
+            //var fileArray = FileHelper.GetFileInfoFromDirectory(Path.Combine(_webHostEnvironment.WebRootPath, "images"));
+            //var imgList = new List<Image>();
+            //fileArray?.ToList().ForEach(src =>
+            //{
+            //    imgList.Add(new Image("/images/" + src.Name));
+            //});
+            //return View(new ImageSelectorCreateEdit().Init(imgList, mealElement.Id, getNewNavigationBar()));
+            return View(new ImageSelectorCreateEdit().Init(_lookupData.ListOfAllFoodImages, mealElement.Id, getNewNavigationBar()));
+
         }
         [HttpPost]
-        public IActionResult ImageSelector4Save(string submit, ImageSelectorCreateEdit viewModel)
+        public IActionResult ImageSelector4Save(int submit, ImageSelectorCreateEdit viewModel)
         {
             var mealElement = _context.ItemGetById<MealElement>(viewModel.MealElementId);
-            mealElement.ImagePath = submit;
+            mealElement.FoodImageId = submit;
             _context.ItemUpdate<MealElement>(mealElement);
             return RedirectToAction(nameof(MealElement3Edit), new { id = viewModel.MealElementId });
         }
@@ -85,13 +87,14 @@ namespace GloboDiet.Controllers
         public IActionResult Interview1Edit(int id)
         {
             //var interviewNewOrFromDb = _context.ItemGetById<Interview>(id);
-            var interviewNewOrFromDb = _context.Set<Interview>()
-                .Include(i => i.Respondent)
-                // inlude also deeper level of model
-                .Include(i => i.Meals).ThenInclude(i => i.MealPlace)
-                .Include(i => i.Meals).ThenInclude(i => i.MealType)
-                .ToList()
-                .FirstOrDefault(x => x.Id == id);
+            //var interviewNewOrFromDb = _context.Set<Interview>()
+            //    .Include(i => i.Respondent)
+            //    // inlude also deeper level of model
+            //    .Include(i => i.Meals).ThenInclude(i => i.MealPlace)
+            //    .Include(i => i.Meals).ThenInclude(i => i.MealType)
+            //    .ToList()
+            //    .FirstOrDefault(x => x.Id == id);
+            var interviewNewOrFromDb = _context.ItemGetById<Interview>(id);
 
             if (interviewNewOrFromDb is not Interview)
             {
@@ -152,11 +155,10 @@ namespace GloboDiet.Controllers
             return RedirectToAction(nameof(Interview1List));
         }
 
-        public IActionResult Interview1Details(int id) => Json(_context
-            );
+        public IActionResult Interview1Details(int id) => Json(_context.ItemGetById<Interview>(id));
 
         public IActionResult Interview1Xml(int id) => Content(
-            _context.InterviewGetByIdEagerLoading(id)
+            _context.ItemGetById<Interview>(id)
             .ToXml());
 
         #endregion
@@ -214,12 +216,12 @@ namespace GloboDiet.Controllers
         [HttpGet]
         public IActionResult Meal2Edit(int id)
         {
-            //MealCreateEdit viewModel = _context.ItemGetById<Meal>(id);
-            MealCreateEdit viewModel = _context.Set<Meal>()
-                .Include(i => i.MealElements)
-                .ThenInclude(i => i.Ingredient)
-                .ToList()
-                .FirstOrDefault(x => x.Id == id);
+            MealCreateEdit viewModel = _context.ItemGetById<Meal>(id);
+            //MealCreateEdit viewModel = _context.Set<Meal>()
+            //    .Include(i => i.MealElements)
+            //    .ThenInclude(i => i.Ingredient)
+            //    .ToList()
+            //    .FirstOrDefault(x => x.Id == id);
 
             viewModel.Init(getNewNavigationBar());
             return View(viewModel);
@@ -241,14 +243,7 @@ namespace GloboDiet.Controllers
             return RedirectToAction(nameof(Interview1Edit), new { id = meal.InterviewId });
         }
 
-        public IActionResult Meal2Details(int id) => Json(_context.Set<Meal>()
-            .Include(i => i.MealType)
-            .Include(i => i.MealPlace)
-            .Include(i => i.MealElements).ThenInclude(i => i.Ingredient)
-            .Include(i => i.MealElements).ThenInclude(i => i.IngredientGroup)
-            .Include(i => i.MealElements).ThenInclude(i => i.Brandname)
-            .ToList().FirstOrDefault(x => x.Id == id)
-            );
+        public IActionResult Meal2Details(int id) => Json(_context.ItemGetById<Meal>(id));
 
         public IActionResult Meal2Delete(int id)
         {
@@ -308,11 +303,12 @@ namespace GloboDiet.Controllers
             return RedirectToAction(nameof(Meal2Edit), new { id = mealElement.MealId });
         }
         public IActionResult MealElement3Details(int id) => Json(
-            _context.Set<MealElement>()
-                .Include(i => i.Ingredient)
-                .Include(i => i.IngredientGroup)
-                .Include(i => i.Brandname)
-                .ToList().FirstOrDefault(x => x.Id == id)
+            _context.ItemGetById<MealElement>(id)
+            //_context.Set<MealElement>()
+            //    .Include(i => i.Ingredient)
+            //    .Include(i => i.IngredientGroup)
+            //    .Include(i => i.Brandname)
+            //    .ToList().FirstOrDefault(x => x.Id == id)
             );
 
 

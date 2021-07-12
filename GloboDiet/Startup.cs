@@ -87,7 +87,7 @@ namespace GloboDiet
 #endif
 #if ENV_DEVMEMORY
             services.AddDbContext<GloboDietDbContext>(options => options
-                //.UseLazyLoadingProxies()
+                .UseLazyLoadingProxies()
                 .UseInMemoryDatabase("Test"));
             services.AddDbContext<MyIdentityDbContext>(options => options
                 .UseInMemoryDatabase("User"));

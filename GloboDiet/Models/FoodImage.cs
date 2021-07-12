@@ -9,11 +9,11 @@ namespace GloboDiet.Models
     {
         public Uri IconPath { get; set; }
 
-        public List<FoodImage> GetSeedsFromMockup() => new List<FoodImage>()
+        public static List<FoodImage> GetSeedsFromLegacy() => new List<FoodImage>()
         {
-            new FoodImage() {Id=1, IconPath = new Uri("/images/apple1.png", UriKind.Relative)},
-            new FoodImage() {Id=2, IconPath = new Uri("/images/apple2.png", UriKind.Relative)},
-            new FoodImage() {Id=3, IconPath = new Uri("/images/fhir.png", UriKind.Relative)}
+            new FoodImage() {Id=1, Code="apple_deliciuos", IconPath = new Uri("/images/apple1.png", UriKind.Relative)},
+            new FoodImage() {Id=2, Code="apple_red", IconPath = new Uri("/images/apple2.png", UriKind.Relative)},
+            new FoodImage() {Id=3, Code="hotmeal", IconPath = new Uri("/images/fhir.jpg", UriKind.Relative)}
         };
     }
 }

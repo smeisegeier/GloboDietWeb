@@ -17,19 +17,19 @@ namespace GloboDiet.Models
 
         // Ingredient (down)
         [XmlIgnore]
-        [ForeignKey(nameof(Ingredient))]
+        [ForeignKey(nameof(GloboDiet.Models.Ingredient))]
         public int? IngredientId { get; set; }
         public virtual Ingredient Ingredient { get; set; }
 
-        // Group
+        // Group (down)
         [XmlIgnore]
-        [ForeignKey(nameof(IngredientGroup))]
+        [ForeignKey(nameof(GloboDiet.Models.IngredientGroup))]
         public int? IngredientGroupId { get; set; }
         public virtual IngredientGroup IngredientGroup { get; set; }
 
-        // Brandname
+        // Brandname (down)
         [XmlIgnore]
-        [ForeignKey(nameof(Brandname))]
+        [ForeignKey(nameof(GloboDiet.Models.Brandname))]
         public int? BrandnameId { get; set; }
         public virtual Brandname Brandname { get; set; }
 
@@ -37,8 +37,14 @@ namespace GloboDiet.Models
 
         public bool IsCachedOnly { get; set; } = true;
 
-        // TODO create object out of image
-        public string ImagePath { get; set; }
+        //public string ImagePath { get; set; }
+
+        // FoodImage (down)
+        [XmlIgnore]
+        [ForeignKey(nameof(GloboDiet.Models.FoodImage))]
+        public int? FoodImageId { get; set; }
+        public virtual FoodImage FoodImage { get; set; }
+
 
         public MealElement() { }
         public MealElement(int mealId)
@@ -57,8 +63,9 @@ namespace GloboDiet.Models
                 IngredientId = viewModel.IngredientId,
                 IngredientGroupId = viewModel.IngredientGroupId,
                 BrandnameId = viewModel.BrandnameId,
+                FoodImageId = viewModel.FoodImageId,
                 IsCachedOnly = viewModel.IsCachedOnly,
-                ImagePath = viewModel.ImagePath
+                //ImagePath = viewModel.ImagePath
             };
             return mealElement;
         }
@@ -75,7 +82,9 @@ namespace GloboDiet.Models
                         BrandnameId=2,
                         Quantity=1,
                         Id=1,
-                        ImagePath="/images/apple1.png",
+                        //ImagePath="/images/apple1.png",
+                        FoodImageId = 1,
+                        //FoodImage = FoodImage.GetSeedsFromLegacy()[0],
                         Name="xde",
                         Description="-- desc --",
                         Code="07",

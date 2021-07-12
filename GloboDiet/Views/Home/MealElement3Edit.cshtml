@@ -3,7 +3,7 @@
 @using Microsoft.AspNetCore.Mvc.Rendering;
 
 @{
-    var DropdownIngredientsFiltered = new SelectList(LookupData.ListOfIngredients.Where(x => x.Group == "03"), "Id", "Label"); 
+    var DropdownIngredientsFiltered = new SelectList(LookupData.ListOfAllIngredients.Where(x => x.Group == "03"), "Id", "Label"); 
 }
 
 <h4>MealElement</h4>
@@ -54,8 +54,8 @@
 
     <div class="form-group">
         <label class="control-label">image</label>
-        <img src="@Model.ImagePath" width="40" height="40" />
-        <input asp-for="ImagePath" hidden />
+        <img src="@Model.FoodImagePath" width="40" height="40" />
+        <input asp-for="FoodImageId" hidden />
         <input type="submit" value="+" name="submit" class="btn btn-info" formaction="/Home/ImageSelector4Create" />
     </div>
 

@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 
 namespace GloboDiet.ViewModels
 {
+    // TODO remove
+    [Obsolete]
     public class Image
     {
         public string Path { get; set; }

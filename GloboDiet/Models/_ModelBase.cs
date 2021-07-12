@@ -16,8 +16,8 @@ namespace GloboDiet.Models
     public abstract class _ModelBase : IEntity
     {
         public int Id { get; set; }
-        public string Name { get; set; } = "NotSet";
-        public string Description { get; set; } = "NotSet";
+        public string Name { get; set; } = "NameNotSet";
+        public string Description { get; set; } = "DescriptionNotSet";
 
         // HACK deviant from ToString :o
         public string Label => $"[{Code} | {Name}]";

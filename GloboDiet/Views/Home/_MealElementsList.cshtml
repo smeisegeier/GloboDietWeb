@@ -14,7 +14,7 @@
                 @Html.DisplayNameFor(model => model.MealElements.First().IngredientId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MealElements.First().ImagePath)
+                @Html.DisplayNameFor(model => model.MealElements.First().FoodImage)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.MealElements.First().Quantity)
@@ -36,7 +36,7 @@
                 @Html.DisplayFor(modelItem => item.IngredientLabel)
             </td>
             <td>
-                <img src="@item.ImagePath" width="30" height="30"></img>
+                <img src="@item.FoodImagePath" width="30" height="30"></img>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Quantity)
