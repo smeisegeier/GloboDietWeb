@@ -86,14 +86,6 @@ namespace GloboDiet.Controllers
         [HttpGet]
         public IActionResult Interview1Edit(int id)
         {
-            //var interviewNewOrFromDb = _context.ItemGetById<Interview>(id);
-            //var interviewNewOrFromDb = _context.Set<Interview>()
-            //    .Include(i => i.Respondent)
-            //    // inlude also deeper level of model
-            //    .Include(i => i.Meals).ThenInclude(i => i.MealPlace)
-            //    .Include(i => i.Meals).ThenInclude(i => i.MealType)
-            //    .ToList()
-            //    .FirstOrDefault(x => x.Id == id);
             var interviewNewOrFromDb = _context.ItemGetById<Interview>(id);
 
             if (interviewNewOrFromDb is not Interview)
@@ -119,7 +111,7 @@ namespace GloboDiet.Controllers
         {
             // cancel out immediately
             Interview interview = interviewCreateEdit;
-            if (submit == "Cancel" && interview.IsCachedOnly)
+            if (submit == Globals.CANCEL && interview.IsCachedOnly)
             {
                 _context.ItemDelete<Interview>(interview);
             }
@@ -139,6 +131,8 @@ namespace GloboDiet.Controllers
                 // now save
                 interview.IsCachedOnly = false;
                 _context.ItemUpdate<Interview>(interview);
+                if (submit == "Stay")
+                    return RedirectToAction(nameof(Interview1Edit), new { id = interviewCreateEdit.Id });
             }
             return RedirectToAction(nameof(Index));
         }
@@ -156,10 +150,6 @@ namespace GloboDiet.Controllers
         }
 
         public IActionResult Interview1Details(int id) => Json(_context.ItemGetById<Interview>(id));
-
-        public IActionResult Interview1Xml(int id) => Content(
-            _context.ItemGetById<Interview>(id)
-            .ToXml());
 
         #endregion
         #region Respondent

@@ -5,7 +5,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace GloboDiet.Models
 {
@@ -25,15 +24,12 @@ namespace GloboDiet.Models
         [Required(ErrorMessage = "Enter code")]
         public string Code { get; set; } = "00";
 
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
-        public DateTime? UpdatedAt { get; set; }
+        public DateTime CreatedAt { get; private set; } = DateTime.Now;
+        public DateTime? UpdatedAt { get; private set; }
 
-        // DOC private set
-        public Guid Guid { get; set; } = Guid.NewGuid();
+        public Guid Guid { get; private set; } = Guid.NewGuid();
  
         public override string ToString() => $"[{Id} | {Name}]";
-
-        public string ToXml() => Globals.ToXml(this);
 
     }
 }

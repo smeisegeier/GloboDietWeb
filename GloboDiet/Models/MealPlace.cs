@@ -7,6 +7,7 @@ using GloboDiet.Legacy.GloboDietDb;
 using GloboDiet.Services;
 using GloboDiet.Extensions;
 using GloboDiet.ViewModels;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GloboDiet.Models
 {
@@ -46,6 +47,8 @@ namespace GloboDiet.Models
             Name = viewModel.Name,
             Code = viewModel.Code
         };
+        public static SelectList Dropdown { get; set; }
+
 
     }
 }

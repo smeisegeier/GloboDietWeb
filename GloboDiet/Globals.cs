@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 using System.IO;
 
 namespace GloboDiet
@@ -30,26 +29,15 @@ namespace GloboDiet
 
             [Description("Meals created")]
             _3_MEALS = 3
-
         }
 
-        /// <summary>
-        /// for displaying all possible milestones, is built onetime from enum
-        /// </summary>
-        //public static IEnumerable<KeyValuePair<ProcessMilestone, string>> StaticListOfProcessMilestones { get; } = EnumHelper.GetListWithDescription<ProcessMilestone>();
+        public static readonly string CANCEL = "Cancel";
 
-        //public static SelectList StaticListOfMealTypes { get; set; }
-        //public static SelectList StaticListOfMealPlaces { get; set; } 
-        //public static SelectList StaticListOfBrandnames { get; set; }
-
-        //public static SelectList StaticListOfEssins { get; } = new SelectList(Essin.GetSeedsFromLegacy(), "Id", "Name");
-
-        public static string ToXml(object obj, string root = null)
+        public enum ButtonAction
         {
-            XmlSerializer xmlSerializer = new(obj.GetType(), new XmlRootAttribute(root));
-            StringWriter sw = new();
-            xmlSerializer.Serialize(sw, obj);
-            return sw.ToString();
+            SAVE_STAY,
+            SAVE_LEAVE,
+            CANCEL_LEAVE
         }
     }
 }

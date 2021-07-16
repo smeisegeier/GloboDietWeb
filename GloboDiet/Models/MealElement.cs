@@ -4,31 +4,26 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace GloboDiet.Models
 {
     public class MealElement : _ModelBase
     {
         // Meal (up)
-        [XmlIgnore]
         [ForeignKey(nameof(Meal))]
         public int MealId { get; set; }
 
         // Ingredient (down)
-        [XmlIgnore]
         [ForeignKey(nameof(GloboDiet.Models.Ingredient))]
         public int? IngredientId { get; set; }
         public virtual Ingredient Ingredient { get; set; }
 
         // Group (down)
-        [XmlIgnore]
         [ForeignKey(nameof(GloboDiet.Models.IngredientGroup))]
         public int? IngredientGroupId { get; set; }
         public virtual IngredientGroup IngredientGroup { get; set; }
 
         // Brandname (down)
-        [XmlIgnore]
         [ForeignKey(nameof(GloboDiet.Models.Brandname))]
         public int? BrandnameId { get; set; }
         public virtual Brandname Brandname { get; set; }
@@ -40,7 +35,6 @@ namespace GloboDiet.Models
         //public string ImagePath { get; set; }
 
         // FoodImage (down)
-        [XmlIgnore]
         [ForeignKey(nameof(GloboDiet.Models.FoodImage))]
         public int? FoodImageId { get; set; }
         public virtual FoodImage FoodImage { get; set; }

@@ -1,4 +1,5 @@
 ﻿using GloboDiet.Legacy.GloboDietDb;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,5 +26,7 @@ namespace GloboDiet.Models
             }
             return newList.OrderBy(x => x.Name);
         }
+
+        public static SelectList Dropdown { get; set; }
     }
 }

@@ -33,11 +33,7 @@ namespace GloboDiet.Services
         /// </summary>
         public IEnumerable<KeyValuePair<Globals.ProcessMilestone, string>> StaticListOfProcessMilestones { get; } = EnumHelper.GetListWithDescription<Globals.ProcessMilestone>();
 
-        public SelectList DropdownMealTypes { get; set; }
-        public SelectList DropdownMealPlaces { get; set; }
-        public SelectList DropdownBrandnames { get; set; }
-        public SelectList DropdownIngredients { get; set; }
-        public SelectList DropdownIngredientGroups { get; set; }
+
 
         public List<Ingredient> ListOfAllIngredients { get; set; }
         public List<FoodImage> ListOfAllFoodImages { get; set; }

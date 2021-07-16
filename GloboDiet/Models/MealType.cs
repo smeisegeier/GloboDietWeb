@@ -1,10 +1,7 @@
 ﻿using GloboDiet.Legacy.GloboDietDb;
 using GloboDiet.ViewModels;
-using System;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace GloboDiet.Models
 {
@@ -34,5 +31,7 @@ namespace GloboDiet.Models
             Description = viewModel.Description,
             Code = viewModel.Code
         };
+
+        public static SelectList Dropdown { get; set; }
     }
 }

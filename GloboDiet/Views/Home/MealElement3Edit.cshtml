@@ -1,7 +1,7 @@
 ﻿@model GloboDiet.ViewModels.MealElementCreateEdit
 @inject GloboDiet.Services.LookupData LookupData
-@using Microsoft.AspNetCore.Mvc.Rendering;
-
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using GloboDiet.Models
 @{
     var DropdownIngredientsFiltered = new SelectList(LookupData.ListOfAllIngredients.Where(x => x.Group == "03"), "Id", "Label"); 
 }
@@ -29,7 +29,7 @@
 
     <div class="form-group">
         <label asp-for="IngredientGroupId" class="control-label"></label>
-        <select asp-for="IngredientGroupId" id="groups" class="js-example-basic-single" style="width: 50%" asp-items=@LookupData.DropdownIngredientGroups autofocus>
+        <select asp-for="IngredientGroupId" id="groups" class="js-example-basic-single" style="width: 50%" asp-items=@IngredientGroup.Dropdown autofocus>
             <option selected disabled value="">Please select</option>
         </select>
         <span asp-validation-for="IngredientGroupId" class="text-danger"></span>
@@ -46,7 +46,7 @@
 
     <div class="form-group">
         <label asp-for="BrandnameId" class="control-label"></label>
-        <select asp-for="BrandnameId" id="brandnames" class="js-example-basic-single" style="width: 50%" asp-items=@LookupData.DropdownBrandnames autofocus>
+        <select asp-for="BrandnameId" id="brandnames" class="js-example-basic-single" style="width: 50%" asp-items=@Brandname.Dropdown autofocus>
             <option selected disabled value="">Please select</option>
         </select>
         <span asp-validation-for="BrandnameId" class="text-danger"></span>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using GloboDiet.Services;
 using GloboDiet.ViewModels;
 using DextersLabor;
-using System.Xml.Serialization;
+
 
 namespace GloboDiet.Models
 {
@@ -32,11 +32,9 @@ namespace GloboDiet.Models
 
         public int Weight { get; set; } = 80;
 
-        [XmlIgnore]
         [ForeignKey("Interview")]
         public int InterviewId { get; set; }
 
-        [XmlIgnore]
         public virtual Interview Interview { get; set; }
 
         public Respondent() { }

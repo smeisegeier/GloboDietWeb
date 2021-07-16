@@ -78,11 +78,11 @@ namespace GloboDiet.Services
             _lookupData.ListOfAllIngredients = Set<Ingredient>().ToList();
             _lookupData.ListOfAllFoodImages = Set<FoodImage>().ToList();
 
-            _lookupData.DropdownMealTypes = new SelectList(Set<MealType>().ToList(), "Id", "Name");
-            _lookupData.DropdownMealPlaces = new SelectList(Set<MealPlace>().ToList(), "Id", "Name");
-            _lookupData.DropdownBrandnames = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
-            _lookupData.DropdownIngredients = new SelectList(Set<Ingredient>().ToList(), "Id", "Label");
-            _lookupData.DropdownIngredientGroups = new SelectList(Set<IngredientGroup>().ToList(), "Id", "Label");
+            MealType.Dropdown = new SelectList(Set<MealType>().ToList(), "Id", "Name");
+            MealPlace.Dropdown = new SelectList(Set<MealPlace>().ToList(), "Id", "Name");
+            Brandname.Dropdown = new SelectList(Set<Brandname>().ToList(), "Id", "Name");
+            Ingredient.Dropdown = new SelectList(Set<Ingredient>().ToList(), "Id", "Label");
+            IngredientGroup.Dropdown = new SelectList(Set<IngredientGroup>().ToList(), "Id", "Label");
 
             /* setup misc*/
             _lookupData.SqlConnectionType = EfCoreHelper.GetSqlConnectionType(this);

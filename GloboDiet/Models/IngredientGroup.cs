@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GloboDiet.Legacy.GloboDietDb;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GloboDiet.Models
 {
@@ -26,6 +27,8 @@ namespace GloboDiet.Models
             });
             return newList.OrderBy(o => o.Code);
         }
+
+        public static SelectList Dropdown { get; set; }
     }
 
 }

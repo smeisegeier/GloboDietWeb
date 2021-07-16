@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+
 
 namespace GloboDiet.Models
 {
@@ -20,7 +19,6 @@ namespace GloboDiet.Models
         public int? MealPlaceId { get; set; }
         public virtual MealPlace MealPlace { get; set; }
 
-        [XmlIgnore]
         [ForeignKey(nameof(Interview))]
         public int InterviewId { get; set; }
 
