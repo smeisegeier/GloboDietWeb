@@ -82,7 +82,7 @@ namespace GloboDiet.Controllers
             var newId = _context.ItemAdd<Interview>(new Interview());
             return RedirectToAction(nameof(Interview1Edit), new { id = newId });
         }
-
+        // CRIT cancel out in the tree is still buggy :o
         [HttpGet]
         public IActionResult Interview1Edit(int id)
         {

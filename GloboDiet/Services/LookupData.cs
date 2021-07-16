@@ -16,17 +16,6 @@ namespace GloboDiet.Services
     /// </summary>
     public class LookupData
     {
-        //public enum ProcessMilestone
-        //{
-        //    [Description("Interview started")]
-        //    _1_INTERVIEW = 1,
-
-        //    [Description("Respondent created")]
-        //    _2_RESPONDENT = 2,
-
-        //    [Description("Meals created")]
-        //    _3_MEALS = 3
-        //}
 
         /// <summary>
         /// for displaying all possible milestones, is built onetime from enum

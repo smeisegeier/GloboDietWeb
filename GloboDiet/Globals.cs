@@ -36,8 +36,13 @@ namespace GloboDiet
         /// </summary>
         public enum SubmitActionOKCancel
         {
+            [Description("Save")]
             OK_STAY = 1,
+
+            [Description("Save & Return")]
             OK_LEAVE = 2,
+
+            [Description("Cancel & Return")]
             CANCEL_LEAVE = 3
         }
     }
