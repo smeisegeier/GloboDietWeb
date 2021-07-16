@@ -56,8 +56,7 @@ namespace GloboDiet.Models
                         Id=1,
                         Name="xde",
                         Description="-- desc --",
-                        Code="07",
-                        CreatedAt=DateTime.Now
+                        Code="07"
                     }
                 };
         }

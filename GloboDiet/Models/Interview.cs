@@ -49,8 +49,7 @@ namespace GloboDiet.Models
                 Id=1,
                 Name="why",
                 Description="gfe",
-                CreatedAt = DateTime.Now,
-                Meals = Meal.GetSeedsFromMockup(),
+                Meals = Meal.GetSeedsFromMockup()
 
             }
         };

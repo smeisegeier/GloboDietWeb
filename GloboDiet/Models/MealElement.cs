@@ -81,8 +81,7 @@ namespace GloboDiet.Models
                         //FoodImage = FoodImage.GetSeedsFromLegacy()[0],
                         Name="xde",
                         Description="-- desc --",
-                        Code="07",
-                        CreatedAt=DateTime.Now
+                        Code="07"
                     }
                 };
         }

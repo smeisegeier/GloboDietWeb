@@ -111,7 +111,7 @@ namespace GloboDiet.Controllers
         {
             // cancel out immediately
             Interview interview = interviewCreateEdit;
-            if (submit == Globals.CANCEL && interview.IsCachedOnly)
+            if (submit == Globals.SubmitActionOKCancel.CANCEL_LEAVE.ToString() && interview.IsCachedOnly)
             {
                 _context.ItemDelete<Interview>(interview);
             }
@@ -131,7 +131,7 @@ namespace GloboDiet.Controllers
                 // now save
                 interview.IsCachedOnly = false;
                 _context.ItemUpdate<Interview>(interview);
-                if (submit == "Stay")
+                if (submit == Globals.SubmitActionOKCancel.OK_STAY.ToString())
                     return RedirectToAction(nameof(Interview1Edit), new { id = interviewCreateEdit.Id });
             }
             return RedirectToAction(nameof(Index));
@@ -179,7 +179,7 @@ namespace GloboDiet.Controllers
         {
             Respondent respondent = respondentCreateEdit;
             // special case: cancel -> no db operation
-            if (submit != "Cancel")
+            if (submit != Globals.SubmitActionOKCancel.CANCEL_LEAVE.ToString())
             {
                 _context.ItemUpdate<Respondent>(respondent);
             }
@@ -221,7 +221,7 @@ namespace GloboDiet.Controllers
         public IActionResult Meal2Edit(MealCreateEdit mealCreateEdit, string submit)
         {
             Meal meal = mealCreateEdit;
-            if (submit == "Cancel" && meal.IsCachedOnly)
+            if (submit == Globals.SubmitActionOKCancel.CANCEL_LEAVE.ToString() && meal.IsCachedOnly)
             {
                 _context.ItemDelete<Meal>(meal);
             }
@@ -274,7 +274,7 @@ namespace GloboDiet.Controllers
         public IActionResult MealElement3Edit(MealElementCreateEdit viewModel, string submit)
         {
             MealElement model = viewModel;
-            if (submit == "Cancel" && model.IsCachedOnly)
+            if (submit == Globals.SubmitActionOKCancel.CANCEL_LEAVE.ToString() && model.IsCachedOnly)
             {
                 _context.ItemDelete<MealElement>(model);
             }

@@ -61,7 +61,6 @@ namespace GloboDiet.Models
                         Name="xde",
                         Description="-- desc --",
                         Code="07",
-                        CreatedAt=DateTime.Now,
                         MealElements = MealElement.GetSeedsFromMockup(),
                     }
                 };

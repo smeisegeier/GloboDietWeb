@@ -31,13 +31,14 @@ namespace GloboDiet
             _3_MEALS = 3
         }
 
-        public static readonly string CANCEL = "Cancel";
-
-        public enum ButtonAction
+        /// <summary>
+        /// Enums all options for corresponding OKCancel Buttons
+        /// </summary>
+        public enum SubmitActionOKCancel
         {
-            SAVE_STAY,
-            SAVE_LEAVE,
-            CANCEL_LEAVE
+            OK_STAY = 1,
+            OK_LEAVE = 2,
+            CANCEL_LEAVE = 3
         }
     }
 }
