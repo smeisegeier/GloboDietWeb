@@ -1,9 +1,9 @@
 //#define SESSION
 
-//#define ENV_DEVMEMORY
+#define ENV_DEVMEMORY
 //#define ENV_DEVLOCAL
 //#define ENV_RKI
-#define ENV_AZURE
+// #define ENV_AZURE
 
 /*
  Update-Database -Context GloboDietDbContext
@@ -58,11 +58,11 @@ namespace GloboDiet
             #region ID
             services.AddIdentity<User, IdentityRole>(config =>
             {
-               config.Password.RequiredLength = 3;
-               config.Password.RequireDigit = false;
-               config.Password.RequireLowercase = false;
-               config.Password.RequireUppercase = false;
-               config.Password.RequireNonAlphanumeric = false;
+                config.Password.RequiredLength = 3;
+                config.Password.RequireDigit = false;
+                config.Password.RequireLowercase = false;
+                config.Password.RequireUppercase = false;
+                config.Password.RequireNonAlphanumeric = false;
             })
                 .AddEntityFrameworkStores<MyIdentityDbContext>()
                 .AddDefaultTokenProviders();
@@ -98,7 +98,7 @@ namespace GloboDiet
 
             services.AddScoped(typeof(IRepositoryNew<>), typeof(RepositoryNew<>));
             services.AddSingleton<LookupData>();
-        #endregion
+            #endregion
 
             #region session
 #if SESSION
