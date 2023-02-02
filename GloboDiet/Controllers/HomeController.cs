@@ -56,17 +56,17 @@ namespace GloboDiet.Controllers
             return RedirectToActionPermanent(nameof(Interview1List));
         }
 
-        //[HttpGet]
-        //public IActionResult ImageSelector()
-        //{
-        //    var fileArray = FileHelper.GetFileInfoFromDirectory(Path.Combine(_webHostEnvironment.WebRootPath,"images"));
-        //    var imgList = new List<Image>();
-        //    fileArray?.ToList().ForEach(src =>
-        //        {
-        //            imgList.Add(new Image("/images/"+ src.Name));
-        //        });
-        //    return View(new ImageSelector().Init(imgList, getNewNavigationBar()));
-        //}
+        [HttpGet]
+        public IActionResult ImageSelector()
+        {
+            var fileArray = FileHelper.GetFileInfoFromDirectory(Path.Combine(_webHostEnvironment.WebRootPath, "images"));
+            var imgList = new List<Image>();
+            fileArray?.ToList().ForEach(src =>
+                {
+                    imgList.Add(new Image("/images/" + src.Name));
+                });
+            return View(new ImageSelector().Init(imgList, getNewNavigationBar()));
+        }
 
         [HttpPost]
         public IActionResult ImageSelector4Create(MealElementCreateEdit mealElementCreateEdit)
@@ -89,7 +89,7 @@ namespace GloboDiet.Controllers
             var mealElement = _repoMealElement.ItemGetById(viewModel.MealElementId);
             mealElement.ImagePath = submit;
             _repoMealElement.ItemUpdate(mealElement);
-            return RedirectToAction(nameof(MealElement3Edit), new { id = viewModel.MealElementId});
+            return RedirectToAction(nameof(MealElement3Edit), new { id = viewModel.MealElementId });
         }
 
 
