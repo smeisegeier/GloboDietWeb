@@ -18,7 +18,7 @@ namespace GloboDiet.Legacy.GloboDietDb
 
         public static List<Anthrop> GetAnthro()
         {
-            string s = System.IO.File.ReadAllText("Legacy/GloboDietDb/Anthrop.json");
+            string s = System.IO.File.ReadAllText("Legacy/Anthrop.json");
             return JsonConvert.DeserializeObject<List<Anthrop>>(s);
         }
     }
