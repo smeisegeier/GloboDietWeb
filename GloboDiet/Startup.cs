@@ -1,9 +1,9 @@
 //#define SESSION
 
-#define ENV_DEVMEMORY
+// #define ENV_DEVMEMORY
 //#define ENV_DEVLOCAL
 //#define ENV_RKI
-// #define ENV_AZURE
+#define ENV_AZURE
 
 /*
  Update-Database -Context GloboDietDbContext
@@ -69,10 +69,12 @@ namespace GloboDiet
             #endregion
 
             #region services
-            //services.AddDbContext<GloboDietDbContext>(options => options
-            //    .UseLazyLoadingProxies()
-            //    .UseSqlServer(Configuration.GetConnectionString("db"))
-            //);
+            // retrieve secrets 
+            var config = new ConfigurationBuilder()
+                .AddUserSecrets<Program>()
+                .Build();
+            var GloboDietWebUser_pw = config["GloboDietWebUser_pw"];
+            var UserManagerUser_pw = config["UserManagerUser_pw"];
 #if ENV_DEVLOCAL
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
@@ -83,10 +85,11 @@ namespace GloboDiet
 #if ENV_AZURE
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
-                .UseSqlServer(@"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=GloboDietWeb;User ID = GloboDietWebUser@demosqlserverxd;Password=tsM3PhbtZWn91;Trusted_Connection=False;Encrypt=True;"));
+                // GloboDietWebUser_pw
+                .UseSqlServer(@$"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=GloboDietWeb;User ID = GloboDietWebUser@demosqlserverxd;Password={GloboDietWebUser_pw};Trusted_Connection=False;Encrypt=True;"));
             services.AddDbContext<MyIdentityDbContext>(options => options
                 .UseLazyLoadingProxies()
-                .UseSqlServer(@"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=UserManager;User ID = UserManagerUser@demosqlserverxd;Password=tsM3PhbtZWn91;Trusted_Connection=False;Encrypt=True;"));
+                .UseSqlServer(@$"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=UserManager;User ID = UserManagerUser@demosqlserverxd;Password={UserManagerUser_pw};Trusted_Connection=False;Encrypt=True;"));
 #endif
 #if ENV_DEVMEMORY
             services.AddDbContext<GloboDietDbContext>(options => options
