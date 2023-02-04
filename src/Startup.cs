@@ -69,12 +69,15 @@ namespace GloboDiet
             #endregion
 
             #region services
-            // retrieve secrets 
+            // get secret store
             var config = new ConfigurationBuilder()
                 .AddUserSecrets<Program>()
                 .Build();
-            var GloboDietWebUser_pw = config["GloboDietWebUser_pw"];
-            var UserManagerUser_pw = config["UserManagerUser_pw"];
+            // retrieve secrets
+            var GloboDiet_usr = config["GloboDiet_usr"];
+            var GloboDiet_pw = config["GloboDiet_pw"];
+            var UserManager_usr = config["UserManager_usr"];
+            var UserManager_pw = config["UserManager_pw"];
 #if ENV_DEVLOCAL
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
@@ -86,10 +89,10 @@ namespace GloboDiet
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
                 // GloboDietWebUser_pw
-                .UseSqlServer(@$"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=GloboDietWeb;User ID = GloboDietWebUser@demosqlserverxd;Password={GloboDietWebUser_pw};Trusted_Connection=False;Encrypt=True;"));
+                .UseSqlServer(@$"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=GloboDietWeb;User ID = {GloboDiet_usr}@demosqlserverxd;Password={GloboDiet_pw};Trusted_Connection=False;Encrypt=True;"));
             services.AddDbContext<MyIdentityDbContext>(options => options
                 .UseLazyLoadingProxies()
-                .UseSqlServer(@$"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=UserManager;User ID = UserManagerUser@demosqlserverxd;Password={UserManagerUser_pw};Trusted_Connection=False;Encrypt=True;"));
+                .UseSqlServer(@$"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=UserManager;User ID = {UserManager_usr}@demosqlserverxd;Password={UserManager_pw};Trusted_Connection=False;Encrypt=True;"));
 #endif
 #if ENV_DEVMEMORY
             services.AddDbContext<GloboDietDbContext>(options => options

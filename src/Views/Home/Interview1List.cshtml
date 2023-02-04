@@ -1,6 +1,6 @@
 ﻿@model GloboDiet.ViewModels.InterviewsList
 
-<h1>ListInterview</h1>
+<h1>List of Interviews</h1>
 
 <table class="table table-striped">
     <thead>
@@ -17,34 +17,37 @@
             <th>
                 @Html.DisplayNameFor(model => model.Interviews.First().ReferenceDate)
             </th>
+            <th>
+                Actions
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         @if (@Model.Interviews is not null && @Model.Interviews.Any())
         {
-        @foreach (var item in Model.Interviews)
+            @foreach (var item in Model.Interviews)
             {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Timestamp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Number)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReferenceDate)
-            </td>
-            <td>
-                <a asp-action="Interview1Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Interview1Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Interview1Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-        }
+                        <tr>
+                            <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                        @Html.DisplayFor(modelItem => item.Timestamp)
+                            </td>
+                            <td>
+                        @Html.DisplayFor(modelItem => item.Number)
+                            </td>
+                            <td>
+                        @Html.DisplayFor(modelItem => item.ReferenceDate)
+                            </td>
+                            <td>
+                                <a asp-action="Interview1Edit" asp-route-id="@item.Id">Edit</a> |
+                                <a asp-action="Interview1Details" asp-route-id="@item.Id">Details</a> |
+                                <a asp-action="Interview1Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+            }
         }
     </tbody>
 </table>
@@ -87,29 +90,29 @@
                     <tbody>
                         @if (@Model.Interviews is not null && @Model.Interviews.Any())
                         {
-                        @foreach (var item in Model.Interviews)
+                            @foreach (var item in Model.Interviews)
                             {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Id)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Timestamp)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Number)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ReferenceDate)
-                            </td>
-                            <td>
-                                <a asp-action="Interview1Edit" asp-route-id="@item.Id">Edit</a> |
-                                <a asp-action="Interview1Details" asp-route-id="@item.Id">Details</a> |
-                                <a asp-action="Interview1Delete" asp-route-id="@item.Id">Delete</a>
-                            </td>
-                        </tr>
+                                        <tr>
+                                            <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                            </td>
+                                            <td>
+                                        @Html.DisplayFor(modelItem => item.Timestamp)
+                                            </td>
+                                            <td>
+                                        @Html.DisplayFor(modelItem => item.Number)
+                                            </td>
+                                            <td>
+                                        @Html.DisplayFor(modelItem => item.ReferenceDate)
+                                            </td>
+                                            <td>
+                                                <a asp-action="Interview1Edit" asp-route-id="@item.Id">Edit</a> |
+                                                <a asp-action="Interview1Details" asp-route-id="@item.Id">Details</a> |
+                                                <a asp-action="Interview1Delete" asp-route-id="@item.Id">Delete</a>
+                                            </td>
+                                        </tr>
+                            }
                         }
-                                    }
                     </tbody>
                 </table>
 
