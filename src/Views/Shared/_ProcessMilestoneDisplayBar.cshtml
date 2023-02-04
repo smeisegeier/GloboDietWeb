@@ -1,7 +1,7 @@
 ﻿@model GloboDiet.ViewModels._ViewModelBase
 @inject GloboDiet.Services.LookupData LookupData
 
-<div class="d-flex justify-content-between border-soft">
+<div class="d-flex justify-content-between border-soft" data-toggle="tooltip" title="experimental">
     @if (Model.CurrentProcessMilestone == default(GloboDiet.Globals.ProcessMilestone))
     {
     <div class="border-soft mb-2 text-primary"><strong>No Display</strong></div>

@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="~/images/favicon.ico" />
-    <title>GloboDiet</title>
+    <title>GloboDietWeb</title>
 
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"  /> 
@@ -36,11 +36,17 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand text-nowrap" asp-area="" asp-controller="Home" asp-action="Index" data-toggle="tooltip" title="lol">
-                    GloboDiet
+                <a class="navbar-brand text-nowrap" asp-area="" asp-controller="Home" asp-action="Index" data-toggle="tooltip" title="home">
+                    GloboDietWeb
                     <img src="~/images/apple2.png" width="30" height="30" />
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler"
+                        type="button" 
+                        data-toggle="collapse" 
+                        data-target=".navbar-collapse" 
+                        aria-controls="navbarSupportedContent" 
+                        aria-expanded="false" 
+                        aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
@@ -59,7 +65,11 @@
                         <a class="dropdown-item" href="/Home/RecipesList">List Recipes</a>
                         </div>
                         </li>*@
-                        <li class="nav-item"><a class="nav-link text-info" href="/Home/Interview1Create"><i class="bi bi-diagram-3-fill"></i> 24h Recall <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountInterviews</span></a></li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" href="/Home/Interview1Create" data-toggle="tooltip" title="start interview">
+                                <i class="bi bi-diagram-3-fill"></i> 24h Recall <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountInterviews</span>
+                            </a>
+                        </li>
 
                         @*                        <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
@@ -71,7 +81,7 @@
                         </div>
                         </li>*@
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                            <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true" data-toggle="tooltip" title="currently public">
                                 Admin
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -82,7 +92,11 @@
                                 <a class="dropdown-item" href="/Admin/LocationsList">List Locations <span class="badge badge-pill badge-warning">@Model.NavigationBar.PillCountLocations</span></a>
                             </div>
                         </li>
-                        <li class="nav-item"><a class="nav-link text-info" href="/Home/ImageSelector">image-gallery</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" href="/Home/ImageSelector" data-toggle="tooltip" title="preview images">
+                            image-gallery
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="float-right">
@@ -94,7 +108,7 @@
                     </span>
                         <small>@LookupData.SoftwareVersion</small>
                     </span>
-                    <span class="navbar-item text-muted">
+                    <span class="navbar-item text-muted" data-toggle="tooltip" title="sql connection used: in-memory | azure | local">
                         <span class="badge badge-pill badge-info">sql</span>
                         <small>@Model.NavigationBar.CurrentSqlConnectionType</small>
                     </span>
@@ -111,7 +125,7 @@
 
     <footer class="border-top footer">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <ul class="container list-group list-group-horizontal">
+        <ul class="container list-group list-group-horizontal" data-toggle="tooltip" title="experimental">
             @if (ViewData.ModelState["CustomError"] is null)
             {
             <li class="list-group-item list-group-item-success">No complex errors</li>
