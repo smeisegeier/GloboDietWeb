@@ -88,7 +88,6 @@ namespace GloboDiet
 #if ENV_AZURE
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
-                // GloboDietWebUser_pw
                 .UseSqlServer(@$"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=GloboDietWeb;User ID = {GloboDiet_usr}@demosqlserverxd;Password={GloboDiet_pw};Trusted_Connection=False;Encrypt=True;"));
             services.AddDbContext<MyIdentityDbContext>(options => options
                 .UseLazyLoadingProxies()
