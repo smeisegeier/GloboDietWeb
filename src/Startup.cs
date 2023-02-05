@@ -74,10 +74,8 @@ namespace GloboDiet
                 .AddUserSecrets<Program>()
                 .Build();
             // retrieve secrets
-            var GloboDiet_usr = config["GloboDiet_usr"];
-            var GloboDiet_pw = config["GloboDiet_pw"];
-            var UserManager_usr = config["UserManager_usr"];
-            var UserManager_pw = config["UserManager_pw"];
+            var GloboDiet_con = config["GloboDiet_con"];
+            var UserManager_con = config["UserManager_con"];
 #if ENV_DEVLOCAL
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
@@ -88,10 +86,10 @@ namespace GloboDiet
 #if ENV_AZURE
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
-                .UseSqlServer(@$"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=GloboDietWeb;User ID = {GloboDiet_usr}@demosqlserverxd;Password={GloboDiet_pw};Trusted_Connection=False;Encrypt=True;"));
+                .UseSqlServer(GloboDiet_con));
             services.AddDbContext<MyIdentityDbContext>(options => options
                 .UseLazyLoadingProxies()
-                .UseSqlServer(@$"Server=tcp:demosqlserverxd.database.windows.net,1433;Database=UserManager;User ID = {UserManager_usr}@demosqlserverxd;Password={UserManager_pw};Trusted_Connection=False;Encrypt=True;"));
+                .UseSqlServer(UserManager_con));
 #endif
 #if ENV_DEVMEMORY
             services.AddDbContext<GloboDietDbContext>(options => options
