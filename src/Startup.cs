@@ -1,9 +1,10 @@
 //#define SESSION
 
-// #define ENV_DEVMEMORY
+#define ENV_DEVMEMORY
 //#define ENV_DEVLOCAL
 //#define ENV_RKI
-#define ENV_AZURE
+// #define ENV_AZURE
+// todo fix azure con on macos
 
 /*
  Update-Database -Context GloboDietDbContext

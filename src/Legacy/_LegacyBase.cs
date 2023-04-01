@@ -26,7 +26,7 @@ namespace GloboDiet.Legacy.GloboDietDb
         {
             return JsonConvert.DeserializeObject<List<T>>(
                 File.ReadAllText(Path.Combine(
-                    "Legacy/GloboDietDb", typeof(T).Name + ".json")
+                    "Legacy", typeof(T).Name + ".json")
                 )
             );
         }
