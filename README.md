@@ -46,3 +46,24 @@
     <PackageReference Include="NLog" Version="5.1.1" />
   </ItemGroup>
 ```
+
+### security manager
+
+- refer to [doc](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=linux)
+- user-secret is generated via
+
+```csharp
+dotnet user-secrets init
+```
+
+[![Windows](https://badgen.net/badge/icon/windows?icon=windows&label)](https://microsoft.com/windows/)
+
+- secret will be stored here: `%APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json`
+
+![apple](https://badgen.net/badge/icon/apple?icon=apple&label)
+
+- secret is here: `~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`
+
+- create a file `secrets.json`
+
+> **note:** if the secret is already present - manually create the secrets file in the folder structure nd paste the content ✅
