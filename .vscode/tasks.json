@@ -17,6 +17,9 @@
       "label": "publish",
       "command": "dotnet",
       "type": "process",
+      "dependsOn": [
+        "build"
+      ],
       "args": [
         "publish",
         "${workspaceFolder}/src/GloboDiet.csproj",
@@ -36,6 +39,24 @@
         "${workspaceFolder}/src/GloboDiet.csproj"
       ],
       "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "run",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "run",
+        "--launch-profile \"dev\""
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/src"
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "echo",
+      "type": "shell",
+      "command": "echo ${workspaceFolder}"
     }
   ]
 }

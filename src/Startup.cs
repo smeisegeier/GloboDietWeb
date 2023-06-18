@@ -1,10 +1,9 @@
 //#define SESSION
 
-// #define ENV_DEVMEMORY
-//#define ENV_DEVLOCAL
-//#define ENV_RKI
-#define ENV_AZURE
-// todo fix azure con on macos
+#define ENV_DEVMEMORY
+// #define ENV_DEVLOCAL // not on macos
+// #define ENV_RKI
+// #define ENV_AZURE
 
 /*
  Update-Database -Context GloboDietDbContext
@@ -45,9 +44,9 @@ namespace GloboDiet
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc()
-                .AddNewtonsoftJson(options => options
-                    .SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            // .AddNewtonsoftJson(options => options
+            //     .SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             #region Culture
             var cultureInfo = new CultureInfo("de-DE");
@@ -140,7 +139,7 @@ namespace GloboDiet
 #if SESSION
             app.UseSession();
 #endif
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
             app.UseRouting();
             // must appear between Routing and Endpoints:
             app.UseAuthentication();

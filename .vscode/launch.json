@@ -13,17 +13,18 @@
       "program": "${workspaceFolder}/src/bin/Debug/net7.0/GloboDiet.dll",
       "args": [],
       "cwd": "${workspaceFolder}/src",
+      "launchSettingsProfile": "dev",
       "stopAtEntry": false,
       // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
       "serverReadyAction": {
         "action": "openExternally",
         "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
       },
-      "env": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
+      // "env": {
+      //   "ASPNETCORE_ENVIRONMENT": "Development"
+      // },
       "sourceFileMap": {
-        "/Views": "${workspaceFolder}/Views"
+        "/Views": "${workspaceFolder}/src/Views"
       }
     },
     {

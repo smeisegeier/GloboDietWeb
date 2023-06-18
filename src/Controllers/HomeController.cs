@@ -53,6 +53,9 @@ namespace GloboDiet.Controllers
         {
             // if no content needed just pass _ViewModelBase
             //return View(new _ViewModelBase(getNewNavigationBar()));
+
+            // return Content("lol");
+            // return RedirectToActionPermanent(nameof(ImageSelector));
             return RedirectToActionPermanent(nameof(Interview1List));
         }
 

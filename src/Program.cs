@@ -5,6 +5,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,7 +18,8 @@ namespace GloboDiet
         public static void Main(string[] args)
         {
             _logger.Info("App started");
-            CreateHostBuilder(args).Build()
+            CreateHostBuilder(args)
+                .Build()
                 .SeedDb()
                 .Run();
 

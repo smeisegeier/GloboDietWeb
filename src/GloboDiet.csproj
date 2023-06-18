@@ -5,6 +5,9 @@
     <UserSecretsId>be9e4500-e3d6-4f8f-941d-406eadc02a65</UserSecretsId>
     <AssemblyVersion>0.8.0.0</AssemblyVersion>
     <PackageIcon>apple.png</PackageIcon>
+
+    <!-- inlude to prevent error on F5 -->
+    <!-- <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles> -->
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,9 +29,10 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.3" />
     <PackageReference Include="NLog" Version="5.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.7" />
   </ItemGroup>
 
-  <ItemGroup>
+  <!-- <ItemGroup>
     <Folder Include="wwwroot\logs\" />
   </ItemGroup>
 
@@ -41,7 +45,7 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
+  </ItemGroup> -->
 
 
 </Project>
