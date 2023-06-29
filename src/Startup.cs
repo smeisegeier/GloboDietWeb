@@ -1,5 +1,8 @@
 //#define SESSION
 
+
+// todo !!! azure sql is set to external. now switch off user secrets and user the new connection string. the publish again
+
 #define ENV_DEVMEMORY
 // #define ENV_DEVLOCAL // not on macos
 // #define ENV_RKI
