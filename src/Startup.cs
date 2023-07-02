@@ -80,12 +80,11 @@ namespace GloboDiet
             // var GloboDiet_con = config["GloboDiet_con"];
             // var UserManager_con = config["UserManager_con"];
 
-            var GloboDiet_con = "Server=tcp:demosqlserverxd.database.windows.net,1433;Database=DemoSqlDb;Authentication=Active Directory Managed Identity;Trusted_Connection=False;Encrypt=True;PersistSecurityInfo=True;";
-            var UserManager_con = "Server=tcp:demosqlserverxd.database.windows.net,1433;Database=UserManager;Authentication=Active Directory Managed Identity;Trusted_Connection=False;Encrypt=True;PersistSecurityInfo=True;";
 
 
 
-            
+
+
 #if ENV_DEVLOCAL
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
@@ -94,6 +93,13 @@ namespace GloboDiet
                 .UseSqlServer("server=(localdb)\\mssqllocaldb;database=UserManager;trusted_connection=true;"));
 #endif
 #if ENV_AZURE
+            // var GloboDiet_con = System.Environment.GetEnvironmentVariable("SQLAZURECONNSTR_GLOBODIET_CON");
+            var GloboDiet_con = Configuration.GetConnectionString("SQLAZURECONNSTR_GLOBODIET_CON");
+            var UserManager_con = Configuration.GetConnectionString("SQLAZURECONNSTR_USERMANAGER_CON");
+            // var UserManager_con = System.Environment.GetEnvironmentVariable("SQLAZURECONNSTR_USERMANAGER_CON");
+            // var GloboDiet_con = "Server=tcp:demosqlserverxd.database.windows.net,1433;Database=DemoSqlDb;Authentication=Active Directory Managed Identity;Trusted_Connection=False;Encrypt=True;PersistSecurityInfo=True;";
+            // var UserManager_con = "Server=tcp:demosqlserverxd.database.windows.net,1433;Database=UserManager;Authentication=Active Directory Managed Identity;Trusted_Connection=False;Encrypt=True;PersistSecurityInfo=True;";
+
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
                 .UseSqlServer(GloboDiet_con));
