@@ -80,10 +80,15 @@ namespace GloboDiet
             // var GloboDiet_con = config["GloboDiet_con"];
             // var UserManager_con = config["UserManager_con"];
 
+            // var config = new ConfigurationBuilder()
+            //     .SetBasePath(Environment.ContentRootPath)
+            //     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            //     .Build();
 
-
-
-
+            var GloboDiet_con = this.Configuration.GetConnectionString("GLOBODIET_CON");
+            var UserManager_con = this.Configuration.GetConnectionString("USERMANAGER_CON");
+            // Console.WriteLine(GloboDiet_con);
+            // Console.WriteLine(UserManager_con);
 
 #if ENV_DEVLOCAL
             services.AddDbContext<GloboDietDbContext>(options => options
@@ -94,9 +99,8 @@ namespace GloboDiet
 #endif
 #if ENV_AZURE
             // var GloboDiet_con = System.Environment.GetEnvironmentVariable("SQLAZURECONNSTR_GLOBODIET_CON");
-            var GloboDiet_con = Configuration.GetConnectionString("SQLAZURECONNSTR_GLOBODIET_CON");
-            var UserManager_con = Configuration.GetConnectionString("SQLAZURECONNSTR_USERMANAGER_CON");
             // var UserManager_con = System.Environment.GetEnvironmentVariable("SQLAZURECONNSTR_USERMANAGER_CON");
+
             // var GloboDiet_con = "Server=tcp:demosqlserverxd.database.windows.net,1433;Database=DemoSqlDb;Authentication=Active Directory Managed Identity;Trusted_Connection=False;Encrypt=True;PersistSecurityInfo=True;";
             // var UserManager_con = "Server=tcp:demosqlserverxd.database.windows.net,1433;Database=UserManager;Authentication=Active Directory Managed Identity;Trusted_Connection=False;Encrypt=True;PersistSecurityInfo=True;";
 
