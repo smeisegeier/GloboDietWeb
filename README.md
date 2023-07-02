@@ -67,3 +67,13 @@ dotnet user-secrets init
 - create a file `secrets.json`
 
 > **note:** if the secret is already present - manually create the secrets file in the folder structure nd paste the content ✅
+
+## deploying via github actions
+
+- azure portal:  overview ➡️ download publish profile
+- github repo settings: add this file as secret
+- if github actions tab is not visible - check in repo settings
+- in github: settings - security - secrets - actions - new repos secret
+- paste content of publish profile, name it `AZURE_WEBAPP_PUBLISH_PROFILE`
+- ❗ do not publish this file
+- use this template for github actions and save it under /.github/workflows

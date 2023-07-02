@@ -1,12 +1,12 @@
 //#define SESSION
 
 
-// todo !!! azure sql is set to external. now switch off user secrets and user the new connection string. the publish again
+// todo !!! azure sql is set to external. now switch off user secrets and user the new connection string. then publish again
 
-#define ENV_DEVMEMORY
+// #define ENV_DEVMEMORY
 // #define ENV_DEVLOCAL // not on macos
 // #define ENV_RKI
-// #define ENV_AZURE
+#define ENV_AZURE
 
 /*
  Update-Database -Context GloboDietDbContext
@@ -73,12 +73,19 @@ namespace GloboDiet
 
             #region services
             // get secret store
-            var config = new ConfigurationBuilder()
-                .AddUserSecrets<Program>()
-                .Build();
+            // var config = new ConfigurationBuilder()
+            //     // .AddUserSecrets<Program>()
+            //     .Build();
             // retrieve secrets
-            var GloboDiet_con = config["GloboDiet_con"];
-            var UserManager_con = config["UserManager_con"];
+            // var GloboDiet_con = config["GloboDiet_con"];
+            // var UserManager_con = config["UserManager_con"];
+
+            var GloboDiet_con = "Server=tcp:demosqlserverxd.database.windows.net,1433;Database=DemoSqlDb;Authentication=Active Directory Managed Identity;Trusted_Connection=False;Encrypt=True;PersistSecurityInfo=True;";
+            var UserManager_con = "Server=tcp:demosqlserverxd.database.windows.net,1433;Database=UserManager;Authentication=Active Directory Managed Identity;Trusted_Connection=False;Encrypt=True;PersistSecurityInfo=True;";
+
+
+
+            
 #if ENV_DEVLOCAL
             services.AddDbContext<GloboDietDbContext>(options => options
                 .UseLazyLoadingProxies()
